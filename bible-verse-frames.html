@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Feather | Bible Verse Frames</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+
+
+
+
+
+
+  <div class="animated-bg"></div>
+
+
+  <header>
+    <a href="index.html" class="logo">
+    
+  <img src="logo.png" alt="Feather Logo" class="logo-img">
+  <span class="logo-text">Feather</span>
+</a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="customer_login.html">Mail Us</a></li>
+        <li class="dropdown">
+          <a href="#">Products</a>
+          <div class="dropdown-content">
+            <a href="products.html">T-Shirts</a>
+            <a href="school.html">School Uniforms</a>
+            <a href="bible-verse-tshirts.html">Bible Verse T-Shirts</a>
+            <a href="bible-verse-frames.html">Bible Verse Frames</a>
+            <a href="cards.html">Cards</a>
+            <a href="bags.html">Bags</a>
+             <a href="caps.html">Caps</a>
+             <a href="bottles.html">Bottles</a>
+            <a href="badges.html">Badges</a>
+            <a href="shoes.html">Shoes</a>
+            <a href="belts.html">Belts</a>
+            <a href="umbrella.html">Umbrella</a>
+          </div>
+        </li>
+        <li><a href="details.html">Details</a></li>
+        <li><a href="clients.html">Our Clients</a></li>
+        <li><a href="#">Contacts</a></li>
+        <li><a href="works.html">Works</a></li>
+       
+      </ul>
+    </nav>
+  </header>
+
+  <section class="products-hero">
+    <h1>Bible Verse Frames</h1>
+    <p>Decorate your space with verses of faith and inspiration.</p>
+  </section>
+
+  <section class="product-gallery">
+    <div class="product-card">
+      <img src="frame1.jpg" alt="Frame 1" />
+      <h3>“Blessed By The Lord Of Zion”</h3>
+      <p>Psalm 128:5 — A reminder of guidance and comfort.</p>
+   
+</div>
+
+    <div class="product-card">
+      <img src="frame2.jpg" alt="Frame 2" />
+      <h3>“Blessed Home”</h3>
+      <p>2 Samuel 7:29 — Bold faith framed beautifully.</p>
+      
+</div>
+   
+    
+
+
+    <div class="product-card">
+      <img src="f3.jpg" alt="Frame 3" />
+      <h3>“Faith Can Move Mountains”</h3>
+      <p>Matthew 17:20 — Bold faith framed beautifully.</p>
+      
+</div>
+  
+   
+     
+  </section>
+
+  <footer class="footer">
+    <p>© 2025 Feather | Faith-Inspired Creations</p>
+  </footer>
+<!-- ===== Contact Modal ===== -->
+<div id="contactModal" class="contact-modal">
+  <div class="contact-content">
+    <span class="close-contact">&times;</span>
+    <h2>Contact Us</h2>
+    <p><i class="fas fa-phone"></i> GARY +91 9047299559</p>
+    <p><i class="fas fa-phone"></i> RAHUL DAVID +91 9003530293</p>
+    <p><i class="fas fa-phone"></i> PRINCE +91 7708287821</p>
+    <p><i class="fas fa-phone"></i> JEMI +91 8667635832</p>
+    <p><i class="fas fa-phone"></i> SOLOMON +91 9629878364</p>
+     <p><i class="fas fa-envelope"></i> mightyhandsorder@gmail.com</p>
+     <p><i class="fas fa-envelope"></i> mightyhandsdesigning@gmail.com</p>
+     <p><i class="fas fa-envelope"></i> mightyhandspdy@gmail.com</p>
+  </div>
+</div>
+
+<script>
+  function toggleDetails(id, btn) {
+    const details = document.getElementById(id);
+
+    if (details.style.display === "block") {
+      details.style.display = "none";
+      btn.textContent = "View More";
+    } else {
+      details.style.display = "block";
+      btn.textContent = "Hide Details";
+    }
+  }
+</script>
+
+
+
+</body>
+</html>
+<script>
+  // Open contact modal when clicking "Contacts" link
+  document.querySelectorAll('a[href="#"], a[href="contacts.html"], a[href*="Contacts"]').forEach(link => {
+    if (link.textContent.trim().toLowerCase() === 'contacts') {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        document.getElementById('contactModal').style.display = 'flex';
+      });
+    }
+  });
+
+  // Close modal when clicking the close button
+  document.querySelector('.close-contact').addEventListener('click', () => {
+    document.getElementById('contactModal').style.display = 'none';
+  });
+
+  // Close modal when clicking outside content
+  window.addEventListener('click', (e) => {
+    const modal = document.getElementById('contactModal');
+    if (e.target === modal) modal.style.display = 'none';
+  });
+</script>
+

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Feather | Bags</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="products-page">
+
+ 
+
+
+
+
+  <!-- ===== Animated Background ===== -->
+  <div class="animated-bg"></div>
+
+  <!-- ===== Header ===== -->
+  <header>
+    <a href="index.html" class="logo">
+  <img src="logo.png" alt="Feather Logo" class="logo-img">
+  <span class="logo-text">Feather</span>
+</a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="customer_login.html">Mail Us</a></li>
+        <li class="dropdown">
+          <a href="#">Products</a>
+          <div class="dropdown-content">
+            <a href="products.html">T-Shirts</a>
+            <a href="school.html">School Uniforms</a>
+            <a href="bible-verse-tshirts.html">Bible Verse T-Shirts</a>
+            <a href="bible-verse-frames.html">Bible Verse Frames</a>
+            <a href="cards.html">Cards</a>
+            <a href="bags.html">Bags</a>
+            <a href="caps.html">Caps</a>
+            <a href="bottles.html">Bottles</a>
+            <a href="badges.html">Badges</a>
+            <a href="shoes.html">Shoes</a>
+            <a href="belts.html">Belts</a>
+            <a href="umbrella.html">Umbrella</a>
+          </div>
+        </li>
+        <li><a href="details.html">Details</a></li>
+        <li><a href="clients.html">Our Clients</a></li>
+        <li><a href="#">Contacts</a></li>
+        <li><a href="works.html">Works</a></li>
+        
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ===== Accessories Hero Section ===== -->
+  <section class="products-hero">
+    <h1>Bottle Collections</h1>
+    <p> Unique Collections.</p>
+  </section>
+
+  <!-- ===== Accessories Product Gallery ===== -->
+  <section class="product-gallery">
+    <div class="product-card">
+      <img src="b12.jpg" alt="bottles" />
+      <h3>Sipper Bottles</h3>
+      <p>Easy Consumption.</p>
+    
+  
+      
+
+      
+      
+    </div>
+
+    <div class="product-card">
+      <img src="b13.jpg" alt="bottles" />
+      <h3>Combo Sippers</h3>
+      <p>With Different Sizes.</p>
+
+      
+      
+    </div>
+
+    <div class="product-card">
+      <img src="b14.jpg" alt="bottles" />
+      <h3>Sport Sippers</h3>
+      <p>With Cold Gear.</p>
+
+
+      
+    </div>
+
+
+<div class="product-card">
+      <img src="b15.jpg" alt="bottles" />
+      <h3>Juice Gear</h3>
+      <p>With Unique Colours.</p>
+
+
+      
+    </div>
+
+<div class="product-card">
+      <img src="b16.jpg" alt="bottles" />
+      <h3>Metal Bottles</h3>
+      <p>rugged look.</p>
+
+
+      
+    </div>
+
+
+<div class="product-card">
+      <img src="b17.jpg" alt="bottles" />
+      <h3>Steel Bottles</h3>
+      <p>Simple and Superb.</p>
+
+
+      
+    </div>
+
+
+<div class="product-card">
+      <img src="b18.jpg" alt="bottles " />
+      <h3>Steel Bottles</h3>
+      <p>Black Body.</p>
+
+
+      
+    </div>
+
+
+
+<div class="product-card">
+      <img src="b19.jpg" alt="bottles" />
+      <h3>Multipurpose Bottles</h3>
+      <p>Flask with Build-in Cup .</p>
+
+
+      
+    </div>
+
+
+<div class="product-card">
+      <img src="b20.jpg" alt="bottles" />
+      <h3>Metal Bottles</h3>
+      <p>Easy to carry .</p>
+
+
+      
+    </div>
+
+
+<div class="product-card">
+      <img src="b21.jpg" alt="bottles" />
+      <h3> Metal Bottles</h3>
+      <p>Retains Warmness .</p>
+
+
+      
+    </div>
+
+
+
+
+  </section>
+
+
+
+  <!-- ===== Footer ===== -->
+  <footer class="footer">
+    <p>© 2025 Feather | Designed with Purpose</p>
+  </footer>
+<!-- ===== Contact Modal ===== -->
+<div id="contactModal" class="contact-modal">
+  <div class="contact-content">
+    <span class="close-contact">&times;</span>
+    <h2>Contact Us</h2>
+    <p><i class="fas fa-phone"></i> GARY +91 9047299559</p>
+    <p><i class="fas fa-phone"></i> RAHUL DAVID +91 9003530293</p>
+    <p><i class="fas fa-phone"></i> PRINCE +91 7708287821</p>
+    <p><i class="fas fa-phone"></i> JEMI +91 8667635832</p>
+    <p><i class="fas fa-phone"></i> SOLOMON +91 9629878364</p>
+     <p><i class="fas fa-envelope"></i> mightyhandsorder@gmail.com</p>
+     <p><i class="fas fa-envelope"></i> mightyhandsdesigning@gmail.com</p>
+     <p><i class="fas fa-envelope"></i> mightyhandspdy@gmail.com</p>
+  </div>
+</div>
+
+<script>
+function toggleDetails(id) {
+  const details = document.getElementById(id);
+  if (details.style.display === "block") {
+    details.style.display = "none";
+  } else {
+    details.style.display = "block";
+  }
+}
+</script>
+
+
+
+
+
+
+</body>
+</html>
+<script>
+  // Open contact modal when clicking "Contacts" link
+  document.querySelectorAll('a[href="#"], a[href="contacts.html"], a[href*="Contacts"]').forEach(link => {
+    if (link.textContent.trim().toLowerCase() === 'contacts') {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        document.getElementById('contactModal').style.display = 'flex';
+      });
+    }
+  });
+
+  // Close modal when clicking the close button
+  document.querySelector('.close-contact').addEventListener('click', () => {
+    document.getElementById('contactModal').style.display = 'none';
+  });
+
+  // Close modal when clicking outside content
+  window.addEventListener('click', (e) => {
+    const modal = document.getElementById('contactModal');
+    if (e.target === modal) modal.style.display = 'none';
+  });
+</script>

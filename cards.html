@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Feather | Cards</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="products-page">
+
+
+
+
+
+  <!-- ===== Animated Background ===== -->
+  <div class="animated-bg"></div>
+
+  <!-- ===== Header ===== -->
+  <header>
+    <a href="index.html" class="logo">
+  <img src="logo.png" alt="Feather Logo" class="logo-img">
+  <span class="logo-text">Feather</span>
+</a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="customer_login.html">Mail Us</a></li>
+        <li class="dropdown">
+          <a href="#">Products</a>
+          <div class="dropdown-content">
+            <a href="products.html">T-Shirts</a>
+            <a href="school.html">School Uniforms</a>
+            <a href="bible-verse-tshirts.html">Bible Verse T-Shirts</a>
+            <a href="bible-verse-frames.html">Bible Verse Frames</a>
+            <a href="cards.html" class="active">Cards</a>
+            <a href="bags.html">Bags</a>
+             <a href="caps.html">Caps</a>
+             <a href="bottles.html">Bottles</a>
+            <a href="badges.html">Badges</a>
+            <a href="shoes.html">Shoes</a>
+             <a href="belts.html">Belts</a>
+             <a href="umbrella.html">Umbrella</a>
+          </div>
+        </li>
+        <li><a href="details.html">Details</a></li>
+        <li><a href="clients.html">Our Clients</a></li>
+        <li><a href="#">Contacts</a></li>
+        <li><a href="works.html">Works</a></li>
+        
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ===== Accessories Hero Section ===== -->
+  <section class="products-hero">
+    <h1>Faith-Inspired Cards</h1>
+    <p>Start your year with daily verses.</p>
+  </section>
+
+  <!-- ===== Accessories Product Gallery ===== -->
+  <section class="product-gallery">
+    <div class="product-card">
+      <img src="card1.jpg" alt="Single Sheet Calendars" />
+      <h3>Single Sheet Calendars</h3>
+      <p>Single and Attractive.</p>
+      
+    </div>
+
+    <div class="product-card">
+      <img src="card2.jpg" alt="Verse Cards" />
+      <h3>Verse cards</h3>
+      <p>Gift cards with the Living Word.</p>
+      
+    </div>
+
+    <div class="product-card">
+      <img src="card3.jpg" alt="Gift Cards" />
+      <h3>Gift Cards</h3>
+      <p>Carry your favorite scripture with you wherever you go.</p>
+      
+    </div>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer class="footer">
+    <p>© 2025 Feather | Designed with Purpose</p>
+  </footer>
+<!-- ===== Contact Modal ===== -->
+<div id="contactModal" class="contact-modal">
+  <div class="contact-content">
+    <span class="close-contact">&times;</span>
+    <h2>Contact Us</h2>
+    <p><i class="fas fa-phone"></i> +91 98765 43210</p>
+    <p><i class="fas fa-phone"></i> +91 91234 56789</p>
+    <p><i class="fas fa-envelope"></i> mightyhands@gmail.com</p>
+  </div>
+</div>
+<!-- ===== Contact Modal ===== -->
+<div id="contactModal" class="contact-modal">
+  <div class="contact-content">
+    <span class="close-contact">&times;</span>
+    <h2>Contact Us</h2>
+    <p><i class="fas fa-phone"></i> GARY +91 9047299559</p>
+    <p><i class="fas fa-phone"></i> RAHUL DAVID +91 9003530293</p>
+    <p><i class="fas fa-phone"></i> PRINCE +91 7708287821</p>
+    <p><i class="fas fa-phone"></i> JEMI +91 8667635832</p>
+    <p><i class="fas fa-phone"></i> SOLOMON +91 9629878364</p>
+     <p><i class="fas fa-envelope"></i> mightyhandsorder@gmail.com</p>
+     <p><i class="fas fa-envelope"></i> mightyhandsdesigning@gmail.com</p>
+     <p><i class="fas fa-envelope"></i> mightyhandspdy@gmail.com</p>
+  </div>
+</div>
+
+
+</body>
+</html>
+<script>
+  // Open contact modal when clicking "Contacts" link
+  document.querySelectorAll('a[href="#"], a[href="contacts.html"], a[href*="Contacts"]').forEach(link => {
+    if (link.textContent.trim().toLowerCase() === 'contacts') {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        document.getElementById('contactModal').style.display = 'flex';
+      });
+    }
+  });
+
+  // Close modal when clicking the close button
+  document.querySelector('.close-contact').addEventListener('click', () => {
+    document.getElementById('contactModal').style.display = 'none';
+  });
+
+  // Close modal when clicking outside content
+  window.addEventListener('click', (e) => {
+    const modal = document.getElementById('contactModal');
+    if (e.target === modal) modal.style.display = 'none';
+  });
+</script>

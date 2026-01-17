@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us | Mighty Hands</title>
+
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background: #f6f8fa;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .form-container {
+      background: white;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      max-width: 500px;
+      width: 100%;
+    }
+
+    h2 {
+      text-align: center;
+      color: #222;
+      margin-bottom: 20px;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    label {
+      font-weight: 600;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background: #1e88e5;
+      border: none;
+      border-radius: 6px;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #1565c0;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="form-container">
+    <h2>Contact Us</h2>
+
+    <form id="contactForm">
+
+      <label>Name:</label>
+      <input type="text" name="name" required>
+
+      <label>Email:</label>
+      <input type="email" name="email" required>
+
+      <label>Phone:</label>
+      <input type="text" name="phone">
+
+      <label>Product:</label>
+      <input type="text" name="product">
+
+      <label>Message:</label>
+      <textarea name="message"></textarea>
+
+      <button type="submit">Submit</button>
+
+    </form>
+  </div>
+
+  <script>
+    const scriptURL = "https://script.google.com/macros/s/AKfycbxcmNxRHFYBICWsq0AF29OERJCEu-6OqRhIupljrxwZoYF_5myFvmQUwH2hXFBgvcIL/exec";
+
+
+    document.getElementById("contactForm").addEventListener("submit", async function(e) {
+      e.preventDefault();
+
+      const formData = new FormData(this);
+
+      try {
+        await fetch(scriptURL, {
+          method: "POST",
+          body: formData
+        });
+
+        alert("Form submitted successfully!");
+        this.reset();
+
+      } catch (error) {
+        alert("Error submitting form!");
+        console.error(error);
+      }
+    });
+  </script>
+
+</body>
+</html>
