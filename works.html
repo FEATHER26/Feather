@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Feather | Works</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body class="works-page">
+
+
+
+
+
+
+
+  <!-- ===== Animated Background ===== -->
+  <div class="animated-bg"></div>
+
+  <!-- ===== Header ===== -->
+  <header>
+    
+<a href="index.html" class="logo">
+
+  <img src="logo.png" alt="Feather Logo" class="logo-img">
+  <span class="logo-text">Feather</span>
+</a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+         <li><a href="customer_login.html">Mail Us</a></li>
+        <li class="dropdown">
+          <a href="#">Products</a>
+          <div class="dropdown-content">
+            <a href="products.html">T-Shirts</a>
+            <a href="school.html">School Uniforms</a>
+            <a href="bible-verse-tshirts.html">Bible Verse T-Shirts</a>
+            <a href="bible-verse-frames.html">Bible Verse Frames</a>
+            <a href="cards.html">Cards</a>
+            <a href="bags.html">Bags</a>
+             <a href="caps.html">Caps</a>
+            <a href="badges.html">Badges</a>
+           <a href="shoes.html">Shoes</a>
+             <a href="belts.html">Belts</a>
+             <a href="umbrella.html">Umbrella</a>
+          </div>
+        </li>
+        <li><a href="details.html">Details</a></li>
+        <li><a href="clients.html">Our Clients</a></li>
+        <li><a href="#">Contacts</a></li>
+        <li><a href="works.html" class="active">Works</a></li>
+       
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ===== Works Section ===== -->
+  <section class="works-section">
+    <h1>Our Creative Works</h1>
+    <p>Explore the projects we've completed with passion and purpose.</p>
+
+    <div class="works-carousel">
+      <div class="carousel-track">
+        <img src="w1.jpg" alt="Work 1">
+        <img src="w2.jpg" alt="Work 2">
+        <img src="w3.jpg" alt="Work 3">
+        <img src="w4.jpg" alt="Work 4">
+        <img src="im1.jpg" alt="Work 5">
+        <img src="w5.jpg" alt="Work 6">
+        <img src="fg.jpg" alt="Work 7">
+        
+      </div>
+    </div>
+  </section>
+
+<!-- ===== Featured Portrait Videos ===== -->
+<section class="portrait-video-section">
+  <h2 class="portrait-title">Our Featured Works</h2>
+
+  <div class="portrait-video-row">
+
+    <div class="portrait-video-container">
+      <video class="portrait-video" autoplay  loop controls>
+        <source src="ft1.mp4" type="video/mp4" />
+      </video>
+    </div>
+
+    <div class="portrait-video-container">
+      <video class="portrait-video" autoplay  loop controls>
+        <source src="ft2.mp4" type="video/mp4" />
+      </video>
+    </div>
+
+    <div class="portrait-video-container">
+      <video class="portrait-video" autoplay  loop controls>
+        <source src="christmassale.mp4" type="video/mp4" />
+      </video>
+    </div>
+
+  </div>
+</section>
+
+
+
+  <!-- ===== Footer ===== -->
+  <footer class="footer">
+    <p>© 2025 Feather | Designed with Purpose</p>
+  </footer>
+
+
+  <script>
+    // Infinite Looping Carousel Animation
+    const track = document.querySelector('.carousel-track');
+    const slides = document.querySelectorAll('.carousel-track img');
+    const slideWidth = slides[0].clientWidth;
+
+    let index = 0;
+    function moveCarousel() {
+      index++;
+      if (index >= slides.length) index = 0;
+      track.style.transform = `translateX(-${index * slideWidth}px)`;
+    }
+    setInterval(moveCarousel, 2500);
+  </script>
+
+
+<!-- ===== Contact Modal ===== -->
+<div id="contactModal" class="contact-modal">
+  <div class="contact-content">
+    <span class="close-contact">&times;</span>
+    <h2>Contact Us</h2>
+    <p><i class="fas fa-phone"></i> GARY +91 9047299559</p>
+    <p><i class="fas fa-phone"></i> RAHUL DAVID +91 9003530293</p>
+    <p><i class="fas fa-phone"></i> PRINCE +91 7708287821</p>
+    <p><i class="fas fa-phone"></i> JEMI +91 8667635832</p>
+    <p><i class="fas fa-phone"></i> SOLOMON +91 9629878364</p>
+     <p><i class="fas fa-envelope"></i> mightyhandsorder@gmail.com</p>
+     <p><i class="fas fa-envelope"></i> mightyhandsdesigning@gmail.com</p>
+     <p><i class="fas fa-envelope"></i> mightyhandspdy@gmail.com</p>
+  </div>
+</div>
+
+<script>
+  // Open contact modal when clicking "Contacts" link
+  document.querySelectorAll('a').forEach(link => {
+    if (link.textContent.trim().toLowerCase() === 'contacts') {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        document.getElementById('contactModal').style.display = 'flex';
+      });
+    }
+  });
+
+  // Close modal when clicking the close button
+  document.querySelector('.close-contact').addEventListener('click', () => {
+    document.getElementById('contactModal').style.display = 'none';
+  });
+
+  // Close modal when clicking outside content
+  window.addEventListener('click', (e) => {
+    const modal = document.getElementById('contactModal');
+    if (e.target === modal) modal.style.display = 'none';
+  });
+</script>
+
+
+
+</body>
+</html>
