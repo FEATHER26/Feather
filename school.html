@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Feather | School Uniforms</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+
+ 
+  <div class="animated-bg"></div>
+
+
+  <header>
+    <a href="index.html" class="logo">
+  <img src="logo.png" alt="Feather Logo" class="logo-img">
+  <span class="logo-text">Feather</span>
+</a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="customer_login.html">Mail Us</a></li>
+        <li class="dropdown">
+          <a href="#">Products</a>
+          <div class="dropdown-content">
+            <a href="products.html">T-Shirts</a>
+            <a href="school.html">School Uniforms</a>
+            <a href="bible-verse-tshirts.html">Bible Verse T-Shirts</a>
+            <a href="bible-verse-frames.html">Bible Verse Frames</a>
+            <a href="cards.html">Cards</a>
+            <a href="bags.html">Bags</a>
+             <a href="caps.html">Caps</a>
+             <a href="bottles.html">Bottles</a>
+            <a href="badges.html">Badges</a>
+           <a href="shoes.html">Shoes</a>
+            <a href="belts.html">Belts</a>
+           <a href="umbrella.html">Umbrella</a>
+          </div>
+        </li>
+        <li><a href="details.html">Details</a></li>
+        <li><a href="clients.html">Our Clients</a></li>
+        <li><a href="#">Contacts</a></li>
+        <li><a href="works.html">Works</a></li>
+       
+      </ul>
+    </nav>
+  </header>
+
+  <section class="products-hero">
+    <h1>School Uniforms(BULK ORDERS)</h1>
+    <p>Elegant and Unique With Customisation.</p>
+  </section>
+
+  <section class="product-gallery">
+    <div class="product-card">
+      <img src="boys.jpg" alt="Boys Sports Wear 1" />
+      <h3>Boys Sports Wear</h3>
+    
+     
+    </div>
+
+    <div class="product-card">
+      <img src="girls.jpg" alt="Girls Sport Wear 2" />
+      <h3>Girls Sports Wear</h3>
+      
+    
+
+    </div>
+
+    <div class="product-card">
+      <img src="kids.jpg" alt="Kids Sports Wear 2" />
+      <h3>Kids Sports Wear</h3>
+      
+     
+
+    </div>
+
+     <div class="product-card">
+      <img src="boysandgirls.jpg" alt="Boys and Girls combo 2" />
+      <h3>Boys and Girls Combo</h3>
+      
+    
+
+    </div>
+
+    <div class="product-card">
+      <img src="s1.jpg" alt="Kids Combo 2" />
+      <h3>Kids Combo</h3>
+      
+    
+
+    </div>
+   
+    <div class="product-card">
+      <img src="s2.jpg" alt="Kids Sports Combo 2" />
+      <h3>Kids Sports Combo</h3>
+      
+    
+
+    </div>
+
+ <div class="product-card">
+      <img src="s3.jpg" alt="Boys Regular 2" />
+      <h3>Boys Uniform</h3>
+      
+    
+
+    </div>
+
+ <div class="product-card">
+      <img src="s4.jpg" alt="Girls Regular 2" />
+      <h3>Girls Uniform</h3>
+      
+    
+
+    </div>
+
+<div class="product-card">
+      <img src="s5.jpg" alt="Boys and Girls Combo 2" />
+      <h3>Boys and Girls Uniform</h3>
+      
+    
+
+    </div>
+    
+
+  </section>
+
+  <footer class="footer">
+    <p>© 2025 Feather | Designed with Purpose</p>
+  </footer>
+<!-- ===== Contact Modal ===== -->
+<div id="contactModal" class="contact-modal">
+  <div class="contact-content">
+    <span class="close-contact">&times;</span>
+    <h2>Contact Us</h2>
+    <p><i class="fas fa-phone"></i> GARY +91 9047299559</p>
+    <p><i class="fas fa-phone"></i> RAHUL DAVID +91 9003530293</p>
+    <p><i class="fas fa-phone"></i> PRINCE +91 7708287821</p>
+    <p><i class="fas fa-phone"></i> JEMI +91 8667635832</p>
+    <p><i class="fas fa-phone"></i> SOLOMON +91 9629878364</p>
+     <p><i class="fas fa-envelope"></i> mightyhandsorder@gmail.com</p>
+     <p><i class="fas fa-envelope"></i> mightyhandsdesigning@gmail.com</p>
+     <p><i class="fas fa-envelope"></i> mightyhandspdy@gmail.com</p>
+  </div>
+</div>
+
+<!-- ===== Modal for View More Details ===== -->
+<div id="detailsModal" class="details-modal">
+  <div class="details-content">
+    <span class="close-details">&times;</span>
+    <h2>Product Details</h2>
+    <p><strong>Price:</strong> ₹799</p>
+    <p><strong>Colour:</strong> White, Black, Navy Blue, Maroon</p>
+    <p><strong>Custom Designs:</strong> Available on request</p>
+    <p><strong>Embroidery:</strong> Premium Thread Embroidery</p>
+  </div>
+</div>
+
+<script>
+  // Get all "View More" buttons
+  const viewButtons = document.querySelectorAll(".view-more-btn");
+  const detailsModal = document.getElementById("detailsModal");
+  const closeDetails = document.querySelector(".close-details");
+
+  // Open modal on click
+  viewButtons.forEach(button => {
+    button.addEventListener("click", () => {
+      detailsModal.style.display = "flex";
+    });
+  });
+
+  // Close modal
+  closeDetails.addEventListener("click", () => {
+    detailsModal.style.display = "none";
+  });
+
+  // Close when clicking outside
+  window.addEventListener("click", (e) => {
+    if (e.target === detailsModal) {
+      detailsModal.style.display = "none";
+    }
+  });
+</script>
+
+
+
+</body>
+</html>
+<script>
+  // Open contact modal when clicking "Contacts" link
+  document.querySelectorAll('a[href="#"], a[href="contacts.html"], a[href*="Contacts"]').forEach(link => {
+    if (link.textContent.trim().toLowerCase() === 'contacts') {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        document.getElementById('contactModal').style.display = 'flex';
+      });
+    }
+  });
+
+  // Close modal when clicking the close button
+  document.querySelector('.close-contact').addEventListener('click', () => {
+    document.getElementById('contactModal').style.display = 'none';
+  });
+
+  // Close modal when clicking outside content
+  window.addEventListener('click', (e) => {
+    const modal = document.getElementById('contactModal');
+    if (e.target === modal) modal.style.display = 'none';
+  });
+</script>
+

@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<body>
+  <form id="f">
+    <input name="name" value="Test Name">
+    <input name="email" value="test@example.com">
+    <button type="submit">Send</button>
+  </form>
+
+  <script>
+    document.getElementById('f').addEventListener('submit', async function(e){
+      e.preventDefault();
+      const url = "
+https://script.google.com/macros/s/AKfycbxcmNxRHFYBICWsq0AF29OERJCEu-6OqRhIupljrxwZoYF_5myFvmQUwH2hXFBgvcIL/exec"; // <-- replace with your /exec URL
+      try {
+        const res = await fetch(url, { method: 'POST', body: new FormData(this) });
+        alert('Submitted — check Sheet & Executions');
+      } catch (err) {
+        alert('Fetch error (see console)');
+        console.error(err);
+      }
+    });
+  </script>
+</body>
+</html>

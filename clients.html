@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Feather | Clients</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body class="clients-page">
+
+ 
+
+
+
+
+  <!-- ===== Animated Background ===== -->
+  <div class="animated-bg"></div>
+
+  <!-- ===== Header ===== -->
+  <header>
+    <a href="index.html" class="logo">
+  <img src="logo.png" alt="Feather logo" class="logo-img">
+  <span class="logo-text">Feather</span>
+</a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="customer_login.html">Mail Us</a></li>
+        <li class="dropdown">
+          <a href="#">Products</a>
+          <div class="dropdown-content">
+            <a href="products.html">T-Shirts</a>
+            <a href="school.html">School Uniforms</a>
+            <a href="bible-verse-tshirts.html">Bible Verse T-Shirts</a>
+            <a href="bible-verse-frames.html">Bible Verse Frames</a>
+            <a href="cards.html">Cards</a>
+            <a href="bags.html">Bags</a>
+             <a href="caps.html">Caps</a>
+             <a href="bottles.html">Bottles</a>
+            <a href="badges.html">Badges</a>
+            <a href="shoes.html">Shoes</a>
+             <a href="belts.html">Belts</a>
+             <a href="umbrella.html">Umbrella</a>
+          </div>
+        </li>
+        <li><a href="details.html">Details</a></li>
+        <li><a href="clients.html" class="active">Clients</a></li>
+        <li><a href="#">Contacts</a></li>
+        <li><a href="works.html">Works</a></li>
+       
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ===== Clients Section ===== -->
+
+<section class="clients-section">
+  <h2>Our Clients</h2>
+  <div class="clients-carousel">
+    <div class="carousel-track">
+      <div class="client-card"><img src="logo.png" alt="Client 1"></div>
+      <div class="client-card"><img src="tata.png" alt="Client 2"></div>
+      <div class="client-card"><img src="star.png" alt="Client 3"></div>
+      <div class="client-card"><img src="apple.png" alt="Client 4"></div>
+      <div class="client-card"><img src="fedbank.png" alt="Client 5"></div>
+      <div class="client-card"><img src="acp.png" alt="Client 6"></div>
+      <div class="client-card"><img src="sos.png" alt="Client 7"></div>
+
+      <!-- Duplicate for seamless loop -->
+      <div class="client-card"><img src="client1.png" alt="Client 1"></div>
+      <div class="client-card"><img src="client2.png" alt="Client 2"></div>
+      <div class="client-card"><img src="client3.png" alt="Client 3"></div>
+      <div class="client-card"><img src="client4.png" alt="Client 4"></div>
+      <div class="client-card"><img src="client5.png" alt="Client 5"></div>
+      <div class="client-card"><img src="client6.png" alt="Client 6"></div>
+      <div class="client-card"><img src="client7.png" alt="Client 7"></div>
+    </div>
+  </div>
+</section>
+
+
+
+
+  <!-- ===== Footer ===== -->
+  <footer class="footer">
+    <p>© 2025 Feather | Faith-Inspired Creations</p>
+  </footer>
+<!-- ===== Contact Modal ===== -->
+<div id="contactModal" class="contact-modal">
+  <div class="contact-content">
+    <span class="close-contact">&times;</span>
+    <h2>Contact Us</h2>
+    <p><i class="fas fa-phone"></i> GARY +91 9047299559</p>
+    <p><i class="fas fa-phone"></i> RAHUL DAVID +91 9003530293</p>
+    <p><i class="fas fa-phone"></i> PRINCE +91 7708287821</p>
+    <p><i class="fas fa-phone"></i> JEMI +91 8667635832</p>
+    <p><i class="fas fa-phone"></i> SOLOMON +91 9629878364</p>
+     <p><i class="fas fa-envelope"></i> mightyhandsorder@gmail.com</p>
+     <p><i class="fas fa-envelope"></i> mightyhandsdesigning@gmail.com</p>
+     <p><i class="fas fa-envelope"></i> mightyhandspdy@gmail.com</p>
+  </div>
+</div>
+<script>
+  const track = document.querySelector('.carousel-track');
+  let isDown = false;
+  let startX;
+  let scrollLeft;
+
+  // Mouse drag functionality
+  track.addEventListener('mousedown', (e) => {
+    isDown = true;
+    track.classList.add('active');
+    startX = e.pageX - track.offsetLeft;
+    scrollLeft = track.scrollLeft;
+  });
+
+  track.addEventListener('mouseleave', () => {
+    isDown = false;
+    track.classList.remove('active');
+  });
+
+  track.addEventListener('mouseup', () => {
+    isDown = false;
+    track.classList.remove('active');
+  });
+
+  track.addEventListener('mousemove', (e) => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - track.offsetLeft;
+    const walk = (x - startX) * 2; // scroll speed
+    track.scrollLeft = scrollLeft - walk;
+  });
+
+  // Touch swipe functionality (for mobile)
+  let touchStartX = 0;
+  track.addEventListener('touchstart', (e) => {
+    touchStartX = e.touches[0].clientX;
+  });
+
+  track.addEventListener('touchmove', (e) => {
+    const touchMoveX = e.touches[0].clientX;
+    const moveX = touchStartX - touchMoveX;
+    track.scrollLeft += moveX;
+    touchStartX = touchMoveX;
+  });
+
+  // Optional: Auto-scroll (looping effect)
+  setInterval(() => {
+    track.scrollLeft += 310; // move right
+    if (track.scrollLeft + track.clientWidth >= track.scrollWidth) {
+      track.scrollLeft = 0; // reset to start
+    }
+  }, 3000);
+</script>
+
+
+</body>
+</html>
+<script>
+  // Open contact modal when clicking "Contacts" link
+  document.querySelectorAll('a[href="#"], a[href="contacts.html"], a[href*="Contacts"]').forEach(link => {
+    if (link.textContent.trim().toLowerCase() === 'contacts') {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        document.getElementById('contactModal').style.display = 'flex';
+      });
+    }
+  });
+
+  // Close modal when clicking the close button
+  document.querySelector('.close-contact').addEventListener('click', () => {
+    document.getElementById('contactModal').style.display = 'none';
+  });
+
+  // Close modal when clicking outside content
+  window.addEventListener('click', (e) => {
+    const modal = document.getElementById('contactModal');
+    if (e.target === modal) modal.style.display = 'none';
+  });
+</script>
+
