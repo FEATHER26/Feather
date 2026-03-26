@@ -156,82 +156,126 @@
   </header>
 
   <div class="form-container">
-    <h2><i class="fas fa-envelope"></i> Contact Us</h2>
+    <h2 class="form-title"><i class="fas fa-envelope"></i> Contact Us</h2>
 
-    <form id="contactForm">
-      <label>Name:</label>
-      <input type="text" name="name" placeholder="Your Name" required>
+    <div class="form-layout">
+      <div class="form-left">
+        <form id="contactForm">
+          <label>Name</label>
+          <input type="text" name="name" placeholder="Your Name" required>
 
-      <label>Email:</label>
-      <input type="email" name="email" placeholder="your@email.com" required>
+          <label>Email</label>
+          <input type="email" name="email" placeholder="your@email.com" required>
 
-      <div class="phone-row">
-        <div class="phone-field">
-          <label>Country:</label>
-          <select name="countryCode" id="countryCode" class="country-select-small">
-            <option value="+91">+91</option>
-            <option value="+1">+1</option>
-            <option value="+44">+44</option>
-            <option value="+61">+61</option>
-            <option value="+81">+81</option>
-            <option value="+49">+49</option>
-            <option value="+33">+33</option>
-            <option value="+86">+86</option>
-            <option value="+82">+82</option>
-            <option value="+971">+971</option>
-            <option value="+966">+966</option>
-            <option value="+20">+20</option>
-            <option value="+234">+234</option>
-            <option value="+27">+27</option>
-            <option value="+55">+55</option>
-            <option value="+52">+52</option>
-            <option value="+64">+64</option>
-            <option value="+65">+65</option>
-            <option value="+60">+60</option>
-            <option value="+92">+92</option>
-            <option value="+880">+880</option>
-            <option value="+94">+94</option>
-            <option value="+977">+977</option>
-          </select>
-        </div>
-        <div class="phone-field">
-          <label>Mobile:</label>
-          <input type="text" name="phone" placeholder="Number" id="phone">
-        </div>
+          <div class="phone-row">
+            <div class="phone-field">
+              <label>Country</label>
+              <select name="countryCode" id="countryCode" class="country-select-small">
+                <option value="+91">+91 India</option>
+                <option value="+1">+1 USA</option>
+                <option value="+1">+1 Canada</option>
+                <option value="+44">+44 UK</option>
+                <option value="+61">+61 Australia</option>
+                <option value="+81">+81 Japan</option>
+                <option value="+49">+49 Germany</option>
+                <option value="+33">+33 France</option>
+                <option value="+86">+86 China</option>
+                <option value="+82">+82 South Korea</option>
+                <option value="+971">+971 UAE</option>
+                <option value="+966">+966 Saudi Arabia</option>
+                <option value="+20">+20 Egypt</option>
+                <option value="+234">+234 Nigeria</option>
+                <option value="+27">+27 South Africa</option>
+                <option value="+55">+55 Brazil</option>
+                <option value="+52">+52 Mexico</option>
+                <option value="+64">+64 New Zealand</option>
+                <option value="+65">+65 Singapore</option>
+                <option value="+60">+60 Malaysia</option>
+                <option value="+92">+92 Pakistan</option>
+                <option value="+880">+880 Bangladesh</option>
+                <option value="+94">+94 Sri Lanka</option>
+                <option value="+977">+977 Nepal</option>
+              </select>
+            </div>
+            <div class="phone-field">
+              <label>Mobile</label>
+              <input type="text" name="phone" placeholder="Number" id="phone">
+            </div>
+          </div>
+          <div id="phoneError" class="validation-error">Enter valid mobile number</div>
+
+          <label>Message</label>
+          <textarea name="message" placeholder="Tell us more about your requirements..." id="message"></textarea>
+          <div id="messageError" class="validation-error">Message cannot be empty</div>
+          
+          <div id="productMessageError" class="validation-error">Please select at least one product or enter a message</div>
+
+          <button type="submit" class="submit-btn">
+            <i class="fas fa-paper-plane"></i> Send Message
+          </button>
+
+          <div id="successMessage" class="success-message">
+            <i class="fas fa-check-circle"></i> Message sent successfully! We'll get back to you soon.
+          </div>
+
+          <div id="errorMessage" class="error-message">
+            <i class="fas fa-exclamation-circle"></i> Something went wrong. Please try again.
+          </div>
+        </form>
       </div>
-      <div id="phoneError" class="validation-error">Enter valid mobile number</div>
 
-      <label>Products (select multiple):</label>
-      <select name="product" id="product" multiple class="product-multi-select">
-        <option value="Corporate T-Shirts">Corporate T-Shirts</option>
-        <option value="Collared T-Shirts">Collared T-Shirts</option>
-        <option value="Round-Neck T-Shirts">Round-Neck T-Shirts</option>
-        <option value="Sports Wear">Sports Wear</option>
-        <option value="Zipper Jackets">Zipper Jackets</option>
-        <option value="Semi Zipper Jackets">Semi Zipper Jackets</option>
-        <option value="Thumbhole Zipper">Thumbhole Zipper</option>
-        <option value="Mars Collared">Mars Collared</option>
-        <option value="Boys Sports Wear">Boys Sports Wear</option>
-        <option value="Girls Sports Wear">Girls Sports Wear</option>
-        <option value="Kids Sports Wear">Kids Sports Wear</option>
-        <option value="Boys and Girls Combo">Boys and Girls Combo</option>
-        <option value="Kids Combo">Kids Combo</option>
-        <option value="Kids Sports Combo">Kids Sports Combo</option>
-        <option value="Boys Uniform">Boys Uniform</option>
-        <option value="Girls Uniform">Girls Uniform</option>
-        <option value="Boys and Girls Uniform">Boys and Girls Uniform</option>
-        <option value="Cotton Bags">Cotton Bags</option>
-        <option value="Canvas Bags">Canvas Bags</option>
-        <option value="Jute Bags">Jute Bags</option>
-        <option value="Laptop Bags">Laptop Bags</option>
-        <option value="Travel Bags">Travel Bags</option>
-        <option value="Sports Caps">Sports Caps</option>
-        <option value="Baseball Caps">Baseball Caps</option>
-        <option value="Kids Caps">Kids Caps</option>
-        <option value="Steel Bottles">Steel Bottles</option>
-        <option value="Plastic Bottles">Plastic Bottles</option>
-        <option value="Copper Bottles">Copper Bottles</option>
-        <option value="Metal Badges">Metal Badges</option>
+      <div class="form-right">
+        <label>Products (select multiple)</label>
+        <select name="product" id="product" multiple class="product-multi-select">
+          <option value="Corporate T-Shirts">Corporate T-Shirts</option>
+          <option value="Collared T-Shirts">Collared T-Shirts</option>
+          <option value="Round-Neck T-Shirts">Round-Neck T-Shirts</option>
+          <option value="Sports Wear">Sports Wear</option>
+          <option value="Zipper Jackets">Zipper Jackets</option>
+          <option value="Semi Zipper Jackets">Semi Zipper Jackets</option>
+          <option value="Thumbhole Zipper">Thumbhole Zipper</option>
+          <option value="Mars Collared">Mars Collared</option>
+          <option value="Boys Sports Wear">Boys Sports Wear</option>
+          <option value="Girls Sports Wear">Girls Sports Wear</option>
+          <option value="Kids Sports Wear">Kids Sports Wear</option>
+          <option value="Boys and Girls Combo">Boys and Girls Combo</option>
+          <option value="Kids Combo">Kids Combo</option>
+          <option value="Kids Sports Combo">Kids Sports Combo</option>
+          <option value="Boys Uniform">Boys Uniform</option>
+          <option value="Girls Uniform">Girls Uniform</option>
+          <option value="Boys and Girls Uniform">Boys and Girls Uniform</option>
+          <option value="Cotton Bags">Cotton Bags</option>
+          <option value="Canvas Bags">Canvas Bags</option>
+          <option value="Jute Bags">Jute Bags</option>
+          <option value="Laptop Bags">Laptop Bags</option>
+          <option value="Travel Bags">Travel Bags</option>
+          <option value="Sports Caps">Sports Caps</option>
+          <option value="Baseball Caps">Baseball Caps</option>
+          <option value="Kids Caps">Kids Caps</option>
+          <option value="Steel Bottles">Steel Bottles</option>
+          <option value="Plastic Bottles">Plastic Bottles</option>
+          <option value="Copper Bottles">Copper Bottles</option>
+          <option value="Metal Badges">Metal Badges</option>
+          <option value="Embroidery Badges">Embroidery Badges</option>
+          <option value="Sports Shoes">Sports Shoes</option>
+          <option value="Canvas Shoes">Canvas Shoes</option>
+          <option value="Kids Shoes">Kids Shoes</option>
+          <option value="Leather Belts">Leather Belts</option>
+          <option value="Fabric Belts">Fabric Belts</option>
+          <option value="Folding Umbrella">Folding Umbrella</option>
+          <option value="Knitted Umbrella">Knitted Umbrella</option>
+          <option value="Cap Embroidery">Cap Embroidery</option>
+          <option value="T-Shirt Embroidery">T-Shirt Embroidery</option>
+          <option value="Jacket Embroidery">Jacket Embroidery</option>
+          <option value="Greeting Cards">Greeting Cards</option>
+          <option value="Business Cards">Business Cards</option>
+          <option value="Bible Verse T-Shirts">Bible Verse T-Shirts</option>
+          <option value="Bible Verse Frames">Bible Verse Frames</option>
+        </select>
+        <p class="select-hint">Hold Ctrl/Cmd to select multiple</p>
+      </div>
+    </div>
+  </div>
         <option value="Embroidery Badges">Embroidery Badges</option>
         <option value="Sports Shoes">Sports Shoes</option>
         <option value="Canvas Shoes">Canvas Shoes</option>
