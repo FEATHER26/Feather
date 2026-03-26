@@ -915,18 +915,20 @@ nav.active .nav-links li a {
   box-shadow: var(--shadow);
   background: var(--white);
   padding: 30px 20px;
+  overflow: visible;
 }
 
 .works-carousel .carousel-track {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 30px;
   justify-content: center;
+  animation: none;
 }
 
 .works-carousel .carousel-track img {
   width: 100%;
-  height: 250px;
+  height: 280px;
   object-fit: cover;
   border-radius: 15px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.1);
@@ -934,7 +936,7 @@ nav.active .nav-links li a {
 }
 
 .works-carousel .carousel-track img:hover {
-  transform: scale(1.05);
+  transform: scale(1.02);
 }
 
 .works-gallery {
@@ -1590,6 +1592,11 @@ nav.active .nav-links li a {
     max-width: 100%;
     padding: 30px 20px;
   }
+  
+  .works-carousel .carousel-track {
+    grid-template-columns: 1fr;
+  }
+}
   
   .product-multi-select {
     min-height: 250px;
