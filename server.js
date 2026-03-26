@@ -23,16 +23,16 @@ app.post("/submit-login", async (req, res) => {
     }
 
     await resend.emails.send({
-      from: "Feather Creations <onboarding@resend.dev>",
+      from: "<< Feather Creations >> <onboarding@resend.dev>",
       to: "featherpy@gmail.com",
       subject: "New Customer Enquiry",
       html: `
         <h2 style="color: #333;">New Customer Message</h2>
         <hr style="border: 1px solid #ddd; margin: 10px 0;">
-        <p><strong>Name:</strong> ${name}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Phone:</strong> ${phone}</p>
-        <p><strong>Product:</strong> ${product}</p>
+        <p><strong>Customer Name:</strong> ${name}</p>
+        <p><strong>EmailID:</strong> ${email}</p>
+        <p><strong>Contact #:</strong> ${phone}</p>
+        <p><strong>Product(s):</strong> ${product}</p>
         <p><strong>Message:</strong> ${message}</p>
       `,
     });
