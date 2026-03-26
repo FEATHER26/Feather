@@ -209,7 +209,7 @@
   <script>
     const apiURL = "https://feather-jet.vercel.app/submit-login";
 
-    document.getElementById("contactForm").addEventListener("submit", async function(e) {
+    document.getElementById("contactForm").addEventListener("submit", function(e) {
       e.preventDefault();
 
       const formData = new FormData(this);
@@ -245,9 +245,10 @@
       }
     });
 
-    document.querySelectorAll('a[href="#"], a[href="contacts.html"], a[href*="Contacts"]').forEach(link => {
+    const links = document.querySelectorAll('a[href="#"], a[href="contacts.html"], a[href*="Contacts"]');
+    links.forEach(function(link) {
       if (link.textContent.trim().toLowerCase() === 'contacts') {
-        link.addEventListener('click', (e) => {
+          link.addEventListener('click', function(e) {
           e.preventDefault();
           document.getElementById('contactModal')?.style.display = 'flex';
         });
@@ -255,7 +256,8 @@
     });
 
     function toggleMenu() {
-      document.querySelector("nav").classList.toggle("active");
+      var nav = document.querySelector("nav");
+      nav.classList.toggle("active");
     }
   </script>
 
