@@ -165,76 +165,91 @@
       <label>Email:</label>
       <input type="email" name="email" placeholder="your@email.com" required>
 
-      <label>Phone:</label>
-      <input type="text" name="phone" placeholder="+91 XXXXX XXXXX" id="phone">
-      <div id="phoneError" class="validation-error">Enter valid 10-digit contact number</div>
+      <label>Country Code:</label>
+      <select name="countryCode" id="countryCode" class="country-select">
+        <option value="+91">+91 (India)</option>
+        <option value="+1">+1 (USA)</option>
+        <option value="+44">+44 (UK)</option>
+        <option value="+61">+61 (Australia)</option>
+        <option value="+81">+81 (Japan)</option>
+        <option value="+49">+49 (Germany)</option>
+        <option value="+33">+33 (France)</option>
+        <option value="+86">+86 (China)</option>
+        <option value="+82">+82 (South Korea)</option>
+        <option value="+971">+971 (UAE)</option>
+        <option value="+966">+966 (Saudi Arabia)</option>
+        <option value="+20">+20 (Egypt)</option>
+        <option value="+234">+234 (Nigeria)</option>
+        <option value="+27">+27 (South Africa)</option>
+        <option value="+55">+55 (Brazil)</option>
+        <option value="+52">+52 (Mexico)</option>
+        <option value="+1">+1 (Canada)</option>
+        <option value="+64">+64 (New Zealand)</option>
+        <option value="+65">+65 (Singapore)</option>
+        <option value="+60">+60 (Malaysia)</option>
+        <option value="+92">+92 (Pakistan)</option>
+        <option value="+880">+880 (Bangladesh)</option>
+        <option value="+94">+94 (Sri Lanka)</option>
+        <option value="+977">+977 (Nepal)</option>
+      </select>
 
-      <label>Product:</label>
-      <input type="text" name="product" placeholder="Interested Product" list="productList" id="product">
-      <datalist id="productList">
-        <!-- T-Shirts -->
-        <option value="Corporate T-Shirts">
-        <option value="Collared T-Shirts">
-        <option value="Round-Neck T-Shirts">
-        <option value="Sports Wear">
-        <option value="Zipper Jackets">
-        <option value="Semi Zipper Jackets">
-        <option value="Thumbhole Zipper">
-        <option value="Mars Collared">
-        <!-- School Uniforms -->
-        <option value="Boys Sports Wear">
-        <option value="Girls Sports Wear">
-        <option value="Kids Sports Wear">
-        <option value="Boys and Girls Combo">
-        <option value="Kids Combo">
-        <option value="Kids Sports Combo">
-        <option value="Boys Uniform">
-        <option value="Girls Uniform">
-        <option value="Boys and Girls Uniform">
-        <!-- Bags -->
-        <option value="Cotton Bags">
-        <option value="Canvas Bags">
-        <option value="Jute Bags">
-        <option value="Laptop Bags">
-        <option value="Travel Bags">
-        <!-- Caps -->
-        <option value="Sports Caps">
-        <option value="Baseball Caps">
-        <option value="Kids Caps">
-        <!-- Bottles -->
-        <option value="Steel Bottles">
-        <option value="Plastic Bottles">
-        <option value="Copper Bottles">
-        <!-- Badges -->
-        <option value="Metal Badges">
-        <option value="Embroidery Badges">
-        <!-- Shoes -->
-        <option value="Sports Shoes">
-        <option value="Canvas Shoes">
-        <option value="Kids Shoes">
-        <!-- Belts -->
-        <option value="Leather Belts">
-        <option value="Fabric Belts">
-        <!-- Umbrella -->
-        <option value="折叠伞">
-        <option value="Knitted Umbrella">
-        <!-- Embroidery -->
-        <option value="Cap Embroidery">
-        <option value="T-Shirt Embroidery">
-        <option value="Jacket Embroidery">
-        <!-- Cards -->
-        <option value="Greeting Cards">
-        <option value="Business Cards">
-        <!-- Bible Verse -->
-        <option value="Bible Verse T-Shirts">
-        <option value="Bible Verse Frames">
-      </datalist>
+      <label>Mobile Number:</label>
+      <input type="text" name="phone" placeholder="Enter mobile number" id="phone">
+      <div id="phoneError" class="validation-error">Enter valid mobile number</div>
+
+      <label>Products (select multiple):</label>
+      <div class="product-checkbox-container">
+        <label class="product-checkbox"><input type="checkbox" name="product" value="Corporate T-Shirts"> Corporate T-Shirts</label>
+        <label class="product-checkbox"><input type="checkbox" name="product" value="Collared T-Shirts"> Collared T-Shirts</label>
+        <label class="product-checkbox"><input type="checkbox" name="product" value="Round-Neck T-Shirts"> Round-Neck T-Shirts</label>
+        <label class="product-checkbox"><input type="checkbox" name="product" value="Sports Wear"> Sports Wear</label>
+        <label class="product-checkbox"><input type="checkbox" name="product" value="Zipper Jackets"> Zipper Jackets</label>
+        <label class="product-checkbox"><input type="checkbox" name="product" value="Semi Zipper Jackets"> Semi Zipper Jackets</label>
+        <label class="product-checkbox"><input type="checkbox" name="product" value="Thumbhole Zipper"> Thumbhole Zipper</label>
+        <label class="product-checkbox"><input type="checkbox" name="product" value="Mars Collared"> Mars Collared</label>
+        <label class="product-checkbox"><input type="checkbox" name="product" value="Boys Sports Wear"> Boys Sports Wear</label>
+        <label class="product-checkbox"><input type="checkbox" name="product" value="Girls Sports Wear"> Girls Sports Wear</label>
+        <label class="product-checkbox"><input type="checkbox" name="product" value="Kids Sports Wear"> Kids Sports Wear</label>
+        <label class="product-checkbox"><input type="checkbox" name="product" value="Boys and Girls Combo"> Boys and Girls Combo</label>
+        <label class="product-checkbox"><input type="checkbox" name="product" value="Kids Combo"> Kids Combo</label>
+        <label class="product-checkbox"><input type="checkbox" name="product" value="Kids Sports Combo"> Kids Sports Combo</label>
+        <label class="product-checkbox"><input type="checkbox" name="product" value="Boys Uniform"> Boys Uniform</label>
+        <label class="product-checkbox"><input type="checkbox" name="product" value="Girls Uniform"> Girls Uniform</label>
+        <label class="product-checkbox"><input type="checkbox" name="product" value="Boys and Girls Uniform"> Boys and Girls Uniform</label>
+        <label class="product-checkbox"><input type="checkbox" name="product" value="Cotton Bags"> Cotton Bags</label>
+        <label class="product-checkbox"><input type="checkbox" name="product" value="Canvas Bags"> Canvas Bags</label>
+        <label class="product-checkbox"><input type="checkbox" name="product" value="Jute Bags"> Jute Bags</label>
+        <label class="product-checkbox"><input type="checkbox" name="product" value="Laptop Bags"> Laptop Bags</label>
+        <label class="product-checkbox"><input type="checkbox" name="product" value="Travel Bags"> Travel Bags</label>
+        <label class="product-checkbox"><input type="checkbox" name="product" value="Sports Caps"> Sports Caps</label>
+        <label class="product-checkbox"><input type="checkbox" name="product" value="Baseball Caps"> Baseball Caps</label>
+        <label class="product-checkbox"><input type="checkbox" name="product" value="Kids Caps"> Kids Caps</label>
+        <label class="product-checkbox"><input type="checkbox" name="product" value="Steel Bottles"> Steel Bottles</label>
+        <label class="product-checkbox"><input type="checkbox" name="product" value="Plastic Bottles"> Plastic Bottles</label>
+        <label class="product-checkbox"><input type="checkbox" name="product" value="Copper Bottles"> Copper Bottles</label>
+        <label class="product-checkbox"><input type="checkbox" name="product" value="Metal Badges"> Metal Badges</label>
+        <label class="product-checkbox"><input type="checkbox" name="product" value="Embroidery Badges"> Embroidery Badges</label>
+        <label class="product-checkbox"><input type="checkbox" name="product" value="Sports Shoes"> Sports Shoes</label>
+        <label class="product-checkbox"><input type="checkbox" name="product" value="Canvas Shoes"> Canvas Shoes</label>
+        <label class="product-checkbox"><input type="checkbox" name="product" value="Kids Shoes"> Kids Shoes</label>
+        <label class="product-checkbox"><input type="checkbox" name="product" value="Leather Belts"> Leather Belts</label>
+        <label class="product-checkbox"><input type="checkbox" name="product" value="Fabric Belts"> Fabric Belts</label>
+        <label class="product-checkbox"><input type="checkbox" name="product" value="Folding Umbrella"> Folding Umbrella</label>
+        <label class="product-checkbox"><input type="checkbox" name="product" value="Knitted Umbrella"> Knitted Umbrella</label>
+        <label class="product-checkbox"><input type="checkbox" name="product" value="Cap Embroidery"> Cap Embroidery</label>
+        <label class="product-checkbox"><input type="checkbox" name="product" value="T-Shirt Embroidery"> T-Shirt Embroidery</label>
+        <label class="product-checkbox"><input type="checkbox" name="product" value="Jacket Embroidery"> Jacket Embroidery</label>
+        <label class="product-checkbox"><input type="checkbox" name="product" value="Greeting Cards"> Greeting Cards</label>
+        <label class="product-checkbox"><input type="checkbox" name="product" value="Business Cards"> Business Cards</label>
+        <label class="product-checkbox"><input type="checkbox" name="product" value="Bible Verse T-Shirts"> Bible Verse T-Shirts</label>
+        <label class="product-checkbox"><input type="checkbox" name="product" value="Bible Verse Frames"> Bible Verse Frames</label>
+      </div>
 
       <label>Message:</label>
       <textarea name="message" placeholder="Tell us more about your requirements..." id="message"></textarea>
       <div id="messageError" class="validation-error">Message cannot be empty</div>
       
-      <div id="productMessageError" class="validation-error">Please fill Product or Message field</div>
+      <div id="productMessageError" class="validation-error">Please select at least one product or enter a message</div>
 
       <button type="submit">
         <i class="fas fa-paper-plane"></i> Send Message
@@ -250,10 +265,7 @@
     </form>
   </div>
 
-  <!-- ===== Footer ===== -->
-  <footer class="footer">
-    <p>©2026 <span> Feather Creations</span> | Designed with Purpose</p>
-  </footer>
+
 
   <!-- ===== WhatsApp Floating Button ===== -->
   <div class="whatsapp-float">
@@ -271,6 +283,33 @@
   <script>
     var apiURL = "https://feather-jet.vercel.app/submit-login";
 
+    // Country phone number patterns (digits only)
+    var countryPatterns = {
+      '+91': 10,   // India
+      '+1': 10,    // USA/Canada
+      '+44': 10,   // UK
+      '+61': 9,    // Australia
+      '+81': 10,   // Japan
+      '+49': 10,   // Germany
+      '+33': 9,    // France
+      '+86': 11,   // China
+      '+82': 10,   // South Korea
+      '+971': 9,   // UAE
+      '+966': 9,   // Saudi Arabia
+      '+20': 10,   // Egypt
+      '+234': 10,  // Nigeria
+      '+27': 9,    // South Africa
+      '+55': 10,   // Brazil
+      '+52': 10,   // Mexico
+      '+64': 9,    // New Zealand
+      '+65': 8,    // Singapore
+      '+60': 9,    // Malaysia
+      '+92': 10,   // Pakistan
+      '+880': 10,  // Bangladesh
+      '+94': 9,    // Sri Lanka
+      '+977': 10   // Nepal
+    };
+
     document.getElementById("contactForm").onsubmit = function(e) {
       e.preventDefault();
       
@@ -283,13 +322,24 @@
       productMessageError.style.display = 'none';
       
       var formData = new FormData(this);
+      var countryCode = formData.get('countryCode');
       var phone = formData.get('phone').trim();
-      var product = formData.get('product').trim();
+      
+      // Get all selected products
+      var selectedProducts = [];
+      var productCheckboxes = document.querySelectorAll('input[name="product"]:checked');
+      for (var i = 0; i < productCheckboxes.length; i++) {
+        selectedProducts.push(productCheckboxes[i].value);
+      }
+      var product = selectedProducts.join(', ');
+      
       var message = formData.get('message').trim();
       
-      // Validate phone - must be exactly 10 digits (India)
+      // Validate phone based on country code
+      var expectedDigits = countryPatterns[countryCode] || 10;
       var phoneDigits = phone.replace(/\D/g, '');
-      if (phone !== '' && phoneDigits.length !== 10) {
+      if (phone !== '' && phoneDigits.length !== expectedDigits) {
+        phoneError.textContent = 'Enter valid ' + expectedDigits + '-digit mobile number for ' + countryCode;
         phoneError.style.display = 'block';
         return false;
       }
@@ -300,10 +350,12 @@
         return false;
       }
       
+      var fullPhone = countryCode + ' ' + phone;
+      
       var data = {
         name: formData.get('name'),
         email: formData.get('email'),
-        phone: phone,
+        phone: fullPhone,
         product: product,
         message: message
       };
@@ -366,5 +418,10 @@
     }
   </script>
 
+  
+  <!-- ===== Footer ===== -->
+  <footer class="footer">
+    <p>&copy; 2026 <span>Feather Creations</span> | Designed with Purpose</p>
+  </footer>
 </body>
 </html>
