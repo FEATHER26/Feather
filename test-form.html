@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Contact Test</title>
+</head>
+<body>
+  <h1>Contact Form Test</h1>
+  <form id="testForm">
+    <input type="text" name="name" placeholder="Name" required><br><br>
+    <input type="email" name="email" placeholder="Email" required><br><br>
+    <input type="text" name="phone" placeholder="Phone"><br><br>
+    <input type="text" name="product" placeholder="Product"><br><br>
+    <textarea name="message" placeholder="Message"></textarea><br><br>
+    <button type="submit">Send</button>
+  </form>
+  <div id="result"></div>
+
+  <script>
+    var apiURL = "https://feather-jet.vercel.app/submit-login";
+    
+    document.getElementById("testForm").onsubmit = function(e) {
+      e.preventDefault();
+      var formData = new FormData(this);
+      var data = {
+        name: formData.get("name"),
+        email: formData.get("email"),
+        phone: formData.get("phone"),
+        product: formData.get("product"),
+        message: formData.get("message")
+      };
+      
+      document.getElementById("result").innerHTML = "Sending...";
+      
+      var xhr = new XMLHttpRequest();
+      xhr.open("POST", apiURL, true);
+      xhr.setRequestHeader("Content-Type", "application/json");
+      xhr.onreadystatechange = function() {
+        if (xhr.readyState === 4) {
+          if (xhr.status === 200) {
+            var res = JSON.parse(xhr.responseText);
+            if (res.success) {
+              document.getElementById("result").innerHTML = "<b style='color:green'>SUCCESS! Email sent!</b>";
+            } else {
+              document.getElementById("result").innerHTML = "<b style='color:red'>Error: " + res.error + "</b>";
+            }
+          } else {
+            document.getElementById("result").innerHTML = "<b style='color:red'>HTTP Error: " + xhr.status + "</b>";
+          }
+        }
+      };
+      xhr.send(JSON.stringify(data));
+    };
+  </script>
+</body>
+</html>
