@@ -752,10 +752,10 @@ nav.active .nav-links li a {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--light);
+  background: #ffffff;
   border-radius: 15px;
   border: 1px solid var(--glass-border);
-  padding: 20px;
+  padding: 15px;
   transition: all 0.3s ease;
 }
 
@@ -769,13 +769,12 @@ nav.active .nav-links li a {
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
-  filter: brightness(0) invert(0.3);
-  opacity: 0.8;
   transition: all 0.3s ease;
 }
 
 .client-card:hover img {
   opacity: 1;
+  transform: scale(1.05);
 }
 
 /* ================================================
