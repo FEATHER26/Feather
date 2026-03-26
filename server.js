@@ -43,4 +43,7 @@ app.post("/submit-login", async (req, res) => {
   }
 });
 
-app.listen(10000, () => console.log("🚀 Server running on port 10000"));
+const port = process.env.PORT || 10000;
+app.listen(port, () => console.log(`🚀 Server running on port ${port}`));
+
+export default app;
