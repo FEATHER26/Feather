@@ -1197,19 +1197,19 @@ nav.active .nav-links li a {
 .form-right label {
   display: block;
   margin-bottom: 8px;
-  color: #0d3b7a;
+  color: #ffffff;
   font-weight: 600;
   font-size: 1.5rem;
-  text-shadow: 0 0 1px rgba(0,0,0,0.1);
+  text-shadow: 0 0 2px rgba(0,0,0,0.5);
 }
 
 .form-container .form-left label {
   display: block;
   margin-bottom: 8px;
-  color: #0d3b7a;
+  color: #ffffff;
   font-weight: 600;
   font-size: 1.5rem;
-  text-shadow: 0 0 1px rgba(0,0,0,0.1);
+  text-shadow: 0 0 2px rgba(0,0,0,0.5);
 }
 }
 
@@ -1274,10 +1274,10 @@ nav.active .nav-links li a {
 .phone-field label {
   display: block;
   margin-bottom: 8px;
-  color: #0d3b7a;
+  color: #ffffff;
   font-weight: 600;
   font-size: 1.5rem;
-  text-shadow: 0 0 1px rgba(0,0,0,0.1);
+  text-shadow: 0 0 2px rgba(0,0,0,0.5);
 }
 
 .phone-field input {
