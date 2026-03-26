@@ -17,5 +17,8 @@
     "express": "^5.1.0",
     "resend": "^4.0.0"
   },
-  "description": ""
+  "description": "",
+  "devDependencies": {
+    "@ljharb/tsconfig": "^0.3.2"
+  }
 }
