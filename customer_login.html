@@ -166,13 +166,75 @@
       <input type="email" name="email" placeholder="your@email.com" required>
 
       <label>Phone:</label>
-      <input type="text" name="phone" placeholder="+91 XXXXX XXXXX">
+      <input type="text" name="phone" placeholder="+91 XXXXX XXXXX" id="phone">
+      <div id="phoneError" class="validation-error">Enter valid 10-digit contact number</div>
 
       <label>Product:</label>
-      <input type="text" name="product" placeholder="Interested Product">
+      <input type="text" name="product" placeholder="Interested Product" list="productList" id="product">
+      <datalist id="productList">
+        <!-- T-Shirts -->
+        <option value="Corporate T-Shirts">
+        <option value="Collared T-Shirts">
+        <option value="Round-Neck T-Shirts">
+        <option value="Sports Wear">
+        <option value="Zipper Jackets">
+        <option value="Semi Zipper Jackets">
+        <option value="Thumbhole Zipper">
+        <option value="Mars Collared">
+        <!-- School Uniforms -->
+        <option value="Boys Sports Wear">
+        <option value="Girls Sports Wear">
+        <option value="Kids Sports Wear">
+        <option value="Boys and Girls Combo">
+        <option value="Kids Combo">
+        <option value="Kids Sports Combo">
+        <option value="Boys Uniform">
+        <option value="Girls Uniform">
+        <option value="Boys and Girls Uniform">
+        <!-- Bags -->
+        <option value="Cotton Bags">
+        <option value="Canvas Bags">
+        <option value="Jute Bags">
+        <option value="Laptop Bags">
+        <option value="Travel Bags">
+        <!-- Caps -->
+        <option value="Sports Caps">
+        <option value="Baseball Caps">
+        <option value="Kids Caps">
+        <!-- Bottles -->
+        <option value="Steel Bottles">
+        <option value="Plastic Bottles">
+        <option value="Copper Bottles">
+        <!-- Badges -->
+        <option value="Metal Badges">
+        <option value="Embroidery Badges">
+        <!-- Shoes -->
+        <option value="Sports Shoes">
+        <option value="Canvas Shoes">
+        <option value="Kids Shoes">
+        <!-- Belts -->
+        <option value="Leather Belts">
+        <option value="Fabric Belts">
+        <!-- Umbrella -->
+        <option value="折叠伞">
+        <option value="Knitted Umbrella">
+        <!-- Embroidery -->
+        <option value="Cap Embroidery">
+        <option value="T-Shirt Embroidery">
+        <option value="Jacket Embroidery">
+        <!-- Cards -->
+        <option value="Greeting Cards">
+        <option value="Business Cards">
+        <!-- Bible Verse -->
+        <option value="Bible Verse T-Shirts">
+        <option value="Bible Verse Frames">
+      </datalist>
 
       <label>Message:</label>
-      <textarea name="message" placeholder="Tell us more about your requirements..."></textarea>
+      <textarea name="message" placeholder="Tell us more about your requirements..." id="message"></textarea>
+      <div id="messageError" class="validation-error">Message cannot be empty</div>
+      
+      <div id="productMessageError" class="validation-error">Please fill Product or Message field</div>
 
       <button type="submit">
         <i class="fas fa-paper-plane"></i> Send Message
@@ -190,7 +252,7 @@
 
   <!-- ===== Footer ===== -->
   <footer class="footer">
-    <p>© 2025 <span>Feather</span> | Designed with Purpose</p>
+    <p>© 2026 <span>Feather Creations</span> | Designed with Purpose</p>
   </footer>
 
   <!-- ===== WhatsApp Floating Button ===== -->
@@ -212,13 +274,38 @@
     document.getElementById("contactForm").onsubmit = function(e) {
       e.preventDefault();
       
+      // Reset error displays
+      var phoneError = document.getElementById('phoneError');
+      var messageError = document.getElementById('messageError');
+      var productMessageError = document.getElementById('productMessageError');
+      phoneError.style.display = 'none';
+      messageError.style.display = 'none';
+      productMessageError.style.display = 'none';
+      
       var formData = new FormData(this);
+      var phone = formData.get('phone').trim();
+      var product = formData.get('product').trim();
+      var message = formData.get('message').trim();
+      
+      // Validate phone - must be exactly 10 digits (India)
+      var phoneDigits = phone.replace(/\D/g, '');
+      if (phone !== '' && phoneDigits.length !== 10) {
+        phoneError.style.display = 'block';
+        return false;
+      }
+      
+      // Validate - either product or message must be filled
+      if (product === '' && message === '') {
+        productMessageError.style.display = 'block';
+        return false;
+      }
+      
       var data = {
         name: formData.get('name'),
         email: formData.get('email'),
-        phone: formData.get('phone'),
-        product: formData.get('product'),
-        message: formData.get('message')
+        phone: phone,
+        product: product,
+        message: message
       };
       
       var successMsg = document.getElementById('successMessage');
