@@ -10,27 +10,22 @@
 
 <body class="works-page">
 
-
-
-
-
-
-
   <!-- ===== Animated Background ===== -->
   <div class="animated-bg"></div>
 
+  <!-- ===== Mobile Menu Button ===== -->
+  <div class="menu-btn" onclick="toggleMenu()">☰</div>
+
   <!-- ===== Header ===== -->
   <header>
-    
-<a href="index.html" class="logo">
-
-  <img src="logo.png" alt="Feather Logo" class="logo-img">
-  <span class="logo-text">Feather</span>
-</a>
+    <a href="index.html" class="logo">
+      <img src="logo.png" alt="Feather Logo" class="logo-img">
+      <span class="logo-text">Feather</span>
+    </a>
     <nav>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
-         <li><a href="customer_login.html">Mail Us</a></li>
+        <li><a href="customer_login.html">Mail Us</a></li>
         <li class="dropdown">
           <a href="#">Products</a>
           <div class="dropdown-content">
@@ -40,26 +35,26 @@
             <a href="bible-verse-frames.html">Bible Verse Frames</a>
             <a href="cards.html">Cards</a>
             <a href="bags.html">Bags</a>
-             <a href="caps.html">Caps</a>
+            <a href="caps.html">Caps</a>
+            <a href="bottles.html">Bottles</a>
             <a href="badges.html">Badges</a>
-           <a href="shoes.html">Shoes</a>
-             <a href="belts.html">Belts</a>
-             <a href="umbrella.html">Umbrella</a>
-             <a href="embroidery.html">Embroidery</a>
+            <a href="shoes.html">Shoes</a>
+            <a href="belts.html">Belts</a>
+            <a href="umbrella.html">Umbrella</a>
+            <a href="embroidery.html">Embroidery</a>
           </div>
         </li>
         <li><a href="details.html">Details</a></li>
         <li><a href="clients.html">Our Clients</a></li>
         <li><a href="#">Contacts</a></li>
         <li><a href="works.html" class="active">Works</a></li>
-       
       </ul>
     </nav>
   </header>
 
   <!-- ===== Works Section ===== -->
   <section class="works-section">
-    <h1>Our Creative Works</h1>
+    <h1>Our Creative <span>Works</span></h1>
     <p>Explore the projects we've completed with passion and purpose.</p>
 
     <div class="works-carousel">
@@ -71,118 +66,64 @@
         <img src="im1.jpg" alt="Work 5">
         <img src="w5.jpg" alt="Work 6">
         <img src="fg.jpg" alt="Work 7">
-        
       </div>
     </div>
   </section>
 
-<!-- ===== Featured Portrait Videos ===== -->
-<section class="portrait-video-section">
-  <h2 class="portrait-title">Our Featured Works</h2>
-
-  <div class="portrait-video-row">
-
-    <div class="portrait-video-container">
-      <video class="portrait-video" autoplay  loop controls>
-        <source src="ft1.mp4" type="video/mp4" />
-      </video>
-    </div>
-
-    <div class="portrait-video-container">
-      <video class="portrait-video" autoplay  loop controls>
-        <source src="ft2.mp4" type="video/mp4" />
-      </video>
-    </div>
-
-    <div class="portrait-video-container">
-      <video class="portrait-video" autoplay  loop controls>
-        <source src="christmassale.mp4" type="video/mp4" />
-      </video>
-    </div>
-
-     <div class="portrait-video-container">
-      <video class="portrait-video" autoplay  loop controls>
-        <source src="wk1.mp4" type="video/mp4" />
-      </video>
-    </div>
-
-     <div class="portrait-video-container">
-      <video class="portrait-video" autoplay  loop controls>
-        <source src="wk2.mp4" type="video/mp4" />
-      </video>
-    </div>
-
-     <div class="portrait-video-container">
-      <video class="portrait-video" autoplay  loop controls>
-        <source src="wk3.mp4" type="video/mp4" />
-      </video>
-    </div>
-
-  </div>
-</section>
-
-
-
   <!-- ===== Footer ===== -->
   <footer class="footer">
-    <p>© 2025 Feather | Designed with Purpose</p>
+    <p>© 2025 <span>Feather</span> | Designed with Purpose</p>
   </footer>
 
+  <!-- ===== Contact Modal ===== -->
+  <div id="contactModal" class="contact-modal">
+    <div class="contact-content">
+      <span class="close-contact">&times;</span>
+      <h2>Contact Us</h2>
+      <p><i class="fas fa-phone"></i> GARY +91 9047299559</p>
+      <p><i class="fas fa-phone"></i> RAHUL DAVID +91 9003530293</p>
+      <p><i class="fas fa-phone"></i> MARIA +91 8838793659</p>
+      <p><i class="fas fa-envelope"></i> featherpy@gmail.com</p>
+      <p><i class="fas fa-envelope"></i> sabareesanl315@gmail.com</p>
+    </div>
+  </div>
+
+  <!-- ===== WhatsApp Floating Button ===== -->
+  <div class="whatsapp-float">
+    <div class="tooltip">Chat with us!</div>
+    <div class="whatsapp-dropdown">
+      <a href="https://wa.me/919003530293" target="_blank" title="Rahul David">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      </a>
+    </div>
+    <a href="https://wa.me/918838793659" target="_blank" title="WhatsApp Chat">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </a>
+  </div>
 
   <script>
-    // Infinite Looping Carousel Animation
-    const track = document.querySelector('.carousel-track');
-    const slides = document.querySelectorAll('.carousel-track img');
-    const slideWidth = slides[0].clientWidth;
+    document.querySelectorAll('a[href="#"], a[href="contacts.html"], a[href*="Contacts"]').forEach(link => {
+      if (link.textContent.trim().toLowerCase() === 'contacts') {
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          document.getElementById('contactModal').style.display = 'flex';
+        });
+      }
+    });
 
-    let index = 0;
-    function moveCarousel() {
-      index++;
-      if (index >= slides.length) index = 0;
-      track.style.transform = `translateX(-${index * slideWidth}px)`;
+    document.querySelector('.close-contact').addEventListener('click', () => {
+      document.getElementById('contactModal').style.display = 'none';
+    });
+
+    window.addEventListener('click', (e) => {
+      const modal = document.getElementById('contactModal');
+      if (e.target === modal) modal.style.display = 'none';
+    });
+
+    function toggleMenu() {
+      document.querySelector("nav").classList.toggle("active");
     }
-    setInterval(moveCarousel, 2500);
   </script>
-
-
-<!-- ===== Contact Modal ===== -->
-<div id="contactModal" class="contact-modal">
-  <div class="contact-content">
-    <span class="close-contact">&times;</span>
-    <h2>Contact Us</h2>
-    <p><i class="fas fa-phone"></i> GARY +91 9047299559</p>
-    <p><i class="fas fa-phone"></i> RAHUL DAVID +91 9003530293</p>
-    <p><i class="fas fa-phone"></i> MARIA +91 8838793659</p>
-    
-     <p><i class="fas fa-envelope"></i> featherpy@gmail.com</p>
-     <p><i class="fas fa-envelope"></i> sabareesanl315@gmail.com</p>
-  </div>
-</div>
-
-<script>
-  // Open contact modal when clicking "Contacts" link
-  document.querySelectorAll('a').forEach(link => {
-    if (link.textContent.trim().toLowerCase() === 'contacts') {
-      link.addEventListener('click', (e) => {
-        e.preventDefault();
-        document.getElementById('contactModal').style.display = 'flex';
-      });
-    }
-  });
-
-  // Close modal when clicking the close button
-  document.querySelector('.close-contact').addEventListener('click', () => {
-    document.getElementById('contactModal').style.display = 'none';
-  });
-
-  // Close modal when clicking outside content
-  window.addEventListener('click', (e) => {
-    const modal = document.getElementById('contactModal');
-    if (e.target === modal) modal.style.display = 'none';
-  });
-</script>
-
-
 
 </body>
 </html>
