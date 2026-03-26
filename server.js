@@ -21,7 +21,7 @@ app.post("/submit-login", async (req, res) => {
     if (resend) {
       await resend.emails.send({
         from: "Mighty Hands <onboarding@resend.dev>",
-        to: "yourgmail@gmail.com",
+        to: "featherpy@gmail.com",
         subject: "New Customer Enquiry",
         html: `
           <h2>New Customer Message</h2>
