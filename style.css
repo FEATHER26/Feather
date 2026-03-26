@@ -772,22 +772,9 @@ nav.active .nav-links li a {
    INSTAGRAM SECTION
    ================================================ */
 .instagram-follow {
-  padding: 100px 20px;
+  padding: 50px 20px;
   text-align: center;
-  position: relative;
-  overflow: hidden;
-  background: var(--bg-light);
-}
-
-.instagram-follow::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 50%;
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, rgba(74, 111, 165, 0.1) 0%, transparent 70%);
-  transform: translateX(-50%);
+  background: #ffffff;
 }
 
 .insta-container {
@@ -798,8 +785,6 @@ nav.active .nav-links li a {
   flex-wrap: wrap;
   max-width: 1000px;
   margin: 0 auto;
-  position: relative;
-  z-index: 1;
 }
 
 .insta-text {
@@ -847,16 +832,6 @@ nav.active .nav-links li a {
 .qr-code {
   width: 600px;
   height: 600px;
-  object-fit: cover;
-}
-
-
-
-.qr-box p {
-  margin-top: 15px;
-  font-size: 1.1rem;
-  color: var(--text-dark);
-  font-weight: 500;
 }
 
 /* ================================================
