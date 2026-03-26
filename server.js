@@ -27,12 +27,13 @@ app.post("/submit-login", async (req, res) => {
       to: "featherpy@gmail.com",
       subject: "New Customer Enquiry",
       html: `
-        <h2>New Customer Message</h2>
-        <p><b>Name:</b> ${name}</p>
-        <p><b>Email:</b> ${email}</p>
-        <p><b>Phone:</b> ${phone}</p>
-        <p><b>Product:</b> ${product}</p>
-        <p><b>Message:</b> ${message}</p>
+        <h2 style="color: #333;">New Customer Message</h2>
+        <hr style="border: 1px solid #ddd; margin: 10px 0;">
+        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Phone:</strong> ${phone}</p>
+        <p><strong>Product:</strong> ${product}</p>
+        <p><strong>Message:</strong> ${message}</p>
       `,
     });
 
