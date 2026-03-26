@@ -19,11 +19,10 @@ app.post("/submit-login", async (req, res) => {
 
   try {
     if (!resend) {
-      console.log("RESEND_API_KEY not set!");
       return res.json({ success: false, error: "API key not configured" });
     }
 
-    const result = await resend.emails.send({
+    await resend.emails.send({
       from: "Mighty Hands <onboarding@resend.dev>",
       to: "featherpy@gmail.com",
       subject: "New Customer Enquiry",
@@ -37,10 +36,8 @@ app.post("/submit-login", async (req, res) => {
       `,
     });
 
-    console.log("Email sent:", result);
-    return res.json({ success: true, result });
+    return res.json({ success: true });
   } catch (error) {
-    console.error("Email error:", error);
     return res.json({ success: false, error: error.message });
   }
 });
