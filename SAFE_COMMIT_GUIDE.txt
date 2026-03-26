@@ -1,0 +1,17 @@
+# Safe commit workflow for Feather website
+
+# To commit code changes safely (without deleting images):
+git add index.html style.css server.js package.json package-lock.json *.html
+git commit -m "Your commit message here"
+git push
+
+# To check what will be committed BEFORE committing:
+git status
+git diff --staged
+
+# To see what files are tracked in Git:
+git ls-tree -r HEAD --name-only
+
+# NEVER use these commands - they will delete images from GitHub:
+# git add -A
+# git add .
