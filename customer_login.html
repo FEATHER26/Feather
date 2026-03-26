@@ -207,19 +207,27 @@
   </div>
 
   <script>
-    const scriptURL = "https://script.google.com/macros/s/AKfycbxcmNxRHFYBICWsq0AF29OERJCEu-6OqRhIupljrxwZoYF_5myFvmQUwH2hXFBgvcIL/exec";
+    const apiURL = "https://feather-jet.vercel.app/submit-login";
 
     document.getElementById("contactForm").addEventListener("submit", async function(e) {
       e.preventDefault();
 
       const formData = new FormData(this);
+      const data = {
+        name: formData.get('name'),
+        email: formData.get('email'),
+        phone: formData.get('phone'),
+        product: formData.get('product'),
+        message: formData.get('message')
+      };
       const successMsg = document.getElementById('successMessage');
       const errorMsg = document.getElementById('errorMessage');
 
       try {
-        await fetch(scriptURL, {
+        await fetch(apiURL, {
           method: "POST",
-          body: formData
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data)
         });
 
         successMsg.style.display = 'block';
