@@ -978,6 +978,36 @@ nav.active .nav-links li a {
 }
 
 /* ================================================
+   INSTAGRAM QR FLOATING BUTTON
+   ================================================ */
+.insta-qr-float {
+  position: fixed;
+  bottom: 30px;
+  right: 130px;
+  z-index: 9999;
+}
+
+.insta-qr-float a {
+  display: block;
+  width: 80px;
+  height: 80px;
+}
+
+.insta-qr-float img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+}
+
+.insta-qr-float img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+
+/* ================================================
    WHATSAPP FLOATING BUTTON
    ================================================ */
 .whatsapp-float {
