@@ -1013,6 +1013,9 @@ nav.active .nav-links li a {
   background: var(--primary);
   color: rgba(255, 255, 255, 0.8);
   font-size: 0.95rem;
+  width: 100%;
+  margin-top: auto;
+  clear: both;
 }
 
 .footer span {
@@ -1158,32 +1161,38 @@ nav.active .nav-links li a {
   padding: 50px;
   border-radius: 25px;
   box-shadow: var(--shadow);
-  max-width: 900px;
+  max-width: 950px;
   margin: 120px auto 60px;
-  min-height: calc(100vh - 300px);
+  min-height: auto;
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .form-title {
   font-family: 'Playfair Display', serif;
   font-size: 2.5rem;
-  color: #1a4a7a;
+  color: #0d3b7a;
   margin-bottom: 30px;
   text-align: center;
   font-weight: 700;
-  text-shadow: 0 2px 4px rgba(26, 74, 122, 0.2);
 }
 
 .form-layout {
   display: flex;
   gap: 40px;
+  justify-content: center;
+  align-items: flex-start;
 }
 
 .form-left {
   flex: 1;
+  max-width: 450px;
 }
 
 .form-right {
   flex: 1;
+  max-width: 400px;
   display: flex;
   flex-direction: column;
 }
@@ -1191,32 +1200,39 @@ nav.active .nav-links li a {
 .form-right label {
   display: block;
   margin-bottom: 8px;
-  color: var(--text-dark);
-  font-weight: 500;
-  font-size: 1.1rem;
+  color: #0d3b7a;
+  font-weight: 600;
+  font-size: 1.15rem;
 }
 
 .form-container .form-left label {
   display: block;
   margin-bottom: 8px;
-  color: var(--text-dark);
-  font-weight: 500;
-  font-size: 1.1rem;
+  color: #0d3b7a;
+  font-weight: 600;
+  font-size: 1.15rem;
+}
 }
 
 .form-container input,
 .form-container textarea,
 .form-container select {
   width: 100%;
-  padding: 15px 20px;
+  padding: 16px 20px;
   margin-bottom: 20px;
   border: 2px solid var(--glass-border);
   border-radius: 12px;
-  font-size: 1rem;
+  font-size: 1.05rem;
   font-family: 'Poppins', sans-serif;
   background: var(--bg-light);
   color: #0f1f35;
   transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+.form-container textarea {
+  min-height: 180px;
+  resize: vertical;
 }
 
 .form-container input::placeholder,
@@ -1307,15 +1323,15 @@ nav.active .nav-links li a {
 /* Multi-select product dropdown */
 .product-multi-select {
   width: 100%;
-  padding: 12px 20px;
+  padding: 14px 20px;
   margin-bottom: 10px;
   border: 2px solid var(--glass-border);
   border-radius: 12px;
-  font-size: 0.95rem;
+  font-size: 1.05rem;
   font-family: 'Poppins', sans-serif;
   background: var(--bg-light);
   color: #0f1f35;
-  min-height: 450px;
+  min-height: 500px;
   cursor: pointer;
 }
 
