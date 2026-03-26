@@ -39,6 +39,9 @@ body {
   color: var(--text-dark);
   overflow-x: hidden;
   line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 /* ================================================
@@ -908,7 +911,6 @@ nav.active .nav-links li a {
   width: 95%;
   max-width: 1400px;
   margin: 0 auto;
-  overflow: visible;
   border-radius: 20px;
   box-shadow: var(--shadow);
   background: var(--white);
@@ -916,19 +918,14 @@ nav.active .nav-links li a {
 }
 
 .works-carousel .carousel-track {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 30px;
-  animation: scrollWorks 30s linear infinite;
-  flex-wrap: wrap;
   justify-content: center;
 }
 
-.works-carousel .carousel-track:hover {
-  animation-play-state: paused;
-}
-
 .works-carousel .carousel-track img {
-  width: 300px;
+  width: 100%;
   height: 250px;
   object-fit: cover;
   border-radius: 15px;
@@ -938,11 +935,6 @@ nav.active .nav-links li a {
 
 .works-carousel .carousel-track img:hover {
   transform: scale(1.05);
-}
-
-@keyframes scrollWorks {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-100%); }
 }
 
 .works-gallery {
