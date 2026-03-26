@@ -847,17 +847,10 @@ nav.active .nav-links li a {
 .qr-code {
   width: 600px;
   height: 600px;
-  border-radius: 30px;
-  border: 6px solid var(--glass-border);
-  box-shadow: 0 30px 60px rgba(26, 54, 93, 0.15);
-  transition: all 0.3s ease;
   object-fit: cover;
 }
 
-.qr-code:hover {
-  transform: rotate(5deg) scale(1.05);
-  border-color: #e1306c;
-}
+
 
 .qr-box p {
   margin-top: 15px;
@@ -1465,11 +1458,6 @@ nav.active .nav-links li a {
   .works-section h1 {
     font-size: 2.5rem;
   }
-  
-  .qr-code {
-    width: 400px;
-    height: 400px;
-  }
 }
 
 @media (max-width: 768px) {
@@ -1556,11 +1544,6 @@ nav.active .nav-links li a {
   
   .insta-text h2 {
     font-size: 2rem;
-  }
-  
-  .qr-code {
-    width: 300px;
-    height: 300px;
   }
   
   .whatsapp-float {
