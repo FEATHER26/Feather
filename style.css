@@ -884,6 +884,7 @@ nav.active .nav-links li a {
   text-align: center;
   padding: 120px 20px 60px;
   background: var(--white);
+  min-height: 100vh;
 }
 
 .works-section h1 {
@@ -901,6 +902,47 @@ nav.active .nav-links li a {
   font-size: 1.2rem;
   color: var(--text-light);
   margin-bottom: 50px;
+}
+
+.works-carousel {
+  width: 95%;
+  max-width: 1400px;
+  margin: 0 auto;
+  overflow: visible;
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  background: var(--white);
+  padding: 30px 20px;
+}
+
+.works-carousel .carousel-track {
+  display: flex;
+  gap: 30px;
+  animation: scrollWorks 30s linear infinite;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.works-carousel .carousel-track:hover {
+  animation-play-state: paused;
+}
+
+.works-carousel .carousel-track img {
+  width: 300px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.works-carousel .carousel-track img:hover {
+  transform: scale(1.05);
+}
+
+@keyframes scrollWorks {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
 }
 
 .works-gallery {
@@ -1147,7 +1189,7 @@ nav.active .nav-links li a {
   font-size: 1rem;
   font-family: 'Poppins', sans-serif;
   background: var(--bg-light);
-  color: var(--text-dark);
+  color: #0f1f35;
   transition: all 0.3s ease;
 }
 
@@ -1163,7 +1205,7 @@ nav.active .nav-links li a {
   border-color: var(--primary);
   background: var(--white);
   box-shadow: 0 0 0 4px rgba(26, 54, 93, 0.1);
-  color: var(--text-dark);
+  color: #0f1f35;
 }
 
 /* Country Select */
@@ -1175,6 +1217,93 @@ nav.active .nav-links li a {
   background-position: right 15px center;
   background-size: 16px;
   padding-right: 45px;
+}
+
+/* Phone row layout */
+.phone-row {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 5px;
+}
+
+.phone-field {
+  flex: 1;
+}
+
+.phone-field label {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--text-dark);
+  font-weight: 500;
+}
+
+.phone-field input {
+  width: 100%;
+  padding: 15px 20px;
+  margin-bottom: 0;
+  border: 2px solid var(--glass-border);
+  border-radius: 12px;
+  font-size: 1rem;
+  font-family: 'Poppins', sans-serif;
+  background: var(--bg-light);
+  color: #0f1f35;
+}
+
+.phone-field input:focus {
+  outline: none;
+  border-color: var(--primary);
+  background: var(--white);
+}
+
+/* Small country select */
+.country-select-small {
+  width: 100%;
+  padding: 15px 20px;
+  border: 2px solid var(--glass-border);
+  border-radius: 12px;
+  font-size: 1rem;
+  font-family: 'Poppins', sans-serif;
+  background: var(--bg-light);
+  color: #0f1f35;
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231a365d' stroke-width='2'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 14px;
+}
+
+.country-select-small:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+/* Multi-select product dropdown */
+.product-multi-select {
+  width: 100%;
+  padding: 12px 20px;
+  margin-bottom: 10px;
+  border: 2px solid var(--glass-border);
+  border-radius: 12px;
+  font-size: 0.95rem;
+  font-family: 'Poppins', sans-serif;
+  background: var(--bg-light);
+  color: #0f1f35;
+  min-height: 120px;
+  cursor: pointer;
+}
+
+.product-multi-select:focus {
+  outline: none;
+  border-color: var(--primary);
+  background: var(--white);
+}
+
+.select-hint {
+  font-size: 0.8rem;
+  color: var(--text-light);
+  margin-top: -10px;
+  margin-bottom: 20px;
 }
 
 /* Product Checkboxes */
