@@ -731,24 +731,13 @@ nav.active .nav-links li a {
 }
 
 .carousel-track {
-  display: flex;
-  gap: 40px;
-  animation: scrollClients 25s linear infinite;
-}
-
-.carousel-track:hover {
-  animation-play-state: paused;
-}
-
-@keyframes scrollClients {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  justify-content: center;
 }
 
 .client-card {
-  flex: 0 0 auto;
-  width: 600px;
-  height: 360px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -756,6 +745,8 @@ nav.active .nav-links li a {
   border-radius: 15px;
   border: 1px solid var(--glass-border);
   padding: 30px;
+  transition: all 0.3s ease;
+}
   transition: all 0.3s ease;
 }
 
@@ -1599,6 +1590,10 @@ nav.active .nav-links li a {
   
   .works-carousel .carousel-track {
     grid-template-columns: 1fr;
+  }
+  
+  .carousel-track {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
   
