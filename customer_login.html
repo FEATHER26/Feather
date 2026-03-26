@@ -211,6 +211,8 @@
 
     document.getElementById("contactForm").addEventListener("submit", async function(e) {
       e.preventDefault();
+      
+      console.log("Form submitted!");
 
       const formData = new FormData(this);
       const data = {
@@ -220,19 +222,28 @@
         product: formData.get('product'),
         message: formData.get('message')
       };
+      
+      console.log("Data:", JSON.stringify(data));
+      
       const successMsg = document.getElementById('successMessage');
       const errorMsg = document.getElementById('errorMessage');
 
       try {
+        console.log("Sending to:", apiURL);
+        
         const response = await fetch(apiURL, {
           method: "POST",
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(data)
         });
         
+        console.log("Response status:", response.status);
+        
         const result = await response.json();
+        console.log("Result:", result);
         
         if (result.success) {
+          alert("Message sent successfully!");
           successMsg.style.display = 'block';
           errorMsg.style.display = 'none';
           this.reset();
@@ -241,13 +252,15 @@
             successMsg.style.display = 'none';
           }, 5000);
         } else {
+          alert("Error: " + result.error);
           errorMsg.style.display = 'block';
           successMsg.style.display = 'none';
         }
       } catch (error) {
+        alert("Error: " + error.message);
+        console.error(error);
         errorMsg.style.display = 'block';
         successMsg.style.display = 'none';
-        console.error(error);
       }
     });
 
