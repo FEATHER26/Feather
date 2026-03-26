@@ -1176,7 +1176,8 @@ nav.active .nav-links li a {
 
 .form-layout {
   display: flex;
-  gap: 60px;
+  flex-direction: column;
+  gap: 30px;
   justify-content: center;
   align-items: flex-start;
 }
@@ -1198,7 +1199,8 @@ nav.active .nav-links li a {
   margin-bottom: 8px;
   color: #0d3b7a;
   font-weight: 600;
-  font-size: 1.15rem;
+  font-size: 1.5rem;
+  text-shadow: 0 0 1px rgba(0,0,0,0.1);
 }
 
 .form-container .form-left label {
@@ -1206,7 +1208,8 @@ nav.active .nav-links li a {
   margin-bottom: 8px;
   color: #0d3b7a;
   font-weight: 600;
-  font-size: 1.15rem;
+  font-size: 1.5rem;
+  text-shadow: 0 0 1px rgba(0,0,0,0.1);
 }
 }
 
@@ -1214,7 +1217,7 @@ nav.active .nav-links li a {
 .form-container textarea,
 .form-container select {
   width: 100%;
-  padding: 20px 25px;
+  padding: 40px 50px;
   margin-bottom: 25px;
   border: 2px solid var(--glass-border);
   border-radius: 12px;
@@ -1227,7 +1230,7 @@ nav.active .nav-links li a {
 }
 
 .form-container textarea {
-  min-height: 220px;
+  min-height: 440px;
   resize: vertical;
 }
 
@@ -1271,8 +1274,10 @@ nav.active .nav-links li a {
 .phone-field label {
   display: block;
   margin-bottom: 8px;
-  color: var(--text-dark);
-  font-weight: 500;
+  color: #0d3b7a;
+  font-weight: 600;
+  font-size: 1.5rem;
+  text-shadow: 0 0 1px rgba(0,0,0,0.1);
 }
 
 .phone-field input {
@@ -1327,7 +1332,7 @@ nav.active .nav-links li a {
   font-family: 'Poppins', sans-serif;
   background: var(--bg-light);
   color: #0f1f35;
-  min-height: 500px;
+  min-height: 1000px;
   cursor: pointer;
 }
 
