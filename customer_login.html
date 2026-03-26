@@ -207,15 +207,13 @@
   </div>
 
   <script>
-    const apiURL = "https://feather-jet.vercel.app/submit-login";
+    var apiURL = "https://feather-jet.vercel.app/submit-login";
 
-    document.getElementById("contactForm").addEventListener("submit", async function(e) {
+    document.getElementById("contactForm").onsubmit = function(e) {
       e.preventDefault();
       
-      console.log("Form submitted!");
-
-      const formData = new FormData(this);
-      const data = {
+      var formData = new FormData(this);
+      var data = {
         name: formData.get('name'),
         email: formData.get('email'),
         phone: formData.get('phone'),
@@ -223,56 +221,57 @@
         message: formData.get('message')
       };
       
-      console.log("Data:", JSON.stringify(data));
+      var successMsg = document.getElementById('successMessage');
+      var errorMsg = document.getElementById('errorMessage');
       
-      const successMsg = document.getElementById('successMessage');
-      const errorMsg = document.getElementById('errorMessage');
-
-      try {
-        console.log("Sending to:", apiURL);
-        
-        const response = await fetch(apiURL, {
-          method: "POST",
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(data)
-        });
-        
-        console.log("Response status:", response.status);
-        
-        const result = await response.json();
-        console.log("Result:", result);
-        
-        if (result.success) {
-          alert("Message sent successfully!");
-          successMsg.style.display = 'block';
-          errorMsg.style.display = 'none';
-          this.reset();
-
-          setTimeout(function() {
+      successMsg.style.display = 'none';
+      errorMsg.style.display = 'none';
+      
+      var xhr = new XMLHttpRequest();
+      xhr.open("POST", apiURL, true);
+      xhr.setRequestHeader("Content-Type", "application/json");
+      
+      xhr.onreadystatechange = function() {
+        if (xhr.readyState === 4) {
+          if (xhr.status === 200) {
+            var result = JSON.parse(xhr.responseText);
+            if (result.success) {
+              alert("Message sent successfully!");
+              successMsg.style.display = 'block';
+              errorMsg.style.display = 'none';
+              document.getElementById("contactForm").reset();
+              
+              setTimeout(function() {
+                successMsg.style.display = 'none';
+              }, 5000);
+            } else {
+              alert("Error: " + result.error);
+              errorMsg.style.display = 'block';
+              successMsg.style.display = 'none';
+            }
+          } else {
+            alert("Error: HTTP " + xhr.status);
+            errorMsg.style.display = 'block';
             successMsg.style.display = 'none';
-          }, 5000);
-        } else {
-          alert("Error: " + result.error);
-          errorMsg.style.display = 'block';
-          successMsg.style.display = 'none';
+          }
         }
-      } catch (error) {
-        alert("Error: " + error.message);
-        console.error(error);
-        errorMsg.style.display = 'block';
-        successMsg.style.display = 'none';
-      }
-    });
+      };
+      
+      xhr.send(JSON.stringify(data));
+    };
 
-    const links = document.querySelectorAll('a[href="#"], a[href="contacts.html"], a[href*="Contacts"]');
-    links.forEach(function(link) {
-      if (link.textContent.trim().toLowerCase() === 'contacts') {
-          link.addEventListener('click', function(e) {
-          e.preventDefault();
-          document.getElementById('contactModal')?.style.display = 'flex';
-        });
-      }
-    });
+    var links = document.querySelectorAll('a[href="#"], a[href="contacts.html"], a[href*="Contacts"]');
+    for (var i = 0; i < links.length; i++) {
+      (function(link) {
+        if (link.textContent.trim().toLowerCase() === 'contacts') {
+          link.onclick = function(e) {
+            e.preventDefault();
+            var modal = document.getElementById('contactModal');
+            if (modal) modal.style.display = 'flex';
+          };
+        }
+      })(links[i]);
+    }
 
     function toggleMenu() {
       var nav = document.querySelector("nav");
