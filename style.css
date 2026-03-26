@@ -1006,8 +1006,10 @@ nav.active .nav-links li a {
   color: rgba(255, 255, 255, 0.8);
   font-size: 0.95rem;
   width: 100%;
-  margin-top: auto;
-  clear: both;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
 }
 
 .footer span {
@@ -1150,10 +1152,10 @@ nav.active .nav-links li a {
    ================================================ */
 .form-container {
   background: var(--white);
-  padding: 50px;
+  padding: 60px;
   border-radius: 25px;
   box-shadow: var(--shadow);
-  max-width: 950px;
+  max-width: 1200px;
   margin: 120px auto 60px;
   min-height: auto;
   display: block;
@@ -1163,16 +1165,16 @@ nav.active .nav-links li a {
 
 .form-title {
   font-family: 'Playfair Display', serif;
-  font-size: 2.5rem;
+  font-size: 3rem;
   color: #0d3b7a;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
   text-align: center;
   font-weight: 700;
 }
 
 .form-layout {
   display: flex;
-  gap: 40px;
+  gap: 60px;
   justify-content: center;
   align-items: flex-start;
 }
@@ -1210,11 +1212,11 @@ nav.active .nav-links li a {
 .form-container textarea,
 .form-container select {
   width: 100%;
-  padding: 16px 20px;
-  margin-bottom: 20px;
+  padding: 20px 25px;
+  margin-bottom: 25px;
   border: 2px solid var(--glass-border);
   border-radius: 12px;
-  font-size: 1.05rem;
+  font-size: 1.15rem;
   font-family: 'Poppins', sans-serif;
   background: var(--bg-light);
   color: #0f1f35;
@@ -1223,7 +1225,7 @@ nav.active .nav-links li a {
 }
 
 .form-container textarea {
-  min-height: 180px;
+  min-height: 220px;
   resize: vertical;
 }
 
