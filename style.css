@@ -845,11 +845,11 @@ nav.active .nav-links li a {
 }
 
 .qr-code {
-  width: 200px;
-  height: 200px;
-  border-radius: 20px;
-  border: 4px solid var(--glass-border);
-  box-shadow: 0 20px 40px rgba(26, 54, 93, 0.1);
+  width: 600px;
+  height: 600px;
+  border-radius: 30px;
+  border: 6px solid var(--glass-border);
+  box-shadow: 0 30px 60px rgba(26, 54, 93, 0.15);
   transition: all 0.3s ease;
   object-fit: cover;
 }
@@ -1465,6 +1465,11 @@ nav.active .nav-links li a {
   .works-section h1 {
     font-size: 2.5rem;
   }
+  
+  .qr-code {
+    width: 400px;
+    height: 400px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -1554,8 +1559,8 @@ nav.active .nav-links li a {
   }
   
   .qr-code {
-    width: 180px;
-    height: 180px;
+    width: 300px;
+    height: 300px;
   }
   
   .whatsapp-float {
