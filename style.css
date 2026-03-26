@@ -747,15 +747,15 @@ nav.active .nav-links li a {
 
 .client-card {
   flex: 0 0 auto;
-  width: 200px;
-  height: 120px;
+  width: 600px;
+  height: 360px;
   display: flex;
   align-items: center;
   justify-content: center;
   background: #ffffff;
   border-radius: 15px;
   border: 1px solid var(--glass-border);
-  padding: 15px;
+  padding: 30px;
   transition: all 0.3s ease;
 }
 
