@@ -10,16 +10,16 @@
     .contact-page {
       min-height: 100vh;
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       justify-content: center;
-      padding: 100px 20px;
+      padding: 100px 20px 60px;
     }
 
     .form-container {
       background: linear-gradient(145deg, rgba(30, 41, 59, 0.9), rgba(15, 23, 42, 0.95));
       backdrop-filter: blur(20px);
       border: 1px solid var(--glass-border);
-      padding: 50px;
+      padding: 30px;
       border-radius: 25px;
       max-width: 500px;
       width: 100%;
@@ -28,8 +28,8 @@
 
     .form-container h2 {
       text-align: center;
-      margin-bottom: 30px;
-      font-size: 2rem;
+      margin-bottom: 20px;
+      font-size: 1.5rem;
       background: linear-gradient(135deg, var(--primary), var(--secondary));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -38,24 +38,25 @@
 
     .form-container label {
       display: block;
-      margin-bottom: 8px;
+      margin-bottom: 6px;
       font-weight: 600;
       color: #ffffff;
-      font-size: 1.5rem;
+      font-size: 0.9rem;
       text-shadow: 0 0 2px rgba(0,0,0,0.5);
     }
 
     .form-container input,
     .form-container textarea {
       width: 100%;
-      padding: 15px;
-      margin-bottom: 20px;
+      padding: 12px;
+      margin-bottom: 15px;
       border: 1px solid var(--glass-border);
       border-radius: 12px;
       background: var(--glass);
       color: var(--white);
-      font-size: 1rem;
+      font-size: 0.95rem;
       transition: all 0.3s ease;
+      box-sizing: border-box;
     }
 
     .form-container input:focus,
@@ -66,13 +67,13 @@
     }
 
     .form-container textarea {
-      min-height: 120px;
+      min-height: 100px;
       resize: vertical;
     }
 
     .form-container button {
       width: 100%;
-      padding: 16px;
+      padding: 14px;
       background: linear-gradient(135deg, var(--primary), var(--primary-dark));
       border: none;
       border-radius: 12px;
@@ -89,26 +90,98 @@
       box-shadow: 0 15px 40px rgba(99, 102, 241, 0.4);
     }
 
-    .success-message {
+    .success-message, .error-message {
       display: none;
-      background: linear-gradient(135deg, #10b981, #059669);
       color: white;
-      padding: 15px;
+      padding: 12px;
       border-radius: 12px;
       text-align: center;
-      margin-top: 20px;
+      margin-top: 15px;
       animation: fadeIn 0.3s ease;
+      font-size: 0.9rem;
+    }
+
+    .success-message {
+      background: linear-gradient(135deg, #10b981, #059669);
     }
 
     .error-message {
-      display: none;
       background: linear-gradient(135deg, #ef4444, #dc2626);
-      color: white;
-      padding: 15px;
+    }
+
+    .phone-row {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 5px;
+    }
+
+    .phone-field {
+      flex: 1;
+    }
+
+    .phone-field label {
+      font-size: 0.85rem;
+    }
+
+    .form-right {
+      margin-bottom: 15px;
+    }
+
+    .form-right label {
+      font-size: 0.9rem;
+      margin-bottom: 6px;
+    }
+
+    .product-multi-select {
+      width: 100%;
+      min-height: 150px;
+      max-height: 200px;
+      padding: 10px;
+      border: 1px solid var(--glass-border);
       border-radius: 12px;
-      text-align: center;
-      margin-top: 20px;
-      animation: fadeIn 0.3s ease;
+      background: var(--glass);
+      color: var(--white);
+      font-size: 0.85rem;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .select-hint {
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.7);
+      margin-top: -10px;
+      margin-bottom: 15px;
+    }
+
+    .validation-error {
+      color: #ff6b6b;
+      font-size: 0.8rem;
+      margin-top: -10px;
+      margin-bottom: 10px;
+      display: none;
+    }
+
+    @media (max-width: 480px) {
+      .contact-page {
+        padding: 90px 10px 50px;
+      }
+
+      .form-container {
+        padding: 20px 15px;
+        border-radius: 20px;
+      }
+
+      .form-container h2 {
+        font-size: 1.3rem;
+      }
+
+      .phone-row {
+        flex-direction: column;
+        gap: 0;
+      }
+
+      .product-multi-select {
+        min-height: 120px;
+      }
     }
   </style>
 </head>
@@ -158,123 +231,117 @@
   <div class="form-container">
     <h2 class="form-title"><i class="fas fa-envelope"></i> Contact Us</h2>
 
-    <div class="form-layout">
-      <div class="form-left">
-        <form id="contactForm">
-          <label>Name</label>
-          <input type="text" name="name" placeholder="Your Name" required>
+    <form id="contactForm">
+      <label>Name</label>
+      <input type="text" name="name" placeholder="Your Name" required>
 
-          <label>Email</label>
-          <input type="email" name="email" placeholder="your@email.com" required>
+      <label>Email</label>
+      <input type="email" name="email" placeholder="your@email.com" required>
 
-          <div class="phone-row">
-            <div class="phone-field">
-              <label>Country</label>
-              <select name="countryCode" id="countryCode" class="country-select-small">
-                <option value="+91">+91 India</option>
-                <option value="+1">+1 USA</option>
-                <option value="+1">+1 Canada</option>
-                <option value="+44">+44 UK</option>
-                <option value="+61">+61 Australia</option>
-                <option value="+81">+81 Japan</option>
-                <option value="+49">+49 Germany</option>
-                <option value="+33">+33 France</option>
-                <option value="+86">+86 China</option>
-                <option value="+82">+82 South Korea</option>
-                <option value="+971">+971 UAE</option>
-                <option value="+966">+966 Saudi Arabia</option>
-                <option value="+20">+20 Egypt</option>
-                <option value="+234">+234 Nigeria</option>
-                <option value="+27">+27 South Africa</option>
-                <option value="+55">+55 Brazil</option>
-                <option value="+52">+52 Mexico</option>
-                <option value="+64">+64 New Zealand</option>
-                <option value="+65">+65 Singapore</option>
-                <option value="+60">+60 Malaysia</option>
-                <option value="+92">+92 Pakistan</option>
-                <option value="+880">+880 Bangladesh</option>
-                <option value="+94">+94 Sri Lanka</option>
-                <option value="+977">+977 Nepal</option>
-              </select>
-            </div>
-            <div class="phone-field">
-              <label>Mobile</label>
-              <input type="text" name="phone" placeholder="Number" id="phone">
-            </div>
-          </div>
-          <div id="phoneError" class="validation-error">Enter valid mobile number</div>
-<div class="form-right">
-        <label>Products (select multiple)</label>
-        <select name="product" id="product" multiple class="product-multi-select">
-          <option value="Baseball Caps">Baseball Caps</option>
-          <option value="Bible Verse Frames">Bible Verse Frames</option>
-          <option value="Bible Verse T-Shirts">Bible Verse T-Shirts</option>
-          <option value="Boys and Girls Combo">Boys and Girls Combo</option>
-          <option value="Boys and Girls Uniform">Boys and Girls Uniform</option>
-          <option value="Boys Sports Wear">Boys Sports Wear</option>
-          <option value="Boys Uniform">Boys Uniform</option>
-          <option value="Business Cards">Business Cards</option>
-          <option value="Canvas Bags">Canvas Bags</option>
-          <option value="Canvas Shoes">Canvas Shoes</option>
-          <option value="Cap Embroidery">Cap Embroidery</option>
-          <option value="Collared T-Shirts">Collared T-Shirts</option>
-          <option value="Copper Bottles">Copper Bottles</option>
-          <option value="Corporate T-Shirts">Corporate T-Shirts</option>
-          <option value="Cotton Bags">Cotton Bags</option>
-          <option value="Embroidery Badges">Embroidery Badges</option>
-          <option value="Fabric Belts">Fabric Belts</option>
-          <option value="Folding Umbrella">Folding Umbrella</option>
-          <option value="Girls Sports Wear">Girls Sports Wear</option>
-          <option value="Girls Uniform">Girls Uniform</option>
-          <option value="Greeting Cards">Greeting Cards</option>
-          <option value="Jacket Embroidery">Jacket Embroidery</option>
-          <option value="Kids Caps">Kids Caps</option>
-          <option value="Kids Combo">Kids Combo</option>
-          <option value="Kids Shoes">Kids Shoes</option>
-          <option value="Kids Sports Combo">Kids Sports Combo</option>
-          <option value="Kids Sports Wear">Kids Sports Wear</option>
-          <option value="Knitted Umbrella">Knitted Umbrella</option>
-          <option value="Laptop Bags">Laptop Bags</option>
-          <option value="Leather Belts">Leather Belts</option>
-          <option value="Mars Collared">Mars Collared</option>
-          <option value="Metal Badges">Metal Badges</option>
-          <option value="Plastic Bottles">Plastic Bottles</option>
-          <option value="Round-Neck T-Shirts">Round-Neck T-Shirts</option>
-          <option value="Semi Zipper Jackets">Semi Zipper Jackets</option>
-          <option value="Sports Caps">Sports Caps</option>
-          <option value="Sports Shoes">Sports Shoes</option>
-          <option value="Sports Wear">Sports Wear</option>
-          <option value="Steel Bottles">Steel Bottles</option>
-          <option value="T-Shirt Embroidery">T-Shirt Embroidery</option>
-          <option value="Thumbhole Zipper">Thumbhole Zipper</option>
-          <option value="Travel Bags">Travel Bags</option>
-          <option value="Zipper Jackets">Zipper Jackets</option>
-          <option value="Jute Bags">Jute Bags</option>
-        </select>
-        <p class="select-hint">Hold Ctrl/Cmd to select multiple</p>
+      <div class="phone-row">
+        <div class="phone-field">
+          <label>Country</label>
+          <select name="countryCode" id="countryCode" class="country-select-small">
+            <option value="+91">+91 India</option>
+            <option value="+1">+1 USA</option>
+            <option value="+1">+1 Canada</option>
+            <option value="+44">+44 UK</option>
+            <option value="+61">+61 Australia</option>
+            <option value="+81">+81 Japan</option>
+            <option value="+49">+49 Germany</option>
+            <option value="+33">+33 France</option>
+            <option value="+86">+86 China</option>
+            <option value="+82">+82 South Korea</option>
+            <option value="+971">+971 UAE</option>
+            <option value="+966">+966 Saudi Arabia</option>
+            <option value="+20">+20 Egypt</option>
+            <option value="+234">+234 Nigeria</option>
+            <option value="+27">+27 South Africa</option>
+            <option value="+55">+55 Brazil</option>
+            <option value="+52">+52 Mexico</option>
+            <option value="+64">+64 New Zealand</option>
+            <option value="+65">+65 Singapore</option>
+            <option value="+60">+60 Malaysia</option>
+            <option value="+92">+92 Pakistan</option>
+            <option value="+880">+880 Bangladesh</option>
+            <option value="+94">+94 Sri Lanka</option>
+            <option value="+977">+977 Nepal</option>
+          </select>
+        </div>
+        <div class="phone-field">
+          <label>Mobile</label>
+          <input type="text" name="phone" placeholder="Number" id="phone">
+        </div>
       </div>
-          <label>Message</label>
-          <textarea name="message" placeholder="Tell us more about your requirements..." id="message"></textarea>
-          <div id="messageError" class="validation-error">Message cannot be empty</div>
-          
-          <div id="productMessageError" class="validation-error">Please select at least one product or enter a message</div>
+      <div id="phoneError" class="validation-error">Enter valid mobile number</div>
 
-          <button type="submit" class="submit-btn">
-            <i class="fas fa-paper-plane"></i> Send Message
-          </button>
+      <label>Products (select multiple)</label>
+      <select name="product" id="product" multiple class="product-multi-select">
+        <option value="Baseball Caps">Baseball Caps</option>
+        <option value="Bible Verse Frames">Bible Verse Frames</option>
+        <option value="Bible Verse T-Shirts">Bible Verse T-Shirts</option>
+        <option value="Boys and Girls Combo">Boys and Girls Combo</option>
+        <option value="Boys and Girls Uniform">Boys and Girls Uniform</option>
+        <option value="Boys Sports Wear">Boys Sports Wear</option>
+        <option value="Boys Uniform">Boys Uniform</option>
+        <option value="Business Cards">Business Cards</option>
+        <option value="Canvas Bags">Canvas Bags</option>
+        <option value="Canvas Shoes">Canvas Shoes</option>
+        <option value="Cap Embroidery">Cap Embroidery</option>
+        <option value="Collared T-Shirts">Collared T-Shirts</option>
+        <option value="Copper Bottles">Copper Bottles</option>
+        <option value="Corporate T-Shirts">Corporate T-Shirts</option>
+        <option value="Cotton Bags">Cotton Bags</option>
+        <option value="Embroidery Badges">Embroidery Badges</option>
+        <option value="Fabric Belts">Fabric Belts</option>
+        <option value="Folding Umbrella">Folding Umbrella</option>
+        <option value="Girls Sports Wear">Girls Sports Wear</option>
+        <option value="Girls Uniform">Girls Uniform</option>
+        <option value="Greeting Cards">Greeting Cards</option>
+        <option value="Jacket Embroidery">Jacket Embroidery</option>
+        <option value="Kids Caps">Kids Caps</option>
+        <option value="Kids Combo">Kids Combo</option>
+        <option value="Kids Shoes">Kids Shoes</option>
+        <option value="Kids Sports Combo">Kids Sports Combo</option>
+        <option value="Kids Sports Wear">Kids Sports Wear</option>
+        <option value="Knitted Umbrella">Knitted Umbrella</option>
+        <option value="Laptop Bags">Laptop Bags</option>
+        <option value="Leather Belts">Leather Belts</option>
+        <option value="Mars Collared">Mars Collared</option>
+        <option value="Metal Badges">Metal Badges</option>
+        <option value="Plastic Bottles">Plastic Bottles</option>
+        <option value="Round-Neck T-Shirts">Round-Neck T-Shirts</option>
+        <option value="Semi Zipper Jackets">Semi Zipper Jackets</option>
+        <option value="Sports Caps">Sports Caps</option>
+        <option value="Sports Shoes">Sports Shoes</option>
+        <option value="Sports Wear">Sports Wear</option>
+        <option value="Steel Bottles">Steel Bottles</option>
+        <option value="T-Shirt Embroidery">T-Shirt Embroidery</option>
+        <option value="Thumbhole Zipper">Thumbhole Zipper</option>
+        <option value="Travel Bags">Travel Bags</option>
+        <option value="Zipper Jackets">Zipper Jackets</option>
+        <option value="Jute Bags">Jute Bags</option>
+      </select>
+      <p class="select-hint">Hold Ctrl/Cmd to select multiple</p>
 
-          <div id="successMessage" class="success-message">
-            <i class="fas fa-check-circle"></i> Message sent successfully! We'll get back to you soon.
-          </div>
-
-          <div id="errorMessage" class="error-message">
-            <i class="fas fa-exclamation-circle"></i> Something went wrong. Please try again.
-          </div>
-        </form>
-      </div>
-
+      <label>Message</label>
+      <textarea name="message" placeholder="Tell us more about your requirements..." id="message"></textarea>
+      <div id="messageError" class="validation-error">Message cannot be empty</div>
       
-    </div>
+      <div id="productMessageError" class="validation-error">Please select at least one product or enter a message</div>
+
+      <button type="submit" class="submit-btn">
+        <i class="fas fa-paper-plane"></i> Send Message
+      </button>
+
+      <div id="successMessage" class="success-message">
+        <i class="fas fa-check-circle"></i> Message sent successfully! We'll get back to you soon.
+      </div>
+
+      <div id="errorMessage" class="error-message">
+        <i class="fas fa-exclamation-circle"></i> Something went wrong. Please try again.
+      </div>
+    </form>
   </div>
   
   <!-- ===== Instagram QR Floating Button -->
