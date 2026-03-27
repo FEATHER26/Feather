@@ -433,9 +433,9 @@
     }
 
     .upload-icon {
-      font-size: 2rem;
+      font-size: 1.5rem;
       color: rgba(255,255,255,0.6);
-      margin-bottom: 10px;
+      margin-bottom: 8px;
     }
 
     .upload-text {
@@ -449,6 +449,19 @@
       display: block;
       color: rgba(255,255,255,0.5);
       font-size: 0.75rem;
+    }
+
+    .upload-text-small {
+      display: block;
+      color: #ffffff;
+      font-size: 0.75rem;
+      margin-bottom: 3px;
+    }
+
+    .upload-hint-small {
+      display: block;
+      color: rgba(255,255,255,0.5);
+      font-size: 0.65rem;
     }
 
     .upload-input {
@@ -534,13 +547,26 @@
       }
 
       .products-upload-row {
-        flex-direction: column;
+        flex-direction: row;
+        gap: 10px;
       }
 
-      .products-column,
+      .products-column {
+        flex: 2;
+      }
+
       .upload-column {
         flex: 1;
-        width: 100%;
+      }
+
+      .upload-box {
+        min-height: 80px;
+        padding: 10px 8px;
+      }
+
+      .upload-icon {
+        font-size: 1.2rem;
+        margin-bottom: 5px;
       }
     }
   </style>
@@ -638,59 +664,32 @@
       <div class="products-upload-row">
         <div class="products-column">
           <select name="product" id="product" multiple class="product-multi-select">
-            <option value="Baseball Caps">Baseball Caps</option>
-            <option value="Bible Verse Frames">Bible Verse Frames</option>
-            <option value="Bible Verse T-Shirts">Bible Verse T-Shirts</option>
-            <option value="Boys and Girls Combo">Boys and Girls Combo</option>
-            <option value="Boys and Girls Uniform">Boys and Girls Uniform</option>
-            <option value="Boys Sports Wear">Boys Sports Wear</option>
             <option value="Boys Uniform">Boys Uniform</option>
-            <option value="Business Cards">Business Cards</option>
-            <option value="Canvas Bags">Canvas Bags</option>
-            <option value="Canvas Shoes">Canvas Shoes</option>
-            <option value="Cap Embroidery">Cap Embroidery</option>
-            <option value="Collared T-Shirts">Collared T-Shirts</option>
-            <option value="Copper Bottles">Copper Bottles</option>
-            <option value="Corporate T-Shirts">Corporate T-Shirts</option>
-            <option value="Cotton Bags">Cotton Bags</option>
-            <option value="Embroidery Badges">Embroidery Badges</option>
-            <option value="Fabric Belts">Fabric Belts</option>
-            <option value="Folding Umbrella">Folding Umbrella</option>
-            <option value="Girls Sports Wear">Girls Sports Wear</option>
             <option value="Girls Uniform">Girls Uniform</option>
-            <option value="Greeting Cards">Greeting Cards</option>
-            <option value="Jacket Embroidery">Jacket Embroidery</option>
-            <option value="Kids Caps">Kids Caps</option>
-            <option value="Kids Combo">Kids Combo</option>
-            <option value="Kids Shoes">Kids Shoes</option>
-            <option value="Kids Sports Combo">Kids Sports Combo</option>
-            <option value="Kids Sports Wear">Kids Sports Wear</option>
-            <option value="Knitted Umbrella">Knitted Umbrella</option>
-            <option value="Laptop Bags">Laptop Bags</option>
-            <option value="Leather Belts">Leather Belts</option>
-            <option value="Mars Collared">Mars Collared</option>
-            <option value="Metal Badges">Metal Badges</option>
-            <option value="Plastic Bottles">Plastic Bottles</option>
+            <option value="Boys Sports Wear">Boys Sports Wear</option>
+            <option value="Girls Sports Wear">Girls Sports Wear</option>
             <option value="Round-Neck T-Shirts">Round-Neck T-Shirts</option>
-            <option value="Semi Zipper Jackets">Semi Zipper Jackets</option>
-            <option value="Sports Caps">Sports Caps</option>
+            <option value="Collared T-Shirts">Collared T-Shirts</option>
             <option value="Sports Shoes">Sports Shoes</option>
-            <option value="Sports Wear">Sports Wear</option>
-            <option value="Steel Bottles">Steel Bottles</option>
-            <option value="T-Shirt Embroidery">T-Shirt Embroidery</option>
-            <option value="Thumbhole Zipper">Thumbhole Zipper</option>
-            <option value="Travel Bags">Travel Bags</option>
-            <option value="Zipper Jackets">Zipper Jackets</option>
-            <option value="Jute Bags">Jute Bags</option>
+            <option value="Canvas Shoes">Canvas Shoes</option>
+            <option value="Caps">Caps</option>
+            <option value="Bags">Bags</option>
+            <option value="Umbrellas">Umbrellas</option>
+            <option value="Badges">Badges</option>
+            <option value="Belts">Belts</option>
+            <option value="Bottles">Bottles</option>
+            <option value="Cards">Cards</option>
+            <option value="Embroidery">Embroidery</option>
+            <option value="Jackets">Jackets</option>
           </select>
           <p class="select-hint">Hold Ctrl/Cmd to select multiple</p>
         </div>
         <div class="upload-column">
-          <label>Upload Image (optional)</label>
+          <label>Upload, if you have any</label>
           <div class="upload-box" id="uploadBox">
             <i class="fas fa-cloud-upload-alt upload-icon"></i>
-            <span class="upload-text">Click or drag image here</span>
-            <span class="upload-hint">JPG, PNG, GIF (Max 5MB)</span>
+            <span class="upload-text-small">Click/drag image</span>
+            <span class="upload-hint-small">JPG, PNG (Max 5MB)</span>
             <input type="file" name="productImage" id="productImage" accept="image/*" class="upload-input">
           </div>
           <div class="preview-container" id="previewContainer" style="display: none;">
