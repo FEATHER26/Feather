@@ -127,7 +127,7 @@
     }
 
     .country-select {
-      width: 130px !important;
+      width: 140px !important;
       height: 38px !important;
       padding: 0 30px 0 12px !important;
       border: 1px solid var(--glass-border) !important;
@@ -231,6 +231,101 @@
       margin-top: -10px;
       margin-bottom: 10px;
       display: none;
+    }
+
+    .upload-container {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+
+    .upload-box {
+      flex: 1;
+      min-width: 200px;
+      border: 2px dashed rgba(255,255,255,0.3);
+      border-radius: 12px;
+      padding: 30px 20px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      background: rgba(26, 54, 93, 0.2);
+      position: relative;
+    }
+
+    .upload-box:hover {
+      border-color: var(--primary);
+      background: rgba(26, 54, 93, 0.3);
+    }
+
+    .upload-box.dragover {
+      border-color: #10b981;
+      background: rgba(16, 185, 129, 0.1);
+    }
+
+    .upload-icon {
+      font-size: 2rem;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 10px;
+    }
+
+    .upload-text {
+      display: block;
+      color: #ffffff;
+      font-size: 0.9rem;
+      margin-bottom: 5px;
+    }
+
+    .upload-hint {
+      display: block;
+      color: rgba(255,255,255,0.5);
+      font-size: 0.75rem;
+    }
+
+    .upload-input {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      cursor: pointer;
+    }
+
+    .preview-container {
+      position: relative;
+      width: 120px;
+      height: 120px;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 2px solid var(--glass-border);
+    }
+
+    .preview-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .remove-image {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: #ef4444;
+      color: white;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+    }
+
+    .remove-image:hover {
+      background: #dc2626;
     }
 
     @media (max-width: 480px) {
@@ -415,6 +510,22 @@
       
       <div id="productMessageError" class="validation-error">Please select at least one product or enter a message</div>
 
+      <label>Upload Product Image (optional)</label>
+      <div class="upload-container">
+        <div class="upload-box" id="uploadBox">
+          <i class="fas fa-cloud-upload-alt upload-icon"></i>
+          <span class="upload-text">Click or drag image here</span>
+          <span class="upload-hint">JPG, PNG, GIF (Max 5MB)</span>
+          <input type="file" name="productImage" id="productImage" accept="image/*" class="upload-input">
+        </div>
+        <div class="preview-container" id="previewContainer" style="display: none;">
+          <img id="imagePreview" src="" alt="Preview">
+          <button type="button" class="remove-image" id="removeImage">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+      </div>
+
       <button type="submit" class="submit-btn">
         <i class="fas fa-paper-plane"></i> Send Message
       </button>
@@ -532,9 +643,22 @@
       successMsg.style.display = 'none';
       errorMsg.style.display = 'none';
       
+      // Prepare form data with file
+      var submitData = new FormData();
+      submitData.append('name', formData.get('name'));
+      submitData.append('email', formData.get('email'));
+      submitData.append('phone', fullPhone);
+      submitData.append('product', product);
+      submitData.append('message', message);
+      
+      // Append image if selected
+      var productImage = document.getElementById('productImage').files[0];
+      if (productImage) {
+        submitData.append('productImage', productImage);
+      }
+      
       var xhr = new XMLHttpRequest();
       xhr.open("POST", apiURL, true);
-      xhr.setRequestHeader("Content-Type", "application/json");
       
       xhr.onreadystatechange = function() {
         if (xhr.readyState === 4) {
@@ -545,6 +669,8 @@
               successMsg.style.display = 'block';
               errorMsg.style.display = 'none';
               document.getElementById("contactForm").reset();
+              document.getElementById('previewContainer').style.display = 'none';
+              document.getElementById('uploadBox').style.display = 'block';
               
               setTimeout(function() {
                 successMsg.style.display = 'none';
@@ -562,7 +688,7 @@
         }
       };
       
-      xhr.send(JSON.stringify(data));
+      xhr.send(submitData);
     };
 
     var links = document.querySelectorAll('a[href="#"], a[href="contacts.html"], a[href*="Contacts"]');
@@ -611,6 +737,60 @@
         closeMenu();
         document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('open'));
       }
+    });
+
+    // Image upload handling
+    var uploadBox = document.getElementById('uploadBox');
+    var uploadInput = document.getElementById('productImage');
+    var previewContainer = document.getElementById('previewContainer');
+    var imagePreview = document.getElementById('imagePreview');
+    var removeImage = document.getElementById('removeImage');
+
+    uploadBox.addEventListener('click', function() {
+      uploadInput.click();
+    });
+
+    uploadBox.addEventListener('dragover', function(e) {
+      e.preventDefault();
+      this.classList.add('dragover');
+    });
+
+    uploadBox.addEventListener('dragleave', function(e) {
+      e.preventDefault();
+      this.classList.remove('dragover');
+    });
+
+    uploadBox.addEventListener('drop', function(e) {
+      e.preventDefault();
+      this.classList.remove('dragover');
+      var file = e.dataTransfer.files[0];
+      if (file && file.type.startsWith('image/')) {
+        uploadInput.files = e.dataTransfer.files;
+        showPreview(file);
+      }
+    });
+
+    uploadInput.addEventListener('change', function() {
+      if (this.files && this.files[0]) {
+        showPreview(this.files[0]);
+      }
+    });
+
+    function showPreview(file) {
+      var reader = new FileReader();
+      reader.onload = function(e) {
+        imagePreview.src = e.target.result;
+        uploadBox.style.display = 'none';
+        previewContainer.style.display = 'block';
+      };
+      reader.readAsDataURL(file);
+    }
+
+    removeImage.addEventListener('click', function() {
+      uploadInput.value = '';
+      imagePreview.src = '';
+      previewContainer.style.display = 'none';
+      uploadBox.style.display = 'block';
     });
   </script>
 
