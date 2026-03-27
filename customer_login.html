@@ -1023,6 +1023,24 @@
         closeModal();
       }
     });
+
+    document.querySelectorAll('a[href="#"], a[href="contacts.html"], a[href*="Contacts"]').forEach(link => {
+      if (link.textContent.trim().toLowerCase() === 'contacts') {
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          document.getElementById('contactModal').style.display = 'flex';
+        });
+      }
+    });
+
+    document.querySelector('.close-contact').addEventListener('click', () => {
+      document.getElementById('contactModal').style.display = 'none';
+    });
+
+    window.addEventListener('click', (e) => {
+      const modal = document.getElementById('contactModal');
+      if (e.target === modal) modal.style.display = 'none';
+    });
   </script>
 
   <!-- Loading Overlay -->
@@ -1046,6 +1064,19 @@
       <div class="modal-footer">
         <button class="modal-ok-btn" onclick="closeModal()">OK</button>
       </div>
+    </div>
+  </div>
+
+  <!-- ===== Contact Modal ===== -->
+  <div id="contactModal" class="contact-modal">
+    <div class="contact-content">
+      <span class="close-contact">&times;</span>
+      <h2>Contact Us</h2>
+      <p><i class="fas fa-phone"></i> GARY +91 9047299559</p>
+      <p><i class="fas fa-phone"></i> RAHUL DAVID +91 9003530293</p>
+      <p><i class="fas fa-phone"></i> MARIA +91 8838793659</p>
+      <p><i class="fas fa-envelope"></i> featherpy@gmail.com</p>
+      <p><i class="fas fa-envelope"></i> sabareesanl315@gmail.com</p>
     </div>
   </div>
   
