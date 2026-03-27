@@ -19,24 +19,9 @@ const resend = process.env.RESEND_API_KEY
   : null;
 
 // Configure multer for file uploads
-const uploadDir = path.join(process.cwd(), 'uploads');
-if (!fs.existsSync(uploadDir)) {
-  fs.mkdirSync(uploadDir, { recursive: true });
-}
-
-const storage = multer.diskStorage({
-  destination: (req, file, cb) => {
-    cb(null, uploadDir);
-  },
-  filename: (req, file, cb) => {
-    const uniqueName = `product_${Date.now()}${path.extname(file.originalname)}`;
-    cb(null, uniqueName);
-  }
-});
-
 const upload = multer({ 
-  storage: storage,
-  limits: { fileSize: 5 * 1024 * 1024 }, // 5MB limit
+  storage: multer.memoryStorage(),
+  limits: { fileSize: 5 * 1024 * 1024 },
   fileFilter: (req, file, cb) => {
     const allowedTypes = /jpeg|jpg|png|gif/;
     const extname = allowedTypes.test(path.extname(file.originalname).toLowerCase());
@@ -80,23 +65,14 @@ app.post("/submit-login", upload.single('productImage'), async (req, res) => {
     if (req.file) {
       emailData.attachments = [{
         filename: req.file.originalname,
-        path: req.file.path
+        content: req.file.buffer.toString('base64')
       }];
     }
 
     await resend.emails.send(emailData);
 
-    // Clean up uploaded file after sending
-    if (req.file) {
-      fs.unlinkSync(req.file.path);
-    }
-
     return res.json({ success: true });
   } catch (error) {
-    // Clean up uploaded file on error
-    if (req.file) {
-      fs.unlinkSync(req.file.path);
-    }
     return res.json({ success: false, error: error.message });
   }
 });
