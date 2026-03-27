@@ -226,11 +226,119 @@
     }
 
     .validation-error {
-      color: #ffcccc;
-      font-size: 0.85rem;
-      margin-top: -10px;
+      background: #ffcccc;
+      color: #cc0000;
+      padding: 10px 15px;
+      border-radius: 8px;
+      border: 2px solid #cc0000;
+      font-weight: bold;
+      margin-top: 5px;
       margin-bottom: 10px;
       display: none;
+      animation: shake 0.3s ease;
+    }
+
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      25% { transform: translateX(-5px); }
+      75% { transform: translateX(5px); }
+    }
+
+    .custom-modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0,0,0,0.6);
+      z-index: 10000;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-box {
+      background: linear-gradient(145deg, #f0f0f0, #e0e0e0);
+      border: 2px solid #808080;
+      border-radius: 8px;
+      min-width: 350px;
+      max-width: 450px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+    }
+
+    .modal-titlebar {
+      background: linear-gradient(to bottom, #0a246a, #1a4db8);
+      padding: 8px 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-radius: 6px 6px 0 0;
+    }
+
+    .modal-title {
+      color: #ffffff;
+      font-weight: bold;
+      font-size: 0.95rem;
+    }
+
+    .modal-close {
+      width: 22px;
+      height: 22px;
+      background: #c42b1c;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 1;
+    }
+
+    .modal-close:hover {
+      background: #e53e3e;
+    }
+
+    .modal-content {
+      padding: 25px 20px;
+      text-align: center;
+    }
+
+    .modal-content p {
+      margin: 0;
+      font-size: 1rem;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .modal-content.modal-error p {
+      color: #c53030;
+    }
+
+    .modal-content.modal-success p {
+      color: #2f855a;
+    }
+
+    .modal-footer {
+      padding: 15px 20px 20px;
+      text-align: center;
+    }
+
+    .modal-ok-btn {
+      background: linear-gradient(to bottom, #4a90d9, #2b6cb0);
+      color: white;
+      border: 1px solid #2b6cb0;
+      padding: 8px 35px;
+      border-radius: 4px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .modal-ok-btn:hover {
+      background: linear-gradient(to bottom, #2b6cb0, #2c5282);
     }
 
     .upload-container {
@@ -618,12 +726,15 @@
       if (phone !== '' && phoneDigits.length !== expectedDigits) {
         phoneError.textContent = 'Enter valid ' + expectedDigits + '-digit mobile number for ' + countryCode;
         phoneError.style.display = 'block';
+        showModal('Validation Error', 'Enter valid ' + expectedDigits + '-digit mobile number for ' + countryCode, true);
         return false;
       }
       
       // Validate - either product or message must be filled
       if (product === '' && message === '') {
+        productMessageError.textContent = 'Please select at least one product or enter a message';
         productMessageError.style.display = 'block';
+        showModal('Validation Error', 'Please select at least one product or enter a message', true);
         return false;
       }
       
@@ -665,15 +776,15 @@
           if (xhr.status === 200) {
             var result = JSON.parse(xhr.responseText);
             if (result.success) {
-              alert("Message sent successfully! We'll get back to you soon.");
+              showModal('Success', 'Message sent successfully! We\'ll get back to you soon.', false);
               document.getElementById("contactForm").reset();
               document.getElementById('previewContainer').style.display = 'none';
               document.getElementById('uploadBox').style.display = 'block';
             } else {
-              alert("Error: " + result.error);
+              showModal('Error', result.error, true);
             }
           } else {
-            alert("Error: HTTP " + xhr.status + " - Please try again.");
+            showModal('Error', 'HTTP ' + xhr.status + ' - Please try again.', true);
           }
         }
       };
@@ -736,10 +847,6 @@
     var imagePreview = document.getElementById('imagePreview');
     var removeImage = document.getElementById('removeImage');
 
-    uploadBox.addEventListener('click', function() {
-      uploadInput.click();
-    });
-
     uploadBox.addEventListener('dragover', function(e) {
       e.preventDefault();
       this.classList.add('dragover');
@@ -782,8 +889,46 @@
       previewContainer.style.display = 'none';
       uploadBox.style.display = 'block';
     });
+
+    function showModal(title, message, isError) {
+      document.getElementById('modalTitle').textContent = title;
+      document.getElementById('modalMessage').textContent = message;
+      var modalContent = document.getElementById('modalContent');
+      modalContent.classList.remove('modal-error', 'modal-success');
+      if (isError) {
+        modalContent.classList.add('modal-error');
+      } else {
+        modalContent.classList.add('modal-success');
+      }
+      document.getElementById('customModal').style.display = 'flex';
+    }
+
+    function closeModal() {
+      document.getElementById('customModal').style.display = 'none';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' || e.key === 'Enter') {
+        closeModal();
+      }
+    });
   </script>
 
+  <!-- Custom Modal Message Box -->
+  <div id="customModal" class="custom-modal">
+    <div class="modal-box">
+      <div class="modal-titlebar">
+        <span class="modal-title">Feather Creations</span>
+        <button class="modal-close" onclick="closeModal()">×</button>
+      </div>
+      <div id="modalContent" class="modal-content">
+        <p id="modalMessage"></p>
+      </div>
+      <div class="modal-footer">
+        <button class="modal-ok-btn" onclick="closeModal()">OK</button>
+      </div>
+    </div>
+  </div>
   
   <!-- ===== Footer ===== -->
   <footer class="footer">
