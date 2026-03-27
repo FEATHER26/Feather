@@ -251,10 +251,46 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background: rgba(0,0,0,0.6);
-      z-index: 10000;
+      background: rgba(0,0,0,0.7);
+      z-index: 99999;
       align-items: center;
       justify-content: center;
+    }
+
+    .loading-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0,0,0,0.5);
+      z-index: 99998;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .loading-spinner {
+      background: #fff;
+      padding: 30px 50px;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    .loading-spinner i {
+      font-size: 2rem;
+      color: #4a90d9;
+      animation: spin 1s linear infinite;
+    }
+
+    .loading-spinner p {
+      margin: 15px 0 0;
+      color: #333;
+      font-weight: 600;
+    }
+
+    @keyframes spin {
+      100% { transform: rotate(360deg); }
     }
 
     .modal-box {
@@ -695,6 +731,7 @@
 
     document.getElementById("contactForm").onsubmit = function(e) {
       e.preventDefault();
+      e.stopPropagation();
       
       // Reset error displays
       var phoneError = document.getElementById('phoneError');
@@ -740,20 +777,6 @@
       
       var fullPhone = countryCode + ' ' + phone;
       
-      var data = {
-        name: formData.get('name'),
-        email: formData.get('email'),
-        phone: fullPhone,
-        product: product,
-        message: message
-      };
-      
-      var successMsg = document.getElementById('successMessage');
-      var errorMsg = document.getElementById('errorMessage');
-      
-      successMsg.style.display = 'none';
-      errorMsg.style.display = 'none';
-      
       // Prepare form data with file
       var submitData = new FormData();
       submitData.append('name', formData.get('name'));
@@ -771,25 +794,37 @@
       var xhr = new XMLHttpRequest();
       xhr.open("POST", apiURL, true);
       
-      xhr.onreadystatechange = function() {
-        if (xhr.readyState === 4) {
+      xhr.onload = function() {
+        document.getElementById('loadingOverlay').style.display = 'none';
+        try {
+          var result = JSON.parse(xhr.responseText);
           if (xhr.status === 200) {
-            var result = JSON.parse(xhr.responseText);
             if (result.success) {
               showModal('Success', 'Message sent successfully! We\'ll get back to you soon.', false);
               document.getElementById("contactForm").reset();
               document.getElementById('previewContainer').style.display = 'none';
               document.getElementById('uploadBox').style.display = 'block';
             } else {
-              showModal('Error', result.error, true);
+              showModal('Error', result.error || 'Unknown error occurred', true);
             }
           } else {
-            showModal('Error', 'HTTP ' + xhr.status + ' - Please try again.', true);
+            showModal('Error', 'HTTP ' + xhr.status + ': ' + (result.error || 'Server error'), true);
           }
+        } catch (err) {
+          showModal('Error', 'Failed to parse server response', true);
         }
       };
       
+      xhr.onerror = function() {
+        document.getElementById('loadingOverlay').style.display = 'none';
+        showModal('Error', 'Network error - please check your connection', true);
+      };
+      
+      // Show loading overlay
+      document.getElementById('loadingOverlay').style.display = 'flex';
+      
       xhr.send(submitData);
+      return false;
     };
 
     var links = document.querySelectorAll('a[href="#"], a[href="contacts.html"], a[href*="Contacts"]');
@@ -913,6 +948,14 @@
       }
     });
   </script>
+
+  <!-- Loading Overlay -->
+  <div id="loadingOverlay" class="loading-overlay">
+    <div class="loading-spinner">
+      <i class="fas fa-spinner"></i>
+      <p>Sending message...</p>
+    </div>
+  </div>
 
   <!-- Custom Modal Message Box -->
   <div id="customModal" class="custom-modal">
