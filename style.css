@@ -1166,7 +1166,7 @@ nav.active .dropdown.open > a::after {
    FORM STYLES - Contact Form
    ================================================ */
 .form-container {
-  background: var(--white);
+  background: rgba(15, 39, 68, 0.95);
   padding: 60px;
   border-radius: 25px;
   box-shadow: var(--shadow);
@@ -1176,15 +1176,17 @@ nav.active .dropdown.open > a::after {
   display: block;
   width: 100%;
   box-sizing: border-box;
+  border: 1px solid rgba(255,255,255,0.1);
 }
 
 .form-title {
   font-family: 'Playfair Display', serif;
-  font-size: 3rem;
-  color: #0d3b7a;
+  font-size: 2.5rem;
+  color: #ffffff;
   margin-bottom: 40px;
   text-align: center;
   font-weight: 700;
+  text-shadow: 0 0 20px rgba(26, 54, 93, 0.8), 0 2px 4px rgba(0,0,0,0.3);
 }
 
 .form-layout {
@@ -1212,8 +1214,8 @@ nav.active .dropdown.open > a::after {
   margin-bottom: 8px;
   color: #ffffff;
   font-weight: 600;
-  font-size: 1.5rem;
-  text-shadow: 0 0 2px rgba(0,0,0,0.5);
+  font-size: 0.9rem;
+  text-shadow: 0 0 3px rgba(0,0,0,0.5);
 }
 
 .form-container .form-left label {
@@ -1221,34 +1223,34 @@ nav.active .dropdown.open > a::after {
   margin-bottom: 8px;
   color: #ffffff;
   font-weight: 600;
-  font-size: 1.5rem;
-  text-shadow: 0 0 2px rgba(0,0,0,0.5);
+  font-size: 0.9rem;
+  text-shadow: 0 0 3px rgba(0,0,0,0.5);
 }
 
 .form-container input,
 .form-container textarea,
 .form-container select {
   width: 100%;
-  padding: 40px 50px;
-  margin-bottom: 25px;
-  border: 2px solid var(--glass-border);
+  padding: 15px 20px;
+  margin-bottom: 20px;
+  border: 1px solid var(--glass-border);
   border-radius: 12px;
-  font-size: 1.15rem;
+  font-size: 1rem;
   font-family: 'Poppins', sans-serif;
-  background: var(--bg-light);
-  color: #0f1f35;
+  background: rgba(26, 54, 93, 0.4);
+  color: #ffffff;
   transition: all 0.3s ease;
   box-sizing: border-box;
 }
 
 .form-container textarea {
-  min-height: 440px;
+  min-height: 120px;
   resize: vertical;
 }
 
 .form-container input::placeholder,
 .form-container textarea::placeholder {
-  color: var(--text-light);
+  color: rgba(255,255,255,0.6);
 }
 
 .form-container input:focus,
@@ -1256,9 +1258,9 @@ nav.active .dropdown.open > a::after {
 .form-container select:focus {
   outline: none;
   border-color: var(--primary);
-  background: var(--white);
-  box-shadow: 0 0 0 4px rgba(26, 54, 93, 0.1);
-  color: #0f1f35;
+  background: rgba(26, 54, 93, 0.5);
+  box-shadow: 0 0 0 4px rgba(26, 54, 93, 0.2);
+  color: #ffffff;
 }
 
 /* Multi-select product dropdown */
@@ -1266,14 +1268,14 @@ nav.active .dropdown.open > a::after {
   width: 100%;
   padding: 14px 20px;
   margin-bottom: 10px;
-  border: 2px solid var(--glass-border);
+  border: 1px solid var(--glass-border);
   border-radius: 12px;
-  font-size: 1.05rem;
+  font-size: 1rem;
   font-family: 'Poppins', sans-serif;
-  background: var(--bg-light);
-  color: #0f1f35;
-  min-height: 200px;
-  max-height: 300px;
+  background: rgba(26, 54, 93, 0.4);
+  color: #ffffff;
+  min-height: 150px;
+  max-height: 250px;
   overflow-y: auto;
   cursor: pointer;
 }
@@ -1281,12 +1283,12 @@ nav.active .dropdown.open > a::after {
 .product-multi-select:focus {
   outline: none;
   border-color: var(--primary);
-  background: var(--white);
+  background: rgba(26, 54, 93, 0.5);
 }
 
 .select-hint {
   font-size: 0.8rem;
-  color: var(--text-light);
+  color: rgba(255,255,255,0.7);
   margin-top: -10px;
   margin-bottom: 20px;
 }
@@ -1298,9 +1300,9 @@ nav.active .dropdown.open > a::after {
   gap: 10px;
   margin-bottom: 20px;
   padding: 15px;
-  background: var(--bg-light);
+  background: rgba(26, 54, 93, 0.3);
   border-radius: 12px;
-  border: 2px solid var(--glass-border);
+  border: 1px solid var(--glass-border);
 }
 
 .product-checkbox {
@@ -1308,18 +1310,18 @@ nav.active .dropdown.open > a::after {
   align-items: center;
   gap: 8px;
   padding: 8px 12px;
-  background: var(--white);
+  background: rgba(26, 54, 93, 0.4);
   border-radius: 8px;
   cursor: pointer;
-  font-size: 0.9rem;
-  color: var(--text-dark);
+  font-size: 0.85rem;
+  color: #ffffff;
   transition: all 0.3s ease;
-  border: 1px solid var(--glass-border);
+  border: 1px solid rgba(255,255,255,0.2);
 }
 
 .product-checkbox:hover {
   border-color: var(--primary);
-  background: var(--light);
+  background: rgba(26, 54, 93, 0.6);
 }
 
 .product-checkbox input[type="checkbox"] {
