@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us | Feather</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    .contact-page {
+      min-height: 100vh;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 100px 20px 60px;
+    }
+
+    .contact-container {
+      background: linear-gradient(145deg, rgba(30, 41, 59, 0.9), rgba(15, 23, 42, 0.95));
+      backdrop-filter: blur(20px);
+      border: 1px solid var(--glass-border);
+      padding: 40px;
+      border-radius: 25px;
+      max-width: 600px;
+      width: 100%;
+      box-shadow: var(--shadow);
+      text-align: center;
+    }
+
+    .contact-container h1 {
+      color: #ffffff;
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      text-shadow: 0 0 10px rgba(255,255,255,0.3), 0 2px 4px rgba(0,0,0,0.5);
+    }
+
+    .contact-container h2 {
+      color: rgba(255,255,255,0.8);
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+      font-weight: 400;
+    }
+
+    .contact-card {
+      background: rgba(26, 54, 93, 0.4);
+      border: 1px solid var(--glass-border);
+      border-radius: 15px;
+      padding: 25px;
+      margin-bottom: 20px;
+      text-align: left;
+    }
+
+    .contact-card h3 {
+      color: var(--primary);
+      font-size: 1.1rem;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .contact-card h3 i {
+      color: var(--primary);
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .contact-item:last-child {
+      border-bottom: none;
+    }
+
+    .contact-item i {
+      width: 40px;
+      color: var(--primary);
+      font-size: 1.2rem;
+    }
+
+    .contact-item span {
+      color: #ffffff;
+      font-size: 1rem;
+      margin-left: 15px;
+    }
+
+    .contact-item a {
+      color: #ffffff;
+      text-decoration: none;
+      margin-left: 15px;
+      transition: color 0.3s ease;
+    }
+
+    .contact-item a:hover {
+      color: var(--primary);
+    }
+
+    .whatsapp-section {
+      margin-top: 30px;
+      padding: 20px;
+      background: linear-gradient(135deg, #10b981, #059669);
+      border-radius: 15px;
+    }
+
+    .whatsapp-section h3 {
+      color: #ffffff;
+      font-size: 1.2rem;
+      margin-bottom: 15px;
+    }
+
+    .whatsapp-section a {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #25D366;
+      color: white;
+      padding: 12px 25px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .whatsapp-section a:hover {
+      background: #128C7E;
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: 480px) {
+      .contact-page {
+        padding: 90px 10px 50px;
+      }
+
+      .contact-container {
+        padding: 25px 20px;
+      }
+
+      .contact-container h1 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body class="contact-page">
+
+  <!-- ===== Animated Background ===== -->
+  <div class="animated-bg"></div>
+
+  <!-- ===== Header ===== -->
+  <header>
+    <div class="menu-btn" onclick="toggleMenu()">☰</div>
+    <a href="index.html" class="logo">
+      <img src="logo.png" alt="Feather Logo" class="logo-img">
+      <span class="logo-text">Feather</span>
+    </a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="customer_login.html">Product Enquiry</a></li>
+        <li class="dropdown">
+          <a href="#">Products</a>
+          <div class="dropdown-content">
+            <a href="products.html">T-Shirts</a>
+            <a href="school.html">School Uniforms</a>
+            <a href="bible-verse-tshirts.html">Bible Verse T-Shirts</a>
+            <a href="bible-verse-frames.html">Bible Verse Frames</a>
+            <a href="cards.html">Cards</a>
+            <a href="bags.html">Bags</a>
+            <a href="caps.html">Caps</a>
+            <a href="bottles.html">Bottles</a>
+            <a href="badges.html">Badges</a>
+            <a href="shoes.html">Shoes</a>
+            <a href="belts.html">Belts</a>
+            <a href="umbrella.html">Umbrella</a>
+            <a href="embroidery.html">Embroidery</a>
+          </div>
+        </li>
+        <li><a href="about_us.html">About Us</a></li>
+        <li><a href="works.html">Our Works</a></li>
+        <li><a href="clients.html">Our Clients</a></li>
+        <li><a href="contact_us.html" class="active">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ===== Contact Section ===== -->
+  <div class="contact-container">
+    <h1><i class="fas fa-address-book"></i> Contact Us</h1>
+    <h2>We'd love to hear from you</h2>
+
+    <div class="contact-card">
+      <h3><i class="fas fa-user"></i> Phone Numbers</h3>
+      
+      <div class="contact-item">
+        <i class="fas fa-phone"></i>
+        <span>GARY: +91 9047299559</span>
+      </div>
+      
+      <div class="contact-item">
+        <i class="fas fa-phone"></i>
+        <span>RAHUL DAVID: +91 9003530293</span>
+      </div>
+      
+      <div class="contact-item">
+        <i class="fas fa-phone"></i>
+        <span>MARIA: +91 8838793659</span>
+      </div>
+    </div>
+
+    <div class="contact-card">
+      <h3><i class="fas fa-envelope"></i> Email Addresses</h3>
+      
+      <div class="contact-item">
+        <i class="fas fa-envelope"></i>
+        <a href="mailto:featherpy@gmail.com">featherpy@gmail.com</a>
+      </div>
+      
+      <div class="contact-item">
+        <i class="fas fa-envelope"></i>
+        <a href="mailto:sabareesanl315@gmail.com">sabareesanl315@gmail.com</a>
+      </div>
+    </div>
+
+    <div class="whatsapp-section">
+      <h3><i class="fab fa-whatsapp"></i> Chat on WhatsApp</h3>
+      <a href="https://wa.me/919003530293" target="_blank">
+        <i class="fab fa-whatsapp" style="font-size: 1.3rem;"></i>
+        Chat with Rahul David
+      </a>
+    </div>
+  </div>
+
+  <!-- ===== Footer ===== -->
+  <footer class="footer">
+    <p>©2026 <span> Feather Creations</span> | Designed with Purpose</p>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.querySelector("nav").classList.toggle("active");
+      document.querySelector(".menu-btn").classList.toggle("active");
+      document.body.classList.toggle("menu-open");
+    }
+
+    function closeMenu() {
+      document.querySelector("nav").classList.remove("active");
+      document.querySelector(".menu-btn").classList.remove("active");
+      document.body.classList.remove("menu-open");
+    }
+
+    document.querySelectorAll('.nav-links > li > a').forEach(link => {
+      link.addEventListener('click', () => {
+        if (window.innerWidth <= 768) closeMenu();
+      });
+    });
+
+    if (window.innerWidth <= 768) {
+      document.querySelectorAll('.dropdown > a').forEach(link => {
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          link.parentElement.classList.toggle('open');
+        });
+      });
+    }
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 768) {
+        closeMenu();
+        document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('open'));
+      }
+    });
+  </script>
+
+</body>
+</html>

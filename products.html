@@ -44,7 +44,7 @@
         <li><a href="about_us.html">About Us</a></li>
         <li><a href="works.html">Our Works</a></li>
         <li><a href="clients.html">Our Clients</a></li>
-        <li><a href="#">Contact Us</a></li>
+        <li><a href="contact_us.html">Contact Us</a></li>
       </ul>
     </nav>
   </header>
@@ -227,17 +227,11 @@
   </div>
 
   <script>
-    document.querySelectorAll('a[href="#"], a[href="contacts.html"], a[href*="Contacts"]').forEach(link => {
-      if (link.textContent.trim().toLowerCase() === 'contacts') {
         link.addEventListener('click', (e) => {
-          e.preventDefault();
-          document.getElementById('contactModal').style.display = 'flex';
         });
       }
     });
 
-    document.querySelector('.close-contact').addEventListener('click', () => {
-      document.getElementById('contactModal').style.display = 'none';
     });
 
     window.addEventListener('click', (e) => {
@@ -266,19 +260,3 @@
     if (window.innerWidth <= 768) {
       document.querySelectorAll('.dropdown > a').forEach(link => {
         link.addEventListener('click', (e) => {
-          e.preventDefault();
-          link.parentElement.classList.toggle('open');
-        });
-      });
-    }
-
-    window.addEventListener('resize', () => {
-      if (window.innerWidth > 768) {
-        closeMenu();
-        document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('open'));
-      }
-    });
-  </script>
-
-</body>
-</html>

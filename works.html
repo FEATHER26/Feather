@@ -45,7 +45,7 @@
         <li><a href="about_us.html">About Us</a></li>
         <li><a href="works.html">Our Works</a></li>
         <li><a href="clients.html">Our Clients</a></li>
-        <li><a href="#">Contact Us</a></li>
+        <li><a href="contact_us.html">Contact Us</a></li>
       </ul>
     </nav>
   </header>
@@ -73,17 +73,6 @@
     <p>©2026 <span> Feather Creations</span> | Designed with Purpose</p>
   </footer>
 
-  <!-- ===== Contact Modal ===== -->
-  <div id="contactModal" class="contact-modal">
-    <div class="contact-content">
-      <span class="close-contact">&times;</span>
-      <h2>Contact Us</h2>
-      <p><i class="fas fa-phone"></i> GARY +91 9047299559</p>
-      <p><i class="fas fa-phone"></i> RAHUL DAVID +91 9003530293</p>
-      <p><i class="fas fa-phone"></i> MARIA +91 8838793659</p>
-      <p><i class="fas fa-envelope"></i> featherpy@gmail.com</p>
-      <p><i class="fas fa-envelope"></i> sabareesanl315@gmail.com</p>
-    </div>
   </div>
 
   <!-- ===== Instagram QR Floating Button -->
@@ -102,17 +91,11 @@
   </div>
 
   <script>
-    document.querySelectorAll('a[href="#"], a[href="contacts.html"], a[href*="Contacts"]').forEach(link => {
-      if (link.textContent.trim().toLowerCase() === 'contacts') {
         link.addEventListener('click', (e) => {
-          e.preventDefault();
-          document.getElementById('contactModal').style.display = 'flex';
         });
       }
     });
 
-    document.querySelector('.close-contact').addEventListener('click', () => {
-      document.getElementById('contactModal').style.display = 'none';
     });
 
     window.addEventListener('click', (e) => {
@@ -141,19 +124,3 @@
     if (window.innerWidth <= 768) {
       document.querySelectorAll('.dropdown > a').forEach(link => {
         link.addEventListener('click', (e) => {
-          e.preventDefault();
-          link.parentElement.classList.toggle('open');
-        });
-      });
-    }
-
-    window.addEventListener('resize', () => {
-      if (window.innerWidth > 768) {
-        closeMenu();
-        document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('open'));
-      }
-    });
-  </script>
-
-</body>
-</html>
