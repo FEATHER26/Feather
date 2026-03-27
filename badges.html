@@ -240,7 +240,37 @@ function toggleDetails(id) {
   <script>
     function toggleMenu() {
       document.querySelector("nav").classList.toggle("active");
+      document.querySelector(".menu-btn").classList.toggle("active");
+      document.body.classList.toggle("menu-open");
     }
+
+    function closeMenu() {
+      document.querySelector("nav").classList.remove("active");
+      document.querySelector(".menu-btn").classList.remove("active");
+      document.body.classList.remove("menu-open");
+    }
+
+    document.querySelectorAll('.nav-links > li > a').forEach(link => {
+      link.addEventListener('click', () => {
+        if (window.innerWidth <= 768) closeMenu();
+      });
+    });
+
+    if (window.innerWidth <= 768) {
+      document.querySelectorAll('.dropdown > a').forEach(link => {
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          link.parentElement.classList.toggle('open');
+        });
+      });
+    }
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 768) {
+        closeMenu();
+        document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('open'));
+      }
+    });
   </script>
 
 </body>

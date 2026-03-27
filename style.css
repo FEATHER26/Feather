@@ -44,6 +44,10 @@ body {
   flex-direction: column;
 }
 
+body.menu-open {
+  overflow: hidden;
+}
+
 /* ================================================
    ANIMATED BACKGROUND - Light Navy
    ================================================ */
@@ -241,6 +245,19 @@ header.scrolled {
   color: var(--white);
 }
 
+.menu-btn.active {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  z-index: 1002;
+  background: var(--primary);
+  color: var(--white);
+}
+
+.menu-btn.active::before {
+  content: '✕';
+}
+
 nav.active .nav-links {
   display: flex;
   flex-direction: column;
@@ -253,14 +270,49 @@ nav.active .nav-links {
   backdrop-filter: blur(20px);
   justify-content: center;
   align-items: center;
-  gap: 20px;
+  gap: 15px;
   z-index: 1000;
+  padding-top: 60px;
+}
+
+nav.active .nav-links li {
+  width: 100%;
+  text-align: center;
 }
 
 nav.active .nav-links li a {
-  font-size: 1.3rem;
-  padding: 15px 30px;
+  font-size: 1.2rem;
+  padding: 12px 20px;
   color: var(--primary);
+  display: inline-block;
+  width: auto;
+  min-width: 200px;
+}
+
+nav.active .dropdown-content {
+  position: static;
+  transform: none;
+  background: var(--light);
+  border: none;
+  box-shadow: none;
+  padding: 10px;
+  display: none;
+  width: 100%;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+nav.active .dropdown.open .dropdown-content {
+  display: block;
+}
+
+nav.active .dropdown > a::after {
+  content: '▼';
+  font-size: 0.6rem;
+}
+
+nav.active .dropdown.open > a::after {
+  content: '▲';
 }
 
 /* ================================================
@@ -747,8 +799,6 @@ nav.active .nav-links li a {
   padding: 30px;
   transition: all 0.3s ease;
 }
-  transition: all 0.3s ease;
-}
 
 .client-card:hover {
   transform: scale(1.1);
@@ -1174,7 +1224,6 @@ nav.active .nav-links li a {
   font-size: 1.5rem;
   text-shadow: 0 0 2px rgba(0,0,0,0.5);
 }
-}
 
 .form-container input,
 .form-container textarea,
@@ -1443,10 +1492,25 @@ nav.active .nav-links li a {
 @media (max-width: 768px) {
   header {
     padding: 12px 20px;
+    justify-content: space-between;
   }
-  
+
   .menu-btn {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 44px;
+    min-height: 44px;
+    font-size: 1.3rem;
+  }
+
+  header .logo {
+    font-size: 1.2rem;
+    margin: 0 auto;
+  }
+
+  header .logo-img {
+    width: 40px;
   }
   
   nav .nav-links {
@@ -1563,8 +1627,7 @@ nav.active .nav-links li a {
   .carousel-track {
     grid-template-columns: repeat(2, 1fr);
   }
-}
-  
+
   .product-multi-select {
     min-height: 250px;
   }
