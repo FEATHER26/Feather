@@ -679,7 +679,7 @@
           <input type="text" name="phone" placeholder="Number" id="phone">
         </div>
       </div>
-      <div id="phoneError" class="validation-error">Enter valid mobile number</div>
+      <div id="phoneError" class="validation-error">Enter a valid Mobile #</div>
 
       <div class="products-upload-row">
         <div class="products-column">
@@ -819,9 +819,9 @@
       var expectedDigits = countryPatterns[countryCode] || 10;
       var phoneDigits = phone.replace(/\D/g, '');
       if (phone !== '' && phoneDigits.length !== expectedDigits) {
-        phoneError.textContent = 'Enter valid ' + expectedDigits + '-digit mobile number for ' + countryCode;
+        phoneError.textContent = 'Enter a valid ' + expectedDigits + '-digit mobile number for ' + countryCode;
         phoneError.style.display = 'block';
-        showModal('Validation Error', 'Enter valid ' + expectedDigits + '-digit mobile number for ' + countryCode, true);
+        showModal('Validation Error', 'Enter a valid ' + expectedDigits + '-digit mobile number for ' + countryCode, true);
         return false;
       }
       
