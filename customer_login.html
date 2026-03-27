@@ -121,7 +121,7 @@
     }
 
     .phone-field-country {
-      flex: 0 0 110px;
+      flex: 0 0 90px;
     }
 
     .phone-field label {
@@ -130,21 +130,42 @@
 
     .country-select-small {
       width: 100%;
-      padding: 12px 8px;
+      padding: 12px 10px;
       border: 1px solid var(--glass-border);
       border-radius: 12px;
       background: var(--glass);
       color: var(--white);
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       font-family: 'Poppins', sans-serif;
       appearance: none;
       background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
       background-repeat: no-repeat;
       background-position: right 8px center;
-      background-size: 14px;
+      background-size: 12px;
     }
 
     .country-select-small:focus {
+      outline: none;
+      border-color: var(--primary);
+    }
+
+    .phone-field input {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid var(--glass-border);
+      border-radius: 12px;
+      background: var(--glass);
+      color: var(--white);
+      font-size: 0.95rem;
+      font-family: 'Poppins', sans-serif;
+      box-sizing: border-box;
+    }
+
+    .phone-field input::placeholder {
+      color: rgba(255,255,255,0.5);
+    }
+
+    .phone-field input:focus {
       outline: none;
       border-color: var(--primary);
     }
@@ -201,13 +222,12 @@
       }
 
       .phone-row {
-        flex-direction: column;
-        gap: 0;
+        flex-direction: row;
+        gap: 10px;
       }
 
-      .phone-field-country {
-        flex: none;
-        width: 100%;
+      .phone-field {
+        flex: 1;
       }
 
       .product-multi-select {
@@ -270,8 +290,8 @@
       <input type="email" name="email" placeholder="your@email.com" required>
 
       <div class="phone-row">
-        <div class="phone-field phone-field-country">
-          <label>Code</label>
+        <div class="phone-field">
+          <label>Country Code</label>
           <select name="countryCode" id="countryCode" class="country-select-small">
             <option value="+91">+91</option>
             <option value="+1">+1</option>
@@ -299,7 +319,7 @@
           </select>
         </div>
         <div class="phone-field">
-          <label>Mobile</label>
+          <label>Mobile Number</label>
           <input type="text" name="phone" placeholder="Number" id="phone">
         </div>
       </div>
