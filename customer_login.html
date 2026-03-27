@@ -109,23 +109,37 @@
       background: linear-gradient(135deg, #ef4444, #dc2626);
     }
 
-    .country-select {
-      width: 100%;
-      padding: 12px 40px 12px 15px;
+    .phone-row {
+      display: flex;
+      gap: 10px;
       margin-bottom: 5px;
+      align-items: flex-start;
+    }
+
+    .phone-row label {
+      font-size: 0.85rem;
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .country-select {
+      width: 130px;
+      height: 38px;
+      padding: 0 25px 0 10px;
       border: 1px solid var(--glass-border);
       border-radius: 10px;
       background: var(--glass);
       color: var(--white);
-      font-size: 0.95rem;
+      font-size: 0.9rem;
       font-family: 'Poppins', sans-serif;
       appearance: none;
       -webkit-appearance: none;
       background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
       background-repeat: no-repeat;
-      background-position: right 12px center;
-      background-size: 14px;
+      background-position: right 6px center;
+      background-size: 10px;
       cursor: pointer;
+      text-align: left;
     }
 
     .country-select:focus {
@@ -136,7 +150,32 @@
     .country-select option {
       background: var(--primary);
       color: var(--white);
-      padding: 10px;
+    }
+
+    .phone-input {
+      flex: 1;
+    }
+
+    .phone-input input {
+      width: 100%;
+      height: 38px;
+      padding: 0 12px;
+      border: 1px solid var(--glass-border);
+      border-radius: 10px;
+      background: var(--glass);
+      color: var(--white);
+      font-size: 0.9rem;
+      font-family: 'Poppins', sans-serif;
+      box-sizing: border-box;
+    }
+
+    .phone-input input::placeholder {
+      color: rgba(255,255,255,0.5);
+    }
+
+    .phone-input input:focus {
+      outline: none;
+      border-color: var(--primary);
     }
 
     .form-right {
@@ -190,9 +229,22 @@
         font-size: 1.3rem;
       }
 
+      .phone-row {
+        flex-direction: column;
+        gap: 5px;
+      }
+
       .country-select {
+        width: 100%;
         font-size: 0.9rem;
-        padding: 10px 35px 10px 12px;
+        padding: 0 30px 0 10px;
+        height: 36px;
+        background-position: right 8px center;
+      }
+
+      .phone-input input {
+        height: 36px;
+        font-size: 0.85rem;
       }
 
       .product-multi-select {
@@ -254,33 +306,40 @@
       <label>Email</label>
       <input type="email" name="email" placeholder="your@email.com" required>
 
-      <label>Mobile Number</label>
-      <select name="countryCode" id="countryCode" class="country-select">
-        <option value="+91">+91 India</option>
-        <option value="+1">+1 USA/Canada</option>
-        <option value="+44">+44 UK</option>
-        <option value="+61">+61 Australia</option>
-        <option value="+81">+81 Japan</option>
-        <option value="+49">+49 Germany</option>
-        <option value="+33">+33 France</option>
-        <option value="+86">+86 China</option>
-        <option value="+82">+82 South Korea</option>
-        <option value="+971">+971 UAE</option>
-        <option value="+966">+966 Saudi Arabia</option>
-        <option value="+20">+20 Egypt</option>
-        <option value="+234">+234 Nigeria</option>
-        <option value="+27">+27 South Africa</option>
-        <option value="+55">+55 Brazil</option>
-        <option value="+52">+52 Mexico</option>
-        <option value="+64">+64 New Zealand</option>
-        <option value="+65">+65 Singapore</option>
-        <option value="+60">+60 Malaysia</option>
-        <option value="+92">+92 Pakistan</option>
-        <option value="+880">+880 Bangladesh</option>
-        <option value="+94">+94 Sri Lanka</option>
-        <option value="+977">+977 Nepal</option>
-      </select>
-      <input type="text" name="phone" placeholder="Mobile Number" id="phone" style="margin-top: 0;">
+      <div class="phone-row">
+        <div>
+          <label>Country</label>
+          <select name="countryCode" id="countryCode" class="country-select">
+            <option value="+91">+91 India</option>
+            <option value="+1">+1 USA/Canada</option>
+            <option value="+44">+44 UK</option>
+            <option value="+61">+61 Australia</option>
+            <option value="+81">+81 Japan</option>
+            <option value="+49">+49 Germany</option>
+            <option value="+33">+33 France</option>
+            <option value="+86">+86 China</option>
+            <option value="+82">+82 South Korea</option>
+            <option value="+971">+971 UAE</option>
+            <option value="+966">+966 Saudi Arabia</option>
+            <option value="+20">+20 Egypt</option>
+            <option value="+234">+234 Nigeria</option>
+            <option value="+27">+27 South Africa</option>
+            <option value="+55">+55 Brazil</option>
+            <option value="+52">+52 Mexico</option>
+            <option value="+64">+64 New Zealand</option>
+            <option value="+65">+65 Singapore</option>
+            <option value="+60">+60 Malaysia</option>
+            <option value="+92">+92 Pakistan</option>
+            <option value="+880">+880 Bangladesh</option>
+            <option value="+94">+94 Sri Lanka</option>
+            <option value="+977">+977 Nepal</option>
+          </select>
+        </div>
+        <div class="phone-input">
+          <label>Mobile</label>
+          <input type="text" name="phone" placeholder="Number" id="phone">
+        </div>
+      </div>
       <div id="phoneError" class="validation-error">Enter valid mobile number</div>
 
       <label>Products (select multiple)</label>
