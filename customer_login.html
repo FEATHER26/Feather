@@ -384,17 +384,42 @@
       flex-wrap: wrap;
     }
 
+    .products-upload-row {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 15px;
+    }
+
+    .products-column {
+      flex: 2;
+    }
+
+    .upload-column {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .upload-column label {
+      margin-bottom: 6px;
+    }
+
     .upload-box {
       flex: 1;
-      min-width: 200px;
+      min-width: 150px;
+      min-height: 120px;
       border: 2px dashed rgba(255,255,255,0.3);
       border-radius: 12px;
-      padding: 30px 20px;
+      padding: 20px 15px;
       text-align: center;
       cursor: pointer;
       transition: all 0.3s ease;
       background: rgba(26, 54, 93, 0.2);
       position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
     }
 
     .upload-box:hover {
@@ -507,6 +532,16 @@
       .product-multi-select {
         min-height: 100px;
       }
+
+      .products-upload-row {
+        flex-direction: column;
+      }
+
+      .products-column,
+      .upload-column {
+        flex: 1;
+        width: 100%;
+      }
     }
   </style>
 </head>
@@ -600,75 +635,78 @@
       <div id="phoneError" class="validation-error">Enter valid mobile number</div>
 
       <label>Products (select multiple)</label>
-      <select name="product" id="product" multiple class="product-multi-select">
-        <option value="Baseball Caps">Baseball Caps</option>
-        <option value="Bible Verse Frames">Bible Verse Frames</option>
-        <option value="Bible Verse T-Shirts">Bible Verse T-Shirts</option>
-        <option value="Boys and Girls Combo">Boys and Girls Combo</option>
-        <option value="Boys and Girls Uniform">Boys and Girls Uniform</option>
-        <option value="Boys Sports Wear">Boys Sports Wear</option>
-        <option value="Boys Uniform">Boys Uniform</option>
-        <option value="Business Cards">Business Cards</option>
-        <option value="Canvas Bags">Canvas Bags</option>
-        <option value="Canvas Shoes">Canvas Shoes</option>
-        <option value="Cap Embroidery">Cap Embroidery</option>
-        <option value="Collared T-Shirts">Collared T-Shirts</option>
-        <option value="Copper Bottles">Copper Bottles</option>
-        <option value="Corporate T-Shirts">Corporate T-Shirts</option>
-        <option value="Cotton Bags">Cotton Bags</option>
-        <option value="Embroidery Badges">Embroidery Badges</option>
-        <option value="Fabric Belts">Fabric Belts</option>
-        <option value="Folding Umbrella">Folding Umbrella</option>
-        <option value="Girls Sports Wear">Girls Sports Wear</option>
-        <option value="Girls Uniform">Girls Uniform</option>
-        <option value="Greeting Cards">Greeting Cards</option>
-        <option value="Jacket Embroidery">Jacket Embroidery</option>
-        <option value="Kids Caps">Kids Caps</option>
-        <option value="Kids Combo">Kids Combo</option>
-        <option value="Kids Shoes">Kids Shoes</option>
-        <option value="Kids Sports Combo">Kids Sports Combo</option>
-        <option value="Kids Sports Wear">Kids Sports Wear</option>
-        <option value="Knitted Umbrella">Knitted Umbrella</option>
-        <option value="Laptop Bags">Laptop Bags</option>
-        <option value="Leather Belts">Leather Belts</option>
-        <option value="Mars Collared">Mars Collared</option>
-        <option value="Metal Badges">Metal Badges</option>
-        <option value="Plastic Bottles">Plastic Bottles</option>
-        <option value="Round-Neck T-Shirts">Round-Neck T-Shirts</option>
-        <option value="Semi Zipper Jackets">Semi Zipper Jackets</option>
-        <option value="Sports Caps">Sports Caps</option>
-        <option value="Sports Shoes">Sports Shoes</option>
-        <option value="Sports Wear">Sports Wear</option>
-        <option value="Steel Bottles">Steel Bottles</option>
-        <option value="T-Shirt Embroidery">T-Shirt Embroidery</option>
-        <option value="Thumbhole Zipper">Thumbhole Zipper</option>
-        <option value="Travel Bags">Travel Bags</option>
-        <option value="Zipper Jackets">Zipper Jackets</option>
-        <option value="Jute Bags">Jute Bags</option>
-      </select>
-      <p class="select-hint">Hold Ctrl/Cmd to select multiple</p>
+      <div class="products-upload-row">
+        <div class="products-column">
+          <select name="product" id="product" multiple class="product-multi-select">
+            <option value="Baseball Caps">Baseball Caps</option>
+            <option value="Bible Verse Frames">Bible Verse Frames</option>
+            <option value="Bible Verse T-Shirts">Bible Verse T-Shirts</option>
+            <option value="Boys and Girls Combo">Boys and Girls Combo</option>
+            <option value="Boys and Girls Uniform">Boys and Girls Uniform</option>
+            <option value="Boys Sports Wear">Boys Sports Wear</option>
+            <option value="Boys Uniform">Boys Uniform</option>
+            <option value="Business Cards">Business Cards</option>
+            <option value="Canvas Bags">Canvas Bags</option>
+            <option value="Canvas Shoes">Canvas Shoes</option>
+            <option value="Cap Embroidery">Cap Embroidery</option>
+            <option value="Collared T-Shirts">Collared T-Shirts</option>
+            <option value="Copper Bottles">Copper Bottles</option>
+            <option value="Corporate T-Shirts">Corporate T-Shirts</option>
+            <option value="Cotton Bags">Cotton Bags</option>
+            <option value="Embroidery Badges">Embroidery Badges</option>
+            <option value="Fabric Belts">Fabric Belts</option>
+            <option value="Folding Umbrella">Folding Umbrella</option>
+            <option value="Girls Sports Wear">Girls Sports Wear</option>
+            <option value="Girls Uniform">Girls Uniform</option>
+            <option value="Greeting Cards">Greeting Cards</option>
+            <option value="Jacket Embroidery">Jacket Embroidery</option>
+            <option value="Kids Caps">Kids Caps</option>
+            <option value="Kids Combo">Kids Combo</option>
+            <option value="Kids Shoes">Kids Shoes</option>
+            <option value="Kids Sports Combo">Kids Sports Combo</option>
+            <option value="Kids Sports Wear">Kids Sports Wear</option>
+            <option value="Knitted Umbrella">Knitted Umbrella</option>
+            <option value="Laptop Bags">Laptop Bags</option>
+            <option value="Leather Belts">Leather Belts</option>
+            <option value="Mars Collared">Mars Collared</option>
+            <option value="Metal Badges">Metal Badges</option>
+            <option value="Plastic Bottles">Plastic Bottles</option>
+            <option value="Round-Neck T-Shirts">Round-Neck T-Shirts</option>
+            <option value="Semi Zipper Jackets">Semi Zipper Jackets</option>
+            <option value="Sports Caps">Sports Caps</option>
+            <option value="Sports Shoes">Sports Shoes</option>
+            <option value="Sports Wear">Sports Wear</option>
+            <option value="Steel Bottles">Steel Bottles</option>
+            <option value="T-Shirt Embroidery">T-Shirt Embroidery</option>
+            <option value="Thumbhole Zipper">Thumbhole Zipper</option>
+            <option value="Travel Bags">Travel Bags</option>
+            <option value="Zipper Jackets">Zipper Jackets</option>
+            <option value="Jute Bags">Jute Bags</option>
+          </select>
+          <p class="select-hint">Hold Ctrl/Cmd to select multiple</p>
+        </div>
+        <div class="upload-column">
+          <label>Upload Image (optional)</label>
+          <div class="upload-box" id="uploadBox">
+            <i class="fas fa-cloud-upload-alt upload-icon"></i>
+            <span class="upload-text">Click or drag image here</span>
+            <span class="upload-hint">JPG, PNG, GIF (Max 5MB)</span>
+            <input type="file" name="productImage" id="productImage" accept="image/*" class="upload-input">
+          </div>
+          <div class="preview-container" id="previewContainer" style="display: none;">
+            <img id="imagePreview" src="" alt="Preview">
+            <button type="button" class="remove-image" id="removeImage">
+              <i class="fas fa-times"></i>
+            </button>
+          </div>
+        </div>
+      </div>
 
       <label>Message</label>
       <textarea name="message" placeholder="Tell us more about your requirements..." id="message"></textarea>
       <div id="messageError" class="validation-error">Message cannot be empty</div>
       
       <div id="productMessageError" class="validation-error">Please select at least one product or enter a message</div>
-
-      <label>Upload Product Image (optional)</label>
-      <div class="upload-container">
-        <div class="upload-box" id="uploadBox">
-          <i class="fas fa-cloud-upload-alt upload-icon"></i>
-          <span class="upload-text">Click or drag image here</span>
-          <span class="upload-hint">JPG, PNG, GIF (Max 5MB)</span>
-          <input type="file" name="productImage" id="productImage" accept="image/*" class="upload-input">
-        </div>
-        <div class="preview-container" id="previewContainer" style="display: none;">
-          <img id="imagePreview" src="" alt="Preview">
-          <button type="button" class="remove-image" id="removeImage">
-            <i class="fas fa-times"></i>
-          </button>
-        </div>
-      </div>
 
       <button type="submit" class="submit-btn">
         <i class="fas fa-paper-plane"></i> Send Message
@@ -800,7 +838,7 @@
           var result = JSON.parse(xhr.responseText);
           if (xhr.status === 200) {
             if (result.success) {
-              showModal('Success', 'Message sent successfully! We\'ll get back to you soon.', false);
+              showModal('Thank You!', 'Your details have been submitted successfully! We\'ll reach out to you soon.', false);
               document.getElementById("contactForm").reset();
               document.getElementById('previewContainer').style.display = 'none';
               document.getElementById('uploadBox').style.display = 'block';
