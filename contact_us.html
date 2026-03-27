@@ -70,6 +70,7 @@
     .contact-item {
       display: flex;
       align-items: center;
+      justify-content: space-between;
       padding: 12px 0;
       border-bottom: 1px solid rgba(255,255,255,0.1);
     }
@@ -82,12 +83,14 @@
       width: 40px;
       color: #4a90d9;
       font-size: 1.2rem;
+      flex-shrink: 0;
     }
 
     .contact-item span {
       color: #ffffff;
       font-size: 1rem;
       margin-left: 15px;
+      flex-grow: 1;
     }
 
     .contact-item a {
@@ -96,6 +99,23 @@
       margin-left: 15px;
       transition: color 0.3s ease;
       font-size: 1rem;
+      flex-shrink: 0;
+    }
+
+    .whatsapp-link {
+      margin-left: auto !important;
+      margin-right: 0 !important;
+      color: #25D366 !important;
+      font-size: 1.5rem !important;
+      padding: 5px 10px;
+      border-radius: 8px;
+      background: rgba(37, 211, 102, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .whatsapp-link:hover {
+      background: rgba(37, 211, 102, 0.3);
+      transform: scale(1.1);
     }
 
     .contact-item a:hover {
@@ -207,16 +227,19 @@
       <div class="contact-item">
         <i class="fas fa-phone"></i>
         <span>GARY: +91 9047299559</span>
+        <a href="https://wa.me/919047299559" target="_blank" class="whatsapp-link"><i class="fab fa-whatsapp"></i></a>
       </div>
       
       <div class="contact-item">
         <i class="fas fa-phone"></i>
         <span>RAHUL DAVID: +91 9003530293</span>
+        <a href="https://wa.me/919003530293" target="_blank" class="whatsapp-link"><i class="fab fa-whatsapp"></i></a>
       </div>
       
       <div class="contact-item">
         <i class="fas fa-phone"></i>
         <span>MARIA: +91 8838793659</span>
+        <a href="https://wa.me/918838793659" target="_blank" class="whatsapp-link"><i class="fab fa-whatsapp"></i></a>
       </div>
     </div>
 
