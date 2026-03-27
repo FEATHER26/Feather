@@ -231,40 +231,74 @@ header.scrolled {
 .menu-btn {
   display: none;
   cursor: pointer;
-  font-size: 1.5rem;
-  color: var(--primary);
   z-index: 1003;
-  padding: 12px 15px;
-  background: var(--light);
-  border-radius: 8px;
+  padding: 10px;
+  background: transparent;
+  border-radius: 50%;
   transition: all 0.3s ease;
-  border: 2px solid var(--primary);
+  position: relative;
+  width: 48px;
+  height: 48px;
+}
+
+/* Feather menu icon */
+.menu-btn .feather-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  gap: 5px;
+}
+
+.menu-btn .feather-icon span {
+  display: block;
+  width: 24px;
+  height: 3px;
+  background: var(--primary);
+  border-radius: 2px;
+  transition: all 0.3s ease;
   position: relative;
 }
 
-.menu-btn:hover {
-  background: var(--primary);
-  color: var(--white);
-  transform: scale(1.05);
+.menu-btn .feather-icon span:nth-child(1) {
+  width: 20px;
+}
+
+.menu-btn .feather-icon span:nth-child(2) {
+  width: 28px;
+}
+
+.menu-btn .feather-icon span:nth-child(3) {
+  width: 20px;
+}
+
+.menu-btn:hover .feather-icon span {
+  background: var(--secondary);
+  transform: scaleX(1.1);
 }
 
 .menu-btn:active {
-  transform: scale(0.95);
+  transform: scale(0.9);
 }
 
-.menu-btn.active {
-  position: fixed;
-  top: 12px;
-  left: 12px;
-  z-index: 1004;
-  background: var(--primary);
-  color: var(--white);
-  border-color: var(--primary);
+/* Active state - X mark */
+.menu-btn.active .feather-icon span:nth-child(1) {
+  width: 24px;
+  transform: rotate(45deg) translate(5px, 5px);
+  background: var(--white);
 }
 
-.menu-btn.active::before {
-  content: '✕';
-  font-size: 1.2rem;
+.menu-btn.active .feather-icon span:nth-child(2) {
+  opacity: 0;
+  transform: translateX(-10px);
+}
+
+.menu-btn.active .feather-icon span:nth-child(3) {
+  width: 24px;
+  transform: rotate(-45deg) translate(5px, -5px);
+  background: var(--white);
 }
 
 nav.active .nav-links {
@@ -1462,20 +1496,9 @@ nav.active .dropdown.open > a::after {
   }
 
   .menu-btn {
-    display: flex;
+    display: flex !important;
     align-items: center;
     justify-content: center;
-    min-width: 48px;
-    min-height: 48px;
-    font-size: 1.4rem;
-  }
-
-  .menu-btn::after {
-    content: '☰';
-  }
-
-  .menu-btn.active::after {
-    content: '✕';
   }
 
   header .logo {
