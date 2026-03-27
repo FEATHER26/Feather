@@ -394,6 +394,16 @@
       flex: 2;
     }
 
+    .products-column label,
+    .upload-column label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 600;
+      color: #ffffff;
+      font-size: 0.85rem;
+      text-shadow: 0 0 2px rgba(0,0,0,0.5);
+    }
+
     .upload-column {
       flex: 1;
       display: flex;
@@ -660,9 +670,9 @@
       </div>
       <div id="phoneError" class="validation-error">Enter valid mobile number</div>
 
-      <label>Products (select multiple)</label>
       <div class="products-upload-row">
         <div class="products-column">
+          <label>Products (select multiple)</label>
           <select name="product" id="product" multiple class="product-multi-select">
             <option value="Boys Uniform">Boys Uniform</option>
             <option value="Girls Uniform">Girls Uniform</option>
@@ -848,14 +858,21 @@
             showModal('Error', 'HTTP ' + xhr.status + ': ' + (result.error || 'Server error'), true);
           }
         } catch (err) {
-          showModal('Error', 'Failed to parse server response', true);
+          showModal('Error', 'Server response error: ' + xhr.responseText.substring(0, 100), true);
         }
       };
       
       xhr.onerror = function() {
         document.getElementById('loadingOverlay').style.display = 'none';
-        showModal('Error', 'Network error - please check your connection', true);
+        showModal('Connection Error', 'Unable to connect to server. Please try again.', true);
       };
+      
+      xhr.ontimeout = function() {
+        document.getElementById('loadingOverlay').style.display = 'none';
+        showModal('Timeout Error', 'Request timed out. Please try again.', true);
+      };
+      
+      xhr.timeout = 30000;
       
       // Show loading overlay
       document.getElementById('loadingOverlay').style.display = 'flex';
