@@ -636,18 +636,18 @@
   </header>
 
   <div class="form-container">
-    <h2 class="form-title"><i class="fas fa-envelope"></i>Need product details?  We’re here to assist you.</h2>
+    <h2 class="form-title">Need product details?  <br>We’re here to assist you.</h2>
 
     <form id="contactForm">
       <label>Name</label>
       <input type="text" name="name" placeholder="Your Name" required>
 
       <label>Email</label>
-      <input type="email" name="email" placeholder="your@email.com" required>
+      <input type="email" name="email" placeholder="yourId@eMail.com" required>
 
       <div class="phone-row">
         <div>
-          <label>Country</label>
+          <label>Country code</label>
           <select name="countryCode" id="countryCode" class="country-select">
             <option value="+91">+91 India</option>
             <option value="+1">+1 USA/Canada</option>
@@ -675,7 +675,7 @@
           </select>
         </div>
         <div class="phone-input">
-          <label>Mobile</label>
+          <label>Mobile #</label>
           <input type="text" name="phone" placeholder="Number" id="phone">
         </div>
       </div>
@@ -726,7 +726,7 @@
       <textarea name="message" placeholder="Tell us more about your requirements..." id="message"></textarea>
       <div id="messageError" class="validation-error">Message cannot be empty</div>
       
-      <div id="productMessageError" class="validation-error">Please select at least one product or enter a message</div>
+      <div id="productMessageError" class="validation-error">Please select at least one product or provide your message to continue.</div>
 
       <button type="submit" class="submit-btn">
         <i class="fas fa-paper-plane"></i> Send Message
@@ -827,9 +827,9 @@
       
       // Validate - either product or message must be filled
       if (product === '' && message === '') {
-        productMessageError.textContent = 'Please select at least one product or enter a message';
+        productMessageError.textContent = 'Please select at least one product or provide your message to continue.';
         productMessageError.style.display = 'block';
-        showModal('Validation Error', 'Please select at least one product or enter a message', true);
+        showModal('Validation Error', 'Please select at least one product or provide your message to continue.', true);
         return false;
       }
       
