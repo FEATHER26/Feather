@@ -665,25 +665,15 @@
           if (xhr.status === 200) {
             var result = JSON.parse(xhr.responseText);
             if (result.success) {
-              alert("Message sent successfully!");
-              successMsg.style.display = 'block';
-              errorMsg.style.display = 'none';
+              alert("Message sent successfully! We'll get back to you soon.");
               document.getElementById("contactForm").reset();
               document.getElementById('previewContainer').style.display = 'none';
               document.getElementById('uploadBox').style.display = 'block';
-              
-              setTimeout(function() {
-                successMsg.style.display = 'none';
-              }, 5000);
             } else {
               alert("Error: " + result.error);
-              errorMsg.style.display = 'block';
-              successMsg.style.display = 'none';
             }
           } else {
-            alert("Error: HTTP " + xhr.status);
-            errorMsg.style.display = 'block';
-            successMsg.style.display = 'none';
+            alert("Error: HTTP " + xhr.status + " - Please try again.");
           }
         }
       };
