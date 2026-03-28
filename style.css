@@ -1476,7 +1476,7 @@ nav.active .dropdown.open > a::after {
 .validation-error {
   color: #dc2626;
   font-size: 0.85rem;
-  margin-top: -15px;
+  margin-top: 5px;
   margin-bottom: 15px;
   display: none;
 }
