@@ -1638,6 +1638,11 @@ nav.active .dropdown.open > a::after {
   .product-multi-select {
     min-height: 250px;
   }
+  
+  .footer {
+    position: relative;
+    bottom: auto;
+  }
 }
 
 /* ================================================
