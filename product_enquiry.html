@@ -562,21 +562,26 @@
       }
 
       .phone-row {
-        flex-direction: column;
-        gap: 5px;
+        flex-direction: row;
+        gap: 8px;
       }
 
       .country-select {
-        width: 100%;
-        font-size: 0.9rem;
-        padding: 0 30px 0 10px;
+        width: 120px;
+        font-size: 0.8rem;
+        padding: 0 25px 0 8px;
         height: 36px;
-        background-position: right 8px center;
+        background-position: right 5px center;
+      }
+
+      .phone-input {
+        flex: 1;
       }
 
       .phone-input input {
         height: 36px;
         font-size: 0.85rem;
+        width: 100%;
       }
 
       .product-multi-select {
@@ -698,7 +703,7 @@
         </div>
         <div class="phone-input">
           <label>Mobile #</label>
-          <input type="text" name="phone" placeholder="Number" id="phone">
+          <input type="text" name="phone" placeholder="Number" id="phone" maxlength="15">
         </div>
       </div>
       <div id="phoneError" class="validation-error">Enter a valid Mobile #</div>
