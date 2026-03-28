@@ -763,7 +763,7 @@
       </div>
 
       <label>Message</label>
-      <textarea name="message" placeholder="Tell us your requirements..." id="message"></textarea>
+      <textarea name="message" placeholder="Tell us your requirements (e.g., 5,000 T-shirts like the attached image | 4,000 custom bags with so and so message, etc.)" id="message"></textarea>
       <div id="messageError" class="validation-error">Message cannot be empty</div>
       
       <div id="productMessageError" class="validation-error">Please select at least one product or provide your message to continue.</div>
@@ -841,7 +841,7 @@
           if (this.name === 'name') this.placeholder = 'Your Name';
           else if (this.name === 'email') this.placeholder = 'yourId@eMail.com';
           else if (this.name === 'phone') this.placeholder = 'Number';
-          else if (this.tagName === 'TEXTAREA') this.placeholder = 'Tell us your requirements...';
+          else if (this.tagName === 'TEXTAREA') this.placeholder = 'Tell us your requirements (e.g., 5,000 T-shirts like the attached image | 4,000 custom bags with so and so message, etc.)';
         }
       });
     });
