@@ -310,7 +310,7 @@ nav {
 
 nav.active .nav-links,
 nav .nav-links.mobile-open {
-  display: flex;
+  display: flex !important;
   flex-direction: column;
   position: fixed;
   top: 0;
