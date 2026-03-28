@@ -1648,8 +1648,14 @@ nav.active .dropdown.open > a::after {
   .product-gallery,
   .clients-section,
   .hero,
-  .products-hero {
-    padding-bottom: 100px;
+  .products-hero,
+  .works-carousel {
+    padding-bottom: 120px;
+    margin-bottom: 0;
+  }
+  
+  .works-carousel {
+    padding-bottom: 120px;
   }
 }
 
