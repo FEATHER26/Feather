@@ -20,7 +20,7 @@
 
   <!-- ===== Header ===== -->
   <header>
-    <div class="menu-btn" onclick="toggleMenu()">
+    <div class="menu-btn" id="menuBtn" onclick="toggleMenu()">
       <div class="feather-icon">
         <span></span>
         <span></span>
@@ -31,7 +31,7 @@
   <img src="logo.png" alt="Feather Logo" class="logo-img">
   <span class="logo-text">Feather</span>
 </a>
-    <nav>
+    <nav id="mainNav">
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="product_enquiry.html">Product Enquiry</a></li>
@@ -236,14 +236,20 @@ function toggleDetails(id) {
 
   <script>
     function toggleMenu() {
-      document.querySelector("nav").classList.toggle("active");
-      document.querySelector(".menu-btn").classList.toggle("active");
-      document.body.classList.toggle("menu-open");
+      const nav = document.getElementById('mainNav');
+      const menuBtn = document.getElementById('menuBtn');
+      if (nav && menuBtn) {
+        nav.classList.toggle("active");
+        menuBtn.classList.toggle("active");
+        document.body.classList.toggle("menu-open");
+      }
     }
 
     function closeMenu() {
-      document.querySelector("nav").classList.remove("active");
-      document.querySelector(".menu-btn").classList.remove("active");
+      const nav = document.getElementById('mainNav');
+      const menuBtn = document.getElementById('menuBtn');
+      if (nav) nav.classList.remove("active");
+      if (menuBtn) menuBtn.classList.remove("active");
       document.body.classList.remove("menu-open");
     }
 
