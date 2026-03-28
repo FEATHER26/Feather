@@ -763,7 +763,7 @@
       </div>
 
       <label>Message</label>
-      <textarea name="message" placeholder="Tell us your requirements (e.g., 5,000 T-shirts like the attached image | 4,000 custom bags with so and so message, etc.)...." id="message"></textarea>
+      <textarea name="message" placeholder="Tell us your requirements..." id="message"></textarea>
       <div id="messageError" class="validation-error">Message cannot be empty</div>
       
       <div id="productMessageError" class="validation-error">Please select at least one product or provide your message to continue.</div>
@@ -826,6 +826,25 @@
       '+94': 9,    // Sri Lanka
       '+977': 10   // Nepal
     };
+
+    // Clear input fields on focus - better UX
+    var inputFields = document.querySelectorAll('.form-input, .phone-input input, .form-container textarea');
+    inputFields.forEach(function(field) {
+      field.addEventListener('focus', function() {
+        if (this.value === '') {
+          this.placeholder = '';
+        }
+      });
+      field.addEventListener('blur', function() {
+        if (this.value === '') {
+          // Restore original placeholder based on field type
+          if (this.name === 'name') this.placeholder = 'Your Name';
+          else if (this.name === 'email') this.placeholder = 'yourId@eMail.com';
+          else if (this.name === 'phone') this.placeholder = 'Number';
+          else if (this.tagName === 'TEXTAREA') this.placeholder = 'Tell us your requirements...';
+        }
+      });
+    });
 
     document.getElementById("contactForm").onsubmit = function(e) {
       e.preventDefault();
