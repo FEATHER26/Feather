@@ -1644,8 +1644,12 @@ nav.active .dropdown.open > a::after {
     bottom: 0;
   }
   
-  body {
-    padding-bottom: 80px;
+  .works-section,
+  .product-gallery,
+  .clients-section,
+  .hero,
+  .products-hero {
+    padding-bottom: 100px;
   }
 }
 
