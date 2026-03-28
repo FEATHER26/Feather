@@ -1097,10 +1097,17 @@ nav.active .dropdown.open > a::after {
   color: rgba(255, 255, 255, 0.8);
   font-size: 0.95rem;
   width: 100%;
-  position: fixed;
+  position: relative;
   bottom: 0;
   left: 0;
   z-index: 100;
+}
+
+.works-section,
+.works-carousel,
+.product-gallery,
+.clients-section {
+  padding-bottom: 80px;
 }
 
 .footer span {
@@ -1307,11 +1314,11 @@ nav.active .dropdown.open > a::after {
 .form-container textarea,
 .form-container select {
   width: 100%;
-  padding: 15px 20px;
+  padding: 10px 12px;
   margin-bottom: 20px;
   border: 1px solid var(--glass-border);
-  border-radius: 12px;
-  font-size: 1rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
   font-family: 'Poppins', sans-serif;
   background: rgba(26, 54, 93, 0.4);
   color: #ffffff;
@@ -1640,8 +1647,8 @@ nav.active .dropdown.open > a::after {
   }
   
   .footer {
-    position: fixed;
-    bottom: 0;
+    position: relative;
+    bottom: auto;
   }
   
   .works-section,
@@ -1652,10 +1659,6 @@ nav.active .dropdown.open > a::after {
   .works-carousel {
     padding-bottom: 120px;
     margin-bottom: 0;
-  }
-  
-  .works-carousel {
-    padding-bottom: 120px;
   }
 }
 
