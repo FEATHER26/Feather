@@ -266,6 +266,12 @@
       box-shadow: 0 4px 12px rgba(238, 90, 90, 0.4);
       animation: shake 0.3s ease;
     }
+    
+    .validation-error.show {
+      display: block !important;
+      visibility: visible !important;
+      opacity: 1 !important;
+    }
 
     @keyframes shake {
       0%, 100% { transform: translateX(0); }
@@ -622,6 +628,13 @@
         color: #ffffff;
         border-radius: 6px;
         box-shadow: 0 3px 10px rgba(238, 90, 90, 0.4);
+        display: none;
+      }
+      
+      .validation-error.show {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
       }
     }
   </style>
@@ -854,10 +867,10 @@
       var phoneError = document.getElementById('phoneError');
       var messageError = document.getElementById('messageError');
       var productMessageError = document.getElementById('productMessageError');
-      phoneError.style.display = 'none';
+      phoneError.classList.remove('show');
       phoneError.textContent = 'Enter a valid Mobile #';
-      messageError.style.display = 'none';
-      productMessageError.style.display = 'none';
+      messageError.classList.remove('show');
+      productMessageError.classList.remove('show');
       
       var formData = new FormData(this);
       var countryCode = formData.get('countryCode');
@@ -880,7 +893,7 @@
       var phoneDigits = phone.replace(/\D/g, '');
       if (phone !== '' && phoneDigits.length !== expectedDigits) {
         phoneError.textContent = 'Enter ' + expectedDigits + '-digit number for ' + countryCode;
-        phoneError.style.display = 'block';
+        phoneError.classList.add('show');
         phoneError.scrollIntoView({ behavior: 'smooth', block: 'center' });
         return false;
       }
@@ -888,7 +901,7 @@
       // Validate - either product or message must be filled
       if (product === '' && message === '') {
         productMessageError.textContent = 'Select a product or enter your message';
-        productMessageError.style.display = 'block';
+        productMessageError.classList.add('show');
         productMessageError.scrollIntoView({ behavior: 'smooth', block: 'center' });
         return false;
       }
