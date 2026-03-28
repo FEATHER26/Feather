@@ -183,6 +183,28 @@
       outline: none;
       border-color: var(--primary);
     }
+    
+    .form-input {
+      width: 100%;
+      height: 38px;
+      padding: 0 12px;
+      border: 1px solid var(--glass-border);
+      border-radius: 8px;
+      background: rgba(26, 54, 93, 0.4);
+      color: #ffffff;
+      font-size: 0.85rem;
+      font-family: 'Poppins', sans-serif;
+      box-sizing: border-box;
+    }
+    
+    .form-input::placeholder {
+      color: rgba(255,255,255,0.6);
+    }
+    
+    .form-input:focus {
+      outline: none;
+      border-color: var(--primary);
+    }
 
     .form-right {
       margin-bottom: 15px;
@@ -640,10 +662,10 @@
 
     <form id="contactForm">
       <label>Name</label>
-      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="text" name="name" class="form-input" placeholder="Your Name" required>
 
       <label>Email</label>
-      <input type="email" name="email" placeholder="yourId@eMail.com" required>
+      <input type="email" name="email" class="form-input" placeholder="yourId@eMail.com" required>
 
       <div class="phone-row">
         <div>
