@@ -253,15 +253,17 @@
     }
 
     .validation-error {
-      background: #ffcccc;
-      color: #cc0000;
-      padding: 10px 15px;
+      background: linear-gradient(135deg, #ff6b6b, #ee5a5a);
+      color: #ffffff;
+      padding: 12px 15px;
       border-radius: 8px;
-      border: 2px solid #cc0000;
-      font-weight: bold;
-      margin-top: 5px;
-      margin-bottom: 10px;
+      border: none;
+      font-weight: 600;
+      font-size: 0.85rem;
+      margin-top: 8px;
+      margin-bottom: 15px;
       display: none;
+      box-shadow: 0 4px 12px rgba(238, 90, 90, 0.4);
       animation: shake 0.3s ease;
     }
 
@@ -612,10 +614,14 @@
       }
       
       .validation-error {
-        margin-top: 5px;
+        margin-top: 8px;
         margin-bottom: 15px;
-        font-size: 0.75rem;
-        padding: 8px 10px;
+        font-size: 0.8rem;
+        padding: 10px 12px;
+        background: linear-gradient(135deg, #ff6b6b, #ee5a5a);
+        color: #ffffff;
+        border-radius: 6px;
+        box-shadow: 0 3px 10px rgba(238, 90, 90, 0.4);
       }
     }
   </style>
@@ -683,29 +689,29 @@
         <div>
           <label>Country code</label>
           <select name="countryCode" id="countryCode" class="country-select">
-            <option value="+91">+91 India</option>
-            <option value="+1">+1 USA/Canada</option>
-            <option value="+44">+44 UK</option>
-            <option value="+61">+61 Australia</option>
-            <option value="+81">+81 Japan</option>
-            <option value="+49">+49 Germany</option>
-            <option value="+33">+33 France</option>
-            <option value="+86">+86 China</option>
-            <option value="+82">+82 South Korea</option>
-            <option value="+971">+971 UAE</option>
-            <option value="+966">+966 Saudi Arabia</option>
-            <option value="+20">+20 Egypt</option>
-            <option value="+234">+234 Nigeria</option>
-            <option value="+27">+27 South Africa</option>
-            <option value="+55">+55 Brazil</option>
-            <option value="+52">+52 Mexico</option>
-            <option value="+64">+64 New Zealand</option>
-            <option value="+65">+65 Singapore</option>
-            <option value="+60">+60 Malaysia</option>
-            <option value="+92">+92 Pakistan</option>
-            <option value="+880">+880 Bangladesh</option>
-            <option value="+94">+94 Sri Lanka</option>
-            <option value="+977">+977 Nepal</option>
+            <option value="+91">India (+91)</option>
+            <option value="+1">USA/Canada (+1)</option>
+            <option value="+44">UK (+44)</option>
+            <option value="+61">Australia (+61)</option>
+            <option value="+81">Japan (+81)</option>
+            <option value="+49">Germany (+49)</option>
+            <option value="+33">France (+33)</option>
+            <option value="+86">China (+86)</option>
+            <option value="+82">South Korea (+82)</option>
+            <option value="+971">UAE (+971)</option>
+            <option value="+966">Saudi Arabia (+966)</option>
+            <option value="+20">Egypt (+20)</option>
+            <option value="+234">Nigeria (+234)</option>
+            <option value="+27">South Africa (+27)</option>
+            <option value="+55">Brazil (+55)</option>
+            <option value="+52">Mexico (+52)</option>
+            <option value="+64">New Zealand (+64)</option>
+            <option value="+65">Singapore (+65)</option>
+            <option value="+60">Malaysia (+60)</option>
+            <option value="+92">Pakistan (+92)</option>
+            <option value="+880">Bangladesh (+880)</option>
+            <option value="+94">Sri Lanka (+94)</option>
+            <option value="+977">Nepal (+977)</option>
           </select>
         </div>
         <div class="phone-input">
@@ -830,6 +836,7 @@
       var messageError = document.getElementById('messageError');
       var productMessageError = document.getElementById('productMessageError');
       phoneError.style.display = 'none';
+      phoneError.textContent = 'Enter a valid Mobile #';
       messageError.style.display = 'none';
       productMessageError.style.display = 'none';
       
@@ -853,17 +860,17 @@
       var expectedDigits = countryPatterns[countryCode] || 10;
       var phoneDigits = phone.replace(/\D/g, '');
       if (phone !== '' && phoneDigits.length !== expectedDigits) {
-        phoneError.textContent = 'Enter a valid ' + expectedDigits + '-digit mobile number for ' + countryCode;
+        phoneError.textContent = 'Enter ' + expectedDigits + '-digit number for ' + countryCode;
         phoneError.style.display = 'block';
-        showModal('Validation Error', 'Enter a valid ' + expectedDigits + '-digit mobile number for ' + countryCode, true);
+        phoneError.scrollIntoView({ behavior: 'smooth', block: 'center' });
         return false;
       }
       
       // Validate - either product or message must be filled
       if (product === '' && message === '') {
-        productMessageError.textContent = 'Please select at least one product or provide your message to continue.';
+        productMessageError.textContent = 'Select a product or enter your message';
         productMessageError.style.display = 'block';
-        showModal('Validation Error', 'Please select at least one product or provide your message to continue.', true);
+        productMessageError.scrollIntoView({ behavior: 'smooth', block: 'center' });
         return false;
       }
       
