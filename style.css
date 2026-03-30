@@ -757,17 +757,47 @@ nav.active .dropdown.open > a::after {
 }
 
 .product-card img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
+  width: auto;
+  height: auto;
+  max-width: 100%;
   border-radius: 15px;
-  transition: transform 0.4s ease;
   position: relative;
   z-index: 1;
 }
 
-.product-card:hover img {
-  transform: scale(1.05);
+.product-card {
+  overflow: visible;
+}
+
+.product-image-zoom {
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+}
+
+.product-image-zoom img {
+  transition: transform 0.3s ease;
+}
+
+.product-image-zoom:hover img {
+  transform: scale(1);
+}
+
+.product-image-zoom .zoom-lens {
+  position: absolute;
+  border: 2px solid var(--primary);
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  background-repeat: no-repeat;
+  display: none;
+  pointer-events: none;
+  z-index: 100;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.product-image-zoom:hover .zoom-lens {
+  display: block;
 }
 
 .product-card h3 {
