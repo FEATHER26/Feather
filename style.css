@@ -1311,13 +1311,110 @@ nav.active .dropdown.open > a::after {
 }
 
 /* ================================================
-   SOLUTIONS SECTION - Vibrant Style
+   SERVICES SECTION - Clean (Non-Vibrant)
    ================================================ */
-.solutions-vibrant-section {
-  position: relative;
-  padding: 50px 20px;
-  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
-  overflow: hidden;
+.services-clean-section {
+  padding: 40px 20px;
+  background: #f8fafc;
+}
+
+.solutions-row-clean {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.service-category-clean {
+  background: white;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+.category-header-clean {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.category-header-clean i {
+  font-size: 1.4rem;
+  padding: 8px;
+  border-radius: 10px;
+}
+
+.it-solutions-clean .category-header-clean i {
+  background: #4a90d9;
+  color: white;
+}
+
+.general-solutions-clean .category-header-clean i {
+  background: #10b981;
+  color: white;
+}
+
+.category-header-clean h2 {
+  font-size: 1.2rem;
+  color: #1e293b;
+  font-weight: 700;
+}
+
+.category-cards-clean {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+
+.compact-cards-clean .service-box-clean {
+  padding: 10px 8px;
+}
+
+.service-box-clean {
+  background: #f8fafc;
+  border-radius: 10px;
+  padding: 12px 10px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.service-box-clean:hover {
+  background: #f1f5f9;
+  transform: translateY(-2px);
+}
+
+.service-box-clean i {
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.it-solutions-clean .service-box-clean i {
+  color: #4a90d9;
+}
+
+.general-solutions-clean .service-box-clean i {
+  color: #10b981;
+}
+
+.service-box-clean h4 {
+  font-size: 0.8rem;
+  color: #1e293b;
+  margin-bottom: 2px;
+  font-weight: 600;
+}
+
+.service-box-clean p {
+  font-size: 0.6rem;
+  color: #64748b;
+}
+
+@media (max-width: 800px) {
+  .solutions-row-clean {
+    grid-template-columns: 1fr;
+  }
 }
 
 .sv-bg-shapes {
