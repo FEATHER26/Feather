@@ -356,27 +356,28 @@ nav.active .nav-links li a.active {
 }
 
 nav.active .dropdown-content {
-  position: static;
-  transform: none;
-  background: rgba(26, 41, 59, 0.95);
+  position: relative;
+  background: rgba(26, 41, 59, 0.98);
   border: none;
   box-shadow: none;
-  padding: 5px 15px;
+  padding: 8px 10px;
   display: none;
   max-width: 100%;
   width: 100%;
   border-radius: 8px;
   margin-top: 5px;
-  margin-left: auto;
-  margin-right: auto;
   z-index: 1002;
   visibility: visible;
   opacity: 1;
   box-sizing: border-box;
+  text-align: center;
 }
 
 nav.active .dropdown.open .dropdown-content {
-  display: block;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 5px;
 }
 
 nav.active .dropdown > a::after {
@@ -388,17 +389,18 @@ nav.active .dropdown > a::after {
 nav.active .dropdown-content a {
   background: transparent !important;
   color: #ffffff !important;
-  padding: 10px 10px !important;
-  font-size: 0.95rem !important;
-  border-radius: 6px !important;
-  display: block;
-  width: 100%;
+  padding: 8px 5px !important;
+  font-size: 0.85rem !important;
+  border-radius: 4px !important;
+  display: inline-block;
+  width: auto;
   box-sizing: border-box;
   text-align: center;
+  flex-basis: auto;
 }
 
 nav.active .dropdown-content a:hover {
-  background: rgba(255, 255, 255, 0.15) !important;
+  background: rgba(255, 255, 255, 0.2) !important;
 }
 
 nav.active .dropdown.open > a::after {
