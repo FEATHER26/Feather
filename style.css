@@ -671,6 +671,16 @@ nav.active .dropdown.open > a::after {
   text-align: left;
 }
 
+.services-list-2col {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.services-list-2col li {
+  margin: 0;
+}
+
 .services-list li {
   margin: 12px 0;
   padding: 15px 20px;
