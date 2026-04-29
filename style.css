@@ -362,7 +362,7 @@ nav.active .dropdown-content {
   border: none !important;
   box-shadow: none !important;
   padding: 8px 10px !important;
-  display: none;
+  display: none !important;
   min-width: auto;
   width: 100%;
   max-width: 100%;
