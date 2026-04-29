@@ -711,6 +711,123 @@ nav.active .dropdown.open > a::after {
 }
 
 /* ================================================
+   SOLUTIONS PAGES - Feature Cards
+   ================================================ */
+.feature-card,
+.service-card,
+.pricing-card,
+.tech-card {
+  background: linear-gradient(145deg, rgba(30, 41, 59, 0.9), rgba(15, 23, 42, 0.95));
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  padding: 35px 25px;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow);
+}
+
+.feature-card:hover,
+.service-card:hover,
+.pricing-card:hover,
+.tech-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+  border-color: rgba(74, 144, 217, 0.5);
+}
+
+.feature-icon,
+.service-icon,
+.tech-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #4a90d9, #2563eb);
+  box-shadow: 0 8px 25px rgba(74, 144, 217, 0.4);
+}
+
+.feature-icon i,
+.service-icon i,
+.tech-icon i {
+  font-size: 2rem;
+  color: #ffffff;
+}
+
+.feature-card h3,
+.service-card h3,
+.tech-card h3 {
+  font-size: 1.4rem;
+  color: #4a90d9;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+.feature-card p,
+.service-card p,
+.tech-card p {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.95);
+  line-height: 1.6;
+}
+
+/* Pricing Cards */
+.pricing-card {
+  text-align: center;
+}
+
+.pricing-card.featured {
+  border-color: #4a90d9;
+  transform: scale(1.05);
+}
+
+.pricing-card h3 {
+  font-size: 1.5rem;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.pricing-card .price {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #4a90d9;
+  margin: 15px 0;
+}
+
+.pricing-card .price span {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.7);
+  font-weight: 400;
+}
+
+.pricing-card .price-features {
+  text-align: left;
+  margin: 25px 0;
+}
+
+.pricing-card .price-features li {
+  color: rgba(255,255,255,0.85);
+  padding: 12px 0;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.pricing-card .price-features li:last-child {
+  border-bottom: none;
+}
+
+.pricing-card .price-features i {
+  color: #10b981;
+  font-size: 0.9rem;
+}
+
+/* ================================================
    PRODUCTS SECTION
    ================================================ */
 .products-hero {
