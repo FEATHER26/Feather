@@ -97,13 +97,33 @@
 
     .contact-name {
       font-weight: 600;
-      min-width: 150px;
+      min-width: 120px;
+      text-align: left;
+      flex-grow: 1;
     }
 
     .contact-number {
       text-align: right;
-      flex-grow: 1;
-      margin-right: 10px;
+      flex-shrink: 0;
+      margin-left: auto;
+    }
+    
+    .whatsapp-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #25D366 !important;
+      font-size: 1.3rem;
+      padding: 8px 12px;
+      background: rgba(37, 211, 102, 0.15);
+      border-radius: 10px;
+      transition: all 0.3s ease;
+      flex-shrink: 0;
+    }
+    
+    .whatsapp-link:hover {
+      background: rgba(37, 211, 102, 0.3);
+      transform: scale(1.1);
     }
 
     .email-item {
@@ -197,18 +217,22 @@
       }
 
       .contact-name {
-        min-width: 70px;
         font-size: 0.75rem;
-        max-width: 80px;
-        overflow: hidden;
-        text-overflow: ellipsis;
+        min-width: 80px;
+        flex-grow: 1;
+        text-align: left;
+        margin-left: 10px;
       }
 
       .contact-number {
         font-size: 0.75rem;
-        max-width: 100px;
-        overflow: hidden;
-        text-overflow: ellipsis;
+        text-align: right;
+        flex-shrink: 0;
+      }
+      
+      .whatsapp-link {
+        font-size: 1.1rem;
+        padding: 6px 8px;
       }
 
       .contact-item i {
@@ -297,24 +321,21 @@
       <h3><i class="fas fa-user"></i> Phone Numbers</h3>
       
       <div class="contact-item">
-        <i class="fas fa-phone"></i>
+        <a href="https://wa.me/919047299559" target="_blank" class="whatsapp-link"><i class="fab fa-whatsapp"></i></a>
         <span class="contact-name">GARY</span>
         <span class="contact-number">+91 9047299559</span>
-        <a href="https://wa.me/919047299559" target="_blank" class="whatsapp-link"><i class="fab fa-whatsapp"></i></a>
       </div>
       
       <div class="contact-item">
-        <i class="fas fa-phone"></i>
-        <span class="contact-name">LESLIE V</span>
-        <span class="contact-number">+91 99625 34351</span>
         <a href="https://wa.me/919962534351" target="_blank" class="whatsapp-link"><i class="fab fa-whatsapp"></i></a>
+        <span class="contact-name">LESLIE VANATHURAJ</span>
+        <span class="contact-number">+91 99625 34351</span>
       </div>
       
       <div class="contact-item">
-        <i class="fas fa-phone"></i>
+        <a href="https://wa.me/919003530293" target="_blank" class="whatsapp-link"><i class="fab fa-whatsapp"></i></a>
         <span class="contact-name">RAHUL DAVID</span>
         <span class="contact-number">+91 9003530293</span>
-        <a href="https://wa.me/919003530293" target="_blank" class="whatsapp-link"><i class="fab fa-whatsapp"></i></a>
       </div>
     </div>
 
