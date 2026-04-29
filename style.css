@@ -1311,6 +1311,186 @@ nav.active .dropdown.open > a::after {
 }
 
 /* ================================================
+   SERVICES OVERVIEW - Diagrammatic Layout
+   ================================================ */
+.services-overview {
+  padding: 50px 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.service-category {
+  margin-bottom: 50px;
+}
+
+.category-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.category-header i {
+  font-size: 2.5rem;
+  padding: 15px;
+  border-radius: 50%;
+}
+
+.it-solutions .category-header i {
+  background: linear-gradient(135deg, #4a90d9, #8b5cf6);
+  color: white;
+  box-shadow: 0 10px 30px rgba(74, 144, 217, 0.4);
+}
+
+.general-solutions .category-header i {
+  background: linear-gradient(135deg, #10b981, #34d399);
+  color: white;
+  box-shadow: 0 10px 30px rgba(16, 185, 129, 0.4);
+}
+
+.category-header h2 {
+  font-size: 2rem;
+  color: #1e293b;
+  font-weight: 700;
+}
+
+.category-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.service-box {
+  background: white;
+  border-radius: 20px;
+  padding: 25px 20px;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  border: 2px solid transparent;
+}
+
+.service-box:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+}
+
+.it-solutions .service-box:hover {
+  border-color: #4a90d9;
+}
+
+.general-solutions .service-box:hover {
+  border-color: #10b981;
+}
+
+.service-box i {
+  font-size: 2.2rem;
+  margin-bottom: 15px;
+  display: block;
+}
+
+.it-solutions .service-box i {
+  color: #4a90d9;
+}
+
+.general-solutions .service-box i {
+  color: #10b981;
+}
+
+.service-box h4 {
+  font-size: 1.1rem;
+  color: #1e293b;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.service-box p {
+  font-size: 0.85rem;
+  color: #64748b;
+  line-height: 1.5;
+}
+
+/* What We Do Section */
+.section-title {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.section-title i {
+  font-size: 2rem;
+  color: #4a90d9;
+  margin-bottom: 10px;
+}
+
+.section-title h2 {
+  font-size: 1.8rem;
+  color: #1e293b;
+  font-weight: 700;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.about-card {
+  background: white;
+  border-radius: 20px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+}
+
+.about-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+}
+
+.about-card i {
+  font-size: 2.5rem;
+  color: #4a90d9;
+  margin-bottom: 15px;
+}
+
+.about-card h3 {
+  font-size: 1.3rem;
+  color: #1e293b;
+  margin-bottom: 12px;
+}
+
+.about-card p {
+  color: #64748b;
+  line-height: 1.7;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+  .category-header h2 {
+    font-size: 1.5rem;
+  }
+  
+  .category-cards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+  
+  .service-box {
+    padding: 20px 15px;
+  }
+  
+  .service-box i {
+    font-size: 1.8rem;
+  }
+  
+  .service-box h4 {
+    font-size: 1rem;
+  }
+}
+
+/* ================================================
    ABOUT US PAGE - Cards Style
    ================================================ */
 .about-card {
