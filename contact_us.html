@@ -73,6 +73,8 @@
       justify-content: space-between;
       padding: 12px 0;
       border-bottom: 1px solid rgba(255,255,255,0.1);
+      flex-wrap: wrap;
+      gap: 8px;
     }
 
     .contact-item:last-child {
@@ -179,24 +181,52 @@
       }
 
       .contact-container {
-        padding: 25px 20px;
+        padding: 20px 15px;
+        width: 95%;
+        max-width: 100%;
+        border-radius: 15px;
       }
 
       .contact-container h1 {
-        font-size: 1.8rem;
+        font-size: 1.5rem;
+      }
+      
+      .contact-container h2 {
+        font-size: 1rem;
+        margin-bottom: 20px;
       }
 
       .contact-name {
-        min-width: 100px;
-        font-size: 0.85rem;
+        min-width: 70px;
+        font-size: 0.75rem;
+        max-width: 80px;
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
 
       .contact-number {
-        font-size: 0.85rem;
+        font-size: 0.75rem;
+        max-width: 100px;
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
 
       .contact-item i {
         display: none;
+      }
+      
+      .contact-item {
+        flex-wrap: wrap;
+        gap: 5px;
+        padding: 10px 5px;
+      }
+      
+      .contact-card {
+        padding: 15px;
+      }
+      
+      .contact-card h3 {
+        font-size: 1rem;
       }
     }
   </style>
