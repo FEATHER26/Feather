@@ -495,7 +495,7 @@ nav.active .dropdown.open > a::after {
   max-width: 30vw;
   animation: floatFamilyLeft 4s ease-in-out infinite;
   filter: drop-shadow(0 20px 40px rgba(26, 54, 93, 0.15));
-  z-index: 10;
+  z-index: 100;
 }
 
 @keyframes floatFamily {
