@@ -1534,8 +1534,8 @@ nav.active .dropdown.open > a::after {
 }
 
 .category-header h2 {
-  font-size: 1.4rem;
-  color: #1e293b;
+  font-size: 1.3rem;
+  color: #ffffff;
   font-weight: 700;
 }
 
@@ -1584,14 +1584,14 @@ nav.active .dropdown.open > a::after {
 
 .service-box h4 {
   font-size: 0.9rem;
-  color: #1e293b;
+  color: #ffffff;
   margin-bottom: 4px;
   font-weight: 600;
 }
 
 .service-box p {
   font-size: 0.7rem;
-  color: #64748b;
+  color: rgba(255, 255, 255, 0.7);
   line-height: 1.4;
 }
 
