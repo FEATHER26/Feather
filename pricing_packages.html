@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pricing Packages | Feather</title>
+  <link rel="stylesheet" href="style.css?v=3" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    .page-content {
+      min-height: 100vh;
+      padding: 100px 20px 60px;
+    }
+
+    .page-header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .page-header h1 {
+      font-size: 3rem;
+      color: #ffffff;
+      text-shadow: 0 0 20px rgba(255,255,255,0.3), 0 2px 4px rgba(0,0,0,0.5);
+      margin-bottom: 15px;
+    }
+
+    .page-header p {
+      font-size: 1.2rem;
+      color: rgba(255,255,255,0.8);
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .pricing-card {
+      background: linear-gradient(145deg, rgba(30, 41, 59, 0.9), rgba(15, 23, 42, 0.95));
+      backdrop-filter: blur(20px);
+      border: 1px solid var(--glass-border);
+      border-radius: 25px;
+      padding: 40px 30px;
+      text-align: center;
+      transition: all 0.3s ease;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .pricing-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 5px;
+      background: linear-gradient(90deg, #4a90d9, #2563eb);
+    }
+
+    .pricing-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+    }
+
+    .pricing-card.featured {
+      border-color: rgba(74, 144, 217, 0.6);
+      transform: scale(1.05);
+    }
+
+    .pricing-card.featured::before {
+      background: linear-gradient(90deg, #8b5cf6, #ec4899);
+      height: 6px;
+    }
+
+    .pricing-card.featured:hover {
+      transform: scale(1.05) translateY(-10px);
+    }
+
+    .featured-badge {
+      position: absolute;
+      top: 20px;
+      right: -35px;
+      background: linear-gradient(135deg, #8b5cf6, #ec4899);
+      color: white;
+      padding: 8px 40px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      transform: rotate(45deg);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .pricing-header {
+      margin-bottom: 25px;
+      padding-bottom: 25px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .pricing-header h3 {
+      font-size: 1.5rem;
+      color: #ffffff;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+
+    .price {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #4a90d9;
+      margin: 15px 0;
+    }
+
+    .price span {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.6);
+      font-weight: 400;
+    }
+
+    .pricing-features {
+      text-align: left;
+      margin: 25px 0;
+    }
+
+    .pricing-features li {
+      color: rgba(255,255,255,0.85);
+      padding: 12px 0;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .pricing-features li:last-child {
+      border-bottom: none;
+    }
+
+    .pricing-features i {
+      color: #10b981;
+      font-size: 0.9rem;
+    }
+
+    .pricing-btn {
+      display: inline-block;
+      background: linear-gradient(135deg, #4a90d9, #2563eb);
+      color: white;
+      padding: 15px 35px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      margin-top: 20px;
+    }
+
+    .pricing-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(74, 144, 217, 0.4);
+    }
+
+    .pricing-card:nth-child(1) .pricing-btn { background: linear-gradient(135deg, #10b981, #059669); }
+    .pricing-card:nth-child(2) .pricing-btn { background: linear-gradient(135deg, #8b5cf6, #6366f1); }
+    .pricing-card:nth-child(3) .pricing-btn { background: linear-gradient(135deg, #f59e0b, #d97706); }
+
+    @media (max-width: 768px) {
+      .page-content {
+        padding: 90px 15px 50px;
+      }
+
+      .page-header h1 {
+        font-size: 2rem;
+      }
+
+      .pricing-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .pricing-card.featured {
+        transform: none;
+      }
+
+      .pricing-card.featured:hover {
+        transform: translateY(-10px);
+      }
+    }
+  </style>
+</head>
+<body class="page-content">
+
+  <!-- ===== Animated Background ===== -->
+  <div class="animated-bg"></div>
+
+  <!-- ===== Header ===== -->
+  <header>
+    <div class="menu-btn" id="menuBtn" onclick="toggleMenu()">
+      <div class="feather-icon">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+    <a href="index.html" class="logo">
+      <img src="logo.png" alt="Feather Logo" class="logo-img">
+      <span class="logo-text">Feather</span>
+    </a>
+    <nav id="mainNav">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="product_enquiry.html">Product Enquiry</a></li>
+        <li class="dropdown">
+          <a href="#">Products</a>
+          <div class="dropdown-content">
+            <a href="products.html">T-Shirts</a>
+            <a href="school.html">School Uniforms</a>
+            <a href="bible-verse-tshirts.html">Bible Verse T-Shirts</a>
+            <a href="bible-verse-frames.html">Bible Verse Frames</a>
+            <a href="cards.html">Cards</a>
+            <a href="bags.html">Bags</a>
+            <a href="caps.html">Caps</a>
+            <a href="bottles.html">Bottles</a>
+            <a href="badges.html">Badges</a>
+            <a href="shoes.html">Shoes</a>
+            <a href="belts.html">Belts</a>
+            <a href="umbrella.html">Umbrella</a>
+            <a href="embroidery.html">Embroidery</a>
+          </div>
+        </li>
+        <li class="dropdown">
+          <a href="#">Solutions</a>
+          <div class="dropdown-content">
+            <a href="why_choose_us.html">Why Choose Us</a>
+            <a href="services.html">Services</a>
+            <a href="pricing_packages.html">Pricing Packages</a>
+            <a href="technology.html">Technology</a>
+          </div>
+        </li>
+        <li><a href="about_us.html">About Us</a></li>
+        <li><a href="our_works.html">Our Works</a></li>
+        <li><a href="our_clients.html">Our Clients</a></li>
+        <li><a href="contact_us.html">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ===== Pricing Section ===== -->
+  <div class="page-header">
+    <h1><i class="fas fa-tags"></i> Pricing Packages</h1>
+    <p>Transparent pricing tailored to your project requirements</p>
+  </div>
+
+  <div class="pricing-grid">
+    <div class="pricing-card">
+      <div class="pricing-header">
+        <h3><i class="fas fa-rocket"></i> Starter</h3>
+        <div class="price">₹27,000 - ₹55,000 <span>| 3-7 Days</span></div>
+      </div>
+      <ul class="pricing-features">
+        <li><i class="fas fa-check"></i> Up to 5 pages</li>
+        <li><i class="fas fa-check"></i> Responsive design</li>
+        <li><i class="fas fa-check"></i> Contact form</li>
+        <li><i class="fas fa-check"></i> Basic SEO setup</li>
+        <li><i class="fas fa-check"></i> SSL & Hosting</li>
+      </ul>
+      <a href="contact_us.html" class="pricing-btn">Get Started</a>
+    </div>
+
+    <div class="pricing-card featured">
+      <div class="featured-badge">Popular</div>
+      <div class="pricing-header">
+        <h3><i class="fas fa-briefcase"></i> Professional</h3>
+        <div class="price">₹65,000 - ₹1,80,000 <span>| 2-4 Weeks</span></div>
+      </div>
+      <ul class="pricing-features">
+        <li><i class="fas fa-check"></i> Up to 15 pages</li>
+        <li><i class="fas fa-check"></i> User authentication</li>
+        <li><i class="fas fa-check"></i> CMS integration</li>
+        <li><i class="fas fa-check"></i> Admin panel</li>
+        <li><i class="fas fa-check"></i> Email notifications</li>
+        <li><i class="fas fa-check"></i> 1-month support</li>
+      </ul>
+      <a href="contact_us.html" class="pricing-btn">Get Started</a>
+    </div>
+
+    <div class="pricing-card">
+      <div class="pricing-header">
+        <h3><i class="fas fa-building"></i> Enterprise</h3>
+        <div class="price">₹4,00,000 - ₹15,00,000 <span>| 1-4 Months</span></div>
+      </div>
+      <ul class="pricing-features">
+        <li><i class="fas fa-check"></i> Unlimited pages</li>
+        <li><i class="fas fa-check"></i> Full payment suite</li>
+        <li><i class="fas fa-check"></i> Inventory management</li>
+        <li><i class="fas fa-check"></i> Real-time notifications</li>
+        <li><i class="fas fa-check"></i> Shipping integration</li>
+        <li><i class="fas fa-check"></i> 3-month support</li>
+      </ul>
+      <a href="contact_us.html" class="pricing-btn">Contact Us</a>
+    </div>
+  </div>
+
+  <!-- ===== Footer ===== -->
+  <footer class="footer">
+    <p>©2026 <span> Feather Creations</span> | Designed with Purpose</p>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById('mainNav');
+      const menuBtn = document.getElementById('menuBtn');
+      if (nav && menuBtn) {
+        nav.classList.toggle("active");
+        menuBtn.classList.toggle("active");
+        document.body.classList.toggle("menu-open");
+      }
+    }
+
+    function closeMenu() {
+      const nav = document.getElementById('mainNav');
+      const menuBtn = document.getElementById('menuBtn');
+      if (nav) nav.classList.remove("active");
+      if (menuBtn) menuBtn.classList.remove("active");
+      document.body.classList.remove("menu-open");
+    }
+
+    document.querySelectorAll('.nav-links > li > a').forEach(link => {
+      link.addEventListener('click', () => {
+        if (window.innerWidth <= 768) closeMenu();
+      });
+    });
+
+    if (window.innerWidth <= 768) {
+      document.querySelectorAll('.dropdown > a').forEach(link => {
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          link.parentElement.classList.toggle('open');
+        });
+      });
+    }
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 768) {
+        closeMenu();
+        document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('open'));
+      }
+    });
+  </script>
+
+</body>
+</html>

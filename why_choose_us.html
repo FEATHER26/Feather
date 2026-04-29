@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Why Choose Us | Feather</title>
+  <link rel="stylesheet" href="style.css?v=3" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    .page-content {
+      min-height: 100vh;
+      padding: 100px 20px 60px;
+    }
+
+    .page-header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .page-header h1 {
+      font-size: 3rem;
+      color: #ffffff;
+      text-shadow: 0 0 20px rgba(255,255,255,0.3), 0 2px 4px rgba(0,0,0,0.5);
+      margin-bottom: 15px;
+    }
+
+    .page-header p {
+      font-size: 1.2rem;
+      color: rgba(255,255,255,0.8);
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .feature-card {
+      background: linear-gradient(145deg, rgba(30, 41, 59, 0.9), rgba(15, 23, 42, 0.95));
+      backdrop-filter: blur(20px);
+      border: 1px solid var(--glass-border);
+      border-radius: 20px;
+      padding: 35px 25px;
+      text-align: center;
+      transition: all 0.3s ease;
+      box-shadow: var(--shadow);
+    }
+
+    .feature-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+      border-color: rgba(74, 144, 217, 0.5);
+    }
+
+    .feature-icon {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #4a90d9, #2563eb);
+      box-shadow: 0 8px 25px rgba(74, 144, 217, 0.4);
+    }
+
+    .feature-icon i {
+      font-size: 2rem;
+      color: #ffffff;
+    }
+
+    .feature-card h3 {
+      font-size: 1.4rem;
+      color: #ffffff;
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+
+    .feature-card p {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.75);
+      line-height: 1.6;
+    }
+
+    .feature-card:nth-child(1) .feature-icon {
+      background: linear-gradient(135deg, #8b5cf6, #6366f1);
+      box-shadow: 0 8px 25px rgba(139, 92, 246, 0.4);
+    }
+
+    .feature-card:nth-child(2) .feature-icon {
+      background: linear-gradient(135deg, #10b981, #059669);
+      box-shadow: 0 8px 25px rgba(16, 185, 129, 0.4);
+    }
+
+    .feature-card:nth-child(3) .feature-icon {
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      box-shadow: 0 8px 25px rgba(245, 158, 11, 0.4);
+    }
+
+    .feature-card:nth-child(4) .feature-icon {
+      background: linear-gradient(135deg, #06b6d4, #0891b2);
+      box-shadow: 0 8px 25px rgba(6, 182, 212, 0.4);
+    }
+
+    .feature-card:nth-child(5) .feature-icon {
+      background: linear-gradient(135deg, #ec4899, #db2777);
+      box-shadow: 0 8px 25px rgba(236, 72, 153, 0.4);
+    }
+
+    .feature-card:nth-child(6) .feature-icon {
+      background: linear-gradient(135deg, #ef4444, #dc2626);
+      box-shadow: 0 8px 25px rgba(239, 68, 68, 0.4);
+    }
+
+    .feature-card:nth-child(7) .feature-icon {
+      background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+      box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
+    }
+
+    .feature-card:nth-child(8) .feature-icon {
+      background: linear-gradient(135deg, #84cc16, #65a30d);
+      box-shadow: 0 8px 25px rgba(132, 204, 22, 0.4);
+    }
+
+    @media (max-width: 768px) {
+      .page-content {
+        padding: 90px 15px 50px;
+      }
+
+      .page-header h1 {
+        font-size: 2rem;
+      }
+
+      .features-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .feature-card {
+        padding: 25px 20px;
+      }
+    }
+  </style>
+</head>
+<body class="page-content">
+
+  <!-- ===== Animated Background ===== -->
+  <div class="animated-bg"></div>
+
+  <!-- ===== Header ===== -->
+  <header>
+    <div class="menu-btn" id="menuBtn" onclick="toggleMenu()">
+      <div class="feather-icon">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+    <a href="index.html" class="logo">
+      <img src="logo.png" alt="Feather Logo" class="logo-img">
+      <span class="logo-text">Feather</span>
+    </a>
+    <nav id="mainNav">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="product_enquiry.html">Product Enquiry</a></li>
+        <li class="dropdown">
+          <a href="#">Products</a>
+          <div class="dropdown-content">
+            <a href="products.html">T-Shirts</a>
+            <a href="school.html">School Uniforms</a>
+            <a href="bible-verse-tshirts.html">Bible Verse T-Shirts</a>
+            <a href="bible-verse-frames.html">Bible Verse Frames</a>
+            <a href="cards.html">Cards</a>
+            <a href="bags.html">Bags</a>
+            <a href="caps.html">Caps</a>
+            <a href="bottles.html">Bottles</a>
+            <a href="badges.html">Badges</a>
+            <a href="shoes.html">Shoes</a>
+            <a href="belts.html">Belts</a>
+            <a href="umbrella.html">Umbrella</a>
+            <a href="embroidery.html">Embroidery</a>
+          </div>
+        </li>
+        <li class="dropdown">
+          <a href="#">Solutions</a>
+          <div class="dropdown-content">
+            <a href="why_choose_us.html">Why Choose Us</a>
+            <a href="services.html">Services</a>
+            <a href="pricing_packages.html">Pricing Packages</a>
+            <a href="technology.html">Technology</a>
+          </div>
+        </li>
+        <li><a href="about_us.html">About Us</a></li>
+        <li><a href="our_works.html">Our Works</a></li>
+        <li><a href="our_clients.html">Our Clients</a></li>
+        <li><a href="contact_us.html">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ===== Why Choose Us Section ===== -->
+  <div class="page-header">
+    <h1><i class="fas fa-star"></i> Why Choose Us</h1>
+    <p>Experience the difference with our premium web solutions</p>
+  </div>
+
+  <div class="features-grid">
+    <div class="feature-card">
+      <div class="feature-icon">
+        <i class="fas fa-brain"></i>
+      </div>
+      <h3>AI-Powered</h3>
+      <p>Leverage cutting-edge artificial intelligence to automate processes, gain insights, and deliver intelligent user experiences.</p>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-icon">
+        <i class="fas fa-shield-alt"></i>
+      </div>
+      <h3>Security</h3>
+      <p>Enterprise-grade security protocols to protect your data and ensure compliance with industry standards.</p>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-icon">
+        <i class="fas fa-rupee-sign"></i>
+      </div>
+      <h3>Transparent Pricing</h3>
+      <p>No hidden costs. Clear, upfront pricing with detailed breakdowns of all deliverables and timelines.</p>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-icon">
+        <i class="fas fa-layer-group"></i>
+      </div>
+      <h3>Modern Tech Stack</h3>
+      <p>Built with the latest technologies ensuring performance, scalability, and future-proof solutions.</p>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-icon">
+        <i class="fas fa-headset"></i>
+      </div>
+      <h3>360° Support</h3>
+      <p>Dedicated support team available around the clock to assist with any queries or technical needs.</p>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-icon">
+        <i class="fas fa-chart-line"></i>
+      </div>
+      <h3>Scalable Solutions</h3>
+      <p>Solutions that grow with your business, easily scaling to handle increased traffic and functionality.</p>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-icon">
+        <i class="fas fa-comments"></i>
+      </div>
+      <h3>Clear Communication</h3>
+      <p>Regular updates, detailed reports, and open communication channels throughout the project lifecycle.</p>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-icon">
+        <i class="fas fa-clock"></i>
+      </div>
+      <h3>On-Time Delivery</h3>
+      <p>Committed to deadlines with efficient project management ensuring your project launches on schedule.</p>
+    </div>
+  </div>
+
+  <!-- ===== Footer ===== -->
+  <footer class="footer">
+    <p>©2026 <span> Feather Creations</span> | Designed with Purpose</p>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById('mainNav');
+      const menuBtn = document.getElementById('menuBtn');
+      if (nav && menuBtn) {
+        nav.classList.toggle("active");
+        menuBtn.classList.toggle("active");
+        document.body.classList.toggle("menu-open");
+      }
+    }
+
+    function closeMenu() {
+      const nav = document.getElementById('mainNav');
+      const menuBtn = document.getElementById('menuBtn');
+      if (nav) nav.classList.remove("active");
+      if (menuBtn) menuBtn.classList.remove("active");
+      document.body.classList.remove("menu-open");
+    }
+
+    document.querySelectorAll('.nav-links > li > a').forEach(link => {
+      link.addEventListener('click', () => {
+        if (window.innerWidth <= 768) closeMenu();
+      });
+    });
+
+    if (window.innerWidth <= 768) {
+      document.querySelectorAll('.dropdown > a').forEach(link => {
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          link.parentElement.classList.toggle('open');
+        });
+      });
+    }
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 768) {
+        closeMenu();
+        document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('open'));
+      }
+    });
+  </script>
+
+</body>
+</html>
