@@ -209,9 +209,11 @@
     }
 
     document.querySelectorAll('.nav-links > li > a').forEach(link => {
-      link.addEventListener('click', () => {
+      link.addEventListener('click', (e) => {
         if (window.innerWidth <= 768) {
-          closeMenu();
+          if (!link.parentElement.classList.contains('dropdown')) {
+            closeMenu();
+          }
         }
       });
     });
