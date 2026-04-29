@@ -784,8 +784,8 @@ nav.active .dropdown.open > a::after {
 .tech-list li,
 .pricing-features li {
   color: rgba(255,255,255,0.9);
-  padding: 10px 0;
-  font-size: 0.95rem;
+  padding: 5px 0;
+  font-size: 0.9rem;
   display: flex;
   align-items: center;
   gap: 10px;
@@ -877,7 +877,7 @@ nav.active .dropdown.open > a::after {
 .pricing-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 15px;
+  gap: 10px;
   max-width: 1000px;
   margin: 0 auto;
   position: relative;
@@ -892,7 +892,7 @@ nav.active .dropdown.open > a::after {
   backdrop-filter: blur(20px);
   border: 2px solid rgba(255, 255, 255, 0.2);
   border-radius: 20px;
-  padding: 20px 15px;
+  padding: 15px 10px;
   text-align: center;
   transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   position: relative;
