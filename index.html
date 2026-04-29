@@ -213,14 +213,26 @@
         // If it's a dropdown parent, toggle submenu on mobile
         if (link.parentElement.classList.contains('dropdown') && window.innerWidth <= 768) {
           e.preventDefault();
+          e.stopPropagation();
           // Close other open dropdowns
           document.querySelectorAll('.dropdown').forEach(d => {
             if (d !== link.parentElement) d.classList.remove('open');
           });
           link.parentElement.classList.toggle('open');
+          // Keep menu open
+          return false;
         }
         // Close menu only for non-dropdown links
         else if (window.innerWidth <= 768) {
+          closeMenu();
+        }
+      });
+    });
+
+    // Submenu links: close menu when clicked
+    document.querySelectorAll('.dropdown-content a').forEach(link => {
+      link.addEventListener('click', () => {
+        if (window.innerWidth <= 768) {
           closeMenu();
         }
       });
