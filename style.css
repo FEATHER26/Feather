@@ -800,7 +800,7 @@ nav.active .dropdown.open > a::after {
 .tech-list i,
 .pricing-features i {
   color: #10b981;
-  font-size: 0.8rem;
+  font-size: 0.7rem;
 }
 
 /* ================================================
@@ -1122,13 +1122,13 @@ nav.active .dropdown.open > a::after {
 
 .pricing-btn {
   display: inline-block;
-  padding: 10px 25px;
+  padding: 8px 18px;
   background: linear-gradient(135deg, #8b5cf6, #6366f1);
   color: white;
   text-decoration: none;
   border-radius: 20px;
   font-weight: 700;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   transition: all 0.4s ease;
   box-shadow: 0 10px 30px rgba(139, 92, 246, 0.4);
   width: 100%;
@@ -1137,8 +1137,8 @@ nav.active .dropdown.open > a::after {
 
 .pricing-features li {
   color: rgba(255, 255, 255, 0.95);
-  padding: 18px 0;
-  font-size: 1.1rem;
+  padding: 5px 0;
+  font-size: 0.9rem;
   display: flex;
   align-items: center;
   gap: 18px;
