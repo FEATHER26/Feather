@@ -210,22 +210,21 @@
 
     document.querySelectorAll('.nav-links > li > a').forEach(link => {
       link.addEventListener('click', (e) => {
-        if (window.innerWidth <= 768) {
-          if (!link.parentElement.classList.contains('dropdown')) {
-            closeMenu();
-          }
+        // If it's a dropdown parent, toggle submenu on mobile
+        if (link.parentElement.classList.contains('dropdown') && window.innerWidth <= 768) {
+          e.preventDefault();
+          // Close other open dropdowns
+          document.querySelectorAll('.dropdown').forEach(d => {
+            if (d !== link.parentElement) d.classList.remove('open');
+          });
+          link.parentElement.classList.toggle('open');
+        }
+        // Close menu only for non-dropdown links
+        else if (window.innerWidth <= 768) {
+          closeMenu();
         }
       });
     });
-
-    if (window.innerWidth <= 768) {
-      document.querySelectorAll('.dropdown > a').forEach(link => {
-        link.addEventListener('click', (e) => {
-          e.preventDefault();
-          link.parentElement.classList.toggle('open');
-        });
-      });
-    }
 
     window.addEventListener('resize', () => {
       if (window.innerWidth > 768) {
