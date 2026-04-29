@@ -369,10 +369,15 @@ nav.active .dropdown-content {
   border-radius: 8px;
   margin-top: 5px;
   z-index: 1002;
+  opacity: 1 !important;
+  visibility: visible !important;
+  transition: none !important;
 }
 
 nav.active .dropdown.open .dropdown-content {
   display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
 }
 
 nav.active .dropdown > a::after {
