@@ -341,47 +341,7 @@
     <p>©2026 <span> Feather Creations</span> | Designed with Purpose</p>
   </footer>
 
-  <script>
-    function toggleMenu() {
-      const nav = document.getElementById('mainNav');
-      const menuBtn = document.getElementById('menuBtn');
-      if (nav && menuBtn) {
-        nav.classList.toggle("active");
-        menuBtn.classList.toggle("active");
-        document.body.classList.toggle("menu-open");
-      }
-    }
-
-    function closeMenu() {
-      const nav = document.getElementById('mainNav');
-      const menuBtn = document.getElementById('menuBtn');
-      if (nav) nav.classList.remove("active");
-      if (menuBtn) menuBtn.classList.remove("active");
-      document.body.classList.remove("menu-open");
-    }
-
-    document.querySelectorAll('.nav-links > li > a').forEach(link => {
-      link.addEventListener('click', () => {
-        if (window.innerWidth <= 768) closeMenu();
-      });
-    });
-
-    if (window.innerWidth <= 768) {
-      document.querySelectorAll('.dropdown > a').forEach(link => {
-        link.addEventListener('click', (e) => {
-          e.preventDefault();
-          link.parentElement.classList.toggle('open');
-        });
-      });
-    }
-
-    window.addEventListener('resize', () => {
-      if (window.innerWidth > 768) {
-        closeMenu();
-        document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('open'));
-      }
-    });
-  </script>
+  <script src="menu.js"></script>
 
 </body>
 </html>
