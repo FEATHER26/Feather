@@ -12,19 +12,24 @@
       padding: 100px 20px 60px;
     }
 
-    .page-header {
+    .products-hero {
       text-align: center;
-      margin-bottom: 50px;
+      padding: 60px 20px 40px;
     }
 
-    .page-header h1 {
-      font-size: 3rem;
+    .products-hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.5rem;
       color: #ffffff;
       text-shadow: 0 0 20px rgba(255,255,255,0.3), 0 2px 4px rgba(0,0,0,0.5);
       margin-bottom: 15px;
     }
 
-    .page-header p {
+    .products-hero h1 span {
+      color: #4a90d9;
+    }
+
+    .products-hero p {
       font-size: 1.2rem;
       color: rgba(255,255,255,0.8);
     }
@@ -187,68 +192,16 @@
     }
   </style>
 </head>
-<body class="page-content">
+<body class="products-page">
 
   <!-- ===== Animated Background ===== -->
   <div class="animated-bg"></div>
 
-  <!-- ===== Header ===== -->
-  <header>
-    <div class="menu-btn" id="menuBtn" onclick="toggleMenu()">
-      <div class="feather-icon">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-    </div>
-    <a href="index.html" class="logo">
-      <img src="logo.png" alt="Feather Logo" class="logo-img">
-      <span class="logo-text">Feather</span>
-    </a>
-    <nav id="mainNav">
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="product_enquiry.html">Product Enquiry</a></li>
-        <li class="dropdown">
-          <a href="#">Products</a>
-          <div class="dropdown-content">
-            <a href="products.html">T-Shirts</a>
-            <a href="school.html">School Uniforms</a>
-            <a href="bible-verse-tshirts.html">Bible Verse T-Shirts</a>
-            <a href="bible-verse-frames.html">Bible Verse Frames</a>
-            <a href="cards.html">Cards</a>
-            <a href="bags.html">Bags</a>
-            <a href="caps.html">Caps</a>
-            <a href="bottles.html">Bottles</a>
-            <a href="badges.html">Badges</a>
-            <a href="shoes.html">Shoes</a>
-            <a href="belts.html">Belts</a>
-            <a href="umbrella.html">Umbrella</a>
-            <a href="embroidery.html">Embroidery</a>
-          </div>
-        </li>
-        <li class="dropdown">
-          <a href="#">Solutions</a>
-          <div class="dropdown-content">
-            <a href="why_choose_us.html">Why Choose Us</a>
-            <a href="services.html">Services</a>
-            <a href="pricing_packages.html">Pricing Packages</a>
-            <a href="technology.html">Technology</a>
-          </div>
-        </li>
-        <li><a href="about_us.html">About Us</a></li>
-        <li><a href="our_works.html">Our Works</a></li>
-        <li><a href="our_clients.html">Our Clients</a></li>
-        <li><a href="contact_us.html">Contact Us</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <!-- ===== Pricing Section ===== -->
-  <div class="page-header">
-    <h1><i class="fas fa-tags"></i> Pricing Packages</h1>
+  <!-- ===== Products Hero ===== -->
+  <section class="products-hero">
+    <h1>Pricing <span>Packages</span></h1>
     <p>Transparent pricing tailored to your project requirements</p>
-  </div>
+  </section>
 
   <div class="pricing-grid">
     <div class="pricing-card">

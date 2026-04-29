@@ -681,6 +681,19 @@ nav.active .dropdown.open > a::after {
   margin: 0;
 }
 
+.services-list-icons li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.services-list-icons li i {
+  color: #4a90d9;
+  font-size: 1.1rem;
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+
 .services-list li {
   margin: 12px 0;
   padding: 15px 20px;

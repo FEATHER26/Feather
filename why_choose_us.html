@@ -12,9 +12,27 @@
       padding: 100px 20px 60px;
     }
 
-    .page-header {
+.page-header {
       text-align: center;
-      margin-bottom: 50px;
+      padding: 120px 20px 60px;
+      background: var(--white);
+    }
+
+    .page-header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.5rem;
+      color: var(--primary);
+      margin-bottom: 15px;
+    }
+
+    .page-header h1 span {
+      color: var(--secondary);
+    }
+
+    .page-header p {
+      font-size: 1.2rem;
+      color: var(--text-light);
+      margin-bottom: 40px;
     }
 
     .page-header h1 {
@@ -143,70 +161,19 @@
     }
   </style>
 </head>
-<body class="page-content">
+<body class="products-page">
 
   <!-- ===== Animated Background ===== -->
   <div class="animated-bg"></div>
 
-  <!-- ===== Header ===== -->
-  <header>
-    <div class="menu-btn" id="menuBtn" onclick="toggleMenu()">
-      <div class="feather-icon">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-    </div>
-    <a href="index.html" class="logo">
-      <img src="logo.png" alt="Feather Logo" class="logo-img">
-      <span class="logo-text">Feather</span>
-    </a>
-    <nav id="mainNav">
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="product_enquiry.html">Product Enquiry</a></li>
-        <li class="dropdown">
-          <a href="#">Products</a>
-          <div class="dropdown-content">
-            <a href="products.html">T-Shirts</a>
-            <a href="school.html">School Uniforms</a>
-            <a href="bible-verse-tshirts.html">Bible Verse T-Shirts</a>
-            <a href="bible-verse-frames.html">Bible Verse Frames</a>
-            <a href="cards.html">Cards</a>
-            <a href="bags.html">Bags</a>
-            <a href="caps.html">Caps</a>
-            <a href="bottles.html">Bottles</a>
-            <a href="badges.html">Badges</a>
-            <a href="shoes.html">Shoes</a>
-            <a href="belts.html">Belts</a>
-            <a href="umbrella.html">Umbrella</a>
-            <a href="embroidery.html">Embroidery</a>
-          </div>
-        </li>
-        <li class="dropdown">
-          <a href="#">Solutions</a>
-          <div class="dropdown-content">
-            <a href="why_choose_us.html">Why Choose Us</a>
-            <a href="services.html">Services</a>
-            <a href="pricing_packages.html">Pricing Packages</a>
-            <a href="technology.html">Technology</a>
-          </div>
-        </li>
-        <li><a href="about_us.html">About Us</a></li>
-        <li><a href="our_works.html">Our Works</a></li>
-        <li><a href="our_clients.html">Our Clients</a></li>
-        <li><a href="contact_us.html">Contact Us</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <!-- ===== Why Choose Us Section ===== -->
-  <div class="page-header">
-    <h1><i class="fas fa-star"></i> Why Choose Us</h1>
+  <!-- ===== Products Hero Section ===== -->
+  <section class="products-hero">
+    <h1>Why Choose <span>Us</span></h1>
     <p>Experience the difference with our premium web solutions</p>
-  </div>
+  </section>
 
-  <div class="features-grid">
+  <!-- ===== Features Grid ===== -->
+  <div class="features-grid" style="padding: 40px; max-width: 1200px; margin: 0 auto;">
     <div class="feature-card">
       <div class="feature-icon">
         <i class="fas fa-brain"></i>
