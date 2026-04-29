@@ -476,7 +476,8 @@ nav.active .dropdown.open > a::after {
 .floating-family {
   position: absolute;
   right: 5%;
-  bottom: 10%;
+  top: 50%;
+  transform: translateY(-50%);
   width: 350px;
   max-width: 40vw;
   animation: floatFamily 4s ease-in-out infinite;
@@ -484,9 +485,26 @@ nav.active .dropdown.open > a::after {
   z-index: 1;
 }
 
+.hero-left-image {
+  position: absolute;
+  left: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 350px;
+  max-width: 40vw;
+  animation: floatFamilyLeft 4s ease-in-out infinite;
+  filter: drop-shadow(0 20px 40px rgba(26, 54, 93, 0.15));
+  z-index: 1;
+}
+
 @keyframes floatFamily {
-  0%, 100% { transform: translateY(0) rotate(0deg); }
-  50% { transform: translateY(-20px) rotate(2deg); }
+  0%, 100% { transform: translateY(-50%) rotate(0deg); }
+  50% { transform: translateY(calc(-50% - 20px)) rotate(2deg); }
+}
+
+@keyframes floatFamilyLeft {
+  0%, 100% { transform: translateY(-50%) rotate(0deg); }
+  50% { transform: translateY(calc(-50% + 20px)) rotate(-2deg); }
 }
 
 /* Hero Buttons */
