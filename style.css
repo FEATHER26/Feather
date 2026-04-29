@@ -426,8 +426,9 @@ nav.active .dropdown.open > a::after {
 
 .hero-content {
   position: relative;
-  z-index: 2;
+  z-index: 1;
   max-width: 900px;
+  isolation: isolate;
 }
 
 .logo-container {
