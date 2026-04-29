@@ -486,15 +486,16 @@ nav.active .dropdown.open > a::after {
 }
 
 .hero-left-image {
+  display: block;
   position: absolute;
-  left: 5%;
+  left: 2%;
   top: 50%;
   transform: translateY(-50%);
-  width: 350px;
-  max-width: 40vw;
+  width: 280px;
+  max-width: 30vw;
   animation: floatFamilyLeft 4s ease-in-out infinite;
   filter: drop-shadow(0 20px 40px rgba(26, 54, 93, 0.15));
-  z-index: 1;
+  z-index: 10;
 }
 
 @keyframes floatFamily {
@@ -2978,7 +2979,7 @@ nav.active .dropdown.open > a::after {
     font-size: 1.1rem;
   }
   
-  .floating-family {
+  .floating-family, .hero-left-image {
     display: none;
   }
   
