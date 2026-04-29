@@ -325,6 +325,7 @@ nav .nav-links.mobile-open {
   z-index: 1001;
   padding-top: 80px;
   overflow-y: auto;
+  overflow-x: hidden;
 }
 
 nav.active .nav-links li {
@@ -355,7 +356,7 @@ nav.active .nav-links li a.active {
 nav.active .dropdown-content {
   position: static;
   transform: none;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(26, 41, 59, 0.95);
   border: none;
   box-shadow: none;
   padding: 5px 15px;
@@ -363,6 +364,9 @@ nav.active .dropdown-content {
   width: 100%;
   border-radius: 8px;
   margin-top: 5px;
+  z-index: 1002;
+  visibility: visible;
+  opacity: 1;
 }
 
 nav.active .dropdown.open .dropdown-content {
