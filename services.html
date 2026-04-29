@@ -6,112 +6,8 @@
   <title>Services | Feather</title>
   <link rel="stylesheet" href="style.css?v=3" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <style>
-    .page-content {
-      min-height: 100vh;
-      padding: 100px 20px 60px;
-    }
-
-    .products-hero {
-      text-align: center;
-      padding: 60px 20px 40px;
-    }
-
-    .products-hero h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 3.5rem;
-      color: #ffffff;
-      text-shadow: 0 0 20px rgba(255,255,255,0.3), 0 2px 4px rgba(0,0,0,0.5);
-      margin-bottom: 15px;
-    }
-
-    .products-hero h1 span {
-      color: #4a90d9;
-    }
-
-    .products-hero p {
-      font-size: 1.2rem;
-      color: rgba(255,255,255,0.8);
-    }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 25px;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .service-card {
-      background: linear-gradient(145deg, rgba(30, 41, 59, 0.9), rgba(15, 23, 42, 0.95));
-      backdrop-filter: blur(20px);
-      border: 1px solid var(--glass-border);
-      border-radius: 20px;
-      padding: 30px;
-      transition: all 0.3s ease;
-      box-shadow: var(--shadow);
-    }
-
-    .service-card:hover {
-      transform: translateY(-8px);
-      border-color: rgba(74, 144, 217, 0.5);
-      box-shadow: 0 15px 35px rgba(0,0,0,0.3);
-    }
-
-    .service-icon {
-      width: 70px;
-      height: 70px;
-      margin-bottom: 20px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 15px;
-      background: linear-gradient(135deg, #4a90d9, #2563eb);
-    }
-
-    .service-icon i {
-      font-size: 1.8rem;
-      color: #ffffff;
-    }
-
-    .service-card h3 {
-      font-size: 1.3rem;
-      color: #4a90d9;
-      margin-bottom: 10px;
-      font-weight: 600;
-    }
-
-    .service-card p {
-      font-size: 0.95rem;
-      color: rgba(255,255,255,0.95);
-      line-height: 1.6;
-    }
-
-    .service-card:nth-child(1) .service-icon { background: linear-gradient(135deg, #8b5cf6, #6366f1); }
-    .service-card:nth-child(2) .service-icon { background: linear-gradient(135deg, #10b981, #059669); }
-    .service-card:nth-child(3) .service-icon { background: linear-gradient(135deg, #f59e0b, #d97706); }
-    .service-card:nth-child(4) .service-icon { background: linear-gradient(135deg, #06b6d4, #0891b2); }
-    .service-card:nth-child(5) .service-icon { background: linear-gradient(135deg, #ec4899, #db2777); }
-    .service-card:nth-child(6) .service-icon { background: linear-gradient(135deg, #3b82f6, #1d4ed8); }
-    .service-card:nth-child(7) .service-icon { background: linear-gradient(135deg, #ef4444, #dc2626); }
-    .service-card:nth-child(8) .service-icon { background: linear-gradient(135deg, #84cc16, #65a30d); }
-    .service-card:nth-child(9) .service-icon { background: linear-gradient(135deg, #a855f7, #9333ea); }
-
-    @media (max-width: 768px) {
-      .page-content {
-        padding: 90px 15px 50px;
-      }
-
-      .page-header h1 {
-        font-size: 2rem;
-      }
-
-      .services-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
 </head>
+
 <body class="products-page">
 
   <!-- ===== Animated Background ===== -->
@@ -169,13 +65,14 @@
     </nav>
   </header>
 
-  <!-- ===== Products Hero ===== -->
+  <!-- ===== Hero Section ===== -->
   <section class="products-hero">
     <h1>Our <span>Services</span></h1>
     <p>Comprehensive digital solutions tailored to your business needs</p>
   </section>
 
-  <div class="services-grid" style="padding: 40px; max-width: 1200px; margin: 0 auto;">
+  <!-- ===== Content Section ===== -->
+  <section class="product-gallery">
     <div class="service-card">
       <div class="service-icon">
         <i class="fas fa-paint-brush"></i>
@@ -247,7 +144,7 @@
       <h3>Ongoing Maintenance & Support</h3>
       <p>Reliable maintenance services including updates, security patches, and technical support.</p>
     </div>
-  </div>
+  </section>
 
   <!-- ===== Footer ===== -->
   <footer class="footer">

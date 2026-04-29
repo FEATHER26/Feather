@@ -6,161 +6,8 @@
   <title>Why Choose Us | Feather</title>
   <link rel="stylesheet" href="style.css?v=3" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <style>
-    .page-content {
-      min-height: 100vh;
-      padding: 100px 20px 60px;
-    }
-
-.page-header {
-      text-align: center;
-      padding: 120px 20px 60px;
-      background: var(--white);
-    }
-
-    .page-header h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 3.5rem;
-      color: var(--primary);
-      margin-bottom: 15px;
-    }
-
-    .page-header h1 span {
-      color: var(--secondary);
-    }
-
-    .page-header p {
-      font-size: 1.2rem;
-      color: var(--text-light);
-      margin-bottom: 40px;
-    }
-
-    .page-header h1 {
-      font-size: 3rem;
-      color: #ffffff;
-      text-shadow: 0 0 20px rgba(255,255,255,0.3), 0 2px 4px rgba(0,0,0,0.5);
-      margin-bottom: 15px;
-    }
-
-    .page-header p {
-      font-size: 1.2rem;
-      color: rgba(255,255,255,0.8);
-    }
-
-    .features-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 25px;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .feature-card {
-      background: linear-gradient(145deg, rgba(30, 41, 59, 0.9), rgba(15, 23, 42, 0.95));
-      backdrop-filter: blur(20px);
-      border: 1px solid var(--glass-border);
-      border-radius: 20px;
-      padding: 35px 25px;
-      text-align: center;
-      transition: all 0.3s ease;
-      box-shadow: var(--shadow);
-    }
-
-    .feature-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-      border-color: rgba(74, 144, 217, 0.5);
-    }
-
-    .feature-icon {
-      width: 80px;
-      height: 80px;
-      margin: 0 auto 20px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 50%;
-      background: linear-gradient(135deg, #4a90d9, #2563eb);
-      box-shadow: 0 8px 25px rgba(74, 144, 217, 0.4);
-    }
-
-    .feature-icon i {
-      font-size: 2rem;
-      color: #ffffff;
-    }
-
-    .feature-card h3 {
-      font-size: 1.4rem;
-      color: #4a90d9;
-      margin-bottom: 12px;
-      font-weight: 600;
-    }
-
-    .feature-card p {
-      font-size: 1rem;
-      color: rgba(255,255,255,0.95);
-      line-height: 1.6;
-    }
-
-    .feature-card:nth-child(1) .feature-icon {
-      background: linear-gradient(135deg, #8b5cf6, #6366f1);
-      box-shadow: 0 8px 25px rgba(139, 92, 246, 0.4);
-    }
-
-    .feature-card:nth-child(2) .feature-icon {
-      background: linear-gradient(135deg, #10b981, #059669);
-      box-shadow: 0 8px 25px rgba(16, 185, 129, 0.4);
-    }
-
-    .feature-card:nth-child(3) .feature-icon {
-      background: linear-gradient(135deg, #f59e0b, #d97706);
-      box-shadow: 0 8px 25px rgba(245, 158, 11, 0.4);
-    }
-
-    .feature-card:nth-child(4) .feature-icon {
-      background: linear-gradient(135deg, #06b6d4, #0891b2);
-      box-shadow: 0 8px 25px rgba(6, 182, 212, 0.4);
-    }
-
-    .feature-card:nth-child(5) .feature-icon {
-      background: linear-gradient(135deg, #ec4899, #db2777);
-      box-shadow: 0 8px 25px rgba(236, 72, 153, 0.4);
-    }
-
-    .feature-card:nth-child(6) .feature-icon {
-      background: linear-gradient(135deg, #ef4444, #dc2626);
-      box-shadow: 0 8px 25px rgba(239, 68, 68, 0.4);
-    }
-
-    .feature-card:nth-child(7) .feature-icon {
-      background: linear-gradient(135deg, #3b82f6, #1d4ed8);
-      box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
-    }
-
-    .feature-card:nth-child(8) .feature-icon {
-      background: linear-gradient(135deg, #84cc16, #65a30d);
-      box-shadow: 0 8px 25px rgba(132, 204, 22, 0.4);
-    }
-
-    @media (max-width: 768px) {
-      .page-content {
-        padding: 90px 15px 50px;
-      }
-
-      .page-header h1 {
-        font-size: 2rem;
-      }
-
-      .features-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .feature-card {
-        padding: 25px 20px;
-      }
-    }
-  </style>
 </head>
+
 <body class="products-page">
 
   <!-- ===== Animated Background ===== -->
@@ -218,14 +65,14 @@
     </nav>
   </header>
 
-  <!-- ===== Products Hero Section ===== -->
+  <!-- ===== Hero Section ===== -->
   <section class="products-hero">
     <h1>Why Choose <span>Us</span></h1>
     <p>Experience the difference with our premium web solutions</p>
   </section>
 
-  <!-- ===== Features Grid ===== -->
-  <div class="features-grid" style="padding: 40px; max-width: 1200px; margin: 0 auto;">
+  <!-- ===== Content Section ===== -->
+  <section class="product-gallery">
     <div class="feature-card">
       <div class="feature-icon">
         <i class="fas fa-brain"></i>
@@ -289,7 +136,7 @@
       <h3>On-Time Delivery</h3>
       <p>Committed to deadlines with efficient project management ensuring your project launches on schedule.</p>
     </div>
-  </div>
+  </section>
 
   <!-- ===== Footer ===== -->
   <footer class="footer">
