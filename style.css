@@ -1311,69 +1311,75 @@ nav.active .dropdown.open > a::after {
 }
 
 /* ================================================
-   SERVICES OVERVIEW - Diagrammatic Layout
+   SERVICES OVERVIEW - Side by Side Layout
    ================================================ */
 .services-overview {
-  padding: 50px 20px;
+  padding: 40px 20px;
   max-width: 1400px;
   margin: 0 auto;
 }
 
-.service-category {
+.solutions-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
   margin-bottom: 50px;
+}
+
+.service-category {
+  margin-bottom: 0;
 }
 
 .category-header {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 15px;
-  margin-bottom: 30px;
+  gap: 12px;
+  margin-bottom: 20px;
 }
 
 .category-header i {
-  font-size: 2.5rem;
-  padding: 15px;
+  font-size: 1.8rem;
+  padding: 12px;
   border-radius: 50%;
 }
 
 .it-solutions .category-header i {
   background: linear-gradient(135deg, #4a90d9, #8b5cf6);
   color: white;
-  box-shadow: 0 10px 30px rgba(74, 144, 217, 0.4);
+  box-shadow: 0 8px 25px rgba(74, 144, 217, 0.4);
 }
 
 .general-solutions .category-header i {
   background: linear-gradient(135deg, #10b981, #34d399);
   color: white;
-  box-shadow: 0 10px 30px rgba(16, 185, 129, 0.4);
+  box-shadow: 0 8px 25px rgba(16, 185, 129, 0.4);
 }
 
 .category-header h2 {
-  font-size: 2rem;
+  font-size: 1.4rem;
   color: #1e293b;
   font-weight: 700;
 }
 
 .category-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
 }
 
 .service-box {
   background: white;
-  border-radius: 20px;
-  padding: 25px 20px;
+  border-radius: 15px;
+  padding: 15px 12px;
   text-align: center;
   transition: all 0.3s ease;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  box-shadow: 0 5px 20px rgba(0,0,0,0.06);
   border: 2px solid transparent;
 }
 
 .service-box:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.12);
 }
 
 .it-solutions .service-box:hover {
@@ -1385,8 +1391,8 @@ nav.active .dropdown.open > a::after {
 }
 
 .service-box i {
-  font-size: 2.2rem;
-  margin-bottom: 15px;
+  font-size: 1.6rem;
+  margin-bottom: 8px;
   display: block;
 }
 
@@ -1399,94 +1405,96 @@ nav.active .dropdown.open > a::after {
 }
 
 .service-box h4 {
-  font-size: 1.1rem;
+  font-size: 0.9rem;
   color: #1e293b;
-  margin-bottom: 8px;
+  margin-bottom: 4px;
   font-weight: 600;
 }
 
 .service-box p {
-  font-size: 0.85rem;
+  font-size: 0.7rem;
   color: #64748b;
-  line-height: 1.5;
+  line-height: 1.4;
 }
 
-/* What We Do Section */
+/* ================================================
+   WHAT WE DO SECTION
+   ================================================ */
+.what-we-do-section {
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  background: #f8fafc;
+}
+
 .section-title {
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
 }
 
 .section-title i {
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: #4a90d9;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 .section-title h2 {
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   color: #1e293b;
   font-weight: 700;
 }
 
 .about-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 25px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
 }
 
 .about-card {
   background: white;
-  border-radius: 20px;
-  padding: 30px;
+  border-radius: 18px;
+  padding: 25px 20px;
   text-align: center;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.06);
   transition: all 0.3s ease;
 }
 
 .about-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.1);
 }
 
 .about-card i {
-  font-size: 2.5rem;
+  font-size: 2rem;
   color: #4a90d9;
-  margin-bottom: 15px;
+  margin-bottom: 12px;
 }
 
 .about-card h3 {
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   color: #1e293b;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
 }
 
 .about-card p {
   color: #64748b;
-  line-height: 1.7;
-  font-size: 0.95rem;
+  line-height: 1.6;
+  font-size: 0.85rem;
 }
 
-@media (max-width: 768px) {
-  .category-header h2 {
-    font-size: 1.5rem;
+@media (max-width: 900px) {
+  .solutions-row {
+    grid-template-columns: 1fr;
   }
   
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
   .category-cards {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-  }
-  
-  .service-box {
-    padding: 20px 15px;
-  }
-  
-  .service-box i {
-    font-size: 1.8rem;
-  }
-  
-  .service-box h4 {
-    font-size: 1rem;
+    grid-template-columns: 1fr;
   }
 }
 
