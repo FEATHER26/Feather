@@ -52,7 +52,11 @@
         "Referrer-Policy": "strict-origin-when-cross-origin",
         "Permissions-Policy": "camera=(), microphone=(), geolocation=()"
       }
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/404.html",
+      "status": 404
     }
-  ],
-  "errorPage": "/404.html"
+  ]
 }
