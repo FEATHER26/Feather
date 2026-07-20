@@ -4319,6 +4319,11 @@ nav.active .dropdown.open > a::after {
   margin-bottom: 15px;
 }
 
+.wcu-testimonials-header p {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.75);
+}
+
 .wcu-testimonials-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
