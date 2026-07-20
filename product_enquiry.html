@@ -287,9 +287,32 @@
       right: 0;
       bottom: 0;
       background: rgba(0,0,0,0.7);
+      backdrop-filter: blur(8px);
       z-index: 99999;
       align-items: center;
       justify-content: center;
+      animation: fadeIn 0.3s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(30px) scale(0.95); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    @keyframes popIn {
+      0% { transform: scale(0); }
+      70% { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
+
+    @keyframes confetti {
+      0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(-100px) rotate(720deg); opacity: 0; }
     }
 
     .loading-overlay {
@@ -329,71 +352,104 @@
     }
 
     .modal-box {
-      background: linear-gradient(145deg, #f0f0f0, #e0e0e0);
-      border: 2px solid #808080;
-      border-radius: 8px;
-      min-width: 350px;
-      max-width: 450px;
-      box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+      background: white;
+      border-radius: 24px;
+      min-width: 380px;
+      max-width: 480px;
+      box-shadow: 0 25px 60px rgba(0,0,0,0.3);
+      overflow: hidden;
+      animation: slideUp 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     }
 
     .modal-titlebar {
-      background: linear-gradient(to bottom, #0a246a, #1a4db8);
-      padding: 8px 12px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      padding: 20px 24px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-radius: 6px 6px 0 0;
     }
 
     .modal-title {
       color: #ffffff;
-      font-weight: bold;
-      font-size: 0.95rem;
+      font-weight: 700;
+      font-size: 1.1rem;
     }
 
     .modal-close {
-      width: 22px;
-      height: 22px;
-      background: #c42b1c;
+      width: 32px;
+      height: 32px;
+      background: rgba(255,255,255,0.2);
       color: white;
       border: none;
-      border-radius: 4px;
+      border-radius: 50%;
       cursor: pointer;
-      font-size: 14px;
+      font-size: 18px;
       font-weight: bold;
       display: flex;
       align-items: center;
       justify-content: center;
       line-height: 1;
+      transition: all 0.3s ease;
     }
 
     .modal-close:hover {
-      background: #e53e3e;
+      background: rgba(255,255,255,0.3);
+      transform: rotate(90deg);
     }
 
     .modal-content {
-      padding: 25px 20px;
+      padding: 40px 30px 30px;
       text-align: center;
+    }
+
+    .modal-content .modal-icon {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      font-size: 2.5rem;
+      animation: popIn 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s both;
+    }
+
+    .modal-content.modal-success .modal-icon {
+      background: linear-gradient(135deg, #10b981, #059669);
+      color: white;
+      box-shadow: 0 10px 30px rgba(16, 185, 129, 0.3);
+    }
+
+    .modal-content.modal-error .modal-icon {
+      background: linear-gradient(135deg, #ef4444, #dc2626);
+      color: white;
+      box-shadow: 0 10px 30px rgba(239, 68, 68, 0.3);
+    }
+
+    .modal-content h3 {
+      font-size: 1.5rem;
+      color: #1a1a2e;
+      margin-bottom: 12px;
+      font-weight: 700;
     }
 
     .modal-content p {
       margin: 0;
       font-size: 1rem;
-      color: #333;
-      line-height: 1.6;
+      color: #64748b;
+      line-height: 1.7;
+    }
+
+    .modal-content.modal-error h3 {
+      color: #dc2626;
     }
 
     .modal-content.modal-error p {
-      color: #c53030;
-    }
-
-    .modal-content.modal-success p {
-      color: #2f855a;
+      color: #ef4444;
     }
 
     .modal-footer {
-      padding: 15px 20px 20px;
+      padding: 0 30px 30px;
       text-align: center;
     }
 
@@ -793,13 +849,6 @@
         <li><a href="about_us.html">About Us</a></li>
         <li><a href="contact_us.html">Contact Us</a></li>
       </ul>
-        </li>
-
-        <li><a href="about_us.html">About Us</a></li>
-        <li><a href="our_works.html">Our Works</a></li>
-        <li><a href="our_clients.html">Our Clients</a></li>
-        <li><a href="contact_us.html">Contact Us</a></li>
-      </ul>
     </nav>
   </header>
 
@@ -1164,7 +1213,7 @@
     function showModal(title, message, isError) {
       document.getElementById('modalTitle').textContent = title;
       document.getElementById('modalMessage').textContent = message;
-      document.getElementById('modalIcon').innerHTML = isError ? '<i class="fas fa-exclamation-circle" style="color: #ef4444;"></i>' : '<i class="fas fa-check-circle" style="color: #10b981;"></i>';
+      document.getElementById('modalIcon').innerHTML = isError ? '<i class="fas fa-exclamation"></i>' : '<i class="fas fa-check"></i>';
       var modalContent = document.getElementById('modalContent');
       modalContent.classList.remove('modal-error', 'modal-success');
       if (isError) {
@@ -1202,12 +1251,12 @@
         <button class="modal-close" onclick="closeModal()">×</button>
       </div>
       <div id="modalContent" class="modal-content">
-        <div id="modalIcon" style="font-size: 3rem; margin-bottom: 15px;"></div>
-        <h3 id="modalTitle" style="margin-bottom: 10px; color: #1a1a2e;"></h3>
+        <div id="modalIcon" class="modal-icon"></div>
+        <h3 id="modalTitle"></h3>
         <p id="modalMessage"></p>
       </div>
       <div class="modal-footer">
-        <button class="modal-ok-btn" onclick="closeModal()">OK</button>
+        <button class="modal-ok-btn" onclick="closeModal()" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; padding: 12px 40px; border-radius: 50px; font-weight: 600; font-size: 1rem; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);">OK</button>
       </div>
     </div>
   </div>

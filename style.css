@@ -844,7 +844,7 @@ nav.active .dropdown.open > a::after {
   position: relative;
   padding: 30px 20px;
   background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
-  overflow: hidden;
+  overflow: visible;
   min-height: auto;
 }
 
