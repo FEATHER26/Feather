@@ -974,21 +974,44 @@ nav.active .dropdown.open > a::after {
 
 .featured-badge {
   position: absolute;
-  top: -15px;
+  top: 35%;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translate(-50%, -50%) rotate(-15deg);
   background: linear-gradient(135deg, #f59e0b, #ef4444, #f59e0b);
   background-size: 200% 200%;
   animation: gradientShift 2s ease infinite;
   color: white;
-  padding: 5px 15px;
-  font-size: 0.65rem;
+  padding: 8px 30px;
+  font-size: 0.75rem;
   font-weight: 800;
-  border-radius: 20px;
+  border-radius: 4px;
   box-shadow: 0 5px 20px rgba(245, 158, 11, 0.5);
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
   z-index: 20;
+  white-space: nowrap;
+}
+
+.featured-badge::before,
+.featured-badge::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
+
+.featured-badge::before {
+  left: 0;
+  border-width: 8px 0 0 10px;
+  border-color: #b45309 transparent transparent transparent;
+}
+
+.featured-badge::after {
+  right: 0;
+  border-width: 8px 10px 0 0;
+  border-color: #b45309 transparent transparent transparent;
 }
 
 @keyframes gradientShift {

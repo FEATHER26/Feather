@@ -286,8 +286,8 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background: rgba(0,0,0,0.7);
-      backdrop-filter: blur(8px);
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(10px);
       z-index: 99999;
       align-items: center;
       justify-content: center;
@@ -300,19 +300,14 @@
     }
 
     @keyframes slideUp {
-      from { opacity: 0; transform: translateY(30px) scale(0.95); }
+      from { opacity: 0; transform: translateY(20px) scale(0.96); }
       to { opacity: 1; transform: translateY(0) scale(1); }
     }
 
     @keyframes popIn {
       0% { transform: scale(0); }
-      70% { transform: scale(1.1); }
+      70% { transform: scale(1.15); }
       100% { transform: scale(1); }
-    }
-
-    @keyframes confetti {
-      0% { transform: translateY(0) rotate(0deg); opacity: 1; }
-      100% { transform: translateY(-100px) rotate(720deg); opacity: 0; }
     }
 
     .loading-overlay {
@@ -353,123 +348,132 @@
 
     .modal-box {
       background: white;
-      border-radius: 24px;
-      min-width: 380px;
-      max-width: 480px;
+      border-radius: 20px;
+      width: 360px;
+      max-width: 90vw;
       box-shadow: 0 25px 60px rgba(0,0,0,0.3);
       overflow: hidden;
       animation: slideUp 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     }
 
-    .modal-titlebar {
+    .modal-header-bar {
       background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      padding: 20px 24px;
+      padding: 14px 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
 
-    .modal-title {
+    .modal-brand {
       color: #ffffff;
       font-weight: 700;
-      font-size: 1.1rem;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
     }
 
-    .modal-close {
-      width: 32px;
-      height: 32px;
+    .modal-close-btn {
+      width: 26px;
+      height: 26px;
       background: rgba(255,255,255,0.2);
       color: white;
       border: none;
       border-radius: 50%;
       cursor: pointer;
-      font-size: 18px;
-      font-weight: bold;
+      font-size: 15px;
       display: flex;
       align-items: center;
       justify-content: center;
-      line-height: 1;
       transition: all 0.3s ease;
     }
 
-    .modal-close:hover {
-      background: rgba(255,255,255,0.3);
+    .modal-close-btn:hover {
+      background: rgba(255,255,255,0.35);
       transform: rotate(90deg);
     }
 
-    .modal-content {
-      padding: 40px 30px 30px;
+    .modal-body {
+      padding: 30px 28px 20px;
       text-align: center;
     }
 
-    .modal-content .modal-icon {
-      width: 80px;
-      height: 80px;
+    .modal-success-icon {
+      width: 60px;
+      height: 60px;
       border-radius: 50%;
+      background: linear-gradient(135deg, #10b981, #059669);
       display: flex;
       align-items: center;
       justify-content: center;
-      margin: 0 auto 20px;
-      font-size: 2.5rem;
-      animation: popIn 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s both;
+      margin: 0 auto 15px;
+      box-shadow: 0 6px 20px rgba(16, 185, 129, 0.35);
+      animation: popIn 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.15s both;
     }
 
-    .modal-content.modal-success .modal-icon {
-      background: linear-gradient(135deg, #10b981, #059669);
+    .modal-success-icon i {
       color: white;
-      box-shadow: 0 10px 30px rgba(16, 185, 129, 0.3);
+      font-size: 1.6rem;
     }
 
-    .modal-content.modal-error .modal-icon {
-      background: linear-gradient(135deg, #ef4444, #dc2626);
-      color: white;
-      box-shadow: 0 10px 30px rgba(239, 68, 68, 0.3);
-    }
-
-    .modal-content h3 {
-      font-size: 1.5rem;
-      color: #1a1a2e;
-      margin-bottom: 12px;
+    .modal-body h3 {
+      font-size: 1.2rem;
+      color: #1e293b;
+      margin: 0 0 8px;
       font-weight: 700;
     }
 
-    .modal-content p {
-      margin: 0;
-      font-size: 1rem;
+    .modal-body p {
+      font-size: 0.85rem;
       color: #64748b;
-      line-height: 1.7;
+      line-height: 1.6;
+      margin: 0;
     }
 
-    .modal-content.modal-error h3 {
-      color: #dc2626;
+    .modal-divider {
+      height: 1px;
+      background: #e2e8f0;
+      margin: 0 28px;
     }
 
-    .modal-content.modal-error p {
-      color: #ef4444;
-    }
-
-    .modal-footer {
-      padding: 0 30px 30px;
+    .modal-action {
+      padding: 18px 28px 22px;
       text-align: center;
     }
 
-    .modal-ok-btn {
+    .modal-action-btn {
       background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
       color: white;
       border: none;
-      padding: 14px 50px;
+      padding: 11px 45px;
       border-radius: 50px;
-      font-size: 1rem;
+      font-size: 0.9rem;
       font-weight: 600;
       cursor: pointer;
       transition: all 0.3s ease;
-      box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
-      letter-spacing: 0.5px;
+      box-shadow: 0 4px 15px rgba(102, 126, 234, 0.35);
     }
 
-    .modal-ok-btn:hover {
+    .modal-action-btn:hover {
       transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+      box-shadow: 0 6px 20px rgba(102, 126, 234, 0.5);
+    }
+
+    .modal-body.modal-error .modal-success-icon {
+      background: linear-gradient(135deg, #ef4444, #dc2626);
+      box-shadow: 0 6px 20px rgba(239, 68, 68, 0.35);
+    }
+
+    .modal-body.modal-error h3 {
+      color: #dc2626;
+    }
+
+    .modal-body.modal-error p {
+      color: #ef4444;
+    }
+
+    .modal-close-old {
+      display: none;
     }
 
     .upload-container {
@@ -1250,17 +1254,20 @@
   <!-- Custom Modal Message Box -->
   <div id="customModal" class="custom-modal">
     <div class="modal-box">
-      <div class="modal-titlebar">
-        <span class="modal-title">Feather Creations</span>
-        <button class="modal-close" onclick="closeModal()">×</button>
+      <div class="modal-header-bar">
+        <span class="modal-brand"><i class="fas fa-feather-alt"></i> Feather Creations</span>
+        <button class="modal-close-btn" onclick="closeModal()">×</button>
       </div>
-      <div id="modalContent" class="modal-content">
-        <div id="modalIcon" class="modal-icon"></div>
+      <div id="modalContent" class="modal-body">
+        <div id="modalIcon" class="modal-success-icon">
+          <i class="fas fa-check"></i>
+        </div>
         <h3 id="modalTitle"></h3>
         <p id="modalMessage"></p>
       </div>
-      <div class="modal-footer">
-        <button class="modal-ok-btn" onclick="closeModal()">OK</button>
+      <div class="modal-divider"></div>
+      <div class="modal-action">
+        <button class="modal-action-btn" onclick="closeModal()">Got it!</button>
       </div>
     </div>
   </div>
