@@ -842,7 +842,7 @@ nav.active .dropdown.open > a::after {
    ================================================ */
 .pricing-section {
   position: relative;
-  padding: 30px 20px;
+  padding: 60px 20px 30px;
   background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
   overflow: visible;
   min-height: auto;
@@ -926,7 +926,7 @@ nav.active .dropdown.open > a::after {
   backdrop-filter: blur(20px);
   border: 2px solid rgba(255, 255, 255, 0.2);
   border-radius: 20px;
-  padding: 15px 10px;
+  padding: 25px 15px;
   text-align: center;
   transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   position: relative;

@@ -105,11 +105,14 @@
       background: rgba(255, 255, 255, 0.06);
       border: 1px solid rgba(255, 255, 255, 0.1);
       border-radius: 20px;
-      padding: 50px 40px;
-      text-align: center;
+      padding: 40px 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
       position: relative;
       overflow: visible;
+      min-height: 180px;
     }
 
     .client-card-premium::before {
@@ -135,10 +138,10 @@
     }
 
     .client-card-premium img {
-      max-width: 200px;
-      max-height: 120px;
+      width: 240px;
+      height: 140px;
       object-fit: contain;
-      filter: brightness(0.9) contrast(1.1);
+      filter: brightness(0.95) contrast(1.1);
       transition: all 0.4s ease;
     }
 
