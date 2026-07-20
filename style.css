@@ -974,9 +974,9 @@ nav.active .dropdown.open > a::after {
 
 .featured-badge {
   position: absolute;
-  top: 35%;
-  left: 50%;
-  transform: translate(-50%, -50%) rotate(-15deg);
+  top: 15%;
+  left: -5px;
+  transform: rotate(-15deg);
   background: linear-gradient(135deg, #f59e0b, #ef4444, #f59e0b);
   background-size: 200% 200%;
   animation: gradientShift 2s ease infinite;
