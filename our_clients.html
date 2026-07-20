@@ -245,6 +245,8 @@
     }
 
     @media (max-width: 900px) {
+      .clients-hero h1 { font-size: 2.5rem; }
+      .clients-header h2 { font-size: 2.2rem; }
       .clients-grid {
         grid-template-columns: repeat(2, 1fr);
       }
@@ -254,17 +256,46 @@
     }
 
     @media (max-width: 600px) {
+      .clients-hero {
+        min-height: 50vh;
+        padding: 100px 15px 60px;
+      }
       .clients-hero h1 {
         font-size: 2.2rem;
+      }
+      .clients-hero p {
+        font-size: 1rem;
       }
       .clients-header h2 {
         font-size: 2rem;
       }
+      .clients-section {
+        padding: 60px 15px;
+      }
       .clients-grid {
         grid-template-columns: 1fr 1fr;
       }
+      .client-card-premium img {
+        width: 100%;
+        height: auto;
+        max-height: 120px;
+      }
+      .client-card-premium {
+        min-height: auto;
+        padding: 25px 15px;
+      }
       .trust-stats {
         grid-template-columns: 1fr 1fr;
+        padding: 60px 15px;
+      }
+      .trust-stat-number {
+        font-size: 2.2rem;
+      }
+      .clients-cta-section {
+        padding: 60px 15px;
+      }
+      .clients-cta-section h2 {
+        font-size: 1.8rem;
       }
     }
   </style>

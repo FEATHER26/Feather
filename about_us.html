@@ -294,6 +294,8 @@
     }
 
     @media (max-width: 900px) {
+      .about-hero h1 { font-size: 2.5rem; }
+      .about-content-header h2 { font-size: 2.2rem; }
       .about-grid {
         grid-template-columns: 1fr;
       }
@@ -303,14 +305,33 @@
     }
 
     @media (max-width: 600px) {
+      .about-hero {
+        min-height: 50vh;
+        padding: 100px 15px 60px;
+      }
       .about-hero h1 {
         font-size: 2.2rem;
+      }
+      .about-hero p {
+        font-size: 1rem;
+      }
+      .about-content-section {
+        padding: 60px 15px;
       }
       .about-content-header h2 {
         font-size: 2rem;
       }
+      .about-products-section {
+        padding: 60px 15px;
+      }
       .about-products-grid {
         grid-template-columns: 1fr 1fr;
+      }
+      .about-cta-section {
+        padding: 60px 15px;
+      }
+      .about-cta-section h2 {
+        font-size: 1.8rem;
       }
     }
   </style>

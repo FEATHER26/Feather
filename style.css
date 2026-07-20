@@ -3174,6 +3174,30 @@ nav.active .dropdown.open > a::after {
     position: relative;
     bottom: auto;
   }
+
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    text-align: center;
+  }
+
+  .footer-social {
+    justify-content: center;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 8px;
+  }
+
+  .featured-badge {
+    left: 10px;
+    top: -5px;
+    transform: rotate(-15deg) scale(0.85);
+    padding: 6px 20px;
+    font-size: 0.65rem;
+  }
   
   .works-section,
   .product-gallery,

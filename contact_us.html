@@ -351,6 +351,8 @@
     }
 
     @media (max-width: 900px) {
+      .contact-hero h1 { font-size: 2.5rem; }
+      .contact-cards-header h2 { font-size: 2.2rem; }
       .contact-cards-grid {
         grid-template-columns: 1fr;
         max-width: 500px;
@@ -358,13 +360,34 @@
     }
 
     @media (max-width: 600px) {
+      .contact-hero {
+        min-height: 50vh;
+        padding: 100px 15px 60px;
+      }
       .contact-hero h1 {
         font-size: 2.2rem;
       }
-
-      .contact-cards-header h2,
-      .contact-cta-section h2 {
+      .contact-hero p {
+        font-size: 1rem;
+      }
+      .contact-cards-header h2 {
         font-size: 2rem;
+      }
+      .contact-cards-section {
+        padding: 60px 15px;
+      }
+      .contact-card-new {
+        padding: 30px 20px;
+      }
+      .contact-cta-section {
+        padding: 60px 15px;
+      }
+      .contact-cta-section h2 {
+        font-size: 1.8rem;
+      }
+      .contact-cta-btn {
+        padding: 14px 28px;
+        font-size: 0.95rem;
       }
     }
   </style>

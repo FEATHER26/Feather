@@ -619,6 +619,17 @@
       background: #dc2626;
     }
 
+    @media (max-width: 768px) {
+      .products-upload-row {
+        flex-direction: column;
+      }
+      .products-column,
+      .upload-column {
+        flex: auto;
+        width: 100%;
+      }
+    }
+
     @media (max-width: 480px) {
       .contact-page {
         padding: 90px 10px 50px;
@@ -699,6 +710,16 @@
         display: block !important;
         visibility: visible !important;
         opacity: 1 !important;
+      }
+    }
+
+    @media (max-width: 360px) {
+      .phone-row {
+        flex-direction: column;
+      }
+      .country-select {
+        width: 100% !important;
+        margin-bottom: 8px;
       }
     }
   </style>
