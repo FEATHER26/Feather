@@ -760,7 +760,6 @@
     <nav id="mainNav" aria-label="Main navigation">
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
-        <li><a href="product_enquiry.html" class="active">Product Enquiry</a></li>
         <li class="dropdown">
           <a href="#">Products</a>
           <div class="dropdown-content">
@@ -787,6 +786,13 @@
             <a href="pricing_packages.html">Pricing Packages</a>
             <a href="technology.html">Technology</a>
           </div>
+        </li>
+        <li><a href="product_enquiry.html" class="active">Product Enquiry</a></li>
+        <li><a href="our_works.html">Our Works</a></li>
+        <li><a href="our_clients.html">Our Clients</a></li>
+        <li><a href="about_us.html">About Us</a></li>
+        <li><a href="contact_us.html">Contact Us</a></li>
+      </ul>
         </li>
 
         <li><a href="about_us.html">About Us</a></li>
@@ -885,7 +891,7 @@
       </div>
 
       <label>Message</label>
-      <textarea name="message" placeholder="Tell us what your requirements are (e.g., 5,000 T-shirts like the attached image needed or 4,000 premium custom bags with our message needed..)" id="message"></textarea>
+      <textarea name="message" placeholder="Tell us what your requirements are (e.g., 1,000 T-shirts like the attached image needed or 2,000 premium custom bags with our message needed..)" id="message"></textarea>
       <div id="messageError" class="validation-error">Message cannot be empty</div>
       
       <div id="productMessageError" class="validation-error">Please select at least one product or provide your message to continue.</div>
@@ -963,7 +969,7 @@
           if (this.name === 'name') this.placeholder = 'Your Name';
           else if (this.name === 'email') this.placeholder = 'yourId@eMail.com';
           else if (this.name === 'phone') this.placeholder = 'Number';
-          else if (this.tagName === 'TEXTAREA') this.placeholder = 'Tell us your requirements (e.g., 5,000 T-shirts like the attached image | 4,000 custom bags with so and so message, etc.)';
+          else if (this.tagName === 'TEXTAREA') this.placeholder = 'Tell us your requirements (e.g., 1,000 T-shirts like the attached image | 2,000 custom bags with so and so message, etc.)';
         }
       });
     });
@@ -1040,7 +1046,7 @@
           var result = JSON.parse(xhr.responseText);
           if (xhr.status === 200) {
             if (result.success) {
-              showModal('Thank You!', 'Your details have been submitted successfully! We\'ll reach out to you soon.', false);
+              showModal('Thank You! 🎉', 'We\'ve received your enquiry and our team is already on it! You\'ll hear from us within 24 hours. We\'re excited to bring your vision to life!', false);
               document.getElementById("contactForm").reset();
               document.getElementById('previewContainer').style.display = 'none';
               document.getElementById('uploadBox').style.display = 'block';
@@ -1158,6 +1164,7 @@
     function showModal(title, message, isError) {
       document.getElementById('modalTitle').textContent = title;
       document.getElementById('modalMessage').textContent = message;
+      document.getElementById('modalIcon').innerHTML = isError ? '<i class="fas fa-exclamation-circle" style="color: #ef4444;"></i>' : '<i class="fas fa-check-circle" style="color: #10b981;"></i>';
       var modalContent = document.getElementById('modalContent');
       modalContent.classList.remove('modal-error', 'modal-success');
       if (isError) {
@@ -1183,7 +1190,7 @@
   <div id="loadingOverlay" class="loading-overlay">
     <div class="loading-spinner">
       <i class="fas fa-spinner"></i>
-      <p>Sending message...</p>
+      <p>Sending your enquiry...</p>
     </div>
   </div>
 
@@ -1195,6 +1202,8 @@
         <button class="modal-close" onclick="closeModal()">×</button>
       </div>
       <div id="modalContent" class="modal-content">
+        <div id="modalIcon" style="font-size: 3rem; margin-bottom: 15px;"></div>
+        <h3 id="modalTitle" style="margin-bottom: 10px; color: #1a1a2e;"></h3>
         <p id="modalMessage"></p>
       </div>
       <div class="modal-footer">
