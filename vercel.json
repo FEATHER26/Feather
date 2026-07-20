@@ -16,8 +16,43 @@
       "dest": "/server.js"
     },
     {
+      "src": "/robots.txt",
+      "dest": "/robots.txt",
+      "headers": {
+        "Cache-Control": "public, max-age=86400",
+        "Content-Type": "text/plain"
+      }
+    },
+    {
+      "src": "/sitemap.xml",
+      "dest": "/sitemap.xml",
+      "headers": {
+        "Cache-Control": "public, max-age=86400",
+        "Content-Type": "application/xml"
+      }
+    },
+    {
+      "src": "/(.*)\\.(jpg|jpeg|png|gif|webp|svg|ico)",
+      "headers": {
+        "Cache-Control": "public, max-age=31536000, immutable"
+      }
+    },
+    {
+      "src": "/(.*)\\.(css|js)",
+      "headers": {
+        "Cache-Control": "public, max-age=31536000, immutable"
+      }
+    },
+    {
       "src": "/(.*)",
-      "dest": "/$1"
+      "dest": "/$1",
+      "headers": {
+        "X-Content-Type-Options": "nosniff",
+        "X-Frame-Options": "SAMEORIGIN",
+        "Referrer-Policy": "strict-origin-when-cross-origin",
+        "Permissions-Policy": "camera=(), microphone=(), geolocation=()"
+      }
     }
-  ]
+  ],
+  "errorPage": "/404.html"
 }

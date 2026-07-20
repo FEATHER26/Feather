@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /node_modules/
+Disallow: /uploads/
+
+Sitemap: https://feather-creations.vercel.app/sitemap.xml

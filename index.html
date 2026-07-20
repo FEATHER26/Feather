@@ -8,14 +8,104 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <meta name="description" content="Feather Creations offers faith-inspired t-shirts, custom embroidery, school uniforms, badges, bags, and IT & AI solutions. Crafted with purpose in Coimbatore, India.">
+  <meta name="keywords" content="feather creations, faith inspired fashion, custom t-shirts, embroidery, school uniforms, coimbatore">
+
+  <link rel="canonical" href="https://feather-creations.vercel.app/index.html">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://feather-creations.vercel.app/index.html">
+  <meta property="og:title" content="Feather Creations | Faith-Inspired Fashion & Custom Products">
+  <meta property="og:description" content="Feather Creations offers faith-inspired t-shirts, custom embroidery, school uniforms, badges, bags, and IT & AI solutions. Crafted with purpose in Coimbatore, India.">
+  <meta property="og:image" content="https://feather-creations.vercel.app/webp/insta.webp">
+  <meta property="og:site_name" content="Feather Creations">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://feather-creations.vercel.app/index.html">
+  <meta name="twitter:title" content="Feather Creations | Faith-Inspired Fashion & Custom Products">
+  <meta name="twitter:description" content="Feather Creations offers faith-inspired t-shirts, custom embroidery, school uniforms, badges, bags, and IT & AI solutions. Crafted with purpose in Coimbatore, India.">
+  <meta name="twitter:image" content="https://feather-creations.vercel.app/webp/insta.webp">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/webp" href="/webp/logo.webp">
+  <link rel="apple-touch-icon" href="/webp/logo.webp">
+  <meta name="theme-color" content="#1a365d">
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Feather Creations",
+  "url": "https://feather-creations.vercel.app",
+  "logo": "https://feather-creations.vercel.app/webp/logo.webp",
+  "description": "Faith-inspired fashion and custom products crafted with purpose.",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Coimbatore",
+    "addressRegion": "Tamil Nadu",
+    "addressCountry": "IN"
+  },
+  "contactPoint": [
+    {
+      "@type": "ContactPoint",
+      "telephone": "+91-9047299559",
+      "contactType": "customer service",
+      "name": "Gary"
+    },
+    {
+      "@type": "ContactPoint",
+      "telephone": "+91-9962534351",
+      "contactType": "customer service",
+      "name": "Leslie Vanathuraj"
+    },
+    {
+      "@type": "ContactPoint",
+      "telephone": "+91-9003530293",
+      "contactType": "customer service",
+      "name": "Rahul David"
+    }
+  ],
+  "sameAs": [
+    "https://www.instagram.com/feathercreations"
+  ]
+}</script>
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Feather Creations",
+  "url": "https://feather-creations.vercel.app",
+  "logo": "https://feather-creations.vercel.app/webp/logo.webp",
+  "description": "Faith-inspired fashion, custom products, and IT solutions in Coimbatore.",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Coimbatore",
+    "addressRegion": "Tamil Nadu",
+    "addressCountry": "IN"
+  },
+  "telephone": "+91-9047299559"
+}</script>
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://feather-creations.vercel.app/"
+    }
+  ]
+}</script>
 </head>
 <body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
   <!-- ===== Animated Background ===== -->
   <div class="animated-bg"></div>
 
   <!-- ===== Header ===== -->
-  <header>
+  <header role="banner">
     <div class="menu-btn" id="menuBtn" onclick="toggleMenu()">
       <div class="feather-icon">
         <span></span>
@@ -28,7 +118,7 @@
       <span class="logo-text">Feather</span>
     </a>
 
-    <nav id="mainNav">
+    <nav id="mainNav" aria-label="Main navigation">
       <ul class="nav-links">
         <li><a href="index.html" class="active">Home</a></li>
         <li><a href="product_enquiry.html">Product Enquiry</a></li>
@@ -73,7 +163,7 @@
   </header>
 
   <!-- ===== Hero Section ===== -->
-  <section class="hero">
+  <section id="main-content" class="hero">
     <img src="webp/AI_the_trend_setter.webp" alt="AI The Trend Setter" class="hero-left-image" loading="lazy">
     
     <div class="hero-content">
@@ -131,7 +221,7 @@
   </section>
 
   <!-- ===== Footer ===== -->
-  <footer class="footer">
+  <footer role="contentinfo" class="footer">
     <p>©2026 <span> Feather Creations</span> | Designed with Purpose</p>
   </footer>
 

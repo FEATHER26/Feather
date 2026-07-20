@@ -6,14 +6,129 @@
   <title>Feather | T-Shirt Collection</title>
   <link rel="stylesheet" href="style.css?v=3" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <meta name="description" content="Explore our premium t-shirt collection — corporate wear, round-neck, collared, sports wear, and zipper jackets. Custom designs with faith-inspired typography.">
+  <meta name="keywords" content="t-shirts, corporate t-shirts, round neck, collared t-shirts, sports wear, custom t-shirts">
+
+  <link rel="canonical" href="https://feather-creations.vercel.app/products.html">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://feather-creations.vercel.app/products.html">
+  <meta property="og:title" content="T-Shirt Collection | Feather Creations">
+  <meta property="og:description" content="Explore our premium t-shirt collection — corporate wear, round-neck, collared, sports wear, and zipper jackets. Custom designs with faith-inspired typography.">
+  <meta property="og:image" content="https://feather-creations.vercel.app/webp/ts1.webp">
+  <meta property="og:site_name" content="Feather Creations">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://feather-creations.vercel.app/products.html">
+  <meta name="twitter:title" content="T-Shirt Collection | Feather Creations">
+  <meta name="twitter:description" content="Explore our premium t-shirt collection — corporate wear, round-neck, collared, sports wear, and zipper jackets. Custom designs with faith-inspired typography.">
+  <meta name="twitter:image" content="https://feather-creations.vercel.app/webp/ts1.webp">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/webp" href="/webp/logo.webp">
+  <link rel="apple-touch-icon" href="/webp/logo.webp">
+  <meta name="theme-color" content="#1a365d">
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Feather Creations",
+  "url": "https://feather-creations.vercel.app",
+  "logo": "https://feather-creations.vercel.app/webp/logo.webp",
+  "description": "Faith-inspired fashion and custom products crafted with purpose.",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Coimbatore",
+    "addressRegion": "Tamil Nadu",
+    "addressCountry": "IN"
+  },
+  "contactPoint": [
+    {
+      "@type": "ContactPoint",
+      "telephone": "+91-9047299559",
+      "contactType": "customer service",
+      "name": "Gary"
+    },
+    {
+      "@type": "ContactPoint",
+      "telephone": "+91-9962534351",
+      "contactType": "customer service",
+      "name": "Leslie Vanathuraj"
+    },
+    {
+      "@type": "ContactPoint",
+      "telephone": "+91-9003530293",
+      "contactType": "customer service",
+      "name": "Rahul David"
+    }
+  ],
+  "sameAs": [
+    "https://www.instagram.com/feathercreations"
+  ]
+}</script>
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Feather Creations",
+  "url": "https://feather-creations.vercel.app",
+  "logo": "https://feather-creations.vercel.app/webp/logo.webp",
+  "description": "Faith-inspired fashion, custom products, and IT solutions in Coimbatore.",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Coimbatore",
+    "addressRegion": "Tamil Nadu",
+    "addressCountry": "IN"
+  },
+  "telephone": "+91-9047299559"
+}</script>
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://feather-creations.vercel.app/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "T-Shirts",
+      "item": "https://feather-creations.vercel.app/products.html"
+    }
+  ]
+}</script>
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "T-Shirt Collection",
+  "description": "Explore our premium t-shirt collection — corporate wear, round-neck, collared, sports wear, and zipper jackets. Custom designs with faith-inspired typography.",
+  "image": "https://feather-creations.vercel.app/webp/ts1.webp",
+  "brand": {
+    "@type": "Brand",
+    "name": "Feather Creations"
+  },
+  "offers": {
+    "@type": "AggregateOffer",
+    "priceCurrency": "INR",
+    "lowPrice": "199",
+    "availability": "https://schema.org/InStock"
+  }
+}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
 <body class="products-page">
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
   <!-- ===== Animated Background ===== -->
   <div class="animated-bg"></div>
 
   <!-- ===== Header ===== -->
-  <header>
+  <header role="banner">
     <div class="menu-btn" id="menuBtn" onclick="toggleMenu()">
       <div class="feather-icon">
         <span></span>
@@ -25,7 +140,7 @@
       <img src="webp/logo.webp" alt="Feather Logo" class="logo-img" loading="lazy">
       <span class="logo-text">Feather</span>
     </a>
-    <nav id="mainNav">
+    <nav id="mainNav" aria-label="Main navigation">
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="product_enquiry.html">Product Enquiry</a></li>
@@ -64,7 +179,7 @@
     </nav>
   </header>
 
-  <section class="products-hero">
+  <section id="main-content" class="products-hero">
     <h1>Our Premium <span>T-Shirt Collection</span></h1>
     <p>Comfort, quality, and creativity — crafted with purpose</p>
   </section>
@@ -128,7 +243,7 @@
 
     <div class="product-card">
       <div class="product-image-zoom" data-src="webp/ts8.webp">
-        <img src="webp/ts8.webp" alt="Thumbhole Zipper" loading="lazy" />
+        <img src="webp/ts8.webp" alt="Thumbhole Zipper T-Shirt 1" loading="lazy" />
       </div>
       <h3>Thumbhole Zipper</h3>
       <p>Zipper T-Shirt</p>
@@ -136,7 +251,7 @@
 
     <div class="product-card">
       <div class="product-image-zoom" data-src="webp/ts9.webp">
-        <img src="webp/ts9.webp" alt="Thumbhole Zipper" loading="lazy" />
+        <img src="webp/ts9.webp" alt="Thumbhole Zipper T-Shirt 2" loading="lazy" />
       </div>
       <h3>Thumbhole Zipper</h3>
       <p>Zipper T-Shirt</p>
@@ -144,7 +259,7 @@
 
     <div class="product-card">
       <div class="product-image-zoom" data-src="webp/ts10.webp">
-        <img src="webp/ts10.webp" alt="Thumbhole Zipper" loading="lazy" />
+        <img src="webp/ts10.webp" alt="Thumbhole Zipper T-Shirt 3" loading="lazy" />
       </div>
       <h3>Thumbhole Zipper</h3>
       <p>Classic Black</p>
@@ -152,7 +267,7 @@
 
     <div class="product-card">
       <div class="product-image-zoom" data-src="webp/ts11.webp">
-        <img src="webp/ts11.webp" alt="Thumbhole Zipper" loading="lazy" />
+        <img src="webp/ts11.webp" alt="Thumbhole Zipper T-Shirt 4" loading="lazy" />
       </div>
       <h3>Thumbhole Zipper</h3>
       <p>Classic Look</p>
@@ -255,7 +370,7 @@
     </div>
   </section>
 
-  <footer class="footer">
+  <footer role="contentinfo" class="footer">
     <p>©2026 <span> Feather Creations</span> | Designed with Purpose</p>
   </footer>
 

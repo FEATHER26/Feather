@@ -3200,3 +3200,78 @@ nav.active .dropdown.open > a::after {
   border-radius: 20px;
   padding: 30px;
 }
+
+/* ================================================
+   ACCESSIBILITY - Skip to Content Link
+   ================================================ */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 0;
+  background: var(--primary);
+  color: var(--white);
+  padding: 12px 24px;
+  z-index: 10000;
+  font-weight: 600;
+  border-radius: 0 0 8px 0;
+  transition: top 0.3s ease;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* ================================================
+   PERFORMANCE - Content Visibility
+   ================================================ */
+.product-gallery,
+.footer,
+.whatsapp-float {
+  content-visibility: auto;
+  contain-intrinsic-size: 0 500px;
+}
+
+/* ================================================
+   PRINT STYLESHEET
+   ================================================ */
+@media print {
+  header,
+  nav,
+  .whatsapp-float,
+  .animated-bg,
+  .menu-btn,
+  .hero-buttons,
+  .freelancing-modal,
+  .zoom-lens,
+  .footer {
+    display: none !important;
+  }
+
+  body {
+    background: white;
+    color: black;
+    font-size: 12pt;
+  }
+
+  .product-card {
+    break-inside: avoid;
+    border: 1px solid #ccc;
+    margin-bottom: 15px;
+  }
+
+  .product-card img {
+    max-width: 200px;
+    height: auto;
+  }
+
+  a {
+    color: black;
+    text-decoration: underline;
+  }
+
+  a[href]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.8em;
+    color: #666;
+  }
+}

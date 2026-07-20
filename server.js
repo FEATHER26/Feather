@@ -5,25 +5,48 @@ import dotenv from "dotenv";
 import multer from "multer";
 import path from "path";
 import fs from "fs";
+import { fileURLToPath } from "url";
 
 dotenv.config();
 
 const app = express();
-app.use(express.static('.'));
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+
+// Security headers
+app.use((req, res, next) => {
+  res.setHeader('X-Content-Type-Options', 'nosniff');
+  res.setHeader('X-Frame-Options', 'SAMEORIGIN');
+  res.setHeader('Referrer-Policy', 'strict-origin-when-cross-origin');
+  res.setHeader('Permissions-Policy', 'camera=(), microphone=(), geolocation=()');
+  res.setHeader('X-XSS-Protection', '1; mode=block');
+  next();
+});
+
+// Cache static assets
+app.use(express.static(__dirname, {
+  maxAge: '1y',
+  immutable: true,
+  setHeaders: (res, filePath) => {
+    if (filePath.endsWith('.html')) {
+      res.setHeader('Cache-Control', 'public, max-age=3600');
+    }
+  }
+}));
+
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-const resend = process.env.RESEND_API_KEY 
-  ? new Resend(process.env.RESEND_API_KEY) 
+const resend = process.env.RESEND_API_KEY
+  ? new Resend(process.env.RESEND_API_KEY)
   : null;
 
 // Configure multer for file uploads
-const upload = multer({ 
+const upload = multer({
   storage: multer.memoryStorage(),
   limits: { fileSize: 5 * 1024 * 1024 },
   fileFilter: (req, file, cb) => {
-    const allowedTypes = /jpeg|jpg|png|gif/;
+    const allowedTypes = /jpeg|jpg|png|gif|webp/;
     const extname = allowedTypes.test(path.extname(file.originalname).toLowerCase());
     const mimetype = allowedTypes.test(file.mimetype);
     if (extname && mimetype) {
@@ -38,7 +61,6 @@ app.post("/submit-login", upload.single('productImage'), async (req, res) => {
 
   try {
     if (!resend) {
-      // Clean up uploaded file if email fails
       if (req.file) {
         fs.unlinkSync(req.file.path);
       }
@@ -61,7 +83,6 @@ app.post("/submit-login", upload.single('productImage'), async (req, res) => {
       `,
     };
 
-    // Add attachment if file was uploaded
     if (req.file) {
       emailData.attachments = [{
         filename: req.file.originalname,
@@ -78,6 +99,6 @@ app.post("/submit-login", upload.single('productImage'), async (req, res) => {
 });
 
 const port = process.env.PORT || 10000;
-app.listen(port, () => console.log(`🚀 Server running on port ${port}`));
+app.listen(port, () => console.log(`Server running on port ${port}`));
 
 export default app;
