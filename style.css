@@ -3841,3 +3841,708 @@ nav.active .dropdown.open > a::after {
     color: #666;
   }
 }
+
+/* ================================================
+   WHY CHOOSE US - Premium Goosebumps Design
+   ================================================ */
+.wcu-hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #0a0a1a 0%, #1a1a3e 30%, #0d1b2a 60%, #1b2838 100%);
+  padding: 120px 20px 80px;
+}
+
+.wcu-hero::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(ellipse at 30% 50%, rgba(99, 102, 241, 0.15) 0%, transparent 50%),
+              radial-gradient(ellipse at 70% 20%, rgba(139, 92, 246, 0.1) 0%, transparent 40%),
+              radial-gradient(ellipse at 50% 80%, rgba(59, 130, 246, 0.08) 0%, transparent 40%);
+  animation: wcuHeroBg 20s ease-in-out infinite;
+}
+
+@keyframes wcuHeroBg {
+  0%, 100% { transform: rotate(0deg) scale(1); }
+  33% { transform: rotate(5deg) scale(1.1); }
+  66% { transform: rotate(-3deg) scale(0.95); }
+}
+
+.wcu-hero-content {
+  position: relative;
+  z-index: 10;
+  max-width: 900px;
+}
+
+.wcu-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50px;
+  padding: 10px 24px;
+  margin-bottom: 30px;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  animation: fadeInDown 0.8s ease;
+}
+
+.wcu-hero-badge i {
+  color: #fbbf24;
+  animation: starPulse 2s infinite;
+}
+
+@keyframes starPulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.3); opacity: 0.7; }
+}
+
+.wcu-hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 25px;
+  animation: fadeInUp 0.8s ease 0.2s both;
+}
+
+.wcu-hero h1 .gradient-text {
+  background: linear-gradient(135deg, #818cf8, #c084fc, #f472b6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  background-size: 200% 200%;
+  animation: gradientMove 4s ease infinite;
+}
+
+@keyframes gradientMove {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.wcu-hero p {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.6);
+  max-width: 600px;
+  margin: 0 auto 40px;
+  line-height: 1.8;
+  animation: fadeInUp 0.8s ease 0.4s both;
+}
+
+.wcu-hero-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  color: white;
+  padding: 18px 40px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.1rem;
+  transition: all 0.4s ease;
+  box-shadow: 0 20px 50px rgba(99, 102, 241, 0.4);
+  animation: fadeInUp 0.8s ease 0.6s both;
+  position: relative;
+  overflow: hidden;
+}
+
+.wcu-hero-cta::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.wcu-hero-cta:hover::before {
+  left: 100%;
+}
+
+.wcu-hero-cta:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 30px 60px rgba(99, 102, 241, 0.6);
+}
+
+/* Floating Particles for Hero */
+.wcu-particles {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.wcu-particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: rgba(139, 92, 246, 0.4);
+  border-radius: 50%;
+  animation: wcuFloat linear infinite;
+}
+
+.wcu-particle:nth-child(1) { left: 10%; animation-duration: 25s; animation-delay: 0s; }
+.wcu-particle:nth-child(2) { left: 20%; animation-duration: 20s; animation-delay: 2s; width: 6px; height: 6px; }
+.wcu-particle:nth-child(3) { left: 35%; animation-duration: 28s; animation-delay: 4s; }
+.wcu-particle:nth-child(4) { left: 50%; animation-duration: 22s; animation-delay: 1s; width: 5px; height: 5px; }
+.wcu-particle:nth-child(5) { left: 65%; animation-duration: 26s; animation-delay: 3s; }
+.wcu-particle:nth-child(6) { left: 80%; animation-duration: 24s; animation-delay: 5s; width: 7px; height: 7px; }
+.wcu-particle:nth-child(7) { left: 90%; animation-duration: 21s; animation-delay: 0.5s; }
+.wcu-particle:nth-child(8) { left: 45%; animation-duration: 23s; animation-delay: 6s; width: 3px; height: 3px; }
+
+@keyframes wcuFloat {
+  0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+  10% { opacity: 0.6; }
+  90% { opacity: 0.6; }
+  100% { transform: translateY(-100vh) rotate(720deg); opacity: 0; }
+}
+
+/* Stats Counter Section */
+.wcu-stats {
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  position: relative;
+  overflow: hidden;
+}
+
+.wcu-stats::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(139, 92, 246, 0.5), transparent);
+}
+
+.wcu-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.wcu-stat-item {
+  text-align: center;
+  padding: 30px 20px;
+  position: relative;
+}
+
+.wcu-stat-item::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 20%;
+  height: 60%;
+  width: 1px;
+  background: linear-gradient(180deg, transparent, rgba(255,255,255,0.1), transparent);
+}
+
+.wcu-stat-item:last-child::after {
+  display: none;
+}
+
+.wcu-stat-number {
+  font-family: 'Playfair Display', serif;
+  font-size: 3.5rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #818cf8, #c084fc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+  margin-bottom: 10px;
+}
+
+.wcu-stat-label {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 500;
+}
+
+/* Features Grid */
+.wcu-features {
+  padding: 100px 20px;
+  background: linear-gradient(180deg, #0f172a, #1a1a2e);
+  position: relative;
+}
+
+.wcu-features-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.wcu-features-header h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  color: white;
+  margin-bottom: 15px;
+}
+
+.wcu-features-header p {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.wcu-features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.wcu-feature-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 24px;
+  padding: 40px 30px;
+  text-align: center;
+  transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
+  overflow: hidden;
+  cursor: default;
+}
+
+.wcu-feature-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(139, 92, 246, 0.05));
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.wcu-feature-card:hover::before {
+  opacity: 1;
+}
+
+.wcu-feature-card:hover {
+  transform: translateY(-15px) scale(1.02);
+  border-color: rgba(139, 92, 246, 0.3);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3), 0 0 40px rgba(139, 92, 246, 0.1);
+}
+
+.wcu-feature-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  position: relative;
+  z-index: 1;
+  transition: all 0.4s ease;
+}
+
+.wcu-feature-card:hover .wcu-feature-icon {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.wcu-feature-icon.icon-purple { background: linear-gradient(135deg, #8b5cf6, #6366f1); box-shadow: 0 15px 35px rgba(139, 92, 246, 0.4); }
+.wcu-feature-icon.icon-blue { background: linear-gradient(135deg, #3b82f6, #06b6d4); box-shadow: 0 15px 35px rgba(59, 130, 246, 0.4); }
+.wcu-feature-icon.icon-green { background: linear-gradient(135deg, #10b981, #34d399); box-shadow: 0 15px 35px rgba(16, 185, 129, 0.4); }
+.wcu-feature-icon.icon-orange { background: linear-gradient(135deg, #f59e0b, #f97316); box-shadow: 0 15px 35px rgba(245, 158, 11, 0.4); }
+.wcu-feature-icon.icon-pink { background: linear-gradient(135deg, #ec4899, #f472b6); box-shadow: 0 15px 35px rgba(236, 72, 153, 0.4); }
+.wcu-feature-icon.icon-red { background: linear-gradient(135deg, #ef4444, #f87171); box-shadow: 0 15px 35px rgba(239, 68, 68, 0.4); }
+
+.wcu-feature-icon i {
+  font-size: 2rem;
+  color: white;
+}
+
+.wcu-feature-card h3 {
+  font-size: 1.3rem;
+  color: white;
+  margin-bottom: 12px;
+  font-weight: 700;
+  position: relative;
+  z-index: 1;
+}
+
+.wcu-feature-card p {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.5);
+  line-height: 1.7;
+  position: relative;
+  z-index: 1;
+}
+
+/* Process/How We Work Section */
+.wcu-process {
+  padding: 100px 20px;
+  background: linear-gradient(180deg, #1a1a2e, #0f172a);
+  position: relative;
+  overflow: hidden;
+}
+
+.wcu-process::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.08) 0%, transparent 70%);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.wcu-process-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.wcu-process-header h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  color: white;
+  margin-bottom: 15px;
+}
+
+.wcu-process-header p {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.wcu-process-timeline {
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.wcu-process-timeline::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(180deg, transparent, rgba(139, 92, 246, 0.5), transparent);
+  transform: translateX(-50%);
+}
+
+.wcu-process-step {
+  display: flex;
+  align-items: center;
+  margin-bottom: 50px;
+  position: relative;
+}
+
+.wcu-process-step:nth-child(odd) {
+  flex-direction: row;
+}
+
+.wcu-process-step:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.wcu-process-step-content {
+  width: 45%;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 20px;
+  padding: 30px;
+  transition: all 0.4s ease;
+}
+
+.wcu-process-step-content:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(139, 92, 246, 0.3);
+  transform: translateY(-5px);
+}
+
+.wcu-process-step-number {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, #8b5cf6, #6366f1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 1.2rem;
+  color: white;
+  z-index: 2;
+  box-shadow: 0 10px 30px rgba(139, 92, 246, 0.4);
+}
+
+.wcu-process-step-content h3 {
+  font-size: 1.2rem;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.wcu-process-step-content p {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.5);
+  line-height: 1.6;
+}
+
+/* Testimonials */
+.wcu-testimonials {
+  padding: 100px 20px;
+  background: linear-gradient(180deg, #0f172a, #1e1e3a);
+  position: relative;
+}
+
+.wcu-testimonials-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.wcu-testimonials-header h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  color: white;
+  margin-bottom: 15px;
+}
+
+.wcu-testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.wcu-testimonial-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 24px;
+  padding: 35px;
+  position: relative;
+  transition: all 0.4s ease;
+}
+
+.wcu-testimonial-card:hover {
+  transform: translateY(-10px);
+  border-color: rgba(139, 92, 246, 0.3);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+}
+
+.wcu-testimonial-stars {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 20px;
+}
+
+.wcu-testimonial-stars i {
+  color: #fbbf24;
+  font-size: 1rem;
+}
+
+.wcu-testimonial-text {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.8;
+  margin-bottom: 25px;
+  font-style: italic;
+}
+
+.wcu-testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.wcu-testimonial-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #8b5cf6, #6366f1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: white;
+}
+
+.wcu-testimonial-name {
+  font-weight: 600;
+  color: white;
+  font-size: 1rem;
+}
+
+.wcu-testimonial-role {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+/* CTA Section */
+.wcu-cta {
+  padding: 100px 20px;
+  background: linear-gradient(135deg, #1e1b4b, #312e81, #1e1b4b);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.wcu-cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: 
+    radial-gradient(circle at 20% 50%, rgba(139, 92, 246, 0.2) 0%, transparent 50%),
+    radial-gradient(circle at 80% 50%, rgba(59, 130, 246, 0.15) 0%, transparent 50%);
+  animation: ctaGlow 8s ease-in-out infinite;
+}
+
+@keyframes ctaGlow {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+.wcu-cta-content {
+  position: relative;
+  z-index: 10;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.wcu-cta h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.wcu-cta p {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 40px;
+  line-height: 1.8;
+}
+
+.wcu-cta-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.wcu-cta-btn {
+  padding: 18px 40px;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-decoration: none;
+  transition: all 0.4s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.wcu-cta-btn-primary {
+  background: linear-gradient(135deg, #8b5cf6, #6366f1);
+  color: white;
+  box-shadow: 0 15px 40px rgba(139, 92, 246, 0.4);
+}
+
+.wcu-cta-btn-primary:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 25px 50px rgba(139, 92, 246, 0.6);
+}
+
+.wcu-cta-btn-secondary {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+.wcu-cta-btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.4);
+  transform: translateY(-5px);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Mobile Responsive for WCU */
+@media (max-width: 900px) {
+  .wcu-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .wcu-features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .wcu-testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .wcu-process-timeline::before {
+    left: 25px;
+  }
+
+  .wcu-process-step,
+  .wcu-process-step:nth-child(odd),
+  .wcu-process-step:nth-child(even) {
+    flex-direction: column;
+    padding-left: 60px;
+  }
+
+  .wcu-process-step-content {
+    width: 100%;
+  }
+
+  .wcu-process-step-number {
+    left: 0;
+    transform: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .wcu-hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .wcu-stats-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+  }
+
+  .wcu-stat-number {
+    font-size: 2.5rem;
+  }
+
+  .wcu-features-header h2,
+  .wcu-process-header h2,
+  .wcu-testimonials-header h2,
+  .wcu-cta h2 {
+    font-size: 2rem;
+  }
+}
