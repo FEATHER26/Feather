@@ -1732,7 +1732,7 @@ nav.active .dropdown.open > a::after {
 .why-choose-us-section {
   position: relative;
   padding: 80px 20px;
-  background: linear-gradient(135deg, #0f0c29 0%, #1a1a3e 50%, #24243e 100%);
+  background: linear-gradient(135deg, #1c1c35 0%, #2a2a48 50%, #2c3a50 100%);
   overflow: hidden;
 }
 
@@ -3853,7 +3853,7 @@ nav.active .dropdown.open > a::after {
   text-align: center;
   position: relative;
   overflow: hidden;
-  background: linear-gradient(135deg, #141428 0%, #22223e 30%, #162032 60%, #243040 100%);
+  background: linear-gradient(135deg, #1c1c35 0%, #2a2a48 30%, #1e2840 60%, #2c3a50 100%);
   padding: 120px 20px 80px;
 }
 
@@ -4013,7 +4013,7 @@ nav.active .dropdown.open > a::after {
 /* Stats Counter Section */
 .wcu-stats {
   padding: 80px 20px;
-  background: linear-gradient(135deg, #1a2540, #283550);
+  background: linear-gradient(135deg, #222e4a, #304060);
   position: relative;
   overflow: hidden;
 }
@@ -4077,7 +4077,7 @@ nav.active .dropdown.open > a::after {
 /* Features Grid */
 .wcu-features {
   padding: 100px 20px;
-  background: linear-gradient(180deg, #1a2540, #22223e);
+  background: linear-gradient(180deg, #222e4a, #2a2a48);
   position: relative;
 }
 
@@ -4189,7 +4189,7 @@ nav.active .dropdown.open > a::after {
 /* Process/How We Work Section */
 .wcu-process {
   padding: 100px 20px;
-  background: linear-gradient(180deg, #22223e, #1a2540);
+  background: linear-gradient(180deg, #2a2a48, #222e4a);
   position: relative;
   overflow: hidden;
 }
@@ -4303,7 +4303,7 @@ nav.active .dropdown.open > a::after {
 /* Testimonials */
 .wcu-testimonials {
   padding: 100px 20px;
-  background: linear-gradient(180deg, #1a2540, #252545);
+  background: linear-gradient(180deg, #222e4a, #2e2e50);
   position: relative;
 }
 
@@ -4394,7 +4394,7 @@ nav.active .dropdown.open > a::after {
 /* CTA Section */
 .wcu-cta {
   padding: 100px 20px;
-  background: linear-gradient(135deg, #2d2960, #3d3890, #2d2960);
+  background: linear-gradient(135deg, #362f70, #4a42a0, #362f70);
   text-align: center;
   position: relative;
   overflow: hidden;
