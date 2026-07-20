@@ -3192,11 +3192,11 @@ nav.active .dropdown.open > a::after {
   }
 
   .featured-badge {
-    left: 10px;
-    top: -5px;
-    transform: rotate(-15deg) scale(0.85);
-    padding: 6px 20px;
-    font-size: 0.65rem;
+    top: 2%;
+    left: -5px;
+    transform: rotate(-15deg) scale(0.9);
+    padding: 7px 25px;
+    font-size: 0.7rem;
   }
   
   .works-section,
