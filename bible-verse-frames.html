@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Feather | Bible Verse Frames</title>
   <link rel="stylesheet" href="style.css?v=3" />
+  <link rel="stylesheet" href="featherCreations.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <meta name="description" content="Decorate your space with beautifully framed Bible verses. Inspirational wall art featuring Psalms, 2 Samuel, and Matthew.">
@@ -125,66 +126,74 @@
 <body>
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
-
-
-
-
-
-
-  <div class="animated-bg"></div>
-
-
-  <header role="banner">
-    <div class="menu-btn" id="menuBtn" onclick="toggleMenu()">
-      <div class="feather-icon">
-        <span></span>
-        <span></span>
-        <span></span>
+  <!-- ===== Top Bar ===== -->
+  <div class="top-bar">
+    <div class="top-bar-inner">
+      <div class="top-bar-left">
+        <i class="fas fa-truck"></i>
+        <span>Premium Quality Fabrics</span>
+        <span class="dot">&#8226;</span>
+        <span>Bulk Orders Only</span>
+      </div>
+      <div class="top-bar-center">
+        Welcome to Feather Creations
+      </div>
+      <div class="top-bar-right">
+        <a href="product_enquiry.html"><i class="fas fa-headset"></i> Bulk Enquiry</a>
+        <a href="contact_us.html"><i class="fas fa-headset"></i> Support</a>
       </div>
     </div>
-    <a href="index.html" class="logo">
-    
-  <img src="webp/logo.webp" alt="Feather Logo" class="logo-img" loading="lazy">
-  <span class="logo-text">Feather</span>
-</a>
-    <nav id="mainNav" aria-label="Main navigation">
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-         <li class="dropdown">
+  </div>
+
+  <!-- ===== Navigation ===== -->
+  <header class="navbar">
+    <div class="navbar-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="webp/logo.webp" alt="Feather Logo" class="nav-logo-img" loading="lazy">
+        <span class="nav-logo-text">Feather</span>
+      </a>
+      <nav class="nav-menu">
+        <a href="index.html">Home</a>
+        <div class="nav-dropdown">
           <a href="#">Products</a>
-          <div class="dropdown-content">
+          <div class="nav-dropdown-content">
             <a href="products.html">T-Shirts</a>
             <a href="school.html">School Uniforms</a>
             <a href="bible-verse-tshirts.html">Bible Verse T-Shirts</a>
             <a href="bible-verse-frames.html">Bible Verse Frames</a>
             <a href="cards.html">Cards</a>
             <a href="bags.html">Bags</a>
-             <a href="caps.html">Caps</a>
-             <a href="bottles.html">Bottles</a>
+            <a href="caps.html">Caps</a>
+            <a href="bottles.html">Bottles</a>
             <a href="badges.html">Badges</a>
             <a href="shoes.html">Shoes</a>
             <a href="belts.html">Belts</a>
             <a href="umbrella.html">Umbrella</a>
-             <a href="embroidery.html">Embroidery</a>
+            <a href="embroidery.html">Embroidery</a>
           </div>
-        </li>
-        <li class="dropdown">
+        </div>
+        <div class="nav-dropdown">
           <a href="#">IT & AI Solutions</a>
-          <div class="dropdown-content">
+          <div class="nav-dropdown-content">
             <a href="why_choose_us.html">Why Choose Us</a>
             <a href="services.html">Services</a>
             <a href="pricing_packages.html">Pricing Packages</a>
             <a href="technology.html">Technology</a>
           </div>
-        </li>
-        <li><a href="product_enquiry.html">Product Enquiry</a></li>
-        <li><a href="our_works.html">Our Works</a></li>
-        <li><a href="our_clients.html">Our Clients</a></li>
-                <li><a href="about_us.html">About Us</a></li>
-        <li><a href="contact_us.html">Contact Us</a></li>
-        
-      </ul>
-    </nav>
+        </div>
+        <a href="product_enquiry.html">Product Enquiry</a>
+        <a href="our_works.html">Our Works</a>
+        <a href="our_clients.html">Our Clients</a>
+        <a href="about_us.html">About Us</a>
+        <a href="contact_us.html">Contact Us</a>
+      </nav>
+      <a href="contact_us.html" class="nav-cta">
+        <i class="fas fa-phone-alt"></i> GET QUOTE
+      </a>
+      <div class="nav-hamburger" id="navHamburger">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
   </header>
 
   <section id="main-content" class="products-hero">
@@ -221,12 +230,12 @@
      
   </section>
 
-    <!-- ===== Footer ===== -->
-  <footer role="contentinfo" class="footer">
+  <!-- ===== Footer ===== -->
+  <footer class="footer">
     <div class="footer-content">
       <div class="footer-col">
         <h4>Feather Creations</h4>
-        <p>Faith-inspired fashion and custom products crafted with purpose.</p>
+        <p>Premium fashion fabrics for men, women, and kids. Crafted with purpose, made for bulk orders.</p>
         <div class="footer-social">
           <a href="https://www.instagram.com/feathercreations" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
           <a href="https://wa.me/919047299559" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
@@ -234,14 +243,12 @@
         </div>
       </div>
       <div class="footer-col">
-        <h4>Products</h4>
+        <h4>Quick Links</h4>
         <ul>
-          <li><a href="products.html"><i class="fas fa-tshirt"></i> T-Shirts</a></li>
-          <li><a href="school.html"><i class="fas fa-user-graduate"></i> School Uniforms</a></li>
-          <li><a href="bags.html"><i class="fas fa-shopping-bag"></i> Bags</a></li>
-          <li><a href="caps.html"><i class="fas fa-hat-cowboy-side"></i> Caps</a></li>
-          <li><a href="embroidery.html"><i class="fas fa-scissors"></i> Embroidery</a></li>
-          <li><a href="badges.html"><i class="fas fa-medal"></i> Badges</a></li>
+          <li><a href="products.html">Men's Fabrics</a></li>
+          <li><a href="products.html">Women's Fabrics</a></li>
+          <li><a href="products.html">Kids' Fabrics</a></li>
+          <li><a href="about_us.html">About Us</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -251,14 +258,11 @@
           <li><a href="https://wa.me/919962534351" target="_blank"><i class="fab fa-whatsapp"></i> Leslie: +91 9962534351</a></li>
           <li><a href="https://wa.me/919003530293" target="_blank"><i class="fab fa-whatsapp"></i> David: +91 9003530293</a></li>
           <li><a href="mailto:featherpy@gmail.com"><i class="fas fa-envelope"></i> featherpy@gmail.com</a></li>
-                  <li><a href="about_us.html"><i class="fas fa-info-circle"></i> About Us</a></li>
-        <li><a href="contact_us.html"><i class="fas fa-map-marker-alt"></i> Contact Us</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; 2026 <span>Feather Creations</span> | Designed with Purpose</p>
-      <p style="color: rgba(255,255,255,0.4); font-size: 0.8rem;">Crafted with <i class="fas fa-heart" style="color: #e1306c;"></i> for faith & fashion</p>
+      <p>&copy; 2026 <span>Feather Creations</span> | Premium Quality Fabrics</p>
     </div>
   </footer>
 </div>
@@ -309,6 +313,16 @@
 
   <script src="animations.js"></script>
   <script src="menu.js"></script>
+  <script>
+    const hamburger = document.getElementById('navHamburger');
+    const navMenu = document.querySelector('.nav-menu');
+    if (hamburger && navMenu) {
+      hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navMenu.classList.toggle('open');
+      });
+    }
+  </script>
   <script src="product-zoom.js"></script>
 
 </body>

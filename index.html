@@ -3,43 +3,46 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Feather | Home</title>
+  <title>Feather Creations | Premium Fashion Fabrics & IT Solutions</title>
   <link rel="stylesheet" href="style.css?v=3" />
+  <link rel="stylesheet" href="featherCreations.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <meta name="description" content="Feather Creations offers faith-inspired t-shirts, custom embroidery, school uniforms, badges, bags, and IT & AI solutions. Crafted with purpose in Pondicherry, India.">
-  <meta name="keywords" content="feather creations, faith inspired fashion, custom t-shirts, embroidery, school uniforms, coimbatore">
+  <meta name="description" content="Feather Creations offers premium fashion fabrics for men, women & kids, faith-inspired t-shirts, custom embroidery, school uniforms, badges, bags, and IT & AI solutions. Crafted with purpose in Pondicherry, India.">
+  <meta name="keywords" content="feather creations, premium fabrics, faith inspired fashion, custom t-shirts, embroidery, school uniforms, bulk orders, coimbatore">
 
-  <link rel="canonical" href="https://feather-creations.vercel.app/index.html">
+  <link rel="canonical" href="https://feather-creations.vercel.app/">
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://feather-creations.vercel.app/index.html">
-  <meta property="og:title" content="Feather Creations | Faith-Inspired Fashion & Custom Products">
-  <meta property="og:description" content="Feather Creations offers faith-inspired t-shirts, custom embroidery, school uniforms, badges, bags, and IT & AI solutions. Crafted with purpose in Pondicherry, India.">
+  <meta property="og:url" content="https://feather-creations.vercel.app/">
+  <meta property="og:title" content="Feather Creations | Premium Fashion Fabrics & IT Solutions">
+  <meta property="og:description" content="Premium fashion fabrics for men, women & kids. Faith-inspired fashion and custom products crafted with purpose.">
   <meta property="og:image" content="https://feather-creations.vercel.app/webp/insta.webp">
   <meta property="og:site_name" content="Feather Creations">
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:url" content="https://feather-creations.vercel.app/index.html">
-  <meta name="twitter:title" content="Feather Creations | Faith-Inspired Fashion & Custom Products">
-  <meta name="twitter:description" content="Feather Creations offers faith-inspired t-shirts, custom embroidery, school uniforms, badges, bags, and IT & AI solutions. Crafted with purpose in Pondicherry, India.">
+  <meta name="twitter:url" content="https://feather-creations.vercel.app/">
+  <meta name="twitter:title" content="Feather Creations | Premium Fashion Fabrics & IT Solutions">
+  <meta name="twitter:description" content="Premium fashion fabrics for men, women & kids. Faith-inspired fashion and custom products crafted with purpose.">
   <meta name="twitter:image" content="https://feather-creations.vercel.app/webp/insta.webp">
 
   <!-- Favicon -->
   <link rel="icon" type="image/webp" href="/webp/logo.webp">
   <link rel="apple-touch-icon" href="/webp/logo.webp">
   <meta name="theme-color" content="#1a365d">
+
   <script type="application/ld+json">{
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "Feather Creations",
   "url": "https://feather-creations.vercel.app",
   "logo": "https://feather-creations.vercel.app/webp/logo.webp",
-  "description": "Faith-inspired fashion and custom products crafted with purpose.",
+  "description": "Premium fashion fabrics and faith-inspired fashion crafted with purpose.",
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Pondicherry",
@@ -76,7 +79,7 @@
   "name": "Feather Creations",
   "url": "https://feather-creations.vercel.app",
   "logo": "https://feather-creations.vercel.app/webp/logo.webp",
-  "description": "Faith-inspired fashion, custom products, and IT solutions in Pondicherry.",
+  "description": "Premium fashion fabrics, custom products, and IT solutions in Pondicherry.",
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Pondicherry",
@@ -98,34 +101,703 @@
   ]
 }</script>
   <meta name="google-site-verification" content="_I9CtyOmc3Cv_qOTkC0m_vcbLaEdX4msPN0XtgGo-GI" />
+
+  <style>
+    /* ===== INDEX PAGE ENHANCED STYLES ===== */
+    .hero-section {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(ellipse at 30% 50%, rgba(196,154,108,0.08) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .hero-left {
+      position: relative;
+    }
+
+    .hero-left::after {
+      content: '';
+      position: absolute;
+      bottom: -50px;
+      left: -50px;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(196,154,108,0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-family-img {
+      width: 100%;
+      max-width: 500px;
+      height: auto;
+      border-radius: 20px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+      object-fit: cover;
+    }
+
+    .hero-wings-logo {
+      animation: floatWings 3s ease-in-out infinite;
+    }
+
+    @keyframes floatWings {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    .hero-feature {
+      transition: transform 0.3s ease;
+    }
+
+    .hero-feature:hover {
+      transform: translateX(5px);
+    }
+
+    .hero-feature-icon {
+      transition: all 0.3s ease;
+    }
+
+    .hero-feature:hover .hero-feature-icon {
+      background: var(--gold);
+      border-color: var(--gold);
+    }
+
+    .hero-feature:hover .hero-feature-icon i {
+      color: var(--white);
+    }
+
+    .fabric-card {
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .fabric-card:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    }
+
+    .fabric-card-img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 15px 15px 0 0;
+      transition: transform 0.4s ease;
+    }
+
+    .fabric-card:hover .fabric-card-img {
+      transform: scale(1.05);
+    }
+
+    /* Fabric Rows - Alternating Layout */
+    .fabric-rows {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      width: 100%;
+    }
+
+    .fabric-row {
+      display: flex;
+      align-items: stretch;
+      background: var(--white);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .fabric-row:hover {
+      transform: translateY(-5px);
+    }
+
+    .fabric-row.reversed {
+      flex-direction: row-reverse;
+    }
+
+    .fabric-row-img {
+      flex: 1;
+      min-height: 140px;
+      overflow: hidden;
+    }
+
+    .fabric-row-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .fabric-row:hover .fabric-row-img img {
+      transform: scale(1.05);
+    }
+
+    .fabric-row-info {
+      flex: 1;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .fabric-row-info h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      letter-spacing: 0.5px;
+      margin-bottom: 8px;
+    }
+
+    .fabric-row-info p {
+      font-size: 0.85rem;
+      color: var(--text-light);
+      margin-bottom: 12px;
+      line-height: 1.6;
+    }
+
+    .fabric-row-line {
+      width: 40px;
+      height: 3px;
+      background: var(--gold);
+      border-radius: 3px;
+    }
+
+    .features-bar-item {
+      transition: all 0.3s ease;
+    }
+
+    .features-bar-item:hover {
+      transform: translateY(-3px);
+    }
+
+    .features-bar-item:hover .features-bar-icon {
+      background: var(--gold);
+      border-color: var(--gold);
+    }
+
+    .features-bar-item:hover .features-bar-icon i {
+      color: var(--white);
+    }
+
+    .btn-enquire, .btn-our-fabrics, .btn-contact, .btn-view-collections {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-enquire::before, .btn-contact::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      transition: left 0.5s ease;
+    }
+
+    .btn-enquire:hover::before, .btn-contact:hover::before {
+      left: 100%;
+    }
+
+    .crafted-section {
+      position: relative;
+    }
+
+    .crafted-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(ellipse at 80% 20%, rgba(255,255,255,0.05) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .crafted-feature {
+      transition: all 0.3s ease;
+    }
+
+    .crafted-feature:hover {
+      transform: translateX(5px);
+    }
+
+    .crafted-feature i {
+      transition: all 0.3s ease;
+    }
+
+    .crafted-feature:hover i {
+      background: var(--gold-light);
+      color: var(--white);
+    }
+
+    /* Scroll reveal animation */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease;
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Counter animation */
+    .counter-section {
+      background: linear-gradient(135deg, var(--charcoal) 0%, #1a1a1a 100%);
+      padding: 60px 0;
+    }
+
+    .counter-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 40px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 30px;
+    }
+
+    .counter-item {
+      text-align: center;
+      color: var(--white);
+    }
+
+    .counter-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--gold);
+      margin-bottom: 5px;
+    }
+
+    .counter-label {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.7);
+      letter-spacing: 1px;
+    }
+
+    /* Services showcase */
+    .services-showcase {
+      padding: 80px 0;
+      background: var(--cream);
+    }
+
+    .services-showcase-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 40px;
+      text-align: center;
+    }
+
+    .services-showcase h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      color: var(--text-dark);
+      margin-bottom: 15px;
+    }
+
+    .services-showcase h2 span {
+      color: var(--gold);
+    }
+
+    .services-showcase > p {
+      color: var(--text-light);
+      margin-bottom: 50px;
+      font-size: 1.1rem;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 25px;
+    }
+
+    .service-card {
+      background: var(--white);
+      border-radius: 20px;
+      padding: 35px 25px;
+      text-align: center;
+      transition: all 0.4s ease;
+      border: 1px solid rgba(0,0,0,0.05);
+      cursor: pointer;
+    }
+
+    .service-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+      border-color: var(--gold);
+    }
+
+    .service-card-icon {
+      width: 70px;
+      height: 70px;
+      margin: 0 auto 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      box-shadow: 0 8px 25px rgba(196,154,108,0.3);
+    }
+
+    .service-card-icon i {
+      font-size: 1.5rem;
+      color: var(--white);
+    }
+
+    .service-card h3 {
+      font-size: 1.1rem;
+      color: var(--text-dark);
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+
+    .service-card p {
+      font-size: 0.85rem;
+      color: var(--text-light);
+      line-height: 1.6;
+    }
+
+    /* CTA Section */
+    .cta-section {
+      background: linear-gradient(135deg, var(--teal) 0%, var(--teal-dark) 100%);
+      padding: 80px 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle at 30% 50%, rgba(255,255,255,0.05) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .cta-content {
+      position: relative;
+      z-index: 2;
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+
+    .cta-content h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem;
+      color: var(--white);
+      margin-bottom: 20px;
+    }
+
+    .cta-content p {
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.85);
+      margin-bottom: 35px;
+      line-height: 1.7;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .cta-btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 16px 35px;
+      background: var(--gold);
+      color: var(--white);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      border-radius: 30px;
+      transition: all 0.3s;
+    }
+
+    .cta-btn-primary:hover {
+      background: var(--gold-light);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(196,154,108,0.4);
+    }
+
+    .cta-btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 16px 35px;
+      border: 2px solid var(--white);
+      color: var(--white);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      border-radius: 30px;
+      transition: all 0.3s;
+    }
+
+    .cta-btn-secondary:hover {
+      background: var(--white);
+      color: var(--teal-dark);
+      transform: translateY(-3px);
+    }
+
+    @media (max-width: 768px) {
+      .counter-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+      }
+      .counter-number {
+        font-size: 2.2rem;
+      }
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+      }
+      .cta-content h2 {
+        font-size: 2rem;
+      }
+      .fabric-row,
+      .fabric-row.reversed {
+        flex-direction: column;
+      }
+      .fabric-row-img {
+        min-height: 180px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ===== PRODUCT SHOWCASE ===== */
+    .product-showcase {
+      padding: 80px 0;
+      background: var(--cream);
+    }
+
+    .product-showcase-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+
+    .product-showcase-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      color: var(--text-dark);
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .product-showcase-title span {
+      color: var(--gold);
+    }
+
+    .product-showcase-subtitle {
+      text-align: center;
+      color: var(--text-light);
+      font-size: 1.05rem;
+      margin-bottom: 50px;
+    }
+
+    .product-row {
+      display: flex;
+      align-items: stretch;
+      background: var(--white);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+      margin-bottom: 30px;
+      transition: all 0.4s ease;
+    }
+
+    .product-row:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 25px 50px rgba(0,0,0,0.12);
+    }
+
+    .product-row.reversed {
+      flex-direction: row-reverse;
+    }
+
+    .product-row-img {
+      flex: 1;
+      min-height: 280px;
+      overflow: hidden;
+    }
+
+    .product-row-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .product-row:hover .product-row-img img {
+      transform: scale(1.06);
+    }
+
+    .product-row-info {
+      flex: 1;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .product-row-icon {
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 18px;
+      box-shadow: 0 8px 20px rgba(196,154,108,0.3);
+    }
+
+    .product-row-icon i {
+      font-size: 1.3rem;
+      color: var(--white);
+    }
+
+    .product-row-info h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      color: var(--text-dark);
+      margin-bottom: 12px;
+      letter-spacing: 0.5px;
+    }
+
+    .product-row-info p {
+      font-size: 0.95rem;
+      color: var(--text-light);
+      line-height: 1.7;
+      margin-bottom: 18px;
+    }
+
+    .product-row-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 22px;
+    }
+
+    .product-row-tags span {
+      padding: 5px 14px;
+      background: var(--cream);
+      border: 1px solid rgba(196,154,108,0.25);
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--gold-dark);
+      letter-spacing: 0.3px;
+    }
+
+    .product-row-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 28px;
+      background: var(--charcoal);
+      color: var(--white);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.85rem;
+      border-radius: 30px;
+      transition: all 0.3s ease;
+      width: fit-content;
+    }
+
+    .product-row-btn:hover {
+      background: var(--gold);
+      transform: translateX(5px);
+    }
+
+    .product-row-btn i {
+      transition: transform 0.3s ease;
+    }
+
+    .product-row-btn:hover i {
+      transform: translateX(4px);
+    }
+
+    @media (max-width: 768px) {
+      .product-row,
+      .product-row.reversed {
+        flex-direction: column;
+      }
+      .product-row-img {
+        min-height: 220px;
+      }
+      .product-row-info {
+        padding: 30px;
+      }
+      .product-showcase-title {
+        font-size: 2rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .product-row-info {
+        padding: 24px 20px;
+      }
+      .product-row-info h3 {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
 </head>
 <body>
-  <a href="#main-content" class="skip-link">Skip to main content</a>
 
-  <!-- ===== Animated Background ===== -->
-  <div class="animated-bg"></div>
-
-  <!-- ===== Header ===== -->
-  <header role="banner">
-    <div class="menu-btn" id="menuBtn" onclick="toggleMenu()">
-      <div class="feather-icon">
-        <span></span>
-        <span></span>
-        <span></span>
+  <!-- ===== Top Bar ===== -->
+  <div class="top-bar">
+    <div class="top-bar-inner">
+      <div class="top-bar-left">
+        <i class="fas fa-truck"></i>
+        <span>Premium Quality Fabrics</span>
+        <span class="dot">&#8226;</span>
+        <span>Bulk Orders Only</span>
+      </div>
+      <div class="top-bar-center">
+        Welcome to Feather Creations
+      </div>
+      <div class="top-bar-right">
+        <a href="product_enquiry.html"><i class="fas fa-headset"></i> Bulk Enquiry</a>
+        <a href="contact_us.html"><i class="fas fa-headset"></i> Support</a>
       </div>
     </div>
-    <a href="index.html" class="logo">
-      <img src="webp/logo.webp" alt="Feather Logo" class="logo-img" loading="lazy">
-      <span class="logo-text">Feather</span>
-    </a>
+  </div>
 
-    <nav id="mainNav" aria-label="Main navigation">
-      <ul class="nav-links">
-        <li><a href="index.html" class="active">Home</a></li>
-         <li class="dropdown">
+  <!-- ===== Navigation ===== -->
+  <header class="navbar">
+    <div class="navbar-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="webp/logo.webp" alt="Feather Logo" class="nav-logo-img" loading="lazy">
+        <span class="nav-logo-text">Feather</span>
+      </a>
+      <nav class="nav-menu">
+        <a href="index.html" class="active">Home</a>
+        <div class="nav-dropdown">
           <a href="#">Products</a>
-
-          <div class="dropdown-content">
+          <div class="nav-dropdown-content">
             <a href="products.html">T-Shirts</a>
             <a href="school.html">School Uniforms</a>
             <a href="bible-verse-tshirts.html">Bible Verse T-Shirts</a>
@@ -140,65 +812,390 @@
             <a href="umbrella.html">Umbrella</a>
             <a href="embroidery.html">Embroidery</a>
           </div>
-        </li>
-
-        <li class="dropdown">
+        </div>
+        <div class="nav-dropdown">
           <a href="#">IT & AI Solutions</a>
-          <div class="dropdown-content">
+          <div class="nav-dropdown-content">
             <a href="why_choose_us.html">Why Choose Us</a>
             <a href="services.html">Services</a>
             <a href="pricing_packages.html">Pricing Packages</a>
             <a href="technology.html">Technology</a>
           </div>
-        </li>
-        <li><a href="product_enquiry.html">Product Enquiry</a></li>
-        <li><a href="our_works.html">Our Works</a></li>
-        <li><a href="our_clients.html">Our Clients</a></li>
-                <li><a href="about_us.html">About Us</a></li>
-        <li><a href="contact_us.html">Contact Us</a></li>
-
-      </ul>
-    </nav>
+        </div>
+        <a href="product_enquiry.html">Product Enquiry</a>
+        <a href="our_works.html">Our Works</a>
+        <a href="our_clients.html">Our Clients</a>
+        <a href="about_us.html">About Us</a>
+        <a href="contact_us.html">Contact Us</a>
+      </nav>
+      <a href="contact_us.html" class="nav-cta">
+        <i class="fas fa-phone-alt"></i> GET QUOTE
+      </a>
+      <div class="nav-hamburger" id="navHamburger">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
   </header>
 
   <!-- ===== Hero Section ===== -->
-  <section id="main-content" class="hero">
-    <div class="hero-particles">
-      <div class="particle"></div>
-      <div class="particle"></div>
-      <div class="particle"></div>
-      <div class="particle"></div>
-      <div class="particle"></div>
-      <div class="particle"></div>
-      <div class="particle"></div>
-      <div class="particle"></div>
-    </div>
-    <img src="webp/AI_the_trend_setter.webp" alt="AI The Trend Setter" class="hero-left-image" loading="lazy">
-    
-    <div class="hero-content">
-      <div class="logo-container">
-        <img src="webp/logo.webp" alt="Feather Logo" class="small-floating-logo" loading="lazy">
+  <section class="hero-section">
+    <div class="hero-left">
+      <div class="hero-wings-logo">
+        <i class="fas fa-feather-alt"></i>
       </div>
-
-      <h1><span>Feather</span> Creations</h1>
-      <p>Explore our faith-inspired fashion and accessories, crafted with purpose and passion. Each piece reflects belief, inspires hope, and adds meaning to your everyday style. Wear your faith with confidence, share positivity, and let your style speak of purpose, strength, and grace wherever you go.</p>
-
+      <h1 class="hero-title">
+        PREMIUM FABRICS.<br>
+        <span class="hero-title-gold">TIMELESS STYLE.</span>
+      </h1>
+      <p class="hero-subtitle">
+        Explore our faith-inspired fashion and accessories, crafted with purpose and passion. Each piece reflects belief, inspires hope, and adds meaning to your everyday style.
+      </p>
+      <div class="hero-features">
+        <div class="hero-feature">
+          <div class="hero-feature-icon"><i class="fas fa-gem"></i></div>
+          <div>
+            <strong>PREMIUM QUALITY</strong>
+            <span>Finest Fabrics</span>
+          </div>
+        </div>
+        <div class="hero-feature">
+          <div class="hero-feature-icon"><i class="fas fa-box-open"></i></div>
+          <div>
+            <strong>BULK ORDERS</strong>
+            <span>Best Wholesale Prices</span>
+          </div>
+        </div>
+        <div class="hero-feature">
+          <div class="hero-feature-icon"><i class="fas fa-th-large"></i></div>
+          <div>
+            <strong>WIDE VARIETY</strong>
+            <span>Styles for Every Need</span>
+          </div>
+        </div>
+        <div class="hero-feature">
+          <div class="hero-feature-icon"><i class="fas fa-user-tie"></i></div>
+          <div>
+            <strong>TRUSTED BY</strong>
+            <span>Fashion Professionals</span>
+          </div>
+        </div>
+      </div>
       <div class="hero-buttons">
-        <a href="products.html" class="explore-btn">
-          <i class="fas fa-shopping-bag"></i> Explore Now
+        <a href="contact_us.html" class="btn-enquire">
+          <i class="fas fa-phone-alt"></i> ENQUIRE NOW <i class="fas fa-chevron-right"></i>
         </a>
-        <button class="freelancing-btn" id="freelancingBtn">
-          <i class="fas fa-palette"></i> Our Services
+        <a href="products.html" class="btn-our-fabrics">
+          OUR FABRICS <i class="fas fa-chevron-right"></i>
+        </a>
+        <button class="btn-our-fabrics" id="freelancingBtn" style="background:var(--charcoal);color:var(--white);border-color:var(--charcoal);">
+          <i class="fas fa-palette"></i> OUR SERVICES
         </button>
-        <a href="product_enquiry.html" class="order-btn">
-          <i class="fas fa-box"></i> Bulk Orders
+      </div>
+    </div>
+    <div class="hero-right">
+      <img src="webp/fam.webp" alt="Feather Creations Family" class="hero-family-img" loading="lazy">
+      <div class="bulk-badge">
+        <span>BULK ORDERS</span>
+        <i class="fas fa-box-open"></i>
+        <span>ONLY</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Crafted With Choice Section ===== -->
+  <section class="crafted-section">
+    <div class="crafted-left">
+      <p class="crafted-by">DESIGNED BY YOU.</p>
+      <h2 class="crafted-title">CRAFTED<br>WITH CHOICE.</h2>
+      <p class="crafted-desc">
+        A Stunning Range of Fabrics for Men, Women & Kids.<br>
+        Bulk Fabrics. Endless Possibilities.
+      </p>
+      <div class="crafted-features">
+        <div class="crafted-feature">
+          <i class="fas fa-fire"></i>
+          <div>
+            <strong>TRENDING</strong>
+            <span>COLLECTIONS</span>
+          </div>
+        </div>
+        <div class="crafted-feature">
+          <i class="fas fa-palette"></i>
+          <div>
+            <strong>RICH COLORS</strong>
+            <span>& TEXTURES</span>
+          </div>
+        </div>
+        <div class="crafted-feature">
+          <i class="fas fa-paint-brush"></i>
+          <div>
+            <strong>PERFECT FOR</strong>
+            <span>EVERY DESIGN</span>
+          </div>
+        </div>
+        <div class="crafted-feature">
+          <i class="fas fa-check-circle"></i>
+          <div>
+            <strong>CONSISTENT</strong>
+            <span>QUALITY</span>
+          </div>
+        </div>
+      </div>
+      <div class="crafted-buttons">
+        <a href="contact_us.html" class="btn-contact">
+          <i class="fas fa-phone-alt"></i> CONTACT US
+        </a>
+        <a href="products.html" class="btn-view-collections">
+          VIEW COLLECTIONS <i class="fas fa-chevron-right"></i>
         </a>
       </div>
-
-      
     </div>
+    <div class="crafted-right">
+      <div class="fabric-rows">
+        <div class="fabric-row">
+          <div class="fabric-row-img">
+            <img src="webp/men-fabrics.webp" alt="Men's Fabrics" loading="lazy">
+          </div>
+          <div class="fabric-row-info">
+            <h3>MEN'S FABRICS</h3>
+            <p>Sophisticated. Strong. Versatile.</p>
+            <div class="fabric-row-line"></div>
+          </div>
+        </div>
+        <div class="fabric-row reversed">
+          <div class="fabric-row-img">
+            <img src="webp/women-fabrics.webp" alt="Women's Fabrics" loading="lazy">
+          </div>
+          <div class="fabric-row-info">
+            <h3>WOMEN'S FABRICS</h3>
+            <p>Elegant. Graceful. Timeless.</p>
+            <div class="fabric-row-line"></div>
+          </div>
+        </div>
+        <div class="fabric-row">
+          <div class="fabric-row-img">
+            <img src="webp/kids-fabrics.webp" alt="Kids' Fabrics" loading="lazy">
+          </div>
+          <div class="fabric-row-info">
+            <h3>KIDS' FABRICS</h3>
+            <p>Soft. Colorful. Comfortable.</p>
+            <div class="fabric-row-line"></div>
+          </div>
+        </div>
+      </div>
+      <div class="bulk-badge crafted-badge">
+        <span>BULK ORDERS</span>
+        <i class="fas fa-box-open"></i>
+        <span>ONLY</span>
+      </div>
+    </div>
+  </section>
 
-    <img src="webp/fam.webp" alt="Feather Creations Family" class="floating-family" loading="lazy">
+  <!-- ===== Product Showcase ===== -->
+  <section class="product-showcase">
+    <div class="product-showcase-inner">
+      <h2 class="product-showcase-title">Our <span>Products</span></h2>
+      <p class="product-showcase-subtitle">Premium Quality. Custom Designs. Bulk Orders Welcome.</p>
+
+      <!-- 1) T-Shirts — Image LEFT, Info RIGHT -->
+      <div class="product-row reveal">
+        <div class="product-row-img">
+          <img src="webp/ts1.webp" alt="Custom T-Shirts" loading="lazy">
+        </div>
+        <div class="product-row-info">
+          <div class="product-row-icon"><i class="fas fa-tshirt"></i></div>
+          <h3>CUSTOM T-SHIRTS</h3>
+          <p>From bold graphic tees to elegant plain blends — printed, embroidered, or plain. Perfect for teams, events, brands & faith-inspired fashion.</p>
+          <div class="product-row-tags">
+            <span>Printed</span><span>Embroidered</span><span>Bulk</span><span>Custom</span>
+          </div>
+          <a href="products.html" class="product-row-btn">Explore Collection <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <!-- 2) School Uniforms — Info LEFT, Image RIGHT -->
+      <div class="product-row reversed reveal">
+        <div class="product-row-img">
+          <img src="webp/school.webp" alt="School Uniforms" loading="lazy">
+        </div>
+        <div class="product-row-info">
+          <div class="product-row-icon"><i class="fas fa-graduation-cap"></i></div>
+          <h3>SCHOOL UNIFORMS</h3>
+          <p>Durable, comfortable uniforms built for daily wear. Shirts, pants, skirts, pinafores — tailored to your school's identity with logo branding.</p>
+          <div class="product-row-tags">
+            <span>Shirts</span><span>Pants</span><span>Skirts</span><span>Logo</span>
+          </div>
+          <a href="school.html" class="product-row-btn">View Uniforms <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <!-- 3) Embroidery — Image LEFT, Info RIGHT -->
+      <div class="product-row reveal">
+        <div class="product-row-img">
+          <img src="webp/e1.webp" alt="Custom Embroidery" loading="lazy">
+        </div>
+        <div class="product-row-info">
+          <div class="product-row-icon"><i class="fas fa needle"></i></div>
+          <h3>CUSTOM EMBROIDERY</h3>
+          <p>Precision-stitched logos, names & artwork on any fabric. Professional-grade embroidery for corporate, school & personal branding that lasts.</p>
+          <div class="product-row-tags">
+            <span>Logos</span><span>Names</span><span>Patches</span><span>Corporate</span>
+          </div>
+          <a href="embroidery.html" class="product-row-btn">See Samples <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <!-- 4) Bags & Backpacks — Info LEFT, Image RIGHT -->
+      <div class="product-row reversed reveal">
+        <div class="product-row-img">
+          <img src="webp/b4.webp" alt="Bags and Backpacks" loading="lazy">
+        </div>
+        <div class="product-row-info">
+          <div class="product-row-icon"><i class="fas fa-shopping-bag"></i></div>
+          <h3>BAGS & BACKPACKS</h3>
+          <p>Trendy tote bags, sturdy backpacks, sleek laptop sleeves & sling bags. Custom prints & embroidery for schools, corporates & events.</p>
+          <div class="product-row-tags">
+            <span>Tote</span><span>Backpack</span><span>Sling</span><span>Laptop</span>
+          </div>
+          <a href="bags.html" class="product-row-btn">Browse Bags <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <!-- 5) Caps & Headwear — Image LEFT, Info RIGHT -->
+      <div class="product-row reveal">
+        <div class="product-row-img">
+          <img src="webp/ca2.webp" alt="Caps and Headwear" loading="lazy">
+        </div>
+        <div class="product-row-info">
+          <div class="product-row-icon"><i class="fas fa-hat-cowboy"></i></div>
+          <h3>CAPS & HEADWEAR</h3>
+          <p>Classic baseball caps, snapbacks, beanies & visors. Embroidered or printed with your logo — perfect for teams, brands & promotional events.</p>
+          <div class="product-row-tags">
+            <span>Baseball</span><span>Snapback</span><span>Beanie</span><span>Visor</span>
+          </div>
+          <a href="caps.html" class="product-row-btn">Shop Caps <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <!-- 6) Bible Verse Products — Info LEFT, Image RIGHT -->
+      <div class="product-row reversed reveal">
+        <div class="product-row-img">
+          <img src="webp/frame1.webp" alt="Bible Verse Products" loading="lazy">
+        </div>
+        <div class="product-row-info">
+          <div class="product-row-icon"><i class="fas fa-book-bible"></i></div>
+          <h3>BIBLE VERSE COLLECTION</h3>
+          <p>Faith-inspired fashion & decor — t-shirts with powerful scriptures, beautifully framed verse art, custom cards & gifts that spread hope.</p>
+          <div class="product-row-tags">
+            <span>T-Shirts</span><span>Frames</span><span>Cards</span><span>Gifts</span>
+          </div>
+          <a href="bible-verse-tshirts.html" class="product-row-btn">View Collection <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== Stats Counter ===== -->
+  <section class="counter-section">
+    <div class="counter-grid">
+      <div class="counter-item reveal">
+        <div class="counter-number" data-target="3">0</div>
+        <div class="counter-label">YEARS OF EXCELLENCE</div>
+      </div>
+      <div class="counter-item reveal">
+        <div class="counter-number" data-target="70">0</div>
+        <div class="counter-label">HAPPY CLIENTS</div>
+      </div>
+      <div class="counter-item reveal">
+        <div class="counter-number" data-target="200">0</div>
+        <div class="counter-label">PROJECTS COMPLETED</div>
+      </div>
+      <div class="counter-item reveal">
+        <div class="counter-number" data-target="99">0</div>
+        <div class="counter-label">% SATISFACTION</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Services Showcase ===== -->
+  <section class="services-showcase">
+    <div class="services-showcase-inner">
+      <h2>Our <span>Services</span></h2>
+      <p>End-to-End Creative & Tech Solutions for Your Business</p>
+      <div class="services-grid">
+        <div class="service-card reveal">
+          <div class="service-card-icon"><i class="fas fa-laptop-code"></i></div>
+          <h3>Web Designing</h3>
+          <p>Modern, responsive websites that captivate and convert visitors into customers.</p>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-card-icon"><i class="fas fa-shopping-cart"></i></div>
+          <h3>E-Commerce</h3>
+          <p>Complete online store solutions with payment integration and inventory management.</p>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-card-icon"><i class="fas fa-ad"></i></div>
+          <h3>Commercial Ads</h3>
+          <p>Eye-catching advertisements that boost your brand visibility and drive engagement.</p>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-card-icon"><i class="fas fa-share-alt"></i></div>
+          <h3>Social Media</h3>
+          <p>Strategic social media management to grow your audience and build brand loyalty.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA Section ===== -->
+  <section class="cta-section">
+    <div class="cta-content">
+      <h2>Ready to Create Something Amazing?</h2>
+      <p>Whether you need premium fabrics for your fashion line or cutting-edge IT solutions for your business, we're here to bring your vision to life.</p>
+      <div class="cta-buttons">
+        <a href="product_enquiry.html" class="cta-btn-primary">
+          <i class="fas fa-box-open"></i> Bulk Orders
+        </a>
+        <a href="contact_us.html" class="cta-btn-secondary">
+          <i class="fas fa-headset"></i> Get in Touch
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Bottom Features Bar ===== -->
+  <section class="features-bar">
+    <div class="features-bar-inner">
+      <div class="features-bar-item">
+        <div class="features-bar-icon"><i class="fas fa-feather-alt"></i></div>
+        <div>
+          <strong>PREMIUM FABRICS</strong>
+          <span>Carefully Sourced</span>
+        </div>
+      </div>
+      <div class="features-bar-item">
+        <div class="features-bar-icon"><i class="fas fa-hand-holding-usd"></i></div>
+        <div>
+          <strong>WHOLESALE PRICING</strong>
+          <span>Best Rates for Bulk</span>
+        </div>
+      </div>
+      <div class="features-bar-item">
+        <div class="features-bar-icon"><i class="fas fa-shipping-fast"></i></div>
+        <div>
+          <strong>ON-TIME DELIVERY</strong>
+          <span>Reliable & Fast</span>
+        </div>
+      </div>
+      <div class="features-bar-item">
+        <div class="features-bar-icon"><i class="fas fa-headset"></i></div>
+        <div>
+          <strong>PERSONALIZED SUPPORT</strong>
+          <span>We're Here to Help</span>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- ===== Freelancing Modal ===== -->
@@ -206,7 +1203,6 @@
     <div class="modal-content">
       <span class="close-btn" id="closeModal">&times;</span>
       <h2>Our Services</h2>
-
       <ul class="services-list">
         <li><a href="pricing_packages.html"><i class="fas fa-laptop-code"></i> WEB DESIGNING</a></li>
         <li><a href="#" onclick="window.open('christmassale.mp4','_blank','width=600,height=400'); return false;"><i class="fas fa-ad"></i> COMMERCIAL ADS</a></li>
@@ -220,21 +1216,12 @@
     </div>
   </div>
 
-  <!-- ===== Animation Videos Section (hidden initially) ===== -->
-  <section id="animation-videos" class="christmas-sale" style="display: none;">
-    <h2 class="sale-title">Animation Videos</h2>
-    <video class="sale-video" autoplay muted loop playsinline>
-      <source src="christmassale.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-  </section>
-
   <!-- ===== Footer ===== -->
-  <footer role="contentinfo" class="footer">
+  <footer class="footer">
     <div class="footer-content">
       <div class="footer-col">
         <h4>Feather Creations</h4>
-        <p>Faith-inspired fashion and custom products crafted with purpose.</p>
+        <p>Premium fashion fabrics for men, women, and kids. Crafted with purpose, made for bulk orders.</p>
         <div class="footer-social">
           <a href="https://www.instagram.com/feathercreations" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
           <a href="https://wa.me/919047299559" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
@@ -242,14 +1229,12 @@
         </div>
       </div>
       <div class="footer-col">
-        <h4>Products</h4>
+        <h4>Quick Links</h4>
         <ul>
-          <li><a href="products.html"><i class="fas fa-tshirt"></i> T-Shirts</a></li>
-          <li><a href="school.html"><i class="fas fa-user-graduate"></i> School Uniforms</a></li>
-          <li><a href="bags.html"><i class="fas fa-shopping-bag"></i> Bags</a></li>
-          <li><a href="caps.html"><i class="fas fa-hat-cowboy-side"></i> Caps</a></li>
-          <li><a href="embroidery.html"><i class="fas fa-scissors"></i> Embroidery</a></li>
-          <li><a href="badges.html"><i class="fas fa-medal"></i> Badges</a></li>
+          <li><a href="products.html">Men's Fabrics</a></li>
+          <li><a href="products.html">Women's Fabrics</a></li>
+          <li><a href="products.html">Kids' Fabrics</a></li>
+          <li><a href="about_us.html">About Us</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -259,71 +1244,93 @@
           <li><a href="https://wa.me/919962534351" target="_blank"><i class="fab fa-whatsapp"></i> Leslie: +91 9962534351</a></li>
           <li><a href="https://wa.me/919003530293" target="_blank"><i class="fab fa-whatsapp"></i> David: +91 9003530293</a></li>
           <li><a href="mailto:featherpy@gmail.com"><i class="fas fa-envelope"></i> featherpy@gmail.com</a></li>
-                  <li><a href="about_us.html"><i class="fas fa-info-circle"></i> About Us</a></li>
-        <li><a href="contact_us.html"><i class="fas fa-map-marker-alt"></i> Contact Us</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; 2026 <span>Feather Creations</span> | Designed with Purpose</p>
-      <p style="color: rgba(255,255,255,0.4); font-size: 0.8rem;">Crafted with <i class="fas fa-heart" style="color: #e1306c;"></i> for faith & fashion</p>
+      <p>&copy; 2026 <span>Feather Creations</span> | Premium Quality Fabrics</p>
     </div>
   </footer>
 
-  <!-- ===== Instagram QR Floating Button ===== -->
-
-  <!-- ===== WhatsApp Floating Button ===== -->
+  <!-- ===== WhatsApp Float ===== -->
   <div class="whatsapp-float">
-    <div class="tooltip">Chat with us!</div>
-    <div class="whatsapp-dropdown">
-      <a href="https://wa.me/919047299559" target="_blank" title="Gary">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-      </a>
-    </div>
-    <a href="https://wa.me/919962534351" target="_blank" title="Leslie Vanathuraj">
+    <a href="https://wa.me/919047299559" target="_blank">
       <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
     </a>
   </div>
 
+  <!-- ===== Scripts ===== -->
   <script>
-    const sliderImages = ["webp/c1.webp", "webp/c2.webp", "webp/office.webp", "webp/frame1.webp", "webp/card3.webp", "webp/ts4.webp", "webp/c3.webp", "webp/boys.webp", "webp/girls.webp", "webp/im1.webp"];
-    let currentIndex = 0;
-    const circleImg = document.getElementById("circleImage");
-
-    function changeImage() {
-      circleImg.style.opacity = "0";
-      setTimeout(() => {
-        currentIndex = (currentIndex + 1) % sliderImages.length;
-        circleImg.src = sliderImages[currentIndex];
-        circleImg.style.opacity = "1";
-      }, 400);
+    // Hamburger menu
+    const hamburger = document.getElementById('navHamburger');
+    const navMenu = document.querySelector('.nav-menu');
+    if (hamburger && navMenu) {
+      hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navMenu.classList.toggle('open');
+      });
     }
 
-    setInterval(changeImage, 3500);
-  </script>
-
-  <script>
+    // Services modal
     const freelancingBtn = document.getElementById('freelancingBtn');
     const modal = document.getElementById('freelancingModal');
     const closeModal = document.getElementById('closeModal');
 
-    freelancingBtn.addEventListener('click', () => {
-      modal.style.display = 'flex';
-    });
-
-    closeModal.addEventListener('click', () => {
-      modal.style.display = 'none';
-    });
-
-    window.addEventListener('click', (e) => {
-      if (e.target === modal) {
+    if (freelancingBtn && modal && closeModal) {
+      freelancingBtn.addEventListener('click', () => {
+        modal.style.display = 'flex';
+      });
+      closeModal.addEventListener('click', () => {
         modal.style.display = 'none';
-      }
-    });
-  </script>
+      });
+      window.addEventListener('click', (e) => {
+        if (e.target === modal) {
+          modal.style.display = 'none';
+        }
+      });
+    }
 
-  <script src="animations.js"></script>
-  <script src="menu.js"></script>
+    // Scroll reveal animation
+    function reveal() {
+      var reveals = document.querySelectorAll('.reveal');
+      for (var i = 0; i < reveals.length; i++) {
+        var windowHeight = window.innerHeight;
+        var elementTop = reveals[i].getBoundingClientRect().top;
+        var elementVisible = 120;
+        if (elementTop < windowHeight - elementVisible) {
+          reveals[i].classList.add('active');
+        }
+      }
+    }
+    window.addEventListener('scroll', reveal);
+    reveal();
+
+    // Counter animation
+    function animateCounters() {
+      var counters = document.querySelectorAll('.counter-number');
+      counters.forEach(counter => {
+        if (counter.dataset.animated) return;
+        var rect = counter.getBoundingClientRect();
+        if (rect.top < window.innerHeight && rect.bottom > 0) {
+          counter.dataset.animated = 'true';
+          var target = +counter.dataset.target;
+          var count = 0;
+          var increment = target / 60;
+          var timer = setInterval(() => {
+            count += increment;
+            if (count >= target) {
+              counter.textContent = target + (target === 99 ? '%' : '+');
+              clearInterval(timer);
+            } else {
+              counter.textContent = Math.floor(count) + (target === 99 ? '%' : '+');
+            }
+          }, 30);
+        }
+      });
+    }
+    window.addEventListener('scroll', animateCounters);
+    animateCounters();
+  </script>
 
 </body>
 </html>
