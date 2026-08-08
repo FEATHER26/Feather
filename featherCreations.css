@@ -917,7 +917,7 @@ header.navbar .dropdown-content a {
   .top-bar-inner {
     justify-content: space-between;
   }
-  .nav-menu {
+  header.navbar .nav-menu {
     display: none;
     position: fixed;
     top: 0;
@@ -931,7 +931,7 @@ header.navbar .dropdown-content a {
     gap: 20px;
     z-index: 1001;
   }
-  .nav-menu.open {
+  header.navbar .nav-menu.open {
     display: flex;
   }
   .nav-menu a {
