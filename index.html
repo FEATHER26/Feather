@@ -137,10 +137,10 @@
     }
 
     .hero-collage {
-      position: absolute;
-      inset: 0;
+      position: relative;
       width: 100%;
-      height: 100%;
+      max-width: 1200px;
+      aspect-ratio: 2 / 1;
       transform: translateY(0);
     }
 
@@ -588,11 +588,10 @@
 
 @media (max-width: 768px) {
       .hero-collage {
-        position: absolute;
-        inset: 0;
+        position: relative;
         width: 100%;
-        height: 100%;
-        max-width: none;
+        max-width: 100%;
+        aspect-ratio: 2 / 1;
         margin: 0 auto;
       }
     }
@@ -1227,7 +1226,7 @@
     </div>
     <div class="hero-right">
       <div class="hero-collage">
-        <img src="webp/fam.webp?v=2" alt="Feather Creations Family" class="hero-collage-main" loading="lazy">
+        <img src="webp/fam-wide.webp?v=1" alt="Feather Creations Family" class="hero-collage-main" loading="lazy">
       </div>
       <div class="bulk-badge">
         <span>BULK ORDERS</span>
