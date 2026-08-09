@@ -2,5 +2,8 @@ User-agent: *
 Allow: /
 Disallow: /node_modules/
 Disallow: /uploads/
+Disallow: /featherCreations.html
+Disallow: /test-post.html
+Disallow: /test-form.html
 
 Sitemap: https://feather-creations.vercel.app/sitemap.xml
