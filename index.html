@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Feather Creations | Premium Fashion Fabrics & IT Solutions</title>
+  <title>Feather Creations | Premium Fabrics, Fashion & Accessories</title>
   <link rel="stylesheet" href="style.css?v=3" />
   <link rel="stylesheet" href="featherCreations.css?v=4" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -11,24 +11,24 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <meta name="description" content="Feather Creations offers premium fashion fabrics for men, women & kids, custom t-shirts, embroidery, school uniforms, badges, bags, and IT & AI solutions. Quality-first, made for bulk orders in Pondicherry, India.">
-  <meta name="keywords" content="feather creations, premium fabrics, custom t-shirts, embroidery, school uniforms, bulk orders, coimbatore">
+  <meta name="description" content="Feather Creations offers premium fabrics, custom t-shirts, caps, bags, school uniforms, embroidery, badges, accessories, and IT & AI solutions. Made to order, quality-first, for bulk orders in Pondicherry, India.">
+  <meta name="keywords" content="feather creations, premium fabrics, custom t-shirts, caps, bags, embroidery, school uniforms, bulk orders, coimbatore">
 
   <link rel="canonical" href="https://feather-creations.vercel.app/">
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://feather-creations.vercel.app/">
-  <meta property="og:title" content="Feather Creations | Premium Fashion Fabrics & IT Solutions">
-  <meta property="og:description" content="Premium fashion fabrics for men, women & kids. Quality-first custom products crafted for brands and bulk orders.">
+  <meta property="og:title" content="Feather Creations | Premium Fabrics, Fashion & Accessories">
+  <meta property="og:description" content="Premium fabrics, custom T-Shirts, caps, bags & more. Quality-first products crafted for brands and bulk orders.">
   <meta property="og:image" content="https://feather-creations.vercel.app/webp/insta.webp">
   <meta property="og:site_name" content="Feather Creations">
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:url" content="https://feather-creations.vercel.app/">
-  <meta name="twitter:title" content="Feather Creations | Premium Fashion Fabrics & IT Solutions">
-  <meta name="twitter:description" content="Premium fashion and fabrics for men, women & kids. Orders and custom products crafted for quality and bulk.">
+  <meta name="twitter:title" content="Feather Creations | Premium Fabrics, Fashion & Accessories">
+  <meta name="twitter:description" content="Premium fabrics, custom T-Shirts, caps, bags & more. Quality-first products crafted for brands and bulk orders.">
   <meta name="twitter:image" content="https://feather-creations.vercel.app/webp/insta.webp">
 
   <!-- Favicon -->
@@ -42,7 +42,7 @@
   "name": "Feather Creations",
   "url": "https://feather-creations.vercel.app",
   "logo": "https://feather-creations.vercel.app/webp/logo.webp",
-  "description": "Premium fashion fabrics and custom products crafted for quality.",
+  "description": "Premium fabrics, fashion, caps, bags & custom products crafted for quality.",
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Pondicherry",
@@ -79,7 +79,7 @@
   "name": "Feather Creations",
   "url": "https://feather-creations.vercel.app",
   "logo": "https://feather-creations.vercel.app/webp/logo.webp",
-  "description": "Premium fashion fabrics, custom products, and IT solutions in Pondicherry.",
+  "description": "Premium fabrics, custom products, and IT solutions in Pondicherry.",
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Pondicherry",
@@ -136,13 +136,61 @@
       pointer-events: none;
     }
 
-    .hero-family-img {
+    .hero-collage {
+      position: relative;
+      width: 100%;
+      max-width: 500px;
+      transform: translateY(0);
+    }
+
+    .hero-collage-main {
       width: 100%;
       max-width: 500px;
       height: auto;
       border-radius: 20px;
       box-shadow: 0 20px 50px rgba(0,0,0,0.2);
       object-fit: cover;
+      display: block;
+    }
+
+    .hero-collage-item {
+      position: absolute;
+      width: 130px;
+      height: 150px;
+      border-radius: 16px;
+      border: 4px solid #fff;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+      overflow: hidden;
+      z-index: 2;
+    }
+
+    .hero-collage-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .hero-collage-item.caps-tile {
+      top: 20px;
+      left: -60px;
+    }
+
+    .hero-collage-item.bags-tile {
+      bottom: 24px;
+      right: -55px;
+    }
+
+    .hero-collage-item .tile-tag {
+      position: absolute;
+      bottom: 6px;
+      left: 6px;
+      background: rgba(26,54,93,0.9);
+      color: #fff;
+      font-size: 0.6rem;
+      letter-spacing: 1px;
+      padding: 3px 10px;
+      border-radius: 20px;
     }
 
     .hero-wings-logo {
@@ -585,6 +633,47 @@
       }
     }
 
+    @media (max-width: 768px) {
+      .hero-collage {
+        max-width: 88%;
+        margin: 0 auto;
+      }
+      .hero-collage-item {
+        width: 92px;
+        height: 108px;
+        border-radius: 12px;
+      }
+      .hero-collage-item.caps-tile {
+        top: 10px;
+        left: -18px;
+      }
+      .hero-collage-item.bags-tile {
+        bottom: 12px;
+        right: -14px;
+      }
+      .hero-collage-item .tile-tag {
+        font-size: 0.52rem;
+        padding: 2px 8px;
+        bottom: 4px;
+        left: 4px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-collage-item {
+        width: 74px;
+        height: 84px;
+      }
+      .hero-collage-item.caps-tile {
+        top: 6px;
+        left: -10px;
+      }
+      .hero-collage-item.bags-tile {
+        bottom: 8px;
+        right: -8px;
+      }
+    }
+
     /* ===== PRODUCT SHOWCASE ===== */
     .product-showcase {
       padding: 80px 0;
@@ -763,6 +852,121 @@
         font-size: 1.2rem;
       }
     }
+
+    /* ===== PEOPLE SHOWCASE ===== */
+    .people-showcase {
+      padding: 80px 0;
+      background: var(--white);
+    }
+
+    .people-showcase-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+
+    .people-showcase-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      color: var(--text-dark);
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .people-showcase-title span {
+      color: var(--gold);
+    }
+
+    .people-showcase-subtitle {
+      text-align: center;
+      color: var(--text-light);
+      font-size: 1.05rem;
+      margin-bottom: 50px;
+    }
+
+    .people-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+
+    .people-card {
+      position: relative;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+      transition: all 0.4s ease;
+    }
+
+    .people-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+    }
+
+    .people-card img {
+      width: 100%;
+      height: 520px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+
+    .people-card:hover img {
+      transform: scale(1.05);
+    }
+
+    .people-card-label {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(180deg, transparent, rgba(26,54,93,0.92));
+      padding: 60px 25px 22px;
+      text-align: center;
+    }
+
+    .people-card-label h3 {
+      font-family: 'Playfair Display', serif;
+      color: #fff;
+      font-size: 1.5rem;
+      margin: 0 0 4px;
+    }
+
+    .people-card-label p {
+      color: rgba(255,255,255,0.85);
+      font-size: 0.85rem;
+      margin: 0 0 12px;
+    }
+
+    .people-card-label a {
+      display: inline-block;
+      background: var(--gold);
+      color: #fff;
+      padding: 8px 22px;
+      border-radius: 30px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+
+    .people-card-label a:hover {
+      background: var(--gold-light);
+    }
+
+    @media (max-width: 768px) {
+      .people-grid {
+        grid-template-columns: 1fr;
+        gap: 22px;
+      }
+      .people-card img {
+        height: 420px;
+      }
+      .people-showcase-title {
+        font-size: 2rem;
+      }
+    }
   </style>
 </head>
 <body>
@@ -844,18 +1048,18 @@
         <i class="fas fa-feather-alt"></i>
       </div>
       <h1 class="hero-title">
-        PREMIUM FABRICS.<br>
-        <span class="hero-title-gold">TIMELESS STYLE.</span>
+        MORE THAN FABRICS.<br>
+        <span class="hero-title-gold">STYLE IN EVERY THREAD.</span>
       </h1>
       <p class="hero-subtitle">
-        Explore our premium fashion and accessories, crafted with quality and care. Every piece is built for your brand, made to order, and priced for bulk. That's style you can rely on.
+        Premium fabrics, custom T-Shirts, caps, bags, uniforms, embroidery & more — one house for every piece you wear, carry, and stamp with your brand. Made to order, priced for bulk, crafted to impress.
       </p>
       <div class="hero-features">
         <div class="hero-feature">
           <div class="hero-feature-icon"><i class="fas fa-gem"></i></div>
           <div>
             <strong>PREMIUM QUALITY</strong>
-            <span>Finest Fabrics</span>
+            <span>Fabrics to Finished Products</span>
           </div>
         </div>
         <div class="hero-feature">
@@ -869,7 +1073,7 @@
           <div class="hero-feature-icon"><i class="fas fa-th-large"></i></div>
           <div>
             <strong>WIDE VARIETY</strong>
-            <span>Styles for Every Need</span>
+            <span>Apparel, Caps, Bags & More</span>
           </div>
         </div>
         <div class="hero-feature">
@@ -885,7 +1089,7 @@
           <i class="fas fa-phone-alt"></i> ENQUIRE NOW <i class="fas fa-chevron-right"></i>
         </a>
         <a href="products.html" class="btn-our-fabrics">
-          OUR FABRICS <i class="fas fa-chevron-right"></i>
+          OUR FULL RANGE <i class="fas fa-chevron-right"></i>
         </a>
         <button class="btn-our-fabrics" id="freelancingBtn" style="background:var(--charcoal);color:var(--white);border-color:var(--charcoal);">
           <i class="fas fa-palette"></i> OUR SERVICES
@@ -893,7 +1097,17 @@
       </div>
     </div>
     <div class="hero-right">
-      <img src="webp/fam.webp" alt="Feather Creations Family" class="hero-family-img" loading="lazy">
+      <div class="hero-collage">
+        <img src="webp/fam.webp" alt="Feather Creations Family" class="hero-collage-main" loading="lazy">
+        <div class="hero-collage-item caps-tile">
+          <img src="webp/ca2.webp" alt="Custom Caps" loading="lazy">
+          <span class="tile-tag">CAPS</span>
+        </div>
+        <div class="hero-collage-item bags-tile">
+          <img src="webp/b4.webp" alt="Custom Bags" loading="lazy">
+          <span class="tile-tag">BAGS</span>
+        </div>
+      </div>
       <div class="bulk-badge">
         <span>BULK ORDERS</span>
         <i class="fas fa-box-open"></i>
@@ -908,8 +1122,8 @@
       <p class="crafted-by">DESIGNED BY YOU.</p>
       <h2 class="crafted-title">CRAFTED<br>WITH CHOICE.</h2>
       <p class="crafted-desc">
-        A Stunning Range of Fabrics for Men, Women & Kids.<br>
-        Bulk Fabrics. Endless Possibilities.
+        Fabrics, Fashion, Caps, Bags & Accessories — styled for Men, Women & Kids.<br>
+        Bulk Ready. Endless Possibilities.
       </p>
       <div class="crafted-features">
         <div class="crafted-feature">
@@ -987,6 +1201,40 @@
         <span>BULK ORDERS</span>
         <i class="fas fa-box-open"></i>
         <span>ONLY</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Styled For Everyone ===== -->
+  <section class="people-showcase">
+    <div class="people-showcase-inner">
+      <h2 class="people-showcase-title">Styled For <span>Everyone</span></h2>
+      <p class="people-showcase-subtitle">Real style for men, women & kids — wear the look, carry the accessories.</p>
+      <div class="people-grid">
+        <div class="people-card reveal">
+          <img src="webp/boysandgirls.webp" alt="Boys and Girl" loading="lazy">
+          <div class="people-card-label">
+            <h3>Kids</h3>
+            <p>Comfortable styles that keep up with every adventure.</p>
+            <a href="school.html">View Kids Collection</a>
+          </div>
+        </div>
+        <div class="people-card reveal">
+          <img src="webp/kids.webp" alt="Kids style" loading="lazy">
+          <div class="people-card-label">
+            <h3>T-Shirts & Casual</h3>
+            <p>Everyday wear that looks sharp without trying.</p>
+            <a href="products.html">Explore T-Shirts</a>
+          </div>
+        </div>
+        <div class="people-card reveal">
+          <img src="webp/boys.webp" alt="Boys style" loading="lazy">
+          <div class="people-card-label">
+            <h3>Accessorize</h3>
+            <p>Round it off with caps, bags & brand-ready gear.</p>
+            <a href="caps.html">Shop Accessories</a>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -1077,7 +1325,7 @@
         </div>
       </div>
 
-      <!-- 6) Bible Verse Products — Info LEFT, Image RIGHT -->
+      <!-- 6) Custom Print Collection — Info LEFT, Image RIGHT -->
       <div class="product-row reversed reveal">
         <div class="product-row-img">
           <img src="webp/frame1.webp" alt="Custom T-Shirts and Frames" loading="lazy">
@@ -1152,7 +1400,7 @@
   <section class="cta-section">
     <div class="cta-content">
       <h2>Ready to Create Something Amazing?</h2>
-      <p>Whether you need premium fabrics for your fashion line or cutting-edge IT solutions for your business, we're here to bring your vision to life.</p>
+      <p>Whether you need premium fabrics, custom apparel, caps, bags & accessories, or cutting-edge IT solutions for your business, we're here to bring your vision to life.</p>
       <div class="cta-buttons">
         <a href="product_enquiry.html" class="cta-btn-primary">
           <i class="fas fa-box-open"></i> Bulk Orders
@@ -1170,7 +1418,7 @@
       <div class="features-bar-item">
         <div class="features-bar-icon"><i class="fas fa-feather-alt"></i></div>
         <div>
-          <strong>PREMIUM FABRICS</strong>
+          <strong>PREMIUM QUALITY</strong>
           <span>Carefully Sourced</span>
         </div>
       </div>
