@@ -105,6 +105,71 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <meta name="google-site-verification" content="_I9CtyOmc3Cv_qOTkC0m_vcbLaEdX4msPN0XtgGo-GI" />
+  <style>
+    .animation-section .crafted-right {
+      flex-direction: column;
+      justify-content: center;
+      align-items: stretch;
+    }
+
+    .animation-section .animation-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      width: 100%;
+    }
+
+    .animation-card {
+      background: var(--white);
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.14);
+      transition: all 0.4s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .animation-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.18);
+    }
+
+    .animation-card video {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      display: block;
+      background: var(--teal-dark);
+    }
+
+    .animation-label {
+      padding: 14px 16px;
+      margin: 0;
+      font-size: 0.8rem;
+      letter-spacing: 1px;
+      color: var(--text-dark);
+      font-weight: 600;
+    }
+
+    .animation-fullscreen-note {
+      margin: 0 0 24px;
+      font-size: 0.82rem;
+      letter-spacing: 0.5px;
+      color: rgba(255,255,255,0.85);
+      text-align: center;
+    }
+
+    .animation-fullscreen-note i {
+      color: var(--gold-light);
+    }
+
+    @media (max-width: 768px) {
+      .animation-section .animation-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -279,6 +344,84 @@
         </div>
         <h3>Maintenance & Support</h3>
         <p>Reliable ongoing maintenance including updates, security patches, and technical support when you need it.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Animation Services Showcase ===== -->
+  <section class="crafted-section animation-section">
+    <div class="crafted-left">
+      <p class="crafted-by">ANIMATION SERVICES.</p>
+      <h2 class="crafted-title">BRING YOUR<br>SPACE TO LIFE.</h2>
+      <p class="crafted-desc">
+        Cinematic walkthroughs and aerial drone films by Feather Creations — immersive
+        animations of cafeterias, lounges, receptions and rooms that let clients
+        experience a space before it is built.
+      </p>
+      <div class="crafted-features">
+        <div class="crafted-feature">
+          <i class="fas fa-video"></i>
+          <div>
+            <strong>4K FILMS</strong>
+            <span>CINEMATIC QUALITY</span>
+          </div>
+        </div>
+        <div class="crafted-feature">
+          <i class="fas fa-helicopter"></i>
+          <div>
+            <strong>DRONE FLY</strong>
+            <span>AERIAL PERSPECTIVES</span>
+          </div>
+        </div>
+        <div class="crafted-feature">
+          <i class="fas fa-door-open"></i>
+          <div>
+            <strong>INTERIOR TOURS</strong>
+            <span>SPACE WALKTHROUGHS</span>
+          </div>
+        </div>
+        <div class="crafted-feature">
+          <i class="fas fa-expand"></i>
+          <div>
+            <strong>FULL SCREEN</strong>
+            <span>WATCH IT LARGE</span>
+          </div>
+        </div>
+      </div>
+      <div class="crafted-buttons">
+        <a href="contact_us.html" class="btn-contact">
+          <i class="fas fa-headset"></i> GET IN TOUCH
+        </a>
+        <a href="our_works.html" class="btn-view-collections">
+          SEE OUR WORKS <i class="fas fa-chevron-right"></i>
+        </a>
+      </div>
+    </div>
+    <div class="crafted-right">
+      <p class="animation-fullscreen-note">
+        <i class="fas fa-expand"></i>  Hit the expand icon on any clip to watch it in full screen.
+      </p>
+      <div class="animation-grid">
+        <div class="animation-card reveal">
+          <video src="Animated/Cafetaria (whirling shot) - FeatherCreations.mp4" controls loop muted playsinline preload="metadata"></video>
+          <p class="animation-label">CAFETERIA WHIRLING SHOT</p>
+        </div>
+        <div class="animation-card reveal">
+          <video src="Animated/Landscape drone shot (Top to Mid fly) - FeatherCreations.mp4" controls loop muted playsinline preload="metadata"></video>
+          <p class="animation-label">LANDSCAPE DRONE FLY</p>
+        </div>
+        <div class="animation-card reveal">
+          <video src="Animated/Reception (Zoomed in) - FeatherCreations.mp4" controls loop muted playsinline preload="metadata"></video>
+          <p class="animation-label">RECEPTION ZOOMED IN</p>
+        </div>
+        <div class="animation-card reveal">
+          <video src="Animated/Room lounge - FeatherCreations.mp4" controls loop muted playsinline preload="metadata"></video>
+          <p class="animation-label">ROOM LOUNGE</p>
+        </div>
+        <div class="animation-card reveal">
+          <video src="Animated/The Room - FeatherCreations.mp4" controls loop muted playsinline preload="metadata"></video>
+          <p class="animation-label">THE ROOM</p>
+        </div>
       </div>
     </div>
   </section>
