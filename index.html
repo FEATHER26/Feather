@@ -471,11 +471,19 @@
     .service-card {
       background: var(--white);
       border-radius: 20px;
-      padding: 35px 25px;
+      overflow: hidden;
       text-align: center;
-      transition: all 0.4s ease;
+      display: flex;
+      flex-direction: column;
       border: 1px solid rgba(0,0,0,0.05);
       cursor: pointer;
+    }
+
+    .service-card-body {
+      padding: 28px 24px 32px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
     }
 
     .service-card:hover {
@@ -988,31 +996,106 @@
     }
 
     .products-grid {
-      display: flex;
-      flex-direction: column;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
       width: 100%;
     }
 
-    .products-section .products-grid {
-      gap: 22px;
+    .product-card {
+      background: var(--white);
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+      transition: all 0.4s ease;
+      display: flex;
+      flex-direction: column;
     }
 
-    .products-section .product-row {
-      margin-bottom: 0;
+    .product-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.12);
     }
 
-    .products-section .product-row-img {
-      min-height: 210px;
+    .product-card-img {
+      height: 175px;
+      min-height: 175px;
+      overflow: hidden;
+      background: var(--cream);
     }
 
-    .products-section .product-row-info {
-      padding: 28px 30px;
+    .product-card-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .product-card:hover .product-card-img img {
+      transform: scale(1.06);
+    }
+
+    .product-card-body {
+      padding: 24px 24px 26px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .product-card-body h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem;
+      color: var(--text-dark);
+      margin-bottom: 10px;
+      letter-spacing: 0.4px;
+    }
+
+    .product-card-body p {
+      font-size: 0.82rem;
+      color: var(--text-light);
+      line-height: 1.65;
+      margin-bottom: 14px;
+      flex: 1;
+    }
+
+    .product-card-body .product-row-tags {
+      margin-bottom: 16px;
+      gap: 6px;
+    }
+
+    .product-card-body .product-row-tags span {
+      padding: 4px 12px;
+      font-size: 0.7rem;
+    }
+
+    .product-card-body .product-row-btn {
+      align-self: flex-start;
+      padding: 11px 22px;
+      font-size: 0.78rem;
     }
 
     .services-section .services-grid {
       grid-template-columns: repeat(2, 1fr);
       gap: 20px;
       width: 100%;
+    }
+
+    .service-card-img {
+      height: 170px;
+      overflow: hidden;
+      border-radius: 20px 20px 0 0;
+      background: linear-gradient(135deg, var(--teal), var(--teal-dark));
+    }
+
+    .service-card-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .service-card:hover .service-card-img img {
+      transform: scale(1.06);
     }
 
     @media (max-width: 768px) {
@@ -1023,9 +1106,15 @@
       .people-section .people-card img {
         height: 400px;
       }
+      .products-grid {
+        grid-template-columns: 1fr;
+      }
       .services-section .services-grid {
         grid-template-columns: 1fr;
         gap: 16px;
+      }
+      .service-card-img {
+        height: 200px;
       }
     }
   </style>
@@ -1316,7 +1405,7 @@
     <div class="crafted-right">
       <div class="people-grid">
         <div class="people-card reveal">
-          <img src="webp/boysandgirls.webp" alt="Boys and Girl" loading="lazy">
+          <img src="webp/ppl-kids.webp" alt="Kids style" loading="lazy">
           <div class="people-card-label">
             <h3>Kids</h3>
             <p>Comfortable styles that keep up with every adventure.</p>
@@ -1324,7 +1413,7 @@
           </div>
         </div>
         <div class="people-card reveal">
-          <img src="webp/kids.webp" alt="Kids style" loading="lazy">
+          <img src="webp/ppl-casual.webp" alt="T-Shirts and Casual style" loading="lazy">
           <div class="people-card-label">
             <h3>T-Shirts & Casual</h3>
             <p>Everyday wear that feels sharp without trying.</p>
@@ -1332,10 +1421,10 @@
           </div>
         </div>
         <div class="people-card reveal">
-          <img src="webp/boys.webp" alt="Boys style" loading="lazy">
+          <img src="webp/ppl-accessories.webp" alt="Accessorize style" loading="lazy">
           <div class="people-card-label">
             <h3>Accessorize</h3>
-            <p>Round it off with caps, bags & brand-ready gear.</p>
+            <p>Round it with caps, bags & brand-ready gear.</p>
             <a href="caps.html">Shop Accessories</a>
           </div>
         </div>
@@ -1393,15 +1482,14 @@
     <div class="crafted-right">
       <div class="products-grid">
 
-      <!-- 1) T-Shirts — Image LEFT, Info RIGHT -->
-      <div class="product-row reveal">
-        <div class="product-row-img">
+      <!-- 1) T-Shirts -->
+      <div class="product-card reveal">
+        <div class="product-card-img">
           <img src="webp/Corporate T-Shirts.webp" alt="Custom T-Shirts" loading="lazy">
         </div>
-        <div class="product-row-info">
-          <div class="product-row-icon"><i class="fas fa-tshirt"></i></div>
+        <div class="product-card-body">
           <h3>CUSTOM T-SHIRTS</h3>
-          <p>From bold graphic tees to elegant plain blends — printed, embroidered, or plain. Perfect for teams, events, brands & businesses of every size.</p>
+          <p>From bold graphic tees to elegant plain blends — printed, embroidered, or plain. Perfect for teams, events, brands & businesses.</p>
           <div class="product-row-tags">
             <span>Printed</span><span>Embroidered</span><span>Bulk</span><span>Custom</span>
           </div>
@@ -1409,15 +1497,14 @@
         </div>
       </div>
 
-      <!-- 2) School Uniforms — Info LEFT, Image RIGHT -->
-      <div class="product-row reversed reveal">
-        <div class="product-row-img">
+      <!-- 2) School Uniforms -->
+      <div class="product-card reveal">
+        <div class="product-card-img">
           <img src="webp/school.webp" alt="School Uniforms" loading="lazy">
         </div>
-        <div class="product-row-info">
-          <div class="product-row-icon"><i class="fas fa-graduation-cap"></i></div>
+        <div class="product-card-body">
           <h3>SCHOOL UNIFORMS</h3>
-          <p>Durable, comfortable uniforms built for daily wear. Shirts, pants, skirts, pinafores — tailored to your school's identity with logo branding.</p>
+          <p>Durable, comfortable uniforms built for daily wear. Shirts, pants, skirts, pinafores — tailored to your school's identity.</p>
           <div class="product-row-tags">
             <span>Shirts</span><span>Pants</span><span>Skirts</span><span>Logo</span>
           </div>
@@ -1425,15 +1512,14 @@
         </div>
       </div>
 
-      <!-- 3) Embroidery — Image LEFT, Info RIGHT -->
-      <div class="product-row reveal">
-        <div class="product-row-img">
+      <!-- 3) Embroidery -->
+      <div class="product-card reveal">
+        <div class="product-card-img">
           <img src="webp/e1.webp" alt="Custom Embroidery" loading="lazy">
         </div>
-        <div class="product-row-info">
-          <div class="product-row-icon"><i class="fas fa needle"></i></div>
+        <div class="product-card-body">
           <h3>CUSTOM EMBROIDERY</h3>
-          <p>Precision-stitched logos, names & artwork on any fabric. Professional-grade embroidery for corporate, school & personal branding that lasts.</p>
+          <p>Precision-stitched logos, names & artwork on any fabric. Professional-grade embroidery that lasts for corporate & school.</p>
           <div class="product-row-tags">
             <span>Logos</span><span>Names</span><span>Patches</span><span>Corporate</span>
           </div>
@@ -1441,15 +1527,14 @@
         </div>
       </div>
 
-      <!-- 4) Bags & Backpacks — Info LEFT, Image RIGHT -->
-      <div class="product-row reversed reveal">
-        <div class="product-row-img">
+      <!-- 4) Bags & Backpacks -->
+      <div class="product-card reveal">
+        <div class="product-card-img">
           <img src="webp/b4.webp" alt="Bags and Backpacks" loading="lazy">
         </div>
-        <div class="product-row-info">
-          <div class="product-row-icon"><i class="fas fa-shopping-bag"></i></div>
+        <div class="product-card-body">
           <h3>BAGS & BACKPACKS</h3>
-          <p>Trendy tote bags, sturdy backpacks, sleek laptop sleeves & sling bags. Custom prints & embroidery for schools, corporates & events.</p>
+          <p>Trendy tote bags, sturdy backpacks, sleek laptop sleeves & sling bags. Custom prints & embroidery for schools & corporates.</p>
           <div class="product-row-tags">
             <span>Tote</span><span>Backpack</span><span>Sling</span><span>Laptop</span>
           </div>
@@ -1457,15 +1542,14 @@
         </div>
       </div>
 
-      <!-- 5) Caps & Headwear — Image LEFT, Info RIGHT -->
-      <div class="product-row reveal">
-        <div class="product-row-img">
+      <!-- 5) Caps & Headwear -->
+      <div class="product-card reveal">
+        <div class="product-card-img">
           <img src="webp/ca2.webp" alt="Caps and Headwear" loading="lazy">
         </div>
-        <div class="product-row-info">
-          <div class="product-row-icon"><i class="fas fa-hat-cowboy"></i></div>
+        <div class="product-card-body">
           <h3>CAPS & HEADWEAR</h3>
-          <p>Classic baseball caps, snapbacks, beanies & visors. Embroidered or printed with your logo — perfect for teams, brands & promotional events.</p>
+          <p>Classic baseball caps, snapbacks, beanies & visors. Embroidered or printed with your logo for teams, brands & events.</p>
           <div class="product-row-tags">
             <span>Baseball</span><span>Snapback</span><span>Beanie</span><span>Visor</span>
           </div>
@@ -1473,15 +1557,14 @@
         </div>
       </div>
 
-      <!-- 6) Custom Print Collection — Info LEFT, Image RIGHT -->
-      <div class="product-row reversed reveal">
-        <div class="product-row-img">
+      <!-- 6) Custom Print Collection -->
+      <div class="product-card reveal">
+        <div class="product-card-img">
           <img src="webp/frame1.webp" alt="Custom T-Shirts and Frames" loading="lazy">
         </div>
-        <div class="product-row-info">
-          <div class="product-row-icon"><i class="fas fa-palette"></i></div>
+        <div class="product-card-body">
           <h3>CUSTOM PRINT COLLECTION</h3>
-          <p>Premium custom t-shirts, framed prints, cards & gifts — put your logo, message, or artwork on everything, in bulk quantities for business use.</p>
+          <p>Premium custom t-shirts, framed prints, cards & gifts — put your logo, message, or artwork on everything, in bulk.</p>
           <div class="product-row-tags">
             <span>T-Shirts</span><span>Frames</span><span>Cards</span><span>Gifts</span>
           </div>
@@ -1564,24 +1647,44 @@
     <div class="crafted-right">
       <div class="services-grid">
         <div class="service-card reveal">
-          <div class="service-card-icon"><i class="fas fa-laptop-code"></i></div>
-          <h3>Web Designing</h3>
-          <p>Modern, responsive websites that captivate and convert visitors into customers.</p>
+          <div class="service-card-img">
+            <img src="webp/service-web.webp" alt="Web Designing" loading="lazy">
+          </div>
+          <div class="service-card-body">
+            <div class="service-card-icon"><i class="fas fa-laptop-code"></i></div>
+            <h3>Web Designing</h3>
+            <p>Modern, responsive websites that captivate and convert visitors into customers.</p>
+          </div>
         </div>
         <div class="service-card reveal">
-          <div class="service-card-icon"><i class="fas fa-shopping-cart"></i></div>
-          <h3>E-Commerce</h3>
-          <p>Complete online store solutions with payment integration and inventory management.</p>
+          <div class="service-card-img">
+            <img src="webp/service-ecommerce.webp" alt="E-Commerce" loading="lazy">
+          </div>
+          <div class="service-card-body">
+            <div class="service-card-icon"><i class="fas fa-shopping-cart"></i></div>
+            <h3>E-Commerce</h3>
+            <p>Complete online store solutions with payment integration and inventory management.</p>
+          </div>
         </div>
         <div class="service-card reveal">
-          <div class="service-card-icon"><i class="fas fa-ad"></i></div>
-          <h3>Commercial Ads</h3>
-          <p>Eye-catching advertisements that boost your brand visibility and drive engagement.</p>
+          <div class="service-card-img">
+            <img src="webp/service-ads.webp" alt="Commercial Ads" loading="lazy">
+          </div>
+          <div class="service-card-body">
+            <div class="service-card-icon"><i class="fas fa-ad"></i></div>
+            <h3>Commercial Ads</h3>
+            <p>Eye-catching advertisements that boost your brand visibility and drive engagement.</p>
+          </div>
         </div>
         <div class="service-card reveal">
-          <div class="service-card-icon"><i class="fas fa-share-alt"></i></div>
-          <h3>Social Media</h3>
-          <p>Strategic social media management to grow your audience and build brand loyalty.</p>
+          <div class="service-card-img">
+            <img src="webp/service-social.webp" alt="Social Media" loading="lazy">
+          </div>
+          <div class="service-card-body">
+            <div class="service-card-icon"><i class="fas fa-share-alt"></i></div>
+            <h3>Social Media</h3>
+            <p>Strategic social media management to grow your audience and build brand loyalty.</p>
+          </div>
         </div>
       </div>
     </div>
