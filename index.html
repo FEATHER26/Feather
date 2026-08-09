@@ -735,19 +735,19 @@
       border-radius: 30px;
       transition: all 0.3s ease;
       width: fit-content;
+      touch-action: manipulation;
+      -webkit-tap-highlight-color: transparent;
     }
 
-    .product-row-btn:hover {
-      background: var(--gold);
-      transform: translateX(5px);
-    }
+    @media (hover: hover) {
+      .product-row-btn:hover {
+        background: var(--gold);
+        transform: translateX(5px);
+      }
 
-    .product-row-btn i {
-      transition: transform 0.3s ease;
-    }
-
-    .product-row-btn:hover i {
-      transform: translateX(4px);
+      .product-row-btn:hover i {
+        transform: translateX(4px);
+      }
     }
 
     @media (max-width: 768px) {
@@ -1093,6 +1093,21 @@
       .animation-section .animation-grid {
         grid-template-columns: 1fr;
         gap: 16px;
+      }
+    }
+
+    @media (hover: none), (pointer: coarse) {
+      .product-card,
+      .product-card:hover {
+        transform: none;
+      }
+      .product-card .product-card-img img,
+      .product-card:hover .product-card-img img {
+        transform: none;
+      }
+      .product-card-body .product-row-btn,
+      .product-card-body .product-row-btn:hover {
+        transform: none;
       }
     }
 
@@ -1834,9 +1849,16 @@
     const hamburger = document.getElementById('navHamburger');
     const navMenu = document.querySelector('.nav-menu');
     if (hamburger && navMenu) {
+      const closeMenu = () => {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('open');
+      };
       hamburger.addEventListener('click', () => {
         hamburger.classList.toggle('active');
         navMenu.classList.toggle('open');
+      });
+      navMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', closeMenu);
       });
     }
 
