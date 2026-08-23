@@ -799,6 +799,18 @@ header.navbar .dropdown-content a {
   font-weight: 600;
 }
 
+.footer-bottom a {
+  color: var(--gold);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.footer-bottom a:hover {
+  color: var(--gold-light);
+  text-decoration: underline;
+}
+
 /* ================================================
    WHATSAPP FLOAT
    ================================================ */
